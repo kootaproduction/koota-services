@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --color-koota-red: #ac0c0c;
+    --color-koota-red-dark: #820003;
+    --color-koota-green: #28a745;
+    --color-koota-green-light: #80f98b;
+    --color-koota-wa: #25d366;
+    --color-koota-bg: #fcf9f8;
+    --color-koota-surface: #ffffff;
+    --color-koota-dark: #1c1b1b;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: #fcf9f8;
+    color: #1c1b1b;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-shadow-card {
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.custom-shadow-card:hover {
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.08);
+}
