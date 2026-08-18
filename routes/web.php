@@ -16,6 +16,15 @@ use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminConsultationController;
 use App\Http\Controllers\Admin\AdminFaqController;
 
+// Language Switcher Route
+Route::get('/locale/{lang}', function ($lang) {
+    if (in_array($lang, ['id', 'en'])) {
+        session(['locale' => $lang]);
+        app()->setLocale($lang);
+    }
+    return redirect()->back(fallback: route('home'));
+})->name('locale.switch');
+
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
@@ -25,6 +34,7 @@ Route::post('/konsultasi', [ConsultationController::class, 'store'])->name('cons
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/portofolio', [PortfolioController::class, 'index'])->name('portfolio.index');
+Route::get('/portofolio/{project}', [PortfolioController::class, 'show'])->name('portfolio.show');
 Route::get('/tentang-kami', [AboutController::class, 'index'])->name('about');
 
 // Admin Auth Routes
@@ -35,6 +45,7 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 // Admin Protected Routes
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::post('/maintenance/toggle', [AdminDashboardController::class, 'toggleMaintenance'])->name('maintenance.toggle');
 
     Route::resource('services', AdminServiceController::class);
     Route::resource('projects', AdminProjectController::class);

@@ -1,15 +1,54 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard Admin - KOOTA SERVICE')
-@section('page_title', 'Dashboard Overview')
+@section('title', 'Dashboard Admin - KOOTA SERVICES')
+@section('page_title', 'Dashboard Overview & Pengaturan')
 
 @section('content')
     <div class="space-y-8">
+        
+        <!-- Maintenance Mode Control Panel (Point 9) -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
+                <div class="space-y-1">
+                    <div class="flex items-center gap-2.5">
+                        <h3 class="text-lg font-bold text-gray-900">Pengaturan Pemeliharaan Website (Maintenance Mode)</h3>
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold {{ $isMaintenance ? 'bg-amber-100 text-amber-800' : 'bg-green-100 text-green-800' }}">
+                            {{ $isMaintenance ? '🔴 AKTIF (Pemeliharaan)' : '🟢 NONAKTIF (Online)' }}
+                        </span>
+                    </div>
+                    <p class="text-xs text-gray-500">
+                        Ketika aktif, pengunjung luar tidak dapat melihat isi website dan akan melihat halaman pemberitahuan maintenance. Admin tetap dapat mengakses dashboard dan preview website.
+                    </p>
+                </div>
+            </div>
+
+            <form action="{{ route('admin.maintenance.toggle') }}" method="POST" class="space-y-4">
+                @csrf
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-gray-700 uppercase">Pesan Pemberitahuan untuk Pengunjung</label>
+                    <input type="text" name="maintenance_message" value="{{ $maintenanceMessage }}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] text-xs sm:text-sm">
+                </div>
+
+                <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" name="is_maintenance" value="1" {{ $isMaintenance ? 'checked' : '' }} class="w-5 h-5 rounded text-[#820003] focus:ring-[#820003]">
+                        <span class="text-xs sm:text-sm font-bold text-gray-800">
+                            Aktifkan Maintenance Mode (Tutup Akses Publik Sementara)
+                        </span>
+                    </label>
+
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#820003] hover:bg-[#ba1a15] text-white font-bold text-xs sm:text-sm transition-all shadow-sm active:scale-95">
+                        Simpan Status Pemeliharaan
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <!-- Stat Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Stat 1: Total Konsultasi -->
-            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
@@ -21,8 +60,8 @@
             </div>
 
             <!-- Stat 2: Total Layanan -->
-            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                     </svg>
@@ -34,8 +73,8 @@
             </div>
 
             <!-- Stat 3: Total Projects -->
-            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
@@ -47,8 +86,8 @@
             </div>
 
             <!-- Stat 4: Total Posts -->
-            <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-xl bg-green-50 text-[#007327] flex items-center justify-center font-bold">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                     </svg>
@@ -61,7 +100,7 @@
         </div>
 
         <!-- Recent Consultations Table -->
-        <div class="bg-white rounded-2xl border border-gray-100 shadow-2xs overflow-hidden">
+        <div class="bg-white rounded-3xl border border-gray-100 shadow-2xs overflow-hidden">
             <div class="p-6 border-b border-gray-100 flex items-center justify-between">
                 <div>
                     <h3 class="text-lg font-bold text-gray-900">Permintaan Konsultasi Terbaru</h3>

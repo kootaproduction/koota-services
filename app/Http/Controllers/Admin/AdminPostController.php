@@ -18,7 +18,13 @@ class AdminPostController extends Controller
 
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = [
+            'Cleaning Service',
+            'Pengangkutan Sampah',
+            'Jasa Tukang & Renovasi',
+            'IPAL',
+        ];
+        return view('admin.posts.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -28,13 +34,13 @@ class AdminPostController extends Controller
             'category' => 'required|string',
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
-            'image_file' => 'nullable|image|max:5120',
+            'image_file' => 'nullable|image|max:10240',
             'image_url' => 'nullable|string',
             'is_featured' => 'boolean',
             'published_at' => 'nullable|date',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']);
+        $validated['slug'] = Str::slug($validated['title']) . '-' . Str::random(5);
 
         if ($request->hasFile('image_file')) {
             $path = $request->file('image_file')->store('posts', 'public');
@@ -51,7 +57,13 @@ class AdminPostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = [
+            'Cleaning Service',
+            'Pengangkutan Sampah',
+            'Jasa Tukang & Renovasi',
+            'IPAL',
+        ];
+        return view('admin.posts.edit', compact('post', 'categories'));
     }
 
     public function update(Request $request, Post $post)
@@ -61,13 +73,15 @@ class AdminPostController extends Controller
             'category' => 'required|string',
             'excerpt' => 'nullable|string',
             'content' => 'required|string',
-            'image_file' => 'nullable|image|max:5120',
+            'image_file' => 'nullable|image|max:10240',
             'image_url' => 'nullable|string',
             'is_featured' => 'boolean',
             'published_at' => 'nullable|date',
         ]);
 
-        $validated['slug'] = Str::slug($validated['title']);
+        if (empty($post->slug)) {
+            $validated['slug'] = Str::slug($validated['title']) . '-' . Str::random(5);
+        }
 
         if ($request->hasFile('image_file')) {
             $path = $request->file('image_file')->store('posts', 'public');

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="500" height="450">
+  <defs>
+    <style>
+      .skyline-white { fill: #ffffff; }
+      .brand-title-white { font-family: 'Arial Black', 'Inter', system-ui, sans-serif; font-weight: 900; font-size: 88px; fill: #ffffff; letter-spacing: 2px; }
+      .brand-sub-white { font-family: 'Arial', 'Inter', system-ui, sans-serif; font-weight: 800; font-style: italic; font-size: 42px; fill: #ffffff; letter-spacing: 14px; }
+    </style>
+  </defs>
+  <!-- Skyline Silhouette matching Image 2 -->
+  <path class="skyline-white" d="M65 210 L80 210 L80 195 L90 195 L90 185 L98 185 L98 170 L103 170 L103 145 L106 145 L106 140 L108 140 L108 145 L111 145 L111 170 L116 170 L116 185 L124 185 L124 195 L135 195 L135 210 L145 210 L145 155 L175 155 L175 185 L180 185 L180 140 L195 140 L195 90 L199 90 L199 45 L203 45 L203 90 L207 90 L207 140 L220 140 L220 150 L225 150 L225 180 L230 180 L230 155 L245 155 L245 190 L255 190 L255 175 L260 175 L260 160 L270 160 L270 180 L275 180 L275 148 L285 148 L285 125 L300 125 L300 85 L303 85 L303 60 L305 60 L305 85 L308 85 L308 125 L320 125 L320 145 L325 145 L325 175 L335 175 L335 190 L345 190 L345 170 L350 170 L350 180 L365 180 L365 168 L375 168 L375 180 L380 180 L380 170 L410 170 L410 195 L415 195 L415 205 L425 205 L425 210 L435 210 L435 215 L65 215 Z" />
+  
+  <!-- Text KOOTA -->
+  <text x="250" y="325" text-anchor="middle" class="brand-title-white">KOOTA</text>
+  
+  <!-- Text SERVICE -->
+  <text x="258" y="405" text-anchor="middle" class="brand-sub-white">SERVICE</text>
+</svg>
