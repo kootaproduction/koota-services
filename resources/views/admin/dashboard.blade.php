@@ -107,7 +107,7 @@
                     <p class="text-xs text-gray-500">Daftar calon klien yang mengisi form konsultasi website</p>
                 </div>
                 <a href="{{ route('admin.consultations.index') }}" class="text-xs font-bold text-[#820003] hover:underline">
-                    Lihat Semua Konsultasi →
+                    Lihat Semua Konsultasi
                 </a>
             </div>
 

@@ -15,6 +15,7 @@ class Consultation extends Model
         'whatsapp',
         'email',
         'location',
+        'address',
         'property_type',
         'notes',
         'photo_path',

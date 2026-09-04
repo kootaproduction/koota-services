@@ -48,7 +48,6 @@
                         <div>
                             <a href="{{ route('blog.show', $featuredPost->slug) }}" class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#820003] hover:text-[#ba1a15] transition-colors">
                                 <span>{{ __('Baca Selengkapnya') }}</span>
-                                <span>→</span>
                             </a>
                         </div>
                     </div>
@@ -61,24 +60,21 @@
                     <button @click="currentFilter = 'All'" :class="currentFilter === 'All' || currentFilter === 'Semua' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                         {{ __('All') }}
                     </button>
-                    <button @click="currentFilter = 'Cleaning Service'" :class="currentFilter === 'Cleaning Service' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
-                        {{ __('Cleaning Service') }}
+                    <button @click="currentFilter = 'Pembersihan Rumah'" :class="currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning' || currentFilter === 'Cleaning Service' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                        {{ __('Pembersihan Rumah') }}
+                    </button>
+                    <button @click="currentFilter = 'Perbaikan Rumah'" :class="currentFilter === 'Perbaikan Rumah' || currentFilter === 'Jasa Tukang & Renovasi' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                        {{ __('Perbaikan Rumah') }}
                     </button>
                     <button @click="currentFilter = 'Pengangkutan Sampah'" :class="currentFilter === 'Pengangkutan Sampah' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                         {{ __('Pengangkutan Sampah') }}
-                    </button>
-                    <button @click="currentFilter = 'Jasa Tukang & Renovasi'" :class="currentFilter === 'Jasa Tukang & Renovasi' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
-                        {{ __('Jasa Tukang & Renovasi') }}
-                    </button>
-                    <button @click="currentFilter = 'IPAL'" :class="currentFilter === 'IPAL' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
-                        {{ __('IPAL') }}
                     </button>
                 </div>
 
                 <!-- Articles Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @forelse($posts as $post)
-                        <div x-show="currentFilter === 'All' || currentFilter === 'Semua' || currentFilter === '{{ $post->category }}' || '{{ $post->category }}'.includes(currentFilter)" 
+                        <div x-show="currentFilter === 'All' || currentFilter === 'Semua' || currentFilter === '{{ $post->category }}' || '{{ $post->category }}'.includes(currentFilter) || ((currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning') && ('{{ $post->category }}'.includes('Cleaning') || '{{ $post->category }}'.includes('Pembersihan'))) || (currentFilter === 'Perbaikan Rumah' && ('{{ $post->category }}'.includes('Tukang') || '{{ $post->category }}'.includes('Perbaikan')))" 
                              x-transition 
                              class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1">
                             <div>
@@ -100,9 +96,8 @@
                                 </div>
                             </div>
                             <div class="px-6 pb-6 pt-2 border-t border-gray-50 flex items-center justify-between">
-                                <a href="{{ route('blog.show', $post->slug) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:text-[#ba1a15] transition-colors group-hover:translate-x-1 transition-transform">
+                                <a href="{{ route('blog.show', $post->slug) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:text-[#ba1a15] transition-colors">
                                     <span>{{ __('Baca Selengkapnya') }}</span>
-                                    <span>→</span>
                                 </a>
                                 <span class="text-[11px] text-gray-400 font-medium">
                                     {{ $post->published_at ? $post->published_at->format('d M Y') : date('d M Y') }}
@@ -129,7 +124,6 @@
                 <div class="pt-2 flex flex-wrap justify-center gap-4">
                     <a href="{{ route('consultation.index') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-[#820003] hover:bg-gray-100 font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
                         <span>{{ __('Konsultasi Sekarang') }}</span>
-                        <span>→</span>
                     </a>
                     <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20membaca%20blog%20dan%20ingin%20berkonsultasi." target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
                         <span>Chat WhatsApp 0812-1759-7109</span>

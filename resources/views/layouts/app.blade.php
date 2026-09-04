@@ -25,17 +25,9 @@
     <header x-data="{ openMegaMenu: false, openLang: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- Brand Logo (Red Skyline Mark + KOOTA SERVICE Typography) -->
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5 group py-1">
-                <img src="{{ asset('images/logo-icon.svg') }}" alt="KOOTA SERVICE" class="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105">
-                <div class="flex flex-col text-left">
-                    <span class="font-serif-brand font-bold text-lg sm:text-xl tracking-wider text-[#820003] leading-none">
-                        KOOTA
-                    </span>
-                    <span class="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] text-[#820003] leading-tight">
-                        SERVICE
-                    </span>
-                </div>
+            <!-- Brand Logo (Exact Official Image from User) -->
+            <a href="{{ route('home') }}" class="flex items-center group py-1">
+                <img src="{{ asset('images/logo.png') }}" alt="KOOTA SERVICE" class="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105">
             </a>
 
             <!-- Desktop Nav Links with Bubble Gloss Hover Effect -->
@@ -57,7 +49,7 @@
                         </button>
                     </div>
 
-                    <!-- Mega Menu Dropdown — Only 4 Main Services -->
+                    <!-- Mega Menu Dropdown — Only 3 Core Services -->
                     <div x-show="openMegaMenu" 
                          x-transition:enter="transition ease-out duration-200" 
                          x-transition:enter-start="opacity-0 translate-y-2" 
@@ -65,31 +57,25 @@
                          x-transition:leave="transition ease-in duration-150" 
                          x-transition:leave-start="opacity-100 translate-y-0" 
                          x-transition:leave-end="opacity-0 translate-y-2" 
-                         class="absolute left-1/2 -translate-x-1/2 mt-1 w-[720px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/80 p-8 z-50">
+                         class="absolute left-1/2 -translate-x-1/2 mt-1 w-[800px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/80 p-8 z-50">
                         
-                        <div class="grid grid-cols-2 gap-x-10 gap-y-7 text-left">
-                            <!-- Cleaning Service -->
-                            <a href="{{ route('services.show', 'cleaning-service') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
-                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Cleaning Service') }}</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">{{ __('Daily general cleaning, deep cleaning, sterilisasi ruang kerja dan hunian.') }}</p>
+                        <div class="grid grid-cols-3 gap-6 text-left">
+                            <!-- Home Cleaning -->
+                            <a href="{{ route('services.show', 'home-cleaning') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
+                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Pembersihan Rumah') }}</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">{{ __('Pembersihan harian, pembersihan menyeluruh, sedot tungau kasur & sofa, sterilisasi hunian.') }}</p>
+                            </a>
+
+                            <!-- Perbaikan Rumah -->
+                            <a href="{{ route('services.show', 'perbaikan-rumah') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
+                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Perbaikan Rumah') }}</h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">{{ __('Tukang ahli, perbaikan kebocoran pipa, kelistrikan, servis AC & renovasi hunian.') }}</p>
                             </a>
 
                             <!-- Pengangkutan Sampah -->
                             <a href="{{ route('services.show', 'pengangkutan-sampah') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
                                 <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Pengangkutan Sampah') }}</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">{{ __('Solusi pengangkutan terjadwal, komersial F&B, dan evakuasi puing pascarenovasi.') }}</p>
-                            </a>
-
-                            <!-- Jasa Tukang & Renovasi -->
-                            <a href="{{ route('services.show', 'jasa-tukang-perbaikan-dan-renovasi') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
-                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Jasa Tukang Perbaikan & Renovasi') }}</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">{{ __('Tenaga tukang profesional, maintenance properti, dan renovasi interior berkualitas.') }}</p>
-                            </a>
-
-                            <!-- IPAL -->
-                            <a href="{{ route('services.show', 'ipal') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
-                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('IPAL') }}</h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">{{ __('Instalasi pengolahan limbah modern, audit baku mutu, dan maintenance berkala.') }}</p>
+                                <p class="text-xs text-gray-500 leading-relaxed">{{ __('Pengangkutan rutin terjadwal, sampah komersial/kafe, dan evakuasi puing bangunan.') }}</p>
                             </a>
                         </div>
 
@@ -97,7 +83,6 @@
                         <div class="mt-6 pt-5 border-t border-gray-100">
                             <a href="{{ route('services.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:underline">
                                 <span>{{ __('Lihat Semua Layanan') }}</span>
-                                <span>&rarr;</span>
                             </a>
                         </div>
                     </div>
@@ -112,13 +97,19 @@
                 <a href="{{ route('blog.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('blog.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
                     {{ __('Blog') }}
                 </a>
+                <a href="{{ route('consultation.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('consultation.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                    {{ __('Konsultasi & Reservasi') }}
+                </a>
             </nav>
 
             <!-- Actions: Konsultasi + Language Switcher + Hamburger Side Drawer Toggle -->
             <div class="flex items-center space-x-3">
-                <!-- Consultation CTA Button -->
-                <a href="{{ route('consultation.index') }}" class="hidden sm:inline-flex items-center px-6 py-2 rounded-md bg-[#820003] hover:bg-[#ba1a15] text-white font-bold text-xs sm:text-sm transition-all shadow-xs active:scale-95">
-                    {{ __('Konsultasi') }}
+                <!-- Consultation CTA Button with Urgency Green (WhatsApp Fast Response) -->
+                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi." target="_blank" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25d366] hover:bg-[#20ba59] text-white font-extrabold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg active:scale-95 ring-2 ring-green-400/30">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    <span>{{ __('Chat WhatsApp') }}</span>
                 </a>
 
                 <!-- Modern Glossy Language Switcher with Flags -->
@@ -196,13 +187,9 @@
             <div class="p-6 space-y-6">
                 <!-- Drawer Header: Red Close Button (Image 1) -->
                 <div class="flex items-center justify-between border-b border-gray-100 pb-4">
-                    <div class="flex items-center gap-2.5">
-                        <img src="{{ asset('images/logo-icon.svg') }}" alt="KOOTA SERVICE" class="h-8 w-auto">
-                        <div class="flex flex-col text-left">
-                            <span class="font-serif-brand font-bold text-base text-[#820003] leading-none">KOOTA</span>
-                            <span class="text-[9px] font-bold tracking-[0.2em] text-[#820003] leading-tight">SERVICE</span>
-                        </div>
-                    </div>
+                    <a href="{{ route('home') }}" class="flex items-center py-1">
+                        <img src="{{ asset('images/logo.png') }}" alt="KOOTA SERVICE" class="h-10 sm:h-12 w-auto object-contain">
+                    </a>
                     <button @click="sideDrawer = false" class="w-10 h-10 rounded-full bg-red-50 text-[#820003] hover:bg-red-100 flex items-center justify-center transition-colors text-lg font-bold" aria-label="Tutup Menu">
                         ✕
                     </button>
@@ -224,45 +211,35 @@
                             </button>
                         </div>
 
-                        <!-- 4 Services Sub-Items -->
+                        <!-- 3 Services Sub-Items -->
                         <div x-show="openLayananMenu" x-collapse class="space-y-4 pt-3 pl-2">
-                            <!-- Item 1: Cleaning Service -->
-                            <a href="{{ route('services.show', 'cleaning-service') }}" @click="sideDrawer = false" class="block group space-y-1">
+                            <!-- Item 1: Pembersihan Rumah -->
+                            <a href="{{ route('services.show', 'home-cleaning') }}" @click="sideDrawer = false" class="block group space-y-1">
                                 <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
-                                    {{ __('Cleaning Service') }}
+                                    {{ __('Pembersihan Rumah') }}
                                 </h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">
-                                    {{ __('Daily general cleaning, deep cleaning, sterilisasi ruang kerja dan hunian.') }}
+                                    {{ __('Pembersihan harian, pembersihan menyeluruh, sedot tungau kasur & sofa, sterilisasi hunian.') }}
                                 </p>
                             </a>
 
-                            <!-- Item 2: Pengangkutan Sampah -->
+                            <!-- Item 2: Perbaikan Rumah -->
+                            <a href="{{ route('services.show', 'perbaikan-rumah') }}" @click="sideDrawer = false" class="block group space-y-1">
+                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
+                                    {{ __('Perbaikan Rumah') }}
+                                </h4>
+                                <p class="text-xs text-gray-500 leading-relaxed">
+                                    {{ __('Tukang ahli, perbaikan pipa bocor, kelistrikan, servis AC & renovasi ruangan.') }}
+                                </p>
+                            </a>
+
+                            <!-- Item 3: Pengangkutan Sampah -->
                             <a href="{{ route('services.show', 'pengangkutan-sampah') }}" @click="sideDrawer = false" class="block group space-y-1">
                                 <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
                                     {{ __('Pengangkutan Sampah') }}
                                 </h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">
-                                    {{ __('Solusi pengangkutan terjadwal, komersial F&B, dan evakuasi puing pascarenovasi.') }}
-                                </p>
-                            </a>
-
-                            <!-- Item 3: Jasa Tukang & Renovasi -->
-                            <a href="{{ route('services.show', 'jasa-tukang-perbaikan-dan-renovasi') }}" @click="sideDrawer = false" class="block group space-y-1">
-                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
-                                    {{ __('Jasa Tukang Perbaikan & Renovasi') }}
-                                </h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">
-                                    {{ __('Tenaga tukang profesional, maintenance properti, dan renovasi interior berkualitas.') }}
-                                </p>
-                            </a>
-
-                            <!-- Item 4: IPAL -->
-                            <a href="{{ route('services.show', 'ipal') }}" @click="sideDrawer = false" class="block group space-y-1">
-                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
-                                    {{ __('IPAL') }}
-                                </h4>
-                                <p class="text-xs text-gray-500 leading-relaxed">
-                                    {{ __('Instalasi pengolahan limbah modern, audit baku mutu, dan maintenance berkala.') }}
+                                    {{ __('Solusi pengangkutan terjadwal residensial, komersial, dan evakuasi puing pascarenovasi.') }}
                                 </p>
                             </a>
                         </div>
@@ -288,13 +265,23 @@
                             {{ __('Blog') }}
                         </a>
                     </div>
+
+                    <!-- Konsultasi & Reservasi -->
+                    <div class="border-b border-gray-100 pb-4">
+                        <a href="{{ route('consultation.index') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#820003] transition-colors">
+                            {{ __('Konsultasi & Reservasi') }}
+                        </a>
+                    </div>
                 </nav>
             </div>
 
-            <!-- Drawer Bottom Actions (Image 1) -->
+            <!-- Drawer Bottom Actions (WhatsApp Urgency Green) -->
             <div class="p-6 border-t border-gray-100 bg-[#fcf9f8] space-y-4">
-                <a href="{{ route('consultation.index') }}" @click="sideDrawer = false" class="block w-full py-3.5 text-center rounded-xl bg-[#28a745] hover:bg-[#218838] text-white font-bold text-sm shadow-md transition-all active:scale-95">
-                    {{ __('Konsultasi') }}
+                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi." target="_blank" @click="sideDrawer = false" class="flex items-center justify-center gap-2 w-full py-3.5 text-center rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-extrabold text-sm shadow-md transition-all active:scale-95">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    <span>{{ __('Konsultasi WhatsApp') }}</span>
                 </a>
             </div>
         </div>
@@ -312,15 +299,11 @@
                 
                 <!-- Col 1: Brand Info -->
                 <div class="md:col-span-5 space-y-4">
-                    <div class="flex items-center gap-2.5">
-                        <img src="{{ asset('images/logo-icon.svg') }}" alt="KOOTA SERVICE" class="h-8 w-auto">
-                        <div class="flex flex-col text-left">
-                            <span class="font-serif-brand font-bold text-lg text-white leading-none">KOOTA</span>
-                            <span class="text-[10px] font-bold tracking-[0.2em] text-white leading-tight">SERVICE</span>
-                        </div>
-                    </div>
+                    <a href="{{ route('home') }}" class="inline-block">
+                        <img src="{{ asset('images/logo.png') }}" alt="KOOTA SERVICE" class="h-14 w-auto object-contain bg-white/95 p-1 rounded-xl shadow-md">
+                    </a>
                     <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
-                        {{ __('Solusi terpercaya untuk kebersihan dan perawatan fasilitas komersial Anda di Surabaya, Malang, Bali, dan Jakarta.') }}
+                        {{ __('Solusi terpercaya untuk kebersihan, perbaikan, dan perawatan rumah terpadu di Surabaya, Malang, Bali, dan Jakarta.') }}
                     </p>
                 </div>
 
@@ -328,10 +311,9 @@
                 <div class="md:col-span-4 space-y-3">
                     <h4 class="text-xs font-bold text-white uppercase tracking-wider">{{ __('Layanan Utama') }}</h4>
                     <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="{{ route('services.show', 'cleaning-service') }}" class="hover:text-[#ff7676] transition-colors">{{ __('Cleaning Service') }}</a></li>
-                        <li><a href="{{ route('services.show', 'pengangkutan-sampah') }}" class="hover:text-[#ff7676] transition-colors">{{ __('Pengangkutan Sampah') }}</a></li>
-                        <li><a href="{{ route('services.show', 'jasa-tukang-perbaikan-dan-renovasi') }}" class="hover:text-[#ff7676] transition-colors">{{ __('Jasa Tukang Perbaikan & Renovasi') }}</a></li>
-                        <li><a href="{{ route('services.show', 'ipal') }}" class="hover:text-[#ff7676] transition-colors">{{ __('IPAL') }}</a></li>
+                        <li><a href="{{ route('services.show', 'home-cleaning') }}" class="hover:text-[#25d366] transition-colors">{{ __('Home Cleaning') }}</a></li>
+                        <li><a href="{{ route('services.show', 'perbaikan-rumah') }}" class="hover:text-[#25d366] transition-colors">{{ __('Perbaikan Rumah') }}</a></li>
+                        <li><a href="{{ route('services.show', 'pengangkutan-sampah') }}" class="hover:text-[#25d366] transition-colors">{{ __('Pengangkutan Sampah') }}</a></li>
                     </ul>
                 </div>
 
@@ -339,17 +321,17 @@
                 <div class="md:col-span-3 space-y-3">
                     <h4 class="text-xs font-bold text-white uppercase tracking-wider">{{ __('Perusahaan') }}</h4>
                     <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="{{ route('about') }}" class="hover:text-[#ff7676] transition-colors">{{ __('Tentang Kami') }}</a></li>
-                        <li><a href="{{ route('portfolio.index') }}" class="hover:text-[#ff7676] transition-colors">{{ __('Portofolio') }}</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#ff7676] transition-colors">{{ __('Blog') }}</a></li>
-                        <li><a href="{{ route('consultation.index') }}" class="hover:text-[#ff7676] transition-colors">{{ __('Hubungi Kami') }}</a></li>
+                        <li><a href="{{ route('about') }}" class="hover:text-[#25d366] transition-colors">{{ __('Tentang Kami') }}</a></li>
+                        <li><a href="{{ route('portfolio.index') }}" class="hover:text-[#25d366] transition-colors">{{ __('Portofolio') }}</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#25d366] transition-colors">{{ __('Blog') }}</a></li>
+                        <li><a href="{{ route('consultation.index') }}" class="hover:text-[#25d366] transition-colors">{{ __('Hubungi Kami') }}</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Copyright -->
             <div class="pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-                <p>© 2024 KOOTA SERVICE. {{ __('Kita Wujudkan') }} {{ __('Kota Bersih') }}</p>
+                <p>© {{ date('Y') }} KOOTA SERVICE. {{ __('Kita Wujudkan') }} <span class="text-[#22c55e] font-bold">{{ __('Kota Bersih') }}</span></p>
                 <div class="flex items-center gap-4">
                     <span>Surabaya • Malang • Bali • Jakarta</span>
                 </div>

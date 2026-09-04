@@ -23,24 +23,21 @@
                 <button @click="currentFilter = 'All'" :class="currentFilter === 'All' || currentFilter === 'Semua' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                     {{ __('All') }}
                 </button>
-                <button @click="currentFilter = 'Cleaning Service'" :class="currentFilter === 'Cleaning Service' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
-                    {{ __('Cleaning Service') }}
+                <button @click="currentFilter = 'Pembersihan Rumah'" :class="currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning' || currentFilter === 'Cleaning Service' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                    {{ __('Pembersihan Rumah') }}
+                </button>
+                <button @click="currentFilter = 'Perbaikan Rumah'" :class="currentFilter === 'Perbaikan Rumah' || currentFilter === 'Jasa Tukang & Renovasi' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                    {{ __('Perbaikan Rumah') }}
                 </button>
                 <button @click="currentFilter = 'Pengangkutan Sampah'" :class="currentFilter === 'Pengangkutan Sampah' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                     {{ __('Pengangkutan Sampah') }}
-                </button>
-                <button @click="currentFilter = 'Jasa Tukang & Renovasi'" :class="currentFilter === 'Jasa Tukang & Renovasi' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
-                    {{ __('Jasa Tukang & Renovasi') }}
-                </button>
-                <button @click="currentFilter = 'IPAL'" :class="currentFilter === 'IPAL' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
-                    {{ __('IPAL') }}
                 </button>
             </div>
 
             <!-- Portfolio Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($projects->where('is_video', false) as $project)
-                    <div x-show="currentFilter === 'All' || currentFilter === 'Semua' || currentFilter === '{{ $project->category_name }}' || '{{ $project->service->title ?? '' }}'.includes(currentFilter)" 
+                    <div x-show="currentFilter === 'All' || currentFilter === 'Semua' || currentFilter === '{{ $project->category_name }}' || '{{ $project->service->title ?? '' }}'.includes(currentFilter) || ((currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning') && ('{{ $project->category_name }}'.includes('Cleaning') || '{{ $project->category_name }}'.includes('Pembersihan') || '{{ $project->service->title ?? '' }}'.includes('Cleaning') || '{{ $project->service->title ?? '' }}'.includes('Pembersihan'))) || (currentFilter === 'Perbaikan Rumah' && ('{{ $project->category_name }}'.includes('Tukang') || '{{ $project->category_name }}'.includes('Perbaikan') || '{{ $project->service->title ?? '' }}'.includes('Perbaikan')))" 
                          x-transition 
                          class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1">
                         
@@ -78,9 +75,8 @@
 
                         <!-- Action Link to Dedicated Detail Page -->
                         <div class="px-6 pb-6 pt-2 border-t border-gray-50 flex items-center justify-between">
-                            <a href="{{ route('portfolio.show', $project->id) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:text-[#ba1a15] transition-colors group-hover:translate-x-1 transition-transform">
-                                <span>{{ __('Lihat Katalog Foto Lengkap') }}</span>
-                                <span>→</span>
+                            <a href="{{ route('portfolio.show', $project->id) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:text-[#ba1a15] transition-colors">
+                                <span>{{ __('Lihat Dokumentasi Proyek') }}</span>
                             </a>
                             @if(!empty($project->gallery_images) && count($project->gallery_images) > 0)
                                 <span class="text-[11px] font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-md">
@@ -108,7 +104,6 @@
                 <div class="pt-2 flex flex-wrap justify-center gap-4">
                     <a href="{{ route('consultation.index') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-[#820003] hover:bg-gray-100 font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
                         <span>{{ __('Dapatkan Penawaran') }}</span>
-                        <span>→</span>
                     </a>
                     <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi%20mengenai%20proyek." target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
                         <span>Chat WhatsApp 0812-1759-7109</span>
@@ -157,8 +152,8 @@
                                 {{ __('Tim kami siap membantu Anda! Hubungi kami langsung untuk konsultasi gratis dan solusi terbaik sesuai kebutuhan Anda.') }}
                             </p>
                             <div class="pt-2">
-                                <a href="{{ route('consultation.index') }}" class="w-full inline-block py-3.5 rounded-xl bg-[#820003] hover:bg-[#ba1a15] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                                    {{ __('Tanya Ahlinya!') }}
+                                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20proyek." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                                    <span>{{ __('Tanya Ahlinya via WA') }}</span>
                                 </a>
                             </div>
                         </div>

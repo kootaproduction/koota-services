@@ -59,6 +59,10 @@
                     <p class="text-xs font-bold uppercase text-gray-400">Jenis Properti</p>
                     <p class="font-semibold text-gray-900 mt-1">{{ $consultation->property_type }}</p>
                 </div>
+                <div class="md:col-span-2">
+                    <p class="text-xs font-bold uppercase text-gray-400">Alamat Lengkap Properti</p>
+                    <p class="font-semibold text-gray-900 mt-1">{{ $consultation->address ?? '-' }}</p>
+                </div>
             </div>
 
             <div class="pt-4 border-t border-gray-100">

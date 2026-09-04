@@ -48,13 +48,13 @@
             </div>
 
             <button type="submit" class="w-full py-3.5 rounded-xl bg-[#820003] hover:bg-[#ba1a15] text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95">
-                Masuk Ke Panel Admin &rarr;
+                Masuk Ke Panel Admin
             </button>
         </form>
 
         <div class="text-center pt-2">
             <a href="{{ route('home') }}" class="text-xs font-semibold text-gray-500 hover:text-[#820003] transition-colors">
-                ← Kembali ke Website Publik
+                Kembali ke Website Publik
             </a>
         </div>
     </div>

@@ -10,7 +10,7 @@
 
             <div class="space-y-2">
                 <label class="block text-xs font-bold uppercase text-gray-700">Nama Layanan (Judul)</label>
-                <input type="text" name="title" value="{{ old('title') }}" required placeholder="Contoh: Cleaning Service" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] text-sm">
+                <input type="text" name="title" value="{{ old('title') }}" required placeholder="Contoh: Pembersihan Rumah" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] text-sm">
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">

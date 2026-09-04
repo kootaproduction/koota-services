@@ -22,7 +22,7 @@
                 <!-- Right: Image -->
                 <div class="lg:col-span-6">
                     <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=80" alt="Tim Profesional Koota Services" class="w-full h-[360px] sm:h-[420px] object-cover">
+                        <img src="{{ asset('images/team-indonesia.jpg') }}" alt="Tim Profesional Koota Services" class="w-full h-[360px] sm:h-[420px] object-cover">
                     </div>
                 </div>
             </div>
@@ -160,12 +160,111 @@
             </h2>
 
             <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
-                "{{ __('Kita Wujudkan') }} {{ __('Kota Bersih') }}"
+                "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
             </div>
 
             <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
                 {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
             </p>
+        </div>
+    </section>
+
+    <!-- Why Us Section (Official 4 Points) -->
+    <section class="py-24 bg-[#fcf9f8] border-b border-gray-100">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-[#820003] text-xs font-bold uppercase tracking-wider">
+                        ★ {{ __('Kenapa Memilih Kami?') }}
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight leading-tight">
+                        {{ __('Standar Kualitas Tertinggi untuk Kenyamanan Anda') }}
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        {{ __('Kami memadukan keahlian teknis, transparansi penuh, dan jaminan pengerjaan bergaransi untuk setiap hunian dan fasilitas di Surabaya, Malang, Bali, dan Jakarta.') }}
+                    </p>
+                    <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white">
+                        <img src="{{ asset('images/team-indonesia.jpg') }}" alt="Tim Teknisi Koota Services" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <!-- Point 1 -->
+                    <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-xs hover:shadow-lg transition-all space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-sm">
+                            01
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 leading-snug">
+                            {{ __('Didukung SDM Ahli & Berpengalaman') }}
+                        </h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            {{ __('Kami hanya mengirimkan tenaga kerja pilihan yang telah memiliki jam terbang tinggi di bidangnya, memastikan setiap sudut rumah Anda ditangani oleh tangan-tangan profesional yang terampil.') }}
+                        </p>
+                    </div>
+
+                    <!-- Point 2 -->
+                    <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-xs hover:shadow-lg transition-all space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-sm">
+                            02
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 leading-snug">
+                            {{ __('Jaminan Kualitas Hasil Kerja (Garansi)') }}
+                        </h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            {{ __('Kenyamanan Anda adalah prioritas utama. Kami memberikan garansi pengerjaan ulang jika hasil pembersihan atau perbaikan belum memenuhi standar dan ekspektasi yang disepakati.') }}
+                        </p>
+                    </div>
+
+                    <!-- Point 3 -->
+                    <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-xs hover:shadow-lg transition-all space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-sm">
+                            03
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 leading-snug">
+                            {{ __('Harga Transparan & Tanpa Biaya Tersembunyi') }}
+                        </h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            {{ __('Tidak ada kejutan di akhir pekerjaan. Estimasi biaya kami berikan secara terbuka sejak awal sebelum pengerjaan dimulai, sesuai dengan cakupan pekerjaan yang Anda butuhkan.') }}
+                        </p>
+                    </div>
+
+                    <!-- Point 4 -->
+                    <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-xs hover:shadow-lg transition-all space-y-3">
+                        <div class="w-10 h-10 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-sm">
+                            04
+                        </div>
+                        <h3 class="text-base font-bold text-gray-900 leading-snug">
+                            {{ __('Respons Cepat & Jadwal Fleksibel') }}
+                        </h3>
+                        <p class="text-xs text-gray-600 leading-relaxed">
+                            {{ __('Kami menghargai waktu berharga Anda. Layanan customer support kami siap merespons kebutuhan Anda dengan cepat, serta menyediakan pilihan jadwal pengerjaan yang dapat disesuaikan dengan agenda harian Anda.') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gambar 3 Style Consultation Banner -->
+    <section class="py-16 bg-white border-b border-gray-100">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-[#dcdcdc] rounded-3xl overflow-hidden shadow-xl border border-gray-300 relative">
+                <div class="grid grid-cols-1 md:grid-cols-12 items-center">
+                    <div class="p-8 sm:p-12 md:col-span-7 lg:col-span-8 space-y-6">
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 leading-tight">
+                            {{ __('Konsultasi Masalah dan Perawatan Rumah Gratis') }}
+                        </h2>
+                        <div class="pt-2">
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20perawatan%20rumah%20gratis." target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm sm:text-base transition-all shadow-lg shadow-emerald-600/30 active:scale-95">
+                                <span>{{ __('Konsultasi Dengan Ahlinya') }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-5 lg:col-span-4 flex justify-center md:justify-end items-end pt-4 pr-0 sm:pr-8">
+                        <img src="{{ asset('images/kenzo-yanuar.png') }}" alt="Kenzo Yanuar - Founder & CEO Koota Services" class="h-64 sm:h-76 md:h-84 object-contain filter drop-shadow-2xl">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -209,8 +308,8 @@
                             {{ __('Hubungi konsultan kami langsung untuk konsultasi gratis mengenai kebutuhan fasilitas Anda.') }}
                         </p>
                         <div class="pt-2">
-                            <a href="{{ route('consultation.index') }}" class="w-full inline-block py-3.5 rounded-xl bg-[#820003] hover:bg-[#ba1a15] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                                {{ __('Tanya Ahlinya!') }}
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                                <span>{{ __('Tanya Ahlinya via WA') }}</span>
                             </a>
                         </div>
                     </div>

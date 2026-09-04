@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __($project->title) . ' - ' . __('Katalog Portofolio') . ' KOOTA SERVICE')
+@section('title', __($project->title) . ' - ' . __('Portofolio Proyek') . ' KOOTA SERVICES')
 
 @section('content')
     <!-- Breadcrumb -->
@@ -14,7 +14,7 @@
         </div>
     </div>
 
-    <!-- Simple, Modern, Minimalist Photo Catalog -->
+    <!-- Simple, Modern, Minimalist Photo Documentation -->
     <section class="py-12 md:py-16 bg-[#fcf9f8]" x-data="{ lightbox: false, currentPhoto: '{{ $project->image }}' }">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             
@@ -37,7 +37,7 @@
                 $photos = array_values(array_filter(array_merge([$project->image], $project->gallery_images ?? [])));
             @endphp
 
-            <!-- Clean Modern Photo Catalog Grid -->
+            <!-- Clean Modern Photo Documentation Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($photos as $photo)
                     <div class="h-80 sm:h-96 rounded-3xl overflow-hidden shadow-xs hover:shadow-xl border border-gray-100 bg-white group cursor-pointer relative"
@@ -54,11 +54,11 @@
 
             <!-- Minimalist Action CTA Bar -->
             <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
-                <a href="{{ route('consultation.index', ['service' => $project->category_name]) }}" class="px-8 py-3.5 rounded-xl bg-[#820003] hover:bg-[#ba1a15] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                    {{ __('Konsultasi Proyek Serupa') }}
+                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20tertarik%20konsultasi%20proyek%20{{ urlencode($project->title) }}." target="_blank" class="px-8 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-600/30 flex items-center gap-2 active:scale-95">
+                    <span>{{ __('Konsultasi Proyek Ini via WA') }}</span>
                 </a>
                 <a href="{{ route('portfolio.index') }}" class="px-6 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 font-bold text-xs sm:text-sm transition-all">
-                    ← {{ __('Kembali ke Semua Portofolio') }}
+                    {{ __('Kembali ke Semua Portofolio') }}
                 </a>
             </div>
 

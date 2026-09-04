@@ -21,10 +21,15 @@
     "All": "All",
     "Semua": "All",
 
-    "Cleaning Service": "Cleaning Service",
+    "Home Cleaning": "Home Cleaning",
+    "Pembersihan Rumah": "Home Cleaning",
+    "Cleaning Service": "Home Cleaning",
+    "Pembersihan Harian": "Daily Cleaning",
+    "Pembersihan Menyeluruh": "Deep Cleaning",
     "Pengangkutan Sampah": "Waste Management",
-    "Jasa Tukang & Renovasi": "Handyman & Renovation",
-    "Jasa Tukang Perbaikan & Renovasi": "Handyman Repair & Renovation",
+    "Perbaikan Rumah": "Home Repair",
+    "Jasa Tukang & Renovasi": "Home Repair",
+    "Jasa Tukang Perbaikan & Renovasi": "Home Repair",
     "IPAL": "WWTP (IPAL)",
     "IPAL (Pengolahan Air Limbah)": "WWTP (Wastewater Treatment Plant)",
 

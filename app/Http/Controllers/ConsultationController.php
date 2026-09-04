@@ -24,6 +24,7 @@ class ConsultationController extends Controller
             'whatsapp' => 'required|string|max:50',
             'email' => 'required|email|max:255',
             'location' => 'required|string|max:255',
+            'address' => 'nullable|string|max:500',
             'property_type' => 'required|string|max:255',
             'notes' => 'nullable|string',
             'photo' => 'nullable|image|max:5120', // max 5MB
@@ -38,11 +39,12 @@ class ConsultationController extends Controller
         $consultation = Consultation::create($validated);
 
         // Build WhatsApp notification link for convenient direct customer chat
-        $adminPhone = '6281234567890'; // KOOTA Service admin phone
+        $adminPhone = '6281217597109'; // KOOTA Service admin phone
         $waMessage = rawurlencode(
-            "Halo KOOTA SERVICE, saya *{$consultation->name}* ingin berkonsultasi mengenai *{$consultation->service_type}*.\n\n" .
-            "📍 Lokasi: {$consultation->location}\n" .
-            "🏠 Jenis Properti: {$consultation->property_type}\n" .
+            "Halo KOOTA SERVICES, saya *{$consultation->name}* ingin berkonsultasi mengenai *{$consultation->service_type}*.\n\n" .
+            "📍 Kota: {$consultation->location}\n" .
+            ($consultation->address ? "🏠 Alamat: {$consultation->address}\n" : "") .
+            "🏢 Jenis Properti: {$consultation->property_type}\n" .
             "📱 WhatsApp: {$consultation->whatsapp}\n" .
             "✉️ Email: {$consultation->email}\n" .
             "📝 Catatan: {$consultation->notes}"
@@ -50,7 +52,7 @@ class ConsultationController extends Controller
         $waUrl = "https://wa.me/{$adminPhone}?text={$waMessage}";
 
         return redirect()->route('consultation.index')->with([
-            'success' => 'Permintaan konsultasi Anda berhasil dikirim! Tim KOOTA SERVICE akan segera menghubungi Anda.',
+            'success' => 'Permintaan konsultasi Anda berhasil dikirim! Tim KOOTA SERVICES akan segera menghubungi Anda.',
             'wa_url' => $waUrl
         ]);
     }

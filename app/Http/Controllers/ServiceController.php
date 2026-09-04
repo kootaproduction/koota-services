@@ -20,8 +20,14 @@ class ServiceController extends Controller
     public function show($slug)
     {
         // Handle potential slug aliases
-        if ($slug === 'jasa-tukang') {
-            $slug = 'jasa-tukang-perbaikan-dan-renovasi';
+        if ($slug === 'cleaning-service') {
+            return redirect()->route('services.show', 'home-cleaning');
+        }
+        if ($slug === 'jasa-tukang' || $slug === 'jasa-tukang-perbaikan-dan-renovasi') {
+            return redirect()->route('services.show', 'perbaikan-rumah');
+        }
+        if ($slug === 'ipal') {
+            return redirect()->route('services.index');
         }
 
         $service = Service::where('slug', $slug)->firstOrFail();

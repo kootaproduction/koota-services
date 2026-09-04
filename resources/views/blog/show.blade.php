@@ -42,7 +42,7 @@
                     <p class="text-xs text-red-100 mt-1">{{ __('Konsultasikan langsung masalah properti dan fasilitas bisnis Anda di Surabaya, Malang, Bali, atau Jakarta bersama ahli KOOTA SERVICES.') }}</p>
                 </div>
                 <a href="{{ route('consultation.index', ['notes' => 'Terkait artikel: ' . $post->title]) }}" class="px-6 py-3 rounded-xl bg-white text-[#820003] font-bold text-sm hover:bg-gray-100 transition-colors shrink-0">
-                    {{ __('Konsultasi Gratis') }} &rarr;
+                    {{ __('Konsultasi Gratis') }}
                 </a>
             </div>
         </div>

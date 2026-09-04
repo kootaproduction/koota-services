@@ -89,7 +89,7 @@
             <!-- Footer links & logout -->
             <div class="p-6 border-t border-neutral-800 space-y-3">
                 <a href="{{ route('home') }}" target="_blank" class="block w-full text-center py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-xs font-bold text-gray-200 transition-colors">
-                    Lihat Website Publik &rarr;
+                    Lihat Website Publik
                 </a>
                 <form action="{{ route('admin.logout') }}" method="POST">
                     @csrf
