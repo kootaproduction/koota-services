@@ -150,7 +150,7 @@
                 </div>
 
                 <!-- Side Drawer Toggle Button (Hamburger ☰) (Image 1) -->
-                <button @click="sideDrawer = true" class="p-2.5 rounded-xl border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-[#820003] hover:border-red-200 transition-all focus:outline-none" aria-label="Buka Menu">
+                <button @click="sideDrawer = true" class="lg:hidden p-2.5 rounded-xl border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-[#820003] hover:border-red-200 transition-all focus:outline-none" aria-label="Buka Menu">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
