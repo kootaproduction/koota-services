@@ -37,18 +37,14 @@
                     {{ __('Home') }}
                 </a>
 
-                <!-- Layanan Item: Klik Teks ke /layanan, Klik/Hover Panah Membuka Mega-Menu -->
-                <div class="relative" @mouseenter="openMegaMenu = true" @mouseleave="openMegaMenu = false">
-                    <div class="inline-flex items-center gap-1 px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('services.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
-                        <a href="{{ route('services.index') }}" class="hover:underline">
-                            {{ __('Layanan') }}
-                        </a>
-                        <button type="button" @click="openMegaMenu = !openMegaMenu" class="p-0.5 rounded-full hover:bg-gray-100 transition-colors focus:outline-none" aria-label="Buka Menu Layanan">
-                            <svg class="w-3.5 h-3.5 transition-transform duration-200 text-gray-500 hover:text-[#820003]" :class="{ 'rotate-180 text-[#820003]': openMegaMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
-                            </svg>
-                        </button>
-                    </div>
+                <!-- Layanan Item: seluruh trigger membuka menu agar mudah digunakan di semua perangkat -->
+                <div class="relative">
+                    <button type="button" @click="openMegaMenu = !openMegaMenu" @click.outside="openMegaMenu = false" :aria-expanded="openMegaMenu" class="inline-flex items-center gap-1 px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('services.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                        <span>{{ __('Layanan') }}</span>
+                        <svg class="w-3.5 h-3.5 transition-transform duration-200 text-gray-500" :class="{ 'rotate-180 text-[#820003]': openMegaMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
 
                     <!-- Mega Menu Dropdown — Only 3 Core Services -->
                     <div x-show="openMegaMenu" 
@@ -58,9 +54,10 @@
                          x-transition:leave="transition ease-in duration-150" 
                          x-transition:leave-start="opacity-100 translate-y-0" 
                          x-transition:leave-end="opacity-0 translate-y-2" 
-                         class="absolute left-1/2 -translate-x-1/2 mt-1 w-[800px] bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/80 p-8 z-50">
+                         class="fixed left-1/2 top-[5.25rem] -translate-x-1/2 w-[min(800px,calc(100vw-2rem))] max-h-[calc(100dvh-6rem)] overflow-y-auto bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/80 p-4 sm:p-6 lg:p-8 z-[60]"
+                         style="display: none;">
                         
-                        <div class="grid grid-cols-3 gap-6 text-left">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 lg:gap-6 text-left">
                             <!-- Home Cleaning -->
                             <a href="{{ route('services.show', 'home-cleaning') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
                                 <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Pembersihan Rumah') }}</h4>
@@ -306,6 +303,33 @@
                     <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
                         {{ __('Solusi terpercaya untuk kebersihan, perbaikan, dan perawatan rumah terpadu di Surabaya, Malang, Bali, dan Jakarta.') }}
                     </p>
+                    <div class="flex items-center gap-2.5 pt-2" aria-label="Social media">
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#e1306c] hover:border-[#e1306c] hover:text-white transition-all">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#1877f2] hover:border-[#1877f2] hover:text-white transition-all">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3V10H7.4v3h2.7v8h3.4Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-black hover:border-white hover:text-white transition-all">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M15.5 3c.3 1.8 1.3 3 3.1 3.2v3a7.2 7.2 0 0 1-3.1-.8v5.7a5.4 5.4 0 1 1-4.7-5.3v3.1a2.3 2.3 0 1 0 1.6 2.2V3h3.1Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#0a66c2] hover:border-[#0a66c2] hover:text-white transition-all">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M5.2 8.2H2V21h3.2V8.2ZM3.6 3A1.9 1.9 0 1 0 3.6 7a1.9 1.9 0 0 0 0-4ZM8.6 8.2h3.1V10h.1c.4-.8 1.5-2.1 3.7-2.1 3.2 0 3.8 2.1 3.8 4.9V21h-3.2v-7.3c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V21H8.6V8.2Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-all">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2c.4-1.8.4-4.8.4-4.8s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Col 2: Layanan Utama -->
