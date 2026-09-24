@@ -43,7 +43,7 @@
                     </p>
                     <div class="pt-2 text-xs text-gray-500 space-y-1">
                         <p class="font-bold text-gray-900">{{ __('Area Operasional:') }}</p>
-                        <p class="text-[#820003] font-bold">Surabaya • Malang • Bali • Jakarta</p>
+                        <p class="text-[#820003] font-bold">Surabaya, Malang, Bali, Jakarta</p>
                     </div>
                 </div>
 
@@ -70,7 +70,6 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div class="bg-[#fcf9f8] p-6 rounded-2xl border border-gray-100 flex items-start gap-3.5 shadow-2xs">
                             <div class="w-9 h-9 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0 font-bold">
-                                ✓
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold text-gray-900">{{ __('Legalitas & Kepatuhan') }}</h4>
@@ -80,7 +79,6 @@
 
                         <div class="bg-[#fcf9f8] p-6 rounded-2xl border border-gray-100 flex items-start gap-3.5 shadow-2xs">
                             <div class="w-9 h-9 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0 font-bold">
-                                ★
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold text-gray-900">{{ __('Tim Profesional') }}</h4>
@@ -129,15 +127,12 @@
 
                     <ul class="space-y-3">
                         <li class="flex items-start gap-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            <span class="text-[#820003] font-bold text-sm shrink-0">✓</span>
                             <span>{{ __('Memberikan layanan pemeliharaan komersial dan residensial berstandar tinggi.') }}</span>
                         </li>
                         <li class="flex items-start gap-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            <span class="text-[#820003] font-bold text-sm shrink-0">✓</span>
                             <span>{{ __('Menerapkan solusi ramah lingkungan dan teknologi modern dalam setiap operasional.') }}</span>
                         </li>
                         <li class="flex items-start gap-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            <span class="text-[#820003] font-bold text-sm shrink-0">✓</span>
                             <span>{{ __('Mengutamakan keselamatan kerja, ketepatan waktu, dan kepuasan pelanggan prima.') }}</span>
                         </li>
                     </ul>
@@ -175,7 +170,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-5 space-y-6">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-[#820003] text-xs font-bold uppercase tracking-wider">
-                        ★ {{ __('Kenapa Memilih Kami?') }}
+                        {{ __('Kenapa Memilih Kami?') }}
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight leading-tight">
                         {{ __('Standar Kualitas Tertinggi untuk Kenyamanan Anda') }}

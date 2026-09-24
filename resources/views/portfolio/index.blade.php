@@ -55,9 +55,8 @@
                             <!-- Content -->
                             <div class="p-6 space-y-3">
                                 @if($project->location)
-                                    <p class="text-[11px] font-semibold text-gray-400 flex items-center gap-1">
-                                        <span>📍</span>
-                                        <span>{{ $project->location }}</span>
+                                    <p class="text-[11px] font-semibold text-gray-400">
+                                        {{ $project->location }}
                                     </p>
                                 @endif
 
@@ -80,7 +79,7 @@
                             </a>
                             @if(!empty($project->gallery_images) && count($project->gallery_images) > 0)
                                 <span class="text-[11px] font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-md">
-                                    📷 {{ count($project->gallery_images) }} {{ __('Foto') }}
+                                    {{ count($project->gallery_images) }} {{ __('Foto') }}
                                 </span>
                             @endif
                         </div>

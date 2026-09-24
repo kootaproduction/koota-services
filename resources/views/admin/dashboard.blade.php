@@ -13,7 +13,7 @@
                     <div class="flex items-center gap-2.5">
                         <h3 class="text-lg font-bold text-gray-900">Pengaturan Pemeliharaan Website (Maintenance Mode)</h3>
                         <span class="px-2.5 py-0.5 rounded-full text-xs font-bold {{ $isMaintenance ? 'bg-amber-100 text-amber-800' : 'bg-green-100 text-green-800' }}">
-                            {{ $isMaintenance ? '🔴 AKTIF (Pemeliharaan)' : '🟢 NONAKTIF (Online)' }}
+                            {{ $isMaintenance ? 'AKTIF (Pemeliharaan)' : 'NONAKTIF (Online)' }}
                         </span>
                     </div>
                     <p class="text-xs text-gray-500">

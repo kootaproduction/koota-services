@@ -41,7 +41,7 @@
                         <span class="w-2 h-2 rounded-full {{ $isMaint ? 'bg-amber-400 animate-pulse' : 'bg-green-500' }}"></span>
                     </div>
                     <p class="text-[11px] font-semibold {{ $isMaint ? 'text-amber-200' : 'text-green-400' }}">
-                        {{ $isMaint ? '⚠️ Sedang Maintenance' : '🟢 Website Publik Aktif' }}
+                        {{ $isMaint ? 'Sedang Maintenance' : 'Website Publik Aktif' }}
                     </p>
                 </div>
 
@@ -116,7 +116,6 @@
             <main class="p-8">
                 @if(session('success'))
                     <div class="mb-6 p-4 rounded-2xl bg-green-50 border border-green-200 text-green-800 text-sm font-bold flex items-center gap-2">
-                        <span>✓</span>
                         <span>{{ session('success') }}</span>
                     </div>
                 @endif

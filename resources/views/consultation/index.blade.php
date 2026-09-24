@@ -24,7 +24,6 @@
                 <div class="mb-8 p-6 rounded-2xl bg-green-50 border border-green-200 text-green-900 space-y-3 shadow-xs">
                     <div class="flex items-center gap-3">
                         <div class="w-8 h-8 rounded-full bg-[#007327] text-white flex items-center justify-center font-bold text-sm">
-                            ✓
                         </div>
                         <h3 class="text-base font-bold">{{ __('Permintaan Konsultasi Berhasil Dikirim!') }}</h3>
                     </div>

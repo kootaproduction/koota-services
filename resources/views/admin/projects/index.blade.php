@@ -33,7 +33,7 @@
                             <td class="py-4 px-6">
                                 <p class="font-bold text-gray-900 leading-snug">{{ $p->title }}</p>
                                 @if($p->location)
-                                    <p class="text-[11px] text-gray-400">📍 {{ $p->location }}</p>
+                                    <p class="text-[11px] text-gray-400">{{ $p->location }}</p>
                                 @endif
                             </td>
                             <td class="py-4 px-6">
@@ -44,7 +44,7 @@
                             <td class="py-4 px-6">
                                 @if(!empty($p->gallery_images) && count($p->gallery_images) > 0)
                                     <span class="px-2.5 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-semibold">
-                                        📷 {{ count($p->gallery_images) }} Foto
+                                        {{ count($p->gallery_images) }} Foto
                                     </span>
                                 @else
                                     <span class="text-xs text-gray-400">1 Foto Utama</span>
@@ -54,7 +54,7 @@
                                 @if($p->is_video)
                                     <span class="px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-bold">▶ Reels / Shorts</span>
                                 @else
-                                    <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">📷 Foto Proyek</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">Foto Proyek</span>
                                 @endif
                             </td>
                             <td class="py-4 px-6 text-right space-x-2">

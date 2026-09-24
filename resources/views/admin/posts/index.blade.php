@@ -43,7 +43,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 @if($p->is_featured)
-                                    <span class="px-2.5 py-1 rounded-full bg-red-100 text-[#820003] text-xs font-bold">★ Featured Top Card</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-red-100 text-[#820003] text-xs font-bold">Featured Top Card</span>
                                 @else
                                     <span class="text-xs text-gray-400">Standar</span>
                                 @endif

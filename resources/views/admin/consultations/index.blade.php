@@ -35,7 +35,7 @@
                             </td>
                             <td class="py-4 px-6 font-mono text-xs">
                                 <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $c->whatsapp) }}" target="_blank" class="text-green-700 font-bold hover:underline">
-                                    💬 {{ $c->whatsapp }}
+                                    {{ $c->whatsapp }}
                                 </a>
                             </td>
                             <td class="py-4 px-6 text-xs text-gray-600">

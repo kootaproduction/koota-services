@@ -7,7 +7,7 @@
     <div class="max-w-4xl space-y-6">
         <div class="flex items-center justify-between">
             <a href="{{ route('admin.consultations.index') }}" class="text-xs font-bold text-gray-600 hover:underline">
-                ← Kembali ke Kotak Masuk
+                Kembali ke Kotak Masuk
             </a>
 
             <!-- Update Status Form -->
@@ -37,7 +37,7 @@
                 </div>
                 <div class="text-right">
                     <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $consultation->whatsapp) }}?text=Halo%20{{ urlencode($consultation->name) }},%20kami%20dari%20KOOTA%20SERVICE%20menindaklanjuti%20permintaan%20konsultasi%20{{ urlencode($consultation->service_type) }}%20Anda." target="_blank" class="px-5 py-2.5 rounded-xl bg-[#25d366] text-white font-bold text-xs shadow-sm hover:bg-green-600 inline-flex items-center gap-2">
-                        <span>💬 Chat WhatsApp Pelanggan</span>
+                        <span>Chat WhatsApp Pelanggan</span>
                     </a>
                 </div>
             </div>

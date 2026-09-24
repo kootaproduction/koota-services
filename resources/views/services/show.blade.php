@@ -23,7 +23,7 @@
         // Dynamic Content Setup following the Booth Landing Page Template
         if ($isCleaning) {
             $heroHook = "Ingin Rumah Bersih, Higienis & Sehat Dengan Standar Premium?";
-            $heroSubPills = "Pembersihan Menyeluruh • Pembersihan Harian • Sedot Tungau Kasur & Sofa • Sterilisasi Ruangan • Pasca Renovasi";
+            $heroSubPills = "Pembersihan Menyeluruh, Pembersihan Harian, Sedot Tungau Kasur & Sofa, Sterilisasi Ruangan, Pasca Renovasi";
             $credTitle = "Vendor Pembersihan Rumah Premium & Terpercaya Untuk Tingkatkan Kualitas Hidup Anda";
             $credP1 = "Kebersihan rumah adalah investasi kesehatan keluarga. Kami memastikan pembersihan dan sanitasi hunian Anda memancarkan kesegaran serta kenyamanan maksimal sejak detik pertama Anda melangkah masuk.";
             $credP2 = "Standar kualitas kami sangat jelas. Ketelitian pengerjaan, penggunaan cairan pembersih ramah lingkungan (food-grade safe), dan peralatan modern seperti hydro vacuum HEPA adalah prioritas utama. Tim terlatih kami siap menghadirkan hunian yang higienis, wangi, dan bebas alergen.";
@@ -74,7 +74,7 @@
             ];
         } elseif ($isTukang) {
             $heroHook = "Ingin Perbaikan & Renovasi Rumah Presisi Dengan Standar Premium?";
-            $heroSubPills = "Tukang Harian/Borongan • Perbaikan Pipa Bocor • Instalasi Listrik • Servis & Cuci AC • Pengecatan Dinding • Renovasi Interior";
+            $heroSubPills = "Tukang Harian/Borongan, Perbaikan Pipa Bocor, Instalasi Listrik, Servis & Cuci AC, Pengecatan Dinding, Renovasi Interior";
             $credTitle = "Vendor Perbaikan Rumah & Jasa Tukang Ahli Untuk Keamanan Properti Anda";
             $credP1 = "Rumah yang terawat adalah jaminan keamanan dan kenyamanan jangka panjang. Kami memastikan perbaikan teknis dan renovasi rumah Anda ditangani dengan presisi struktur serta hasil finishing yang rapi dan kokoh.";
             $credP2 = "Standar kualitas kami sangat jelas. Akurasi diagnosa kebocoran atau korsleting, penggunaan material SNI berkualitas tinggi, dan disiplin waktu adalah prioritas utama. Tim tukang berpengalaman kami siap mengatasi masalah rumah tinggal secara tuntas tanpa tambal sulam.";
@@ -126,7 +126,7 @@
         } else {
             // Pengangkutan Sampah
             $heroHook = "Ingin Pengangkutan Sampah Teratur & Bebas Bau Dengan Standar Premium?";
-            $heroSubPills = "Pengangkutan Sampah Terjadwal • Sampah Komersial Kafe & Resto • Evakuasi Puing Bangunan • Pembuangan Barang Bekas Besar • Truk Tertutup";
+            $heroSubPills = "Pengangkutan Sampah Terjadwal, Sampah Komersial Kafe & Resto, Evakuasi Puing Bangunan, Pembuangan Barang Bekas Besar, Truk Tertutup";
             $credTitle = "Vendor Pengangkutan Sampah Terpadu & Terjadwal Untuk Lingkungan Bersih";
             $credP1 = "Pengelolaan sampah yang tertib adalah kunci kenyamanan hunian dan kredibilitas bisnis Anda. Kami memastikan sampah Anda diangkut tepat waktu dengan armada truk tertutup yang higienis dan bebas bau ceceran.";
             $credP2 = "Standar kualitas kami sangat jelas. Jadwal kedatangan yang disiplin, tim armada berseragam rapi, dan pembuangan legal ke TPA resmi adalah prioritas utama. Kami siap melayani perumahan, klaster, restoran, kafe, hingga proyek konstruksi.";
@@ -268,7 +268,6 @@
                 <!-- Pillar 1 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
                     <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-lg">
-                        ✓
                     </div>
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar1['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar1['desc'] }}</p>
@@ -277,7 +276,6 @@
                 <!-- Pillar 2 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
                     <div class="w-12 h-12 rounded-2xl bg-green-50 text-[#16a34a] flex items-center justify-center font-bold text-lg">
-                        ★
                     </div>
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar2['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar2['desc'] }}</p>
@@ -286,7 +284,6 @@
                 <!-- Pillar 3 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
                     <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-lg">
-                        ⚙
                     </div>
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar3['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar3['desc'] }}</p>
@@ -295,7 +292,6 @@
                 <!-- Pillar 4 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
                     <div class="w-12 h-12 rounded-2xl bg-green-50 text-[#16a34a] flex items-center justify-center font-bold text-lg">
-                        ⚡
                     </div>
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar4['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar4['desc'] }}</p>
@@ -454,7 +450,7 @@
              style="display: none;">
             <div class="relative w-full max-w-md bg-black rounded-3xl overflow-hidden shadow-2xl aspect-[9/16] max-h-[85vh]" @click.stop>
                 <button @click="videoModal = false; currentVideoUrl = ''" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black transition-colors" aria-label="Tutup Video">
-                    ✕
+                                    Tutup
                 </button>
                 <template x-if="videoModal && currentVideoUrl">
                     <iframe :src="currentVideoUrl" class="w-full h-full border-0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
@@ -483,7 +479,6 @@
                 @foreach($testimonials as $testi)
                     <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
                         <div class="space-y-3">
-                            <div class="text-amber-400 text-sm tracking-widest">★★★★★</div>
                             <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
                                 "{{ $testi['text'] }}"
                             </p>

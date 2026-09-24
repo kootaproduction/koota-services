@@ -28,7 +28,7 @@
                 </h1>
                 @if($project->location)
                     <p class="text-xs sm:text-sm text-gray-500 font-medium">
-                        📍 {{ $project->location }}
+                        {{ $project->location }}
                     </p>
                 @endif
             </div>
@@ -77,7 +77,7 @@
              style="display: none;">
             
             <button @click="lightbox = false" class="absolute top-6 right-6 z-20 w-11 h-11 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/40 transition-colors">
-                ✕
+                Tutup
             </button>
             <div class="max-w-5xl max-h-[90vh] overflow-hidden rounded-3xl" @click.stop>
                 <img :src="currentPhoto" alt="Katalog Foto Fullsize" class="w-full h-full object-contain max-h-[85vh] rounded-3xl">

@@ -146,11 +146,9 @@
                     </div>
                 </div>
 
-                <!-- Side Drawer Toggle Button (Hamburger ☰) (Image 1) -->
-                <button @click="sideDrawer = true" class="lg:hidden p-2.5 rounded-xl border border-gray-200 text-gray-700 hover:bg-gray-50 hover:text-[#820003] hover:border-red-200 transition-all focus:outline-none" aria-label="Buka Menu">
-                    <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+                <!-- Mobile menu toggle -->
+                <button @click="sideDrawer = true" class="lg:hidden px-3 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-[#820003] hover:border-red-200 transition-all focus:outline-none" aria-label="Buka Menu">
+                    Menu
                 </button>
             </div>
         </div>
@@ -189,7 +187,7 @@
                         <img src="{{ asset('images/logo.png') }}" alt="KOOTA SERVICE" class="h-10 sm:h-12 w-auto object-contain">
                     </a>
                     <button @click="sideDrawer = false" class="w-10 h-10 rounded-full bg-red-50 text-[#820003] hover:bg-red-100 flex items-center justify-center transition-colors text-lg font-bold" aria-label="Tutup Menu">
-                        ✕
+                        Tutup
                     </button>
                 </div>
 
@@ -303,33 +301,6 @@
                     <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
                         {{ __('Solusi terpercaya untuk kebersihan, perbaikan, dan perawatan rumah terpadu di Surabaya, Malang, Bali, dan Jakarta.') }}
                     </p>
-                    <div class="flex items-center gap-2.5 pt-2" aria-label="Social media">
-                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#e1306c] hover:border-[#e1306c] hover:text-white transition-all">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                                <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#1877f2] hover:border-[#1877f2] hover:text-white transition-all">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a22 22 0 0 0-2.5-.1c-2.5 0-4.2 1.5-4.2 4.3V10H7.4v3h2.7v8h3.4Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-black hover:border-white hover:text-white transition-all">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M15.5 3c.3 1.8 1.3 3 3.1 3.2v3a7.2 7.2 0 0 1-3.1-.8v5.7a5.4 5.4 0 1 1-4.7-5.3v3.1a2.3 2.3 0 1 0 1.6 2.2V3h3.1Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#0a66c2] hover:border-[#0a66c2] hover:text-white transition-all">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M5.2 8.2H2V21h3.2V8.2ZM3.6 3A1.9 1.9 0 1 0 3.6 7a1.9 1.9 0 0 0 0-4ZM8.6 8.2h3.1V10h.1c.4-.8 1.5-2.1 3.7-2.1 3.2 0 3.8 2.1 3.8 4.9V21h-3.2v-7.3c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V21H8.6V8.2Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full border border-neutral-700 text-gray-400 flex items-center justify-center hover:bg-[#ff0000] hover:border-[#ff0000] hover:text-white transition-all">
-                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C2 9 2 12 2 12s0 3 .4 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2c.4-1.8.4-4.8.4-4.8s0-3-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/>
-                            </svg>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Col 2: Layanan Utama -->
@@ -358,21 +329,11 @@
             <div class="pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
                 <p>© {{ date('Y') }} KOOTA SERVICE. {{ __('Kita Wujudkan') }} <span class="text-[#22c55e] font-bold">{{ __('Kota Bersih') }}</span></p>
                 <div class="flex items-center gap-4">
-                    <span>Surabaya • Malang • Bali • Jakarta</span>
+                    <span>Surabaya, Malang, Bali, Jakarta</span>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- Floating WhatsApp Action Button -->
-    <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi." 
-       target="_blank" 
-       class="fixed bottom-6 right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25d366] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all" 
-       aria-label="Hubungi WhatsApp">
-        <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-        </svg>
-    </a>
 
 </body>
 </html>
