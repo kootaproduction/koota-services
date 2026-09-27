@@ -30,59 +30,71 @@
     </section>
 
     <!-- Section: Siapa Kami & Perjalanan Kami -->
-    <section class="py-20 bg-white border-b border-gray-100">
+    <section class="py-12 md:py-16 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                 <!-- Left Column: Siapa Kami? -->
-                <div class="lg:col-span-5 space-y-4">
+                <div class="lg:col-span-5 space-y-5">
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                         {{ __('Siapa Kami?') }}
                     </h2>
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-md">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
                         {{ __('Berawal dari dedikasi mempersembahkan kualitas perawatan fasilitas, KOOTA SERVICES tumbuh menjadi penyedia solusi terintegrasi satu pintu (One-Stop Facility Services).') }}
                     </p>
-                    <div class="pt-2 text-xs text-gray-500 space-y-1">
-                        <p class="font-bold text-gray-900">{{ __('Area Operasional:') }}</p>
-                        <p class="text-[#820003] font-bold">Surabaya, Malang, Bali, Jakarta</p>
+                    <div class="mt-2 border-t border-gray-200 pt-5">
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500">{{ __('Area Operasional:') }}</p>
+                        <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Surabaya</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Malang</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Bali</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Jakarta</div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Right Column: Perjalanan Kami Card + 2 Mini Cards -->
-                <div class="lg:col-span-7 space-y-6">
+                <div class="lg:col-span-7 space-y-4 sm:space-y-5">
                     <!-- Perjalanan Kami Card -->
-                    <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-100 shadow-2xs space-y-4 relative">
+                    <div class="bg-[#fcf9f8] p-6 sm:p-7 rounded-2xl border border-gray-100 shadow-2xs space-y-4 relative">
                         <div class="flex items-center justify-between">
-                            <h3 class="text-lg font-bold text-gray-900">
+                            <h3 class="text-base sm:text-lg font-bold text-gray-900">
                                 {{ __('Perjalanan & Komitmen Kami') }}
                             </h3>
-                            <div class="w-8 h-8 rounded-full bg-red-50 text-[#820003] flex items-center justify-center">
+                            <div class="w-9 h-9 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
                                 <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
                             </div>
                         </div>
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        <p class="text-sm text-gray-600 leading-relaxed">
                             {{ __('Didirikan dengan tujuan memberikan solusi perawatan terbaik, KOOTA SERVICES berfokus pada integrasi teknologi dan tenaga kerja profesional tersertifikasi. Kami memahami bahwa setiap fasilitas memiliki kebutuhan unik, sehingga kami merancang layanan yang adaptif dan efisien untuk memastikan kelancaran operasional klien kami, dari perumahan hingga kompleks komersial industri.') }}
                         </p>
                     </div>
 
                     <!-- 2 Mini Cards -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-[#fcf9f8] p-6 rounded-2xl border border-gray-100 flex items-start gap-3.5 shadow-2xs">
-                            <div class="w-9 h-9 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0 font-bold">
+                        <div class="bg-white p-5 rounded-2xl border border-gray-200 flex items-start gap-3.5 shadow-2xs">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l7 3v5c0 4.5-2.8 7.8-7 10-4.2-2.2-7-5.5-7-10V6l7-3z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m9 12 2 2 4-4"/>
+                                </svg>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-900">{{ __('Legalitas & Kepatuhan') }}</h4>
-                                <p class="text-[11px] text-gray-500 mt-0.5">{{ __('Dokumen operasional dan sertifikasi baku mutu resmi.') }}</p>
+                                <h4 class="text-sm font-bold text-gray-900">{{ __('Legalitas & Kepatuhan') }}</h4>
+                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">{{ __('Dokumen operasional dan sertifikasi baku mutu resmi.') }}</p>
                             </div>
                         </div>
 
-                        <div class="bg-[#fcf9f8] p-6 rounded-2xl border border-gray-100 flex items-start gap-3.5 shadow-2xs">
-                            <div class="w-9 h-9 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0 font-bold">
+                        <div class="bg-white p-5 rounded-2xl border border-gray-200 flex items-start gap-3.5 shadow-2xs">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm6-7.5a4 4 0 0 1 0 7.5m2 3a4 4 0 0 1 2 3.5V21"/>
+                                </svg>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-gray-900">{{ __('Tim Profesional') }}</h4>
-                                <p class="text-[11px] text-gray-500 mt-0.5">{{ __('Tenaga kerja terlatih dengan standar SOP industri ketat.') }}</p>
+                                <h4 class="text-sm font-bold text-gray-900">{{ __('Tim Profesional') }}</h4>
+                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">{{ __('Tenaga kerja terlatih dengan standar SOP industri ketat.') }}</p>
                             </div>
                         </div>
                     </div>
