@@ -104,47 +104,43 @@
     </section>
 
     <!-- Section: Visi & Misi Kami -->
-    <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
+    <section class="py-10 md:py-12 bg-[#fcf9f8] border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-stretch">
                 <!-- Card 1: Visi Kami -->
-                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-xs space-y-6">
-                    <div class="w-11 h-11 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                        </svg>
+                <div class="h-full bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-xs">
+                    <div class="flex items-center gap-4 mb-2">
+                        <span class="text-5xl font-medium leading-none text-[#f1dada]">01</span>
+                        <span class="w-9 h-px bg-[#ac0c0c]" aria-hidden="true"></span>
                     </div>
-
-                    <h3 class="text-2xl font-extrabold text-[#820003]">
+                    <h3 class="text-2xl font-bold text-[#820003] mb-3">
                         {{ __('Visi Kami') }}
                     </h3>
-
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
                         {{ __('Menjadi penyedia layanan perawatan fasilitas, kebersihan profesional, dan manajemen lingkungan terkemuka di Indonesia dengan standar kualitas unggul, inovatif, dan berkelanjutan.') }}
                     </p>
                 </div>
 
                 <!-- Card 2: Misi Kami -->
-                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-xs space-y-6">
-                    <div class="w-11 h-11 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
+                <div class="h-full bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-xs">
+                    <div class="flex items-center gap-4 mb-2">
+                        <span class="text-5xl font-medium leading-none text-[#f1dada]">02</span>
+                        <span class="w-9 h-px bg-[#ac0c0c]" aria-hidden="true"></span>
                     </div>
-
-                    <h3 class="text-2xl font-extrabold text-[#820003]">
+                    <h3 class="text-2xl font-bold text-[#820003] mb-2">
                         {{ __('Misi Kami') }}
                     </h3>
-
-                    <ul class="space-y-3">
-                        <li class="flex items-start gap-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    <ul class="divide-y divide-gray-100">
+                        <li class="flex items-start gap-3 py-3 first:pt-2 last:pb-0 text-sm text-gray-600 leading-relaxed">
+                            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#820003] shrink-0"></span>
                             <span>{{ __('Memberikan layanan pemeliharaan komersial dan residensial berstandar tinggi.') }}</span>
                         </li>
-                        <li class="flex items-start gap-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        <li class="flex items-start gap-3 py-3 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
+                            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#820003] shrink-0"></span>
                             <span>{{ __('Menerapkan solusi ramah lingkungan dan teknologi modern dalam setiap operasional.') }}</span>
                         </li>
-                        <li class="flex items-start gap-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        <li class="flex items-start gap-3 py-3 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
+                            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#820003] shrink-0"></span>
                             <span>{{ __('Mengutamakan keselamatan kerja, ketepatan waktu, dan kepuasan pelanggan prima.') }}</span>
                         </li>
                     </ul>
