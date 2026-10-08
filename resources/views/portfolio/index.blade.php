@@ -3,17 +3,15 @@
 @section('title', 'Portofolio Project - KOOTA SERVICES')
 
 @section('content')
-    <!-- Header Section -->
-    <section class="py-16 md:py-20 bg-[#fcf9f8] text-center border-b border-gray-100">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-[#1c1b1b]">
-                {{ __('Portofolio') }} <span class="text-[#820003]">Koota Services</span>
-            </h1>
-            <p class="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                {{ __('Melihat lebih dekat karya dan komitmen kami dalam memberikan layanan pemeliharaan fasilitas terbaik di Surabaya, Malang, Bali, dan Jakarta.') }}
-            </p>
-        </div>
-    </section>
+    @if(file_exists(public_path('images/portfolio-banner.png')))
+        <section aria-label="{{ __('Banner portofolio') }}" class="border-b border-gray-100 bg-[#fcf9f8]">
+            <img
+                src="{{ asset('images/portfolio-banner.png') }}"
+                alt="{{ __('Banner portofolio KOOTA SERVICES') }}"
+                class="block h-[220px] w-full object-cover sm:h-[320px] lg:h-[420px]"
+            >
+        </section>
+    @endif
 
     <!-- Main Portfolio Grid & Filter Section -->
     <section class="py-16 bg-[#fcf9f8]" x-data="{ currentFilter: '{{ $category ?? 'All' }}' }">
@@ -37,20 +35,72 @@
             <!-- Portfolio Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @forelse($projects->where('is_video', false) as $project)
-                    <div x-show="currentFilter === 'All' || currentFilter === 'Semua' || currentFilter === '{{ $project->category_name }}' || '{{ $project->service->title ?? '' }}'.includes(currentFilter) || ((currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning') && ('{{ $project->category_name }}'.includes('Cleaning') || '{{ $project->category_name }}'.includes('Pembersihan') || '{{ $project->service->title ?? '' }}'.includes('Cleaning') || '{{ $project->service->title ?? '' }}'.includes('Pembersihan'))) || (currentFilter === 'Perbaikan Rumah' && ('{{ $project->category_name }}'.includes('Tukang') || '{{ $project->category_name }}'.includes('Perbaikan') || '{{ $project->service->title ?? '' }}'.includes('Perbaikan')))" 
+                    @php
+                        $previewPhotos = array_values(array_unique(array_filter(array_merge([$project->image], $project->gallery_images ?? []))));
+                    @endphp
+                    <div x-data="{ galleryOpen: false, touchInteraction: false }"
+                         @pointerenter="if ($event.pointerType === 'mouse') galleryOpen = true"
+                         @pointerleave="if ($event.pointerType === 'mouse' && !$el.contains(document.activeElement)) galleryOpen = false"
+                         @pointerdown="touchInteraction = $event.pointerType === 'touch'"
+                         @pointerup="touchInteraction = false"
+                         @pointercancel="touchInteraction = false"
+                         @focusin="if (!touchInteraction) galleryOpen = true"
+                         @focusout="if (!$el.contains($event.relatedTarget)) galleryOpen = false"
+                         x-show="currentFilter === 'All' || currentFilter === 'Semua' || currentFilter === '{{ $project->category_name }}' || '{{ $project->service->title ?? '' }}'.includes(currentFilter) || ((currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning') && ('{{ $project->category_name }}'.includes('Cleaning') || '{{ $project->category_name }}'.includes('Pembersihan') || '{{ $project->service->title ?? '' }}'.includes('Cleaning') || '{{ $project->service->title ?? '' }}'.includes('Pembersihan'))) || (currentFilter === 'Perbaikan Rumah' && ('{{ $project->category_name }}'.includes('Tukang') || '{{ $project->category_name }}'.includes('Perbaikan') || '{{ $project->service->title ?? '' }}'.includes('Perbaikan')))"
                          x-transition 
-                         class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1">
-                        
+                         class="relative bg-white rounded-3xl border border-gray-100 shadow-xs hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1 hover:z-20 focus-within:z-20">
+
                         <div>
                             <!-- Card Image -->
                             <div class="h-60 overflow-hidden relative bg-gray-100">
                                 <img src="{{ $project->image }}" alt="{{ $project->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute top-4 left-4">
-                                    <span class="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#820003] text-xs font-bold shadow-xs">
+                                @if(count($previewPhotos) > 1)
+                                    <button type="button"
+                                            @click.stop="galleryOpen = !galleryOpen"
+                                            @focusin.stop
+                                            :aria-expanded="galleryOpen.toString()"
+                                            aria-label="{{ __('Tampilkan foto dokumentasi proyek') }}"
+                                            class="portfolio-gallery-toggle absolute inset-0 z-[5] rounded-t-3xl bg-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#820003]">
+                                    </button>
+                                @endif
+                                <div class="portfolio-category-badge-wrap">
+                                    <span class="portfolio-category-badge">
                                         {{ __($project->category_name) }}
                                     </span>
                                 </div>
                             </div>
+
+                            @if(count($previewPhotos) > 1)
+                                <div class="pointer-events-none absolute left-1/2 top-[-1.25rem] z-30 w-[min(90vw,420px)] -translate-x-1/2">
+                                    <div x-show="galleryOpen"
+                                         x-transition:enter="transition ease-out duration-200"
+                                         x-transition:enter-start="opacity-0 translate-y-2"
+                                         x-transition:enter-end="opacity-100 translate-y-0"
+                                         x-transition:leave="transition ease-in duration-150"
+                                         x-transition:leave-start="opacity-100 translate-y-0"
+                                         x-transition:leave-end="opacity-0 translate-y-2"
+                                         style="display: none;"
+                                         class="portfolio-gallery-strip pointer-events-auto flex snap-x snap-mandatory gap-2 overflow-x-auto overscroll-x-contain px-1 pt-1 pb-2 md:cursor-grab"
+                                         x-data="{ dragging: false, startX: 0, startScrollLeft: 0, scrollWithWheel(event) { const delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY; const maxScroll = this.$el.scrollWidth - this.$el.clientWidth; if (delta && maxScroll > 0 && ((delta < 0 && this.$el.scrollLeft > 0) || (delta > 0 && this.$el.scrollLeft < maxScroll))) { this.$el.scrollLeft += delta; event.preventDefault(); } } }"
+                                         @pointerdown="if ($event.pointerType === 'mouse' && $event.button === 0) { dragging = true; startX = $event.clientX; startScrollLeft = $el.scrollLeft; $el.setPointerCapture($event.pointerId); }"
+                                         @pointermove="if (dragging) { $event.preventDefault(); $el.scrollLeft = startScrollLeft + startX - $event.clientX; }"
+                                         @pointerup="dragging = false"
+                                         @pointercancel="dragging = false"
+                                         @lostpointercapture="dragging = false"
+                                         @wheel="scrollWithWheel($event)"
+                                         :class="{ 'is-dragging': dragging }"
+                                         role="region"
+                                         aria-label="{{ __('Foto dokumentasi proyek') }}"
+                                         :tabindex="galleryOpen ? 0 : -1">
+                                        @foreach($previewPhotos as $photo)
+                                            <img src="{{ $photo }}"
+                                                 alt="{{ __($project->title) }} - {{ __('Foto') }} {{ $loop->iteration }}"
+                                                 draggable="false"
+                                                 class="portfolio-gallery-thumbnail h-24 w-32 shrink-0 snap-start rounded-2xl object-cover shadow-lg shadow-black/20 sm:h-28 sm:w-36">
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
 
                             <!-- Content -->
                             <div class="p-6 space-y-3">
@@ -73,15 +123,10 @@
                         </div>
 
                         <!-- Action Link to Dedicated Detail Page -->
-                        <div class="px-6 pb-6 pt-2 border-t border-gray-50 flex items-center justify-between">
+                        <div class="px-6 pb-6 pt-2 border-t border-gray-50">
                             <a href="{{ route('portfolio.show', $project->id) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:text-[#ba1a15] transition-colors">
                                 <span>{{ __('Lihat Dokumentasi Proyek') }}</span>
                             </a>
-                            @if(!empty($project->gallery_images) && count($project->gallery_images) > 0)
-                                <span class="text-[11px] font-semibold text-gray-400 bg-gray-100 px-2 py-0.5 rounded-md">
-                                    {{ count($project->gallery_images) }} {{ __('Foto') }}
-                                </span>
-                            @endif
                         </div>
                     </div>
                 @empty
@@ -90,24 +135,6 @@
                         <p class="text-xs text-gray-500 max-w-md mx-auto">{{ __('Dokumentasi portofolio proyek akan segera diperbarui secara berkala.') }}</p>
                     </div>
                 @endforelse
-            </div>
-
-            <!-- CTA Box: Punya Project? -->
-            <div class="bg-[#820003] rounded-3xl p-10 sm:p-14 text-center max-w-4xl mx-auto space-y-5 text-white shadow-2xl">
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                    {{ __('Punya Rencana Perawatan Fasilitas & Proyek?') }}
-                </h2>
-                <p class="text-xs sm:text-sm text-red-100 max-w-lg mx-auto leading-relaxed">
-                    {{ __('Konsultasikan kebutuhan perawatan fasilitas, pengangkutan limbah, atau renovasi Anda di Surabaya, Malang, Bali, atau Jakarta bersama tim ahli kami hari ini.') }}
-                </p>
-                <div class="pt-2 flex flex-wrap justify-center gap-4">
-                    <a href="{{ route('consultation.index') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-[#820003] hover:bg-gray-100 font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                        <span>{{ __('Dapatkan Penawaran') }}</span>
-                    </a>
-                    <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi%20mengenai%20proyek." target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                        <span>Chat WhatsApp 0812-1759-7109</span>
-                    </a>
-                </div>
             </div>
 
             <!-- FAQ Section -->
@@ -121,9 +148,8 @@
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                    <!-- Left: FAQ Accordion -->
-                    <div class="lg:col-span-8 space-y-4" x-data="{ activeFaq: 1 }">
+                <div class="max-w-4xl mx-auto">
+                    <div class="space-y-4" x-data="{ activeFaq: 1 }">
                         @foreach($faqs as $faq)
                             <div class="border-b border-gray-200 pb-4">
                                 <button @click="activeFaq = (activeFaq === {{ $faq->id }} ? null : {{ $faq->id }})" class="w-full flex items-center justify-between py-3 text-left focus:outline-none group">
@@ -139,23 +165,6 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-
-                    <!-- Right: Ask Expert Box -->
-                    <div class="lg:col-span-4">
-                        <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200 text-center space-y-5 shadow-xs">
-                            <h3 class="text-xl font-bold text-gray-900 leading-tight">
-                                {{ __('Punya pertanyaan lain?') }}
-                            </h3>
-                            <p class="text-xs text-gray-600 leading-relaxed">
-                                {{ __('Tim kami siap membantu Anda! Hubungi kami langsung untuk konsultasi gratis dan solusi terbaik sesuai kebutuhan Anda.') }}
-                            </p>
-                            <div class="pt-2">
-                                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20proyek." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                                    <span>{{ __('Tanya Ahlinya via WA') }}</span>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

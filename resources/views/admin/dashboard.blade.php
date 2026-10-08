@@ -5,7 +5,12 @@
 
 @section('content')
     <div class="space-y-8">
-        
+        @if(session('success'))
+            <div role="status" class="border border-green-200 bg-green-50 px-5 py-4 text-sm font-semibold text-green-800">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <!-- Maintenance Mode Control Panel (Point 9) -->
         <div class="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
