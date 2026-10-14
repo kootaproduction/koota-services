@@ -32,21 +32,24 @@
 
                 <!-- Right Column: Hero Image with Floating Badge (Indonesian Facility / Architecture) -->
                 <div class="lg:col-span-6 relative">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                        <img src="/images/team-indonesia.jpg" alt="Tim Profesional KOOTA SERVICE" class="w-full h-[380px] sm:h-[460px] object-cover">
-                        
-                        <!-- Floating Badge -->
-                        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3">
-                            <div class="w-11 h-11 rounded-xl bg-green-50 text-[#16a34a] flex items-center justify-center font-bold">
-                                <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-[#16a34a] uppercase tracking-wider">{{ __('Layanan Terpercaya') }}</p>
-                                <p class="text-xs sm:text-sm font-extrabold text-gray-900">{{ __('3 Layanan Terpadu & Bergaransi') }}</p>
-                            </div>
+                    <div class="relative">
+                        <div class="city-hero" data-city-hero>
+                            <img
+                                class="city-hero__image"
+                                src="/images/city-hero.png"
+                                data-city-hero-image
+                                data-primary-src="/images/city-hero.png"
+                                data-fallback-src="/images/team-indonesia.png"
+                                alt="KOOTA SERVICES menyediakan layanan kebersihan dan perawatan properti."
+                                decoding="async"
+                                fetchpriority="high"
+                            >
+                            <div class="city-hero__colorwash" aria-hidden="true"></div>
+                            <p class="city-hero__status" data-city-hero-status role="status" aria-live="polite" hidden>
+                                Gambar hero tidak tersedia.
+                            </p>
                         </div>
+                        
                     </div>
                 </div>
             </div>

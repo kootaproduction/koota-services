@@ -1,4 +1,5 @@
 import './bootstrap';
+import './city-hero';
 import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
 
