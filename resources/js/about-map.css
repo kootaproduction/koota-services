@@ -1,0 +1,95 @@
+.service-area-map {
+    height: clamp(340px, 42vw, 540px);
+    isolation: isolate;
+}
+
+.service-area-map__status {
+    position: absolute;
+    z-index: 1000;
+    inset: auto 12px 12px;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    margin: 0;
+    border: 1px solid rgba(130, 0, 3, 0.15);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 0.625rem 0.75rem;
+    color: #5b403c;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 14px rgba(28, 27, 27, 0.12);
+    pointer-events: none;
+}
+
+.service-area-map__status[hidden] {
+    display: none;
+}
+
+.service-area-map__marker {
+    border: 0;
+    background: transparent;
+}
+
+.service-area-map__marker span {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border: 3px solid #fff;
+    border-radius: 50% 50% 50% 0;
+    background: #820003;
+    box-shadow: 0 2px 8px rgba(28, 27, 27, 0.34);
+    transform: rotate(-45deg);
+}
+
+.service-area-map__label {
+    border: 1px solid rgba(130, 0, 3, 0.12) !important;
+    border-radius: 9999px !important;
+    background: #fff !important;
+    padding: 3px 8px !important;
+    color: #1c1b1b !important;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 11px !important;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(28, 27, 27, 0.12) !important;
+}
+
+.service-area-map__label::before {
+    display: none !important;
+}
+
+.service-area-map__popup {
+    display: grid;
+    gap: 4px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.service-area-map__popup strong {
+    color: #1c1b1b;
+    font-size: 0.875rem;
+}
+
+.service-area-map__popup span {
+    color: #5b403c;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.service-area-map .leaflet-control-attribution {
+    font-size: 10px;
+}
+
+@media (max-width: 639px) {
+    .service-area-map {
+        height: 390px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-area-map *,
+    .service-area-map *::before,
+    .service-area-map *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

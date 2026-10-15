@@ -1,6 +1,18 @@
 {
+  "node_modules/leaflet/dist/images/layers-2x.png": {
+    "file": "assets/layers-2x-Bpkbi35X.png",
+    "src": "node_modules/leaflet/dist/images/layers-2x.png"
+  },
+  "node_modules/leaflet/dist/images/layers.png": {
+    "file": "assets/layers-BWBAp2CZ.png",
+    "src": "node_modules/leaflet/dist/images/layers.png"
+  },
+  "node_modules/leaflet/dist/images/marker-icon.png": {
+    "file": "assets/marker-icon-hN30_KVU.png",
+    "src": "node_modules/leaflet/dist/images/marker-icon.png"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-CVzzCNBe.css",
+    "file": "assets/app-G08ABR30.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -8,10 +20,27 @@
       "app.css"
     ]
   },
+  "resources/js/about-map.js": {
+    "file": "assets/about-map-DHJmWQRK.js",
+    "name": "about-map",
+    "src": "resources/js/about-map.js",
+    "isDynamicEntry": true,
+    "css": [
+      "assets/about-map-xmRqvpZd.css"
+    ],
+    "assets": [
+      "assets/layers-BWBAp2CZ.png",
+      "assets/layers-2x-Bpkbi35X.png",
+      "assets/marker-icon-hN30_KVU.png"
+    ]
+  },
   "resources/js/app.js": {
-    "file": "assets/app-BCOUwI2G.js",
+    "file": "assets/app-DTIzSmxE.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/about-map.js"
+    ]
   }
 }

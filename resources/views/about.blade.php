@@ -1,105 +1,57 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'Tentang KOOTA SERVICES - Solusi Fasilitas Terintegrasi')
 
 @section('content')
     <!-- Top Hero Section -->
-    <section class="py-16 md:py-24 bg-[#fcf9f8] border-b border-gray-100">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Left: Info -->
-                <div class="lg:col-span-6 space-y-6">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1c1b1b] leading-[1.1]">
-                        {{ __('Tentang') }} <br>
-                        <span class="text-[#820003]">Koota Services</span>
-                    </h1>
+    <section class="bg-[#fcf9f8] border-b border-gray-100">
+        <div class="w-full">
+            <div
+                class="relative isolate min-h-[480px] w-full overflow-hidden bg-[#101010] shadow-2xl ring-1 ring-black/10 sm:min-h-[560px] lg:min-h-[calc(100svh-5rem)]"
+                aria-labelledby="about-hero-title"
+            >
+                <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(130,0,3,0.24),transparent_55%),linear-gradient(115deg,#080808_0%,#171515_48%,#0a0a0a_100%)]"></div>
+                <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
+                    <source src="{{ asset('images/about-video.mp4') }}" type="video/mp4">
+                </video>
+                <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-black/15"></div>
+                <div class="absolute inset-0 z-10 flex items-center justify-center bg-white/55 px-5 py-8 text-center backdrop-blur-[2px] sm:px-10 lg:px-16">
+                    <div class="w-full max-w-5xl">
+                        <h1 id="about-hero-title" class="text-3xl font-extrabold tracking-tight text-[#1c1b1b] leading-[1.1] sm:text-5xl lg:text-6xl">
+                            {{ __('Tentang') }} <br>
+                            <span class="text-[#820003]">Koota Services</span>
+                        </h1>
 
-                    <p class="text-base sm:text-lg text-gray-600 leading-relaxed max-w-xl">
-                        {{ __('Mitra terpercaya untuk layanan fasilitas komersial, industri, dan perumahan di Surabaya, Malang, Bali, dan Jakarta. Kami mendedikasikan diri untuk menciptakan lingkungan yang bersih, aman, dan berkelanjutan.') }}
-                    </p>
-                </div>
-
-                <!-- Right: Image -->
-                <div class="lg:col-span-6">
-                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                        <img src="{{ asset('images/team-indonesia.jpg') }}" alt="Tim Profesional Koota Services" class="w-full h-[360px] sm:h-[420px] object-cover">
+                        <p class="mx-auto mt-4 max-w-3xl text-sm text-gray-700 leading-relaxed sm:mt-5 sm:text-lg">
+                            {{ __('Mitra terpercaya untuk layanan fasilitas komersial, industri, dan perumahan di Surabaya, Malang, Bali, dan Jakarta. Kami mendedikasikan diri untuk menciptakan lingkungan yang bersih, aman, dan berkelanjutan.') }}
+                        </p>
                     </div>
                 </div>
+                <div aria-hidden="true" class="absolute inset-x-8 bottom-0 z-20 h-px bg-gradient-to-r from-transparent via-[#ac0c0c] to-transparent sm:inset-x-16"></div>
             </div>
         </div>
     </section>
 
-    <!-- Section: Siapa Kami & Perjalanan Kami -->
-    <section class="py-12 md:py-16 bg-white border-b border-gray-100">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-                <!-- Left Column: Siapa Kami? -->
-                <div class="lg:col-span-5 space-y-5">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
-                        {{ __('Siapa Kami?') }}
-                    </h2>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
-                        {{ __('Berawal dari dedikasi mempersembahkan kualitas perawatan fasilitas, KOOTA SERVICES tumbuh menjadi penyedia solusi terintegrasi satu pintu (One-Stop Facility Services).') }}
-                    </p>
-                    <div class="mt-2 border-t border-gray-200 pt-5">
-                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500">{{ __('Area Operasional:') }}</p>
-                        <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Surabaya</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Malang</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Bali</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]"></span>Jakarta</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Perjalanan Kami Card + 2 Mini Cards -->
-                <div class="lg:col-span-7 space-y-4 sm:space-y-5">
-                    <!-- Perjalanan Kami Card -->
-                    <div class="bg-[#fcf9f8] p-6 sm:p-7 rounded-2xl border border-gray-100 shadow-2xs space-y-4 relative">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-base sm:text-lg font-bold text-gray-900">
-                                {{ __('Perjalanan & Komitmen Kami') }}
-                            </h3>
-                            <div class="w-9 h-9 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
-                                <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="text-sm text-gray-600 leading-relaxed">
-                            {{ __('Didirikan dengan tujuan memberikan solusi perawatan terbaik, KOOTA SERVICES berfokus pada integrasi teknologi dan tenaga kerja profesional tersertifikasi. Kami memahami bahwa setiap fasilitas memiliki kebutuhan unik, sehingga kami merancang layanan yang adaptif dan efisien untuk memastikan kelancaran operasional klien kami, dari perumahan hingga kompleks komersial industri.') }}
-                        </p>
-                    </div>
-
-                    <!-- 2 Mini Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-white p-5 rounded-2xl border border-gray-200 flex items-start gap-3.5 shadow-2xs">
-                            <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l7 3v5c0 4.5-2.8 7.8-7 10-4.2-2.2-7-5.5-7-10V6l7-3z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m9 12 2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-bold text-gray-900">{{ __('Legalitas & Kepatuhan') }}</h4>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">{{ __('Dokumen operasional dan sertifikasi baku mutu resmi.') }}</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-5 rounded-2xl border border-gray-200 flex items-start gap-3.5 shadow-2xs">
-                            <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
-                                <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2m6-10a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm6-7.5a4 4 0 0 1 0 7.5m2 3a4 4 0 0 1 2 3.5V21"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-bold text-gray-900">{{ __('Tim Profesional') }}</h4>
-                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">{{ __('Tenaga kerja terlatih dengan standar SOP industri ketat.') }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Section: Komitmen Kami -->
+    <section class="py-20 bg-white border-b border-gray-100 text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center mx-auto shadow-sm">
+                <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
             </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                {{ __('Komitmen Kami') }}
+            </h2>
+
+            <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
+                "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
+            </div>
+
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
+            </p>
         </div>
     </section>
 
@@ -149,26 +101,67 @@
         </div>
     </section>
 
-    <!-- Section: Komitmen Kami -->
-    <section class="py-20 bg-white border-b border-gray-100 text-center">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center mx-auto shadow-sm">
-                <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
+    <!-- Section: Siapa Kami & Area Layanan -->
+    <section class="py-12 md:py-16 bg-white border-b border-gray-100">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Left Column: Siapa Kami? -->
+                <div class="lg:col-span-5 space-y-5">
+                    <h2 class="font-serif-brand text-4xl sm:text-5xl font-semibold text-[#1c1b1b] tracking-tight leading-tight">
+                        {{ __('Siapa Kami?') }}
+                    </h2>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
+                        {{ __('Dari kebersihan rutin hingga perawatan properti dan pengelolaan lingkungan, KOOTA SERVICES menyatukan berbagai kebutuhan fasilitas dalam satu mitra. Kami membantu rumah dan bisnis menjaga ruang tetap terawat, nyaman, dan siap beroperasi—dengan layanan yang disesuaikan dengan kebutuhan tiap lokasi.') }}
+                    </p>
+                    <div class="mt-2 border-t border-gray-200 pt-5">
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500">{{ __('Area Operasional:') }}</p>
+                        <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Surabaya</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Malang</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>{{ __('Denpasar (Bali)') }}</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Jakarta</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Service-Area Map -->
+                <div class="lg:col-span-7 min-w-0">
+                    <div class="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
+                            {{ __('Jangkauan Layanan KOOTA') }}
+                        </h3>
+                        <p class="text-xs text-gray-500">{{ __('Pilih penanda untuk melihat nama kota') }}</p>
+                    </div>
+                    @php
+                        $serviceLocations = [
+                            ['name' => 'Surabaya', 'latitude' => -7.2575, 'longitude' => 112.7521],
+                            ['name' => 'Malang', 'latitude' => -7.9666, 'longitude' => 112.6326],
+                            ['name' => __('Denpasar (Bali)'), 'latitude' => -8.6705, 'longitude' => 115.2126],
+                            ['name' => 'Jakarta', 'latitude' => -6.2088, 'longitude' => 106.8456],
+                        ];
+                    @endphp
+                    <div
+                        id="service-area-map"
+                        class="service-area-map relative z-0 w-full overflow-hidden rounded-2xl border border-[#e4beb8] bg-[#f0edec] shadow-[0_12px_32px_rgba(28,27,27,0.10)]"
+                        role="region"
+                        aria-label="{{ __('Peta area layanan KOOTA SERVICES') }}"
+                        data-locations="{{ json_encode($serviceLocations, JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_HEX_TAG) }}"
+                        data-marker-description="{{ __('Penanda perkiraan pusat kota') }}"
+                        data-unavailable="{{ __('Peta interaktif tidak tersedia saat ini. Daftar area layanan tetap tersedia di samping peta.') }}"
+                        data-tiles-unavailable="{{ __('Peta dasar tidak dapat dimuat. Penanda dan daftar area layanan tetap tersedia.') }}"
+                    >
+                        <p class="service-area-map__status" data-map-status role="status" aria-live="polite">
+                            {{ __('Memuat peta…') }}
+                        </p>
+                        <noscript>
+                            <p class="service-area-map__status">{{ __('Aktifkan JavaScript untuk melihat peta interaktif. Daftar area layanan tetap tersedia di samping peta.') }}</p>
+                        </noscript>
+                    </div>
+                    <p class="mt-3 text-xs leading-relaxed text-gray-500">
+                        {{ __('Penanda menunjukkan perkiraan pusat kota, bukan alamat kantor KOOTA SERVICES yang telah diverifikasi.') }}
+                    </p>
+                </div>
             </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-                {{ __('Komitmen Kami') }}
-            </h2>
-
-            <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
-                "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
-            </div>
-
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
-            </p>
         </div>
     </section>
 
