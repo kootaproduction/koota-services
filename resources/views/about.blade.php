@@ -12,7 +12,7 @@
             >
                 <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(130,0,3,0.24),transparent_55%),linear-gradient(115deg,#080808_0%,#171515_48%,#0a0a0a_100%)]"></div>
                 <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
-                    <source src="{{ asset('images/about-video.mp4') }}" type="video/mp4">
+                    <source src="{{ asset('images/koota.mp4') }}" type="video/mp4">
                 </video>
                 <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-black/15"></div>
                 <div class="absolute inset-0 z-10 flex items-center justify-center bg-white/55 px-5 py-8 text-center backdrop-blur-[2px] sm:px-10 lg:px-16">
@@ -32,73 +32,131 @@
         </div>
     </section>
 
-    <!-- Section: Komitmen Kami -->
-    <section class="py-20 bg-white border-b border-gray-100 text-center">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <div class="w-14 h-14 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center mx-auto shadow-sm">
-                <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-                {{ __('Komitmen Kami') }}
-            </h2>
-
-            <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
-                "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
-            </div>
-
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
-            </p>
-        </div>
-    </section>
-
     <!-- Section: Visi & Misi Kami -->
-    <section class="py-10 md:py-12 bg-[#fcf9f8] border-b border-gray-100">
+    <section id="vision-mission" class="py-10 md:py-12 bg-[#fcf9f8] border-b border-gray-100" aria-labelledby="vision-mission-title">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="vision-mission-title" class="text-center text-2xl font-bold tracking-tight text-[#820003] sm:text-3xl">{{ __('Visi & Misi Kami') }}</h2>
+            <div class="mt-4 mb-5 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+                <a href="{{ route('services.index') }}" class="inline-flex w-full items-center justify-center rounded-xl bg-[#820003] px-5 py-2.5 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[#660002] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#820003] focus-visible:ring-offset-2 sm:w-auto">
+                    {{ __('Lihat Layanan Kami') }}
+                </a>
+                <a href="{{ route('consultation.index') }}" class="inline-flex w-full items-center justify-center rounded-xl border border-[#820003]/25 bg-white px-5 py-2.5 text-sm font-bold text-[#820003] transition-colors hover:border-[#820003] hover:bg-[#f8e9e8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#820003] focus-visible:ring-offset-2 sm:w-auto">
+                    {{ __('Hubungi Kami') }}
+                </a>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-stretch">
                 <!-- Card 1: Visi Kami -->
-                <div class="h-full bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-xs">
-                    <div class="flex items-center gap-4 mb-2">
-                        <span class="text-5xl font-medium leading-none text-[#f1dada]">01</span>
+                <article class="vision-mission-card vision-reveal flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-xs transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(68,25,22,0.12)] sm:p-6 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+                    <div class="mb-1.5 flex items-center gap-3">
+                        <span aria-hidden="true" class="text-4xl font-semibold leading-none text-[#820003]/30">01</span>
                         <span class="w-9 h-px bg-[#ac0c0c]" aria-hidden="true"></span>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#820003] mb-3">
+                    <h3 class="mb-2 text-xl font-bold text-[#820003] sm:text-2xl">
                         {{ __('Visi Kami') }}
                     </h3>
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    <p class="text-sm text-gray-600 leading-relaxed sm:text-[15px]">
                         {{ __('Menjadi penyedia layanan perawatan fasilitas, kebersihan profesional, dan manajemen lingkungan terkemuka di Indonesia dengan standar kualitas unggul, inovatif, dan berkelanjutan.') }}
                     </p>
-                </div>
+                    <dl class="mt-auto pt-4">
+                        <div class="mb-3 border-t border-[#e4beb8]"></div>
+                        <div class="grid grid-cols-3 gap-2 sm:gap-4">
+                            <div class="flex flex-col text-center">
+                                <dt class="order-2 mt-0.5 text-[10px] leading-snug text-gray-600 sm:text-xs">{{ __('Tahun Pengalaman') }}</dt>
+                                <dd class="order-1 text-2xl font-extrabold leading-tight text-[#820003] sm:text-3xl">10+</dd>
+                            </div>
+                            <div class="flex flex-col text-center">
+                                <dt class="order-2 mt-0.5 text-[10px] leading-snug text-gray-600 sm:text-xs">{{ __('Klien') }}</dt>
+                                <dd class="order-1 text-2xl font-extrabold leading-tight text-[#820003] sm:text-3xl">200+</dd>
+                            </div>
+                            <div class="flex flex-col text-center">
+                                <dt class="order-2 mt-0.5 text-[10px] leading-snug text-gray-600 sm:text-xs">{{ __('Gedung') }}</dt>
+                                <dd class="order-1 text-2xl font-extrabold leading-tight text-[#820003] sm:text-3xl">50+</dd>
+                            </div>
+                        </div>
+                    </dl>
+                </article>
 
                 <!-- Card 2: Misi Kami -->
-                <div class="h-full bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 shadow-xs">
-                    <div class="flex items-center gap-4 mb-2">
-                        <span class="text-5xl font-medium leading-none text-[#f1dada]">02</span>
+                <article class="vision-mission-card vision-reveal flex h-full flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-xs transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(68,25,22,0.12)] sm:p-6 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+                    <div class="mb-1.5 flex items-center gap-3">
+                        <span aria-hidden="true" class="text-4xl font-semibold leading-none text-[#820003]/30">02</span>
                         <span class="w-9 h-px bg-[#ac0c0c]" aria-hidden="true"></span>
                     </div>
-                    <h3 class="text-2xl font-bold text-[#820003] mb-2">
+                    <h3 class="mb-1.5 text-xl font-bold text-[#820003] sm:text-2xl">
                         {{ __('Misi Kami') }}
                     </h3>
                     <ul class="divide-y divide-gray-100">
-                        <li class="flex items-start gap-3 py-3 first:pt-2 last:pb-0 text-sm text-gray-600 leading-relaxed">
-                            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#820003] shrink-0"></span>
-                            <span>{{ __('Memberikan layanan pemeliharaan komersial dan residensial berstandar tinggi.') }}</span>
+                        <li class="flex items-start gap-2.5 py-2 first:pt-1.5 last:pb-0 text-sm text-gray-600 leading-relaxed">
+                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f8e9e8] text-[#820003]" aria-hidden="true">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 3 19 6v5c0 4.5-2.9 8-7 10-4.1-2-7-5.5-7-10V6l7-3Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                                    <path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                                </svg>
+                            </span>
+                            <span class="pt-1">
+                                @if (app()->getLocale() === 'en')
+                                    {{ __('Memberikan') }} <strong class="font-semibold text-[#820003]">{{ __('berstandar tinggi') }}</strong> {{ __('layanan pemeliharaan komersial dan residensial') }}.
+                                @else
+                                    {{ __('Memberikan layanan pemeliharaan komersial dan residensial') }} <strong class="font-semibold text-[#820003]">{{ __('berstandar tinggi') }}</strong>.
+                                @endif
+                            </span>
                         </li>
-                        <li class="flex items-start gap-3 py-3 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
-                            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#820003] shrink-0"></span>
-                            <span>{{ __('Menerapkan solusi ramah lingkungan dan teknologi modern dalam setiap operasional.') }}</span>
+                        <li class="flex items-start gap-2.5 py-2 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
+                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f8e9e8] text-[#820003]" aria-hidden="true">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M20 4c-7.5 0-13 3.6-13 9.2A6.8 6.8 0 0 0 13.8 20C19.4 20 20 12 20 4Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                                    <path d="M4 21c2.3-5.5 6.4-9.4 12-12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                                </svg>
+                            </span>
+                            <span class="pt-1">{{ __('Menerapkan solusi') }} <strong class="font-semibold text-[#820003]">{{ __('ramah lingkungan') }}</strong> {{ __('dan') }} <strong class="font-semibold text-[#820003]">{{ __('teknologi modern') }}</strong> {{ __('dalam setiap operasional.') }}</span>
                         </li>
-                        <li class="flex items-start gap-3 py-3 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
-                            <span class="mt-2 h-1.5 w-1.5 rounded-full bg-[#820003] shrink-0"></span>
-                            <span>{{ __('Mengutamakan keselamatan kerja, ketepatan waktu, dan kepuasan pelanggan prima.') }}</span>
+                        <li class="flex items-start gap-2.5 py-2 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
+                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f8e9e8] text-[#820003]" aria-hidden="true">
+                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 9h.01M15 9h.01M9 12h.01M15 12h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
+                                </svg>
+                            </span>
+                            <span class="pt-1">{{ __('Mengutamakan') }} <strong class="font-semibold text-[#820003]">{{ __('keselamatan kerja') }}</strong>, {{ __('ketepatan waktu, dan') }} <strong class="font-semibold text-[#820003]">{{ __('kepuasan pelanggan') }}</strong> {{ __('prima.') }}</span>
                         </li>
                     </ul>
-                </div>
+                </article>
             </div>
+
         </div>
+        <style>
+            @media (prefers-reduced-motion: no-preference) {
+                #vision-mission.vision-reveal-ready .vision-reveal {
+                    opacity: 0;
+                    transform: translateY(18px);
+                    transition: opacity 600ms ease, transform 600ms ease;
+                }
+                #vision-mission.vision-reveal-ready .vision-reveal:nth-child(2) {
+                    transition-delay: 130ms;
+                }
+                #vision-mission.vision-reveal-ready .vision-reveal.is-visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+        <script>
+            (() => {
+                const section = document.getElementById('vision-mission');
+                const cards = section?.querySelectorAll('.vision-reveal');
+                if (!section || !cards?.length || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+                const observer = new IntersectionObserver((entries, currentObserver) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
+                        entry.target.classList.add('is-visible');
+                        currentObserver.unobserve(entry.target);
+                    });
+                }, { threshold: 0.12 });
+
+                section.classList.add('vision-reveal-ready');
+                cards.forEach((card) => observer.observe(card));
+            })();
+        </script>
     </section>
 
     <!-- Section: Siapa Kami & Area Layanan -->
@@ -162,6 +220,23 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Section: Komitmen Kami -->
+    <section class="py-20 bg-white border-b border-gray-100 text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                {{ __('Komitmen Kami') }}
+            </h2>
+
+            <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
+                "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
+            </div>
+
+            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
+            </p>
         </div>
     </section>
 
