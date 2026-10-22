@@ -108,7 +108,7 @@
                 <!-- Left: Local Indonesian Team Photo -->
                 <div class="lg:col-span-5">
                     <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-100 bg-white relative">
-                        <img src="/images/team-indonesia.jpg" alt="Tim Profesional Lokal KOOTA SERVICE" class="w-full h-[450px] object-cover">
+                        <img src="/images/tim.png" alt="Tim Profesional Lokal KOOTA SERVICE" class="w-full h-[450px] object-cover">
                         <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-gray-100 shadow-lg">
                             <p class="text-xs font-bold text-[#820003] uppercase tracking-wider">Kualitas Terjamin</p>
                             <p class="text-sm font-extrabold text-gray-900">SDM Profesional & Berpengalaman</p>
@@ -130,11 +130,11 @@
                     <!-- 4 Points Cards -->
                     <div class="space-y-4">
                         <!-- Point 1 -->
-                        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-2xs flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center font-extrabold text-sm shrink-0">
+                        <div class="relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-2xs">
+                            <div class="absolute top-0 right-0 w-14 h-12 sm:w-16 sm:h-14 bg-[#b00000] text-white rounded-bl-2xl flex items-center justify-center font-extrabold text-sm">
                                 01
                             </div>
-                            <div class="space-y-1">
+                            <div class="p-5 pr-20 space-y-1">
                                 <h3 class="text-sm sm:text-base font-bold text-gray-900">
                                     Didukung SDM Ahli & Berpengalaman
                                 </h3>
@@ -145,11 +145,11 @@
                         </div>
 
                         <!-- Point 2 -->
-                        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-2xs flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-green-50 text-[#16a34a] flex items-center justify-center font-extrabold text-sm shrink-0">
+                        <div class="relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-2xs">
+                            <div class="absolute top-0 right-0 w-14 h-12 sm:w-16 sm:h-14 bg-[#b00000] text-white rounded-bl-2xl flex items-center justify-center font-extrabold text-sm">
                                 02
                             </div>
-                            <div class="space-y-1">
+                            <div class="p-5 pr-20 space-y-1">
                                 <h3 class="text-sm sm:text-base font-bold text-gray-900">
                                     Jaminan Kualitas Hasil Kerja (Garansi)
                                 </h3>
@@ -160,11 +160,11 @@
                         </div>
 
                         <!-- Point 3 -->
-                        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-2xs flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center font-extrabold text-sm shrink-0">
+                        <div class="relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-2xs">
+                            <div class="absolute top-0 right-0 w-14 h-12 sm:w-16 sm:h-14 bg-[#b00000] text-white rounded-bl-2xl flex items-center justify-center font-extrabold text-sm">
                                 03
                             </div>
-                            <div class="space-y-1">
+                            <div class="p-5 pr-20 space-y-1">
                                 <h3 class="text-sm sm:text-base font-bold text-gray-900">
                                     Dukungan Layanan Pelanggan 24/7
                                 </h3>
@@ -175,11 +175,11 @@
                         </div>
 
                         <!-- Point 4 -->
-                        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-2xs flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-green-50 text-[#16a34a] flex items-center justify-center font-extrabold text-sm shrink-0">
+                        <div class="relative overflow-hidden bg-white rounded-2xl border border-gray-100 shadow-2xs">
+                            <div class="absolute top-0 right-0 w-14 h-12 sm:w-16 sm:h-14 bg-[#b00000] text-white rounded-bl-2xl flex items-center justify-center font-extrabold text-sm">
                                 04
                             </div>
-                            <div class="space-y-1">
+                            <div class="p-5 pr-20 space-y-1">
                                 <h3 class="text-sm sm:text-base font-bold text-gray-900">
                                     Solusi Perawatan Rumah Terintegrasi
                                 </h3>
