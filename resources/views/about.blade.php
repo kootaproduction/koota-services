@@ -101,14 +101,7 @@
                     </h3>
 
                     <ul class="divide-y divide-gray-100">
-                        <li class="flex items-start gap-2.5 py-2 first:pt-1.5 last:pb-0 text-sm text-gray-600 leading-relaxed">
-                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f8e9e8] text-[#820003]" aria-hidden="true">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M12 3 19 6v5c0 4.5-2.9 8-7 10-4.1-2-7-5.5-7-10V6l7-3Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
-                                    <path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
-                                </svg>
-                            </span>
-
+                        <li class="py-2 first:pt-1.5 last:pb-0 text-sm text-gray-600 leading-relaxed">
                             <span class="pt-1">
                                 @if (app()->getLocale() === 'en')
                                     {{ __('Memberikan') }} <strong class="font-semibold text-[#820003]">{{ __('berstandar tinggi') }}</strong> {{ __('layanan pemeliharaan komersial dan residensial') }}.
@@ -118,26 +111,13 @@
                             </span>
                         </li>
 
-                        <li class="flex items-start gap-2.5 py-2 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
-                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f8e9e8] text-[#820003]" aria-hidden="true">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M20 4c-7.5 0-13 3.6-13 9.2A6.8 6.8 0 0 0 13.8 20C19.4 20 20 12 20 4Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
-                                    <path d="M4 21c2.3-5.5 6.4-9.4 12-12" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
-                                </svg>
-                            </span>
-
+                        <li class="py-2 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
                             <span class="pt-1">
                                 {{ __('Menerapkan solusi') }} <strong class="font-semibold text-[#820003]">{{ __('ramah lingkungan') }}</strong> {{ __('dan') }} <strong class="font-semibold text-[#820003]">{{ __('teknologi modern') }}</strong> {{ __('dalam setiap operasional.') }}
                             </span>
                         </li>
 
-                        <li class="flex items-start gap-2.5 py-2 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
-                            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#f8e9e8] text-[#820003]" aria-hidden="true">
-                                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 9h.01M15 9h.01M9 12h.01M15 12h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/>
-                                </svg>
-                            </span>
-
+                        <li class="py-2 first:pt-0 last:pb-0 text-sm text-gray-600 leading-relaxed">
                             <span class="pt-1">
                                 {{ __('Mengutamakan') }} <strong class="font-semibold text-[#820003]">{{ __('keselamatan kerja') }}</strong>, {{ __('ketepatan waktu, dan') }} <strong class="font-semibold text-[#820003]">{{ __('kepuasan pelanggan') }}</strong> {{ __('prima.') }}
                             </span>
@@ -273,18 +253,22 @@
 
     <!-- Section: Komitmen Kami -->
     <section class="py-20 bg-white border-b border-gray-100 text-center">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-                {{ __('Komitmen Kami') }}
-            </h2>
+        <div class="relative isolate max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-1/2 h-52 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(130,0,3,0.10),transparent_68%)]"></div>
 
-            <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
-                "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
+            <div class="relative z-10 space-y-6">
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
+                    {{ __('Komitmen Kami') }}
+                </h2>
+
+                <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
+                    "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
+                </div>
+
+                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                    {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
+                </p>
             </div>
-
-            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
-            </p>
         </div>
     </section>
 
@@ -479,7 +463,7 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                <div class="lg:col-span-8 space-y-4" x-data="{ activeFaq: 1 }">
+                <div class="lg:col-span-8 space-y-4 rounded-2xl border border-gray-100 bg-white px-5 py-3 shadow-sm sm:px-7" x-data="{ activeFaq: 1 }">
                     @foreach ($faqs as $faq)
                         <div class="border-b border-gray-200 pb-4">
                             <button @click="activeFaq = (activeFaq === {{ $faq->id }} ? null : {{ $faq->id }})" class="w-full flex items-center justify-between py-3 text-left focus:outline-none group">
