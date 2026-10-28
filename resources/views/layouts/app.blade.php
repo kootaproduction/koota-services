@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>@yield('title', 'KOOTA SERVICE - Solusi Fasilitas Terintegrasi')</title>
     <meta name="description" content="Solusi terpadu untuk kebutuhan perawatan fasilitas dan manajemen lingkungan yang berkelanjutan di Surabaya, Malang, Bali, Jakarta.">
@@ -298,6 +299,128 @@
     <main class="flex-grow">
         @yield('content')
     </main>
+
+    <div x-data="{
+        isOpen: false,
+        draft: '',
+        isSending: false,
+        messages: [{ role: 'bot', text: 'Halo! Saya asisten KOOTA Services. Ada yang bisa saya bantu?' }],
+        toggleChat() {
+            this.isOpen = !this.isOpen;
+        },
+        async sendMessage() {
+            const message = (this.draft || '').trim();
+
+            if (!message || this.isSending) {
+                return;
+            }
+
+            this.messages.push({ role: 'user', text: message });
+            this.draft = '';
+            this.isSending = true;
+
+            const csrf = document.querySelector('meta[name=\"csrf-token\"]')?.content || '';
+            if (csrf) {
+                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = csrf;
+            }
+
+            try {
+                const response = await window.axios.post('{{ route('chatbot.ask') }}', { message });
+                const reply = response?.data?.reply || 'Maaf, saya belum dapat menjawab saat ini. Silakan coba lagi atau hubungi WhatsApp KOOTA Services di 0812-1759-7109.';
+                this.messages.push({ role: 'bot', text: reply });
+            } catch (error) {
+                this.messages.push({
+                    role: 'bot',
+                    text: 'Maaf, terjadi gangguan pada koneksi chatbot. Silakan coba lagi atau langsung hubungi WhatsApp KOOTA Services di 0812-1759-7109.'
+                });
+            } finally {
+                this.isSending = false;
+            }
+        }
+    }" class="fixed bottom-0 right-3 z-[100]" style="right: 1rem; left: auto;">
+        <div
+            x-show="isOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 translate-y-4"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-4"
+            x-cloak
+            class="mb-4 w-[min(92vw,22rem)] overflow-hidden rounded-[1.5rem] border border-[#e7e3df] bg-white shadow-[0_20px_60px_rgba(20,20,20,0.16)]"
+            style="display: none;"
+        >
+            <div class="flex items-center justify-between border-b border-[#f0efee] bg-[#f8f5f4] px-4 py-3">
+                <div class="flex items-center gap-3">
+                    <img src="{{ asset('images/bot.png') }}" alt="KOOTA Services Assistant" class="h-12 w-12 object-contain bg-transparent p-0 rounded-none shadow-none sm:h-14 sm:w-14">
+                    <div>
+                        <p class="text-sm font-extrabold text-[#1c1b1b]">KOOTA Assistant</p>
+                        <p class="text-[10px] font-medium text-[#5f5d5d]">Online</p>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    @click="toggleChat()"
+                    class="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#820003] shadow-sm ring-1 ring-[#f0e3e3] transition hover:bg-[#fff3f3]"
+                    aria-label="Tutup chat"
+                >
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="h-[360px] overflow-y-auto bg-[#f9f8f7] p-3">
+                <template x-for="(message, index) in messages" :key="index">
+                    <div class="mb-3" :class="message.role === 'user' ? 'text-right' : 'text-left'">
+                        <div
+                            class="inline-block max-w-[80%] rounded-2xl px-3 py-2 text-sm leading-relaxed shadow-sm"
+                            :class="message.role === 'user'
+                                ? 'bg-[#820003] text-white'
+                                : 'border border-[#ece5e3] bg-white text-[#1f2937]'"
+                            x-text="message.text"
+                        ></div>
+                    </div>
+                </template>
+
+                <div x-show="isSending" class="mb-3 text-left">
+                    <div class="inline-flex items-center gap-2 rounded-2xl border border-[#ece5e3] bg-white px-3 py-2 text-sm text-gray-600 shadow-sm">
+                        <span class="h-2 w-2 animate-pulse rounded-full bg-[#16a34a]"></span>
+                        <span>KOOTA sedang menulis...</span>
+                    </div>
+                </div>
+            </div>
+
+            <form @submit.prevent="sendMessage" class="flex items-center gap-2 border-t border-[#f0efee] bg-white p-3">
+                <input
+                    x-model="draft"
+                    type="text"
+                    placeholder="Tanya KOOTA Services..."
+                    class="flex-1 rounded-full border border-[#e7e3df] bg-[#f9f8f7] px-4 py-2.5 text-sm text-gray-700 placeholder:text-gray-400 focus:border-[#820003] focus:outline-none"
+                >
+                <button
+                    type="submit"
+                    :disabled="isSending || !draft.trim()"
+                    class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#820003] text-white transition hover:bg-[#a10d12] disabled:cursor-not-allowed disabled:opacity-60"
+                    aria-label="Kirim pesan"
+                >
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </form>
+        </div>
+
+        <button
+            type="button"
+            @click="toggleChat()"
+            class="flex h-36 w-36 items-center justify-center rounded-none border-0 bg-transparent p-0 shadow-none transition hover:scale-105 sm:h-40 sm:w-40"
+            aria-label="Buka chatbot KOOTA Services"
+        >
+            <img src="{{ asset('images/bot.png') }}" alt="KOOTA Services Logo" class="h-full w-full rounded-none object-contain bg-transparent">
+        </button>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-[#1c1b1b] text-white pt-16 pb-12 border-t border-neutral-800">

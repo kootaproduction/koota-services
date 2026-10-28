@@ -35,4 +35,15 @@ return [
         ],
     ],
 
+    'openai' => [
+        'key' => env('OPENAI_API_KEY'),
+        'model' => env('OPENAI_MODEL', 'gpt-4o-mini'),
+        'url' => env('OPENAI_API_URL', 'https://api.openai.com/v1/chat/completions'),
+    ],
+
+    'ai' => [
+        'provider' => env('AI_CHAT_PROVIDER', 'openai'),
+        'fallback' => env('AI_CHAT_FALLBACK', true),
+    ],
+
 ];

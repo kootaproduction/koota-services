@@ -7,6 +7,7 @@ use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ChatbotController;
 
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
@@ -36,6 +37,9 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/portofolio', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::get('/portofolio/{project}', [PortfolioController::class, 'show'])->name('portfolio.show');
 Route::get('/tentang-kami', [AboutController::class, 'index'])->name('about');
+Route::post('/chatbot/message', [ChatbotController::class, 'ask'])
+    ->middleware('throttle:20,1')
+    ->name('chatbot.ask');
 
 // Admin Auth Routes
 Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
