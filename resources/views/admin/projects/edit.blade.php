@@ -9,7 +9,7 @@
             @csrf
             @method('PUT')
 
-            <div class="space-y-2">u
+            <div class="space-y-2">
                 <label class="block text-xs font-bold uppercase text-gray-700">Judul Project</label>
                 <input type="text" name="title" value="{{ old('title', $project->title) }}" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] text-sm">
             </div>

@@ -288,6 +288,84 @@ body {
     cursor: -webkit-grabbing !important;
 }
 
+/* Service Interactive Card (Homepage Layanan Utama - Mirip Blog tapi Elemen Layanan Khas) */
+.service-interactive-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    min-height: 480px;
+    height: 100%;
+    background-color: #171717;
+    isolation: isolate;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.service-card-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.65) 45%,
+        rgba(0, 0, 0, 0.2) 75%,
+        transparent 100%
+    );
+    transition: background 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+}
+
+.group:hover .service-card-overlay,
+.group:focus-within .service-card-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(130, 0, 3, 0.88) 50%,
+        rgba(0, 0, 0, 0.5) 80%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+}
+
+.service-card-expandable {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card-expandable-content {
+    overflow: hidden;
+}
+
+.service-card-anim-item {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .service-card-expandable,
+.group:focus-within .service-card-expandable {
+    grid-template-rows: 1fr;
+}
+
+.group:hover .service-card-anim-item,
+.group:focus-within .service-card-anim-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card-anim-item-delay {
+    transition-delay: 0.06s;
+}
+
+@media (hover: none) {
+    .service-card-expandable {
+        grid-template-rows: 1fr;
+    }
+    .service-card-anim-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @media (min-width: 640px) {
     .portfolio-category-badge {
         padding: 0.75rem 1.25rem;

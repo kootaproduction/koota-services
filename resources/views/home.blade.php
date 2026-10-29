@@ -58,8 +58,11 @@
 
     <!-- Section 2: Layanan Utama Kami (3 Services Only) -->
     <section id="layanan-utama" class="py-20 bg-white border-b border-gray-100">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#820003] block">
+                    {{ __('LAYANAN TERPADU') }}
+                </span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     {{ __('Layanan Utama Kami') }}
                 </h2>
@@ -68,33 +71,59 @@
                 </p>
             </div>
 
-            <!-- Service Cards Grid: 3 Clean Columns -->
+            <!-- Service Cards Grid: 3 Clean Columns with Hover Expansion (Agak sama dengan blog tapi khusus layanan) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 @foreach($services as $service)
-                    <div class="bg-[#fcf9f8] rounded-3xl overflow-visible border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between hover:-translate-y-1">
-                        <div>
-                            <!-- Top Image -->
-                            <div class="h-52 overflow-hidden rounded-t-3xl relative bg-gray-100">
-                                <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            </div>
+                    <div class="service-interactive-card group shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-end">
+                        
+                        <!-- Background Image with Zoom on Hover -->
+                        <img src="{{ $service->hero_image }}" 
+                             alt="{{ $service->title }}" 
+                             class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
 
-                            <!-- Content -->
-                            <div class="p-6 space-y-3">
-                                <h3 class="text-xl font-bold text-[#1c1b1b] group-hover:text-[#820003] transition-colors leading-snug">
-                                    {{ __($service->title) }}
-                                </h3>
+                        <!-- Dynamic Gradient Overlay with Signature KOOTA Dark Red on Hover -->
+                        <div class="service-card-overlay"></div>
 
-                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3">
-                                    {{ __($service->subtitle ?? $service->description) }}
-                                </p>
+                        <!-- Top Badge: Facility Service Only -->
+                        <div class="absolute top-5 left-5 z-10 pointer-events-none">
+                            <span class="px-3.5 py-1.5 rounded-full bg-black/45 backdrop-blur-md text-white text-xs font-semibold border border-white/20 shadow-sm transition-colors duration-300 group-hover:bg-[#820003] group-hover:border-[#820003]">
+                                {{ __('Facility Service') }}
+                            </span>
+                        </div>
+
+                        <!-- Card Content -->
+                        <div class="relative z-20 p-6 sm:p-7 flex flex-col justify-end w-full text-white pointer-events-auto">
+                            <!-- Service Title -->
+                            <h3 class="text-2xl font-extrabold text-white leading-tight tracking-tight drop-shadow-sm group-hover:text-red-200 transition-colors duration-300">
+                                {{ __($service->title) }}
+                            </h3>
+
+                            <p class="text-xs sm:text-sm text-gray-300 font-medium mt-1.5 line-clamp-1">
+                                {{ __($service->subtitle ?? 'Layanan Profesional Bergaransi') }}
+                            </p>
+
+                            <!-- Expandable Description & Action Button on Hover -->
+                            <div class="service-card-expandable">
+                                <div class="service-card-expandable-content">
+                                    <p class="service-card-anim-item text-xs sm:text-[13px] text-gray-200 leading-relaxed mt-3 line-clamp-3">
+                                        {{ __($service->description) }}
+                                    </p>
+
+                                    <div class="service-card-anim-item service-card-anim-item-delay mt-4 pt-3.5 border-t border-white/20 flex items-center justify-between">
+                                        <!-- Primary Detail Button -->
+                                        <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#820003] hover:bg-gray-100 font-bold text-xs sm:text-sm shadow-md transition-all">
+                                            <span>{{ __('Pelajari Layanan') }}</span>
+                                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="px-6 pb-6 pt-2">
-                            <a href="{{ route('services.show', $service->slug) }}" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#820003] hover:text-[#16a34a] transition-colors">
-                                <span>{{ __('Pelajari Selengkapnya') }}</span>
-                            </a>
-                        </div>
+                        <!-- Card link overlay to detail page -->
+                        <a href="{{ route('services.show', $service->slug) }}" class="absolute inset-0 z-20 focus:outline-none focus:ring-2 focus:ring-[#820003] rounded-3xl" aria-label="{{ __($service->title) }}"></a>
                     </div>
                 @endforeach
             </div>
