@@ -352,7 +352,7 @@
         >
             <div class="flex items-center justify-between border-b border-[#f0efee] bg-[#f8f5f4] px-4 py-3">
                 <div class="flex items-center gap-3">
-                    <img src="{{ asset('images/bot.png') }}" alt="KOOTA Services Assistant" class="h-12 w-12 object-contain bg-transparent p-0 rounded-none shadow-none sm:h-14 sm:w-14">
+                    <img src="{{ asset('images/bot.png') }}" alt="KOOTA Services Assistant" class="h-10 w-10 object-contain bg-transparent p-0 rounded-none shadow-none sm:h-11 sm:w-11">
                     <div>
                         <p class="text-sm font-extrabold text-[#1c1b1b]">KOOTA Assistant</p>
                         <p class="text-[10px] font-medium text-[#5f5d5d]">Online</p>
@@ -415,7 +415,7 @@
         <button
             type="button"
             @click="toggleChat()"
-            class="flex h-36 w-36 items-center justify-center rounded-none border-0 bg-transparent p-0 shadow-none transition hover:scale-105 sm:h-40 sm:w-40"
+            class="flex h-16 w-16 items-center justify-center rounded-none border-0 bg-transparent p-0 shadow-none transition hover:scale-105 sm:h-18 sm:w-18"
             aria-label="Buka chatbot KOOTA Services"
         >
             <img src="{{ asset('images/bot.png') }}" alt="KOOTA Services Logo" class="h-full w-full rounded-none object-contain bg-transparent">

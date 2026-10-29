@@ -191,6 +191,103 @@ body {
     }
 }
 
+/* Blog Interactive Card (Google Doodle Games Style with Hover Animation) */
+.blog-interactive-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    min-height: 400px;
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    background-color: #171717;
+    isolation: isolate;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.blog-card-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.96) 0%,
+        rgba(0, 0, 0, 0.72) 42%,
+        rgba(0, 0, 0, 0.25) 70%,
+        transparent 100%
+    );
+    transition: background 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+}
+
+.group:hover .blog-card-overlay,
+.group:focus-within .blog-card-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.98) 0%,
+        rgba(0, 0, 0, 0.88) 55%,
+        rgba(0, 0, 0, 0.45) 85%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+}
+
+.blog-card-expandable {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-card-expandable-content {
+    overflow: hidden;
+}
+
+.blog-card-anim-item {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.group:hover .blog-card-expandable,
+.group:focus-within .blog-card-expandable {
+    grid-template-rows: 1fr;
+}
+
+.group:hover .blog-card-anim-item,
+.group:focus-within .blog-card-anim-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.blog-card-anim-item-delay {
+    transition-delay: 0.06s;
+}
+
+/* Graceful fallback for touch devices without cursor hover */
+@media (hover: none) {
+    .blog-card-expandable {
+        grid-template-rows: 1fr;
+    }
+    .blog-card-anim-item {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog-slider-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x pan-y pinch-zoom;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.blog-slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.blog-slider-track.is-dragging {
+    cursor: grabbing !important;
+    cursor: -webkit-grabbing !important;
+}
+
 @media (min-width: 640px) {
     .portfolio-category-badge {
         padding: 0.75rem 1.25rem;

@@ -277,14 +277,58 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::create([
+            'title' => 'Perbedaan Deep Cleaning vs General Cleaning: Kapan Waktu yang Tepat?',
+            'slug' => 'perbedaan-deep-cleaning-vs-general-cleaning',
+            'category' => 'Home Cleaning',
+            'excerpt' => 'Pahami kapan rumah Anda cukup dibersihkan secara harian atau membutuhkan chemical khusus dan penanganan deep cleaning tuntas.',
+            'content' => '<p>Pembersihan menyeluruh (deep cleaning) membersihkan sudut-sudut mati, celah furnitur, serta sanitasi mendalam yang tidak terjangkau pembersihan biasa.</p>',
+            'image' => '/images/home-cleaning.jpg',
+            'is_featured' => false,
+            'published_at' => now()->subDays(2),
+        ]);
+
+        Post::create([
+            'title' => 'Rahasia Membersihkan Kerak Kamar Mandi Membandel dan Kaca Buram',
+            'slug' => 'rahasia-membersihkan-kerak-kamar-mandi-kaca-buram',
+            'category' => 'Home Cleaning',
+            'excerpt' => 'Panduan membersihkan kerak air dan jamur membandel di kamar mandi menggunakan teknik pembersihan profesional aman keramik.',
+            'content' => '<p>Kerak kalsium dan sabun yang menumpuk bertahun-tahun membutuhkan chemical pembersih khusus dengan pH seimbang agar nat keramik tidak rusak.</p>',
+            'image' => '/images/home-cleaning.jpg',
+            'is_featured' => false,
+            'published_at' => now()->subDays(6),
+        ]);
+
+        Post::create([
             'title' => 'Panduan Perawatan Rumah: Cara Cepat Deteksi Pipa Bocor dan Masalah Kelistrikan',
             'slug' => 'panduan-deteksi-pipa-bocor-listrik',
             'category' => 'Perbaikan Rumah',
             'excerpt' => 'Kenali tanda-tanda awal kebocoran air tersembunyi dan indikasi korsleting listrik sebelum merusak struktur plafon serta dinding rumah Anda.',
             'content' => '<p>Bercak lembap pada dinding atau tagihan listrik yang tiba-tiba membengkak sering kali menjadi pertanda adanya masalah instalasi. Tim tukang ahli Koota Services siap membantu melakukan inspeksi menyeluruh.</p>',
             'image' => '/images/perbaikan-rumah.jpg',
-            'is_featured' => false,
+            'is_featured' => true,
             'published_at' => now()->subDays(3),
+        ]);
+
+        Post::create([
+            'title' => 'Tips Antisipasi Musim Hujan: Cegah Dak Bocor dan Rembesan Dinding Hunian',
+            'slug' => 'tips-antisipasi-musim-hujan-cegah-dak-bocor',
+            'category' => 'Perbaikan Rumah',
+            'excerpt' => 'Langkah preventif memeriksa talang air, waterproofing dak beton, dan perbaikan retak rambut dinding sebelum curah hujan tinggi tiba.',
+            'content' => '<p>Pemeriksaan berkala pada waterproofing talang dan sambungan atap mencegah kerusakan plafon gypsum yang mahal biaya perbaikannya.</p>',
+            'image' => '/images/perbaikan-rumah.jpg',
+            'is_featured' => false,
+            'published_at' => now()->subDays(7),
+        ]);
+
+        Post::create([
+            'title' => 'Panduan Memilih Tukang Bangunan Handal dan Transparansi Biaya Renovasi',
+            'slug' => 'panduan-memilih-tukang-bangunan-handal-renovasi',
+            'category' => 'Perbaikan Rumah',
+            'excerpt' => 'Hindari renovasi mangkrak dan pembengkakan biaya dengan memahami sistem kerja tukang terstandarisasi dan bergaransi resmi.',
+            'content' => '<p>Tukang profesional selalu memberikan estimasi material dan waktu kerja yang terukur sebelum pekerjaan dimulai.</p>',
+            'image' => '/images/perbaikan-rumah.jpg',
+            'is_featured' => false,
+            'published_at' => now()->subDays(10),
         ]);
 
         Post::create([
@@ -294,8 +338,30 @@ class DatabaseSeeder extends Seeder
             'excerpt' => 'Tips memilah sampah organik dapur dan jadwal pengangkutan sampah teratur agar lingkungan perumahan tetap asri, higienis, dan sehat.',
             'content' => '<p>Pengangkutan sampah yang terjadwal mencegah penumpukan limbah dan perkembangbiakan lalat serta bakteri berbahaya di pekarangan rumah Anda.</p>',
             'image' => '/images/pengangkutan-sampah.jpg',
-            'is_featured' => false,
+            'is_featured' => true,
             'published_at' => now()->subDays(5),
+        ]);
+
+        Post::create([
+            'title' => 'Sistem Pemilahan Sampah Organik dan Anorganik untuk Lingkungan Lebih Sehat',
+            'slug' => 'sistem-pemilahan-sampah-organik-anorganik',
+            'category' => 'Pengangkutan Sampah',
+            'excerpt' => 'Cara mudah memisahkan sampah basah dapur dan kemasan daur ulang untuk mencegah bau menyengat serta mempermudah daur ulang.',
+            'content' => '<p>Pemisahan sejak dari tempat sampah rumah membuat lingkungan lebih bersih dan mencegah timbulan bau tak sedap di sekitar tempat tinggal.</p>',
+            'image' => '/images/pengangkutan-sampah.jpg',
+            'is_featured' => false,
+            'published_at' => now()->subDays(8),
+        ]);
+
+        Post::create([
+            'title' => 'Layanan Evakuasi Puing Bangunan dan Sampah Komersial Terjadwal di Perkotaan',
+            'slug' => 'layanan-evakuasi-puing-sampah-komersial',
+            'category' => 'Pengangkutan Sampah',
+            'excerpt' => 'Solusi bersih tuntas sisa puing renovasi dan sampah kafe atau ruko dengan armada truk tertutup yang higienis dan terstandar.',
+            'content' => '<p>Puing bangunan tidak boleh dibuang sembarangan. KOOTA Service menyediakan layanan evakuasi terpadu hingga area kembali bersih rapi.</p>',
+            'image' => '/images/pengangkutan-sampah.jpg',
+            'is_featured' => false,
+            'published_at' => now()->subDays(12),
         ]);
 
         // 6. FAQs Data
