@@ -32,8 +32,27 @@ class BlogController extends Controller
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->firstOrFail();
-        $relatedPosts = Post::where('id', '!=', $post->id)->latest()->take(3)->get();
+        
+        // Ambil artikel terkait di kategori yang sama
+        $relatedPosts = Post::where('id', '!=', $post->id)
+            ->where('category', $post->category)
+            ->latest()
+            ->take(3)
+            ->get();
 
-        return view('blog.show', compact('post', 'relatedPosts'));
+        if ($relatedPosts->count() < 3) {
+            $fallback = Post::where('id', '!=', $post->id)
+                ->whereNotIn('id', $relatedPosts->pluck('id'))
+                ->latest()
+                ->take(3 - $relatedPosts->count())
+                ->get();
+            $relatedPosts = $relatedPosts->merge($fallback);
+        }
+
+        // Estimasi waktu baca (rata-rata 180 kata/menit)
+        $wordCount = str_word_count(strip_tags($post->title . ' ' . $post->excerpt . ' ' . $post->content));
+        $readingTime = max(2, (int) ceil($wordCount / 180));
+
+        return view('blog.show', compact('post', 'relatedPosts', 'readingTime'));
     }
 }

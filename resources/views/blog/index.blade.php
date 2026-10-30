@@ -10,9 +10,6 @@
                 startX: 0,
                 scrollLeft: 0,
                 isDragging: false,
-                scroll(distance) {
-                    this.$refs.heroTrack.scrollBy({ left: distance, behavior: 'smooth' });
-                },
                 startDrag(e) {
                     if (e.button !== 0) return;
                     this.isDown = true;
@@ -46,23 +43,9 @@
             </p>
         </div>
 
-        <!-- Slider Container with Floating Navigation Buttons -->
+        <!-- Slider Container -->
         <div class="relative">
-            <!-- Floating Navigation Buttons (Kiri & Kanan) -->
-            <button type="button" 
-                    @click="scroll(-520)" 
-                    class="absolute left-2 sm:left-6 lg:left-10 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md border border-gray-200 text-gray-800 hover:text-[#820003] hover:border-[#820003] hover:bg-white flex items-center justify-center shadow-xl transition-all active:scale-95" 
-                    aria-label="Artikel sebelumnya">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button type="button" 
-                    @click="scroll(520)" 
-                    class="absolute right-2 sm:right-6 lg:right-10 top-1/2 -translate-y-1/2 z-30 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/95 backdrop-blur-md border border-gray-200 text-gray-800 hover:text-[#820003] hover:border-[#820003] hover:bg-white flex items-center justify-center shadow-xl transition-all active:scale-95" 
-                    aria-label="Artikel berikutnya">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-            </button>
-
-            <!-- Horizontal Track (Sides peek out) -->
+            <!-- Horizontal Track (Sides peek out, scrollable via cursor drag) -->
             <div x-ref="heroTrack"
                  @mousedown="startDrag($event)"
                  @mouseleave="stopDrag()"

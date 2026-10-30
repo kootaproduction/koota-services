@@ -19,10 +19,9 @@ class AdminPostController extends Controller
     public function create()
     {
         $categories = [
-            'Cleaning Service',
+            'Home Cleaning',
+            'Perbaikan Rumah',
             'Pengangkutan Sampah',
-            'Jasa Tukang & Renovasi',
-            'IPAL',
         ];
         return view('admin.posts.create', compact('categories'));
     }
@@ -41,12 +40,15 @@ class AdminPostController extends Controller
         ]);
 
         $validated['slug'] = Str::slug($validated['title']) . '-' . Str::random(5);
+        $validated['is_featured'] = $request->boolean('is_featured');
 
         if ($request->hasFile('image_file')) {
             $path = $request->file('image_file')->store('posts', 'public');
             $validated['image'] = Storage::url($path);
         } else {
-            $validated['image'] = $validated['image_url'] ?? 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80';
+            $validated['image'] = !empty($validated['image_url']) 
+                ? $validated['image_url'] 
+                : 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80';
         }
 
         unset($validated['image_file'], $validated['image_url']);
@@ -58,10 +60,9 @@ class AdminPostController extends Controller
     public function edit(Post $post)
     {
         $categories = [
-            'Cleaning Service',
+            'Home Cleaning',
+            'Perbaikan Rumah',
             'Pengangkutan Sampah',
-            'Jasa Tukang & Renovasi',
-            'IPAL',
         ];
         return view('admin.posts.edit', compact('post', 'categories'));
     }
@@ -82,6 +83,7 @@ class AdminPostController extends Controller
         if (empty($post->slug)) {
             $validated['slug'] = Str::slug($validated['title']) . '-' . Str::random(5);
         }
+        $validated['is_featured'] = $request->boolean('is_featured');
 
         if ($request->hasFile('image_file')) {
             $path = $request->file('image_file')->store('posts', 'public');

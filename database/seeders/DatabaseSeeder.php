@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // 1. Admin User
+        // 1. Admin User (Kredensial Khusus Admin: username 'admin' / email 'admin@kootaservice.com', password 'admin123')
         User::updateOrCreate(
             ['email' => 'admin@kootaservice.com'],
             [
-                'name' => 'Admin KOOTA SERVICE',
-                'password' => Hash::make('password'),
+                'name' => 'admin',
+                'password' => Hash::make('admin123'),
                 'is_admin' => true,
             ]
         );
