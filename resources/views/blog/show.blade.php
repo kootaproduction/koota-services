@@ -81,8 +81,8 @@
                 <div class="pt-4 border-t border-gray-200/80 flex flex-wrap items-center justify-between gap-4">
                     <!-- Author Information -->
                     <div class="flex items-center gap-3">
-                        <div class="w-11 h-11 rounded-full bg-gradient-to-br from-[#820003] to-[#4a0002] text-white flex items-center justify-center font-black text-sm shadow-md ring-2 ring-white shrink-0">
-                            KS
+                        <div class="w-11 h-11 rounded-2xl bg-white border border-gray-200 flex items-center justify-center p-2 shadow-2xs shrink-0">
+                            <img src="{{ asset('images/logo.svg') }}" alt="KOOTA SERVICES" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <div class="flex items-center gap-1.5">
@@ -222,8 +222,8 @@
 
                     <!-- Author Editorial Profile Card -->
                     <div class="p-6 sm:p-8 rounded-3xl bg-white border border-gray-200/80 shadow-xs flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#820003] to-[#420001] text-white flex items-center justify-center font-black text-xl shadow-lg ring-4 ring-red-50 shrink-0">
-                            KS
+                        <div class="w-14 h-14 rounded-2xl bg-white border border-gray-200 flex items-center justify-center p-2.5 shadow-xs shrink-0">
+                            <img src="{{ asset('images/logo.svg') }}" alt="KOOTA SERVICES" class="w-full h-full object-contain">
                         </div>
                         <div class="space-y-2">
                             <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">

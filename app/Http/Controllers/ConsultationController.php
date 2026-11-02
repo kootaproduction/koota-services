@@ -27,8 +27,17 @@ class ConsultationController extends Controller
             'address' => 'nullable|string|max:500',
             'property_type' => 'required|string|max:255',
             'notes' => 'nullable|string',
+            'schedule_preference' => 'nullable|string',
             'photo' => 'nullable|image|max:5120', // max 5MB
         ]);
+
+        if (!empty($validated['schedule_preference'])) {
+            $pref = "[Waktu Kunjungan: " . $validated['schedule_preference'] . "]";
+            $validated['notes'] = !empty($validated['notes']) 
+                ? $pref . "\n" . $validated['notes'] 
+                : $pref;
+        }
+        unset($validated['schedule_preference']);
 
         if ($request->hasFile('photo')) {
             $path = $request->file('photo')->store('consultations', 'public');
