@@ -28,13 +28,20 @@ foreach ($requiredDirs as $dir) {
 putenv('APP_STORAGE_PATH=' . $tmpStorage);
 putenv('VIEW_COMPILED_PATH=' . $tmpStorage . '/framework/views');
 
-// If using SQLite on Vercel, copy database.sqlite to /tmp if not exists
+// Ensure SQLite uses writable /tmp directory on Vercel serverless
 $sqliteSource = __DIR__ . '/../database/database.sqlite';
 $sqliteDest = '/tmp/database.sqlite';
 
 if (file_exists($sqliteSource) && !file_exists($sqliteDest)) {
     @copy($sqliteSource, $sqliteDest);
 }
+
+putenv('DB_CONNECTION=sqlite');
+putenv('DB_DATABASE=' . $sqliteDest);
+$_ENV['DB_CONNECTION'] = 'sqlite';
+$_ENV['DB_DATABASE'] = $sqliteDest;
+$_SERVER['DB_CONNECTION'] = 'sqlite';
+$_SERVER['DB_DATABASE'] = $sqliteDest;
 
 // Forward request to Laravel standard front controller
 require __DIR__ . '/../public/index.php';
