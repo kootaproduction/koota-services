@@ -8,6 +8,8 @@ use App\Models\Project;
 use App\Models\Post;
 use App\Models\Consultation;
 use App\Models\SiteSetting;
+use App\Models\ChatbotKnowledge;
+use App\Models\ChatbotLog;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -18,11 +20,23 @@ class AdminDashboardController extends Controller
         $totalProjects = Project::count();
         $totalPosts = Post::count();
         $totalConsultations = Consultation::count();
+        $totalBotKnowledges = ChatbotKnowledge::count();
+        $unresolvedBotLogsCount = ChatbotLog::where('is_resolved', false)->count();
         $recentConsultations = Consultation::latest()->take(5)->get();
         $isMaintenance = SiteSetting::get('is_maintenance', '0') === '1';
         $maintenanceMessage = SiteSetting::get('maintenance_message', 'Website KOOTA SERVICE sedang dalam pemeliharaan berkala untuk peningkatan kualitas layanan.');
 
-        return view('admin.dashboard', compact('totalServices', 'totalProjects', 'totalPosts', 'totalConsultations', 'recentConsultations', 'isMaintenance', 'maintenanceMessage'));
+        return view('admin.dashboard', compact(
+            'totalServices',
+            'totalProjects',
+            'totalPosts',
+            'totalConsultations',
+            'totalBotKnowledges',
+            'unresolvedBotLogsCount',
+            'recentConsultations',
+            'isMaintenance',
+            'maintenanceMessage'
+        ));
     }
 
     public function toggleMaintenance(Request $request)

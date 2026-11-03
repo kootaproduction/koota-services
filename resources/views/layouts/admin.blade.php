@@ -83,6 +83,22 @@
                         </svg>
                         <span>Manajemen FAQ</span>
                     </a>
+                    <a href="{{ route('admin.bot-knowledges.index') }}" class="flex items-center justify-between px-4 py-2.5 rounded-xl transition-colors {{ request()->routeIs('admin.bot-knowledges.*') ? 'bg-[#820003] text-white font-bold' : 'text-gray-300 hover:bg-neutral-800' }}">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                            </svg>
+                            <span>Pengetahuan Bot (Q&A)</span>
+                        </div>
+                        @php
+                            $unresolvedCount = \App\Models\ChatbotLog::where('is_resolved', false)->count();
+                        @endphp
+                        @if($unresolvedCount > 0)
+                            <span class="px-2 py-0.5 text-[10px] font-bold rounded-full bg-amber-500 text-black" title="{{ $unresolvedCount }} pertanyaan bot belum terjawab">
+                                {{ $unresolvedCount }}
+                            </span>
+                        @endif
+                    </a>
                 </nav>
             </div>
 

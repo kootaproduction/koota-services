@@ -104,6 +104,45 @@
             </div>
         </div>
 
+        <!-- Chatbot Intelligence Quick Panel -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-neutral-100 text-[#820003] flex items-center justify-center font-bold">
+                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Basis Pengetahuan Bot (Q&A)</p>
+                        <p class="text-2xl font-black text-gray-900">{{ $totalBotKnowledges }} <span class="text-xs font-medium text-gray-500">Pertanyaan Database</span></p>
+                    </div>
+                </div>
+                <a href="{{ route('admin.bot-knowledges.index') }}" class="px-4 py-2 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
+                    Kelola Q&A &rarr;
+                </a>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl {{ $unresolvedBotLogsCount > 0 ? 'bg-amber-100 text-amber-800' : 'bg-green-100 text-green-800' }} flex items-center justify-center font-bold">
+                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Pertanyaan Bot Belum Terjawab</p>
+                        <p class="text-2xl font-black {{ $unresolvedBotLogsCount > 0 ? 'text-amber-600' : 'text-green-700' }}">
+                            {{ $unresolvedBotLogsCount }} <span class="text-xs font-medium text-gray-500">Perlu Jawaban</span>
+                        </p>
+                    </div>
+                </div>
+                <a href="{{ route('admin.bot-knowledges.logs', ['status' => 'unresolved']) }}" class="px-4 py-2 rounded-xl {{ $unresolvedBotLogsCount > 0 ? 'bg-amber-600 hover:bg-amber-700 text-white' : 'bg-neutral-100 hover:bg-neutral-200 text-gray-800' }} text-xs font-bold transition-colors">
+                    Lihat Log Chat &rarr;
+                </a>
+            </div>
+        </div>
+
         <!-- Recent Consultations Table -->
         <div class="bg-white rounded-3xl border border-gray-100 shadow-2xs overflow-hidden">
             <div class="p-6 border-b border-gray-100 flex items-center justify-between">

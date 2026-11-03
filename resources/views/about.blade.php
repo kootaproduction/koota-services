@@ -1,4 +1,4 @@
-﻿
+
 @extends('layouts.app')
 
 @section('title', 'Tentang KOOTA SERVICES - Solusi Fasilitas Terintegrasi')
@@ -279,8 +279,11 @@
 
                 <!-- Kolom Kiri -->
                 <div class="lg:col-span-5 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-[#820003] text-xs font-bold uppercase tracking-wider">
-                        {{ __('Kenapa Memilih Kami?') }}
+                    <div class="inline-flex items-center gap-3">
+                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                            {{ __('Kenapa Memilih Kami?') }}
+                        </span>
                     </div>
 
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight leading-tight">

@@ -221,9 +221,12 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-extrabold uppercase tracking-widest text-[#820003] block">
-                        KOMITMEN KUALITAS TINGGI
-                    </span>
+                    <div class="inline-flex items-center gap-3 mb-1.5">
+                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                            {{ __('Komitmen Kualitas Tinggi') }}
+                        </span>
+                    </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1b1b] tracking-tight leading-snug">
                         {{ $credTitle }}
                     </h2>
@@ -304,9 +307,13 @@
     <section class="py-20 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-[#820003] block">
-                    KEUNGGULAN UTAMA
-                </span>
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Keunggulan Utama') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     Kenapa Klien Ternama Memilih KOOTA SERVICE?
                 </h2>
@@ -409,9 +416,13 @@
     <section class="py-20 bg-white border-b border-gray-100" x-data="{ videoModal: false, currentVideoUrl: '' }">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-2">
-                <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#820003] block">
-                    VIDEO HIGHLIGHT
-                </span>
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Video Highlight') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     Lihat Hasil Project Kami
                 </h2>
@@ -588,9 +599,13 @@
     <section class="py-20 bg-white">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-2">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-[#820003] block">
-                    FAQ
-                </span>
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Pertanyaan Umum (FAQ)') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     Pertanyaan yang Sering Ditanyakan
                 </h2>

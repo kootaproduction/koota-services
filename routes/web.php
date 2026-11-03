@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\AdminProjectController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminConsultationController;
 use App\Http\Controllers\Admin\AdminFaqController;
+use App\Http\Controllers\Admin\AdminChatbotKnowledgeController;
 
 // Language Switcher Route
 Route::get('/locale/{lang}', function ($lang) {
@@ -55,6 +56,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('projects', AdminProjectController::class);
     Route::resource('posts', AdminPostController::class);
     Route::resource('faqs', AdminFaqController::class);
+
+    // Chatbot Knowledge Base & User Logs
+    Route::get('bot-knowledges/logs', [AdminChatbotKnowledgeController::class, 'logs'])->name('bot-knowledges.logs');
+    Route::patch('bot-knowledges/logs/{log}/resolve', [AdminChatbotKnowledgeController::class, 'resolveLog'])->name('bot-knowledges.logs.resolve');
+    Route::delete('bot-knowledges/logs/{log}', [AdminChatbotKnowledgeController::class, 'destroyLog'])->name('bot-knowledges.logs.destroy');
+    Route::patch('bot-knowledges/{bot_knowledge}/toggle', [AdminChatbotKnowledgeController::class, 'toggleActive'])->name('bot-knowledges.toggle');
+    Route::resource('bot-knowledges', AdminChatbotKnowledgeController::class);
 
     Route::get('consultations', [AdminConsultationController::class, 'index'])->name('consultations.index');
     Route::get('consultations/{consultation}', [AdminConsultationController::class, 'show'])->name('consultations.show');

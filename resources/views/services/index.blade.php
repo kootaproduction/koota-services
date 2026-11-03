@@ -104,9 +104,13 @@
     <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#820003] block">
-                    {{ __('KENAPA MEMILIH KAMI') }}
-                </span>
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Kenapa Memilih Kami') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     {{ __('Standar Kualitas & Komitmen Penuh Koota Services') }}
                 </h2>
