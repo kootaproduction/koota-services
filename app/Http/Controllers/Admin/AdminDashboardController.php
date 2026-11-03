@@ -10,6 +10,8 @@ use App\Models\Consultation;
 use App\Models\SiteSetting;
 use App\Models\ChatbotKnowledge;
 use App\Models\ChatbotLog;
+use App\Models\Transformation;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
@@ -22,6 +24,8 @@ class AdminDashboardController extends Controller
         $totalConsultations = Consultation::count();
         $totalBotKnowledges = ChatbotKnowledge::count();
         $unresolvedBotLogsCount = ChatbotLog::where('is_resolved', false)->count();
+        $totalTransformations = Transformation::count();
+        $totalTestimonials = Testimonial::count();
         $recentConsultations = Consultation::latest()->take(5)->get();
         $isMaintenance = SiteSetting::get('is_maintenance', '0') === '1';
         $maintenanceMessage = SiteSetting::get('maintenance_message', 'Website KOOTA SERVICE sedang dalam pemeliharaan berkala untuk peningkatan kualitas layanan.');
@@ -33,6 +37,8 @@ class AdminDashboardController extends Controller
             'totalConsultations',
             'totalBotKnowledges',
             'unresolvedBotLogsCount',
+            'totalTransformations',
+            'totalTestimonials',
             'recentConsultations',
             'isMaintenance',
             'maintenanceMessage'

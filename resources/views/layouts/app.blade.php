@@ -531,8 +531,11 @@
             <!-- Bottom Copyright -->
             <div class="pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
                 <p>© {{ date('Y') }} KOOTA SERVICE. {{ __('Kita Wujudkan') }} <span class="text-[#22c55e] font-bold">{{ __('Kota Bersih') }}</span></p>
-                <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
                     <span>Surabaya, Malang, Bali, Jakarta</span>
+                    <a href="{{ route('admin.login') }}" class="text-neutral-600 hover:text-neutral-400 text-[11px] transition-colors" title="Akses Panel Internal Admin">
+                        • Admin Area
+                    </a>
                 </div>
             </div>
         </div>

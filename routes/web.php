@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminConsultationController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminChatbotKnowledgeController;
+use App\Http\Controllers\Admin\AdminTransformationController;
+use App\Http\Controllers\Admin\AdminTestimonialController;
 
 // Language Switcher Route
 Route::get('/locale/{lang}', function ($lang) {
@@ -54,6 +56,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     Route::resource('services', AdminServiceController::class);
     Route::resource('projects', AdminProjectController::class);
+    Route::patch('transformations/{transformation}/toggle-featured', [AdminTransformationController::class, 'toggleFeatured'])->name('transformations.toggleFeatured');
+    Route::resource('transformations', AdminTransformationController::class);
+    Route::patch('testimonials/{testimonial}/toggle-published', [AdminTestimonialController::class, 'togglePublished'])->name('testimonials.togglePublished');
+    Route::resource('testimonials', AdminTestimonialController::class);
     Route::resource('posts', AdminPostController::class);
     Route::resource('faqs', AdminFaqController::class);
 

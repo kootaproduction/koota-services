@@ -230,7 +230,85 @@
         </div>
     </section>
 
-    <!-- Section 4: Banner CTA Konsultasi Baru (Exact from Gambar 3 with Kenzo Yanuar) -->
+    <!-- Section: Transformasi Before & After -->
+    @if(isset($transformations) && $transformations->isNotEmpty())
+        <section class="py-20 bg-white border-b border-gray-100">
+            <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <div class="inline-flex items-center gap-3">
+                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                            {{ __('Hasil Nyata Pengerjaan') }}
+                        </span>
+                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                        {{ __('Transformasi Before & After') }}
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-xl mx-auto">
+                        {{ __('Bukti komitmen kualitas kami dalam merawat kebersihan tandon, mengatasi kebocoran bangunan, hingga evakuasi puing properti Anda.') }}
+                    </p>
+                </div>
+
+                <!-- Grid Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    @foreach($transformations as $item)
+                        <div class="bg-[#fcf9f8] rounded-3xl border border-gray-200/80 overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                            <!-- Before & After Comparison Frame -->
+                            <div class="grid grid-cols-2 h-56 sm:h-64 relative bg-gray-900 overflow-hidden">
+                                <div class="relative group">
+                                    <img src="{{ $item->image_before }}" alt="Sebelum" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-3 left-3 px-2.5 py-1 rounded-lg text-[10px] font-black uppercase bg-red-600 text-white shadow-md">
+                                        BEFORE
+                                    </span>
+                                </div>
+                                <div class="relative group border-l-2 border-white/40">
+                                    <img src="{{ $item->image_after }}" alt="Sesudah" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg text-[10px] font-black uppercase bg-emerald-600 text-white shadow-md">
+                                        AFTER
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="p-6 sm:p-7 space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#820003] border border-red-100 shadow-2xs">
+                                        {{ $item->category }}
+                                    </span>
+                                    @if($item->location)
+                                        <span class="text-xs font-semibold text-gray-500">
+                                            📍 {{ $item->location }}
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <h3 class="text-lg font-bold text-gray-900 leading-snug">
+                                    {{ $item->title }}
+                                </h3>
+
+                                @if($item->description)
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-2">
+                                        {{ $item->description }}
+                                    </p>
+                                @endif
+
+                                @if($item->duration)
+                                    <div class="pt-2 border-t border-gray-200/60 flex items-center justify-between text-xs text-gray-500">
+                                        <span>Estimasi Waktu</span>
+                                        <span class="font-bold text-gray-900">{{ $item->duration }}</span>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
+
+    <!-- Section: Banner CTA Konsultasi Baru (Exact from Gambar 3 with Kenzo Yanuar) -->
     <section class="py-16 bg-[#fcf9f8] border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="relative bg-[#d6d8db] rounded-3xl overflow-hidden shadow-xl border border-gray-300">
@@ -261,6 +339,67 @@
             </div>
         </div>
     </section>
+
+    <!-- Section: Ulasan & Testimonial Pelanggan -->
+    @if(isset($testimonials) && $testimonials->isNotEmpty())
+        <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
+            <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <div class="inline-flex items-center gap-3">
+                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                            {{ __('Kepuasan Klien Kami') }}
+                        </span>
+                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                        {{ __('Apa Kata Mereka Tentang KOOTA?') }}
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-xl mx-auto">
+                        {{ __('Kepercayaan pelanggan residensial, pemilik kafe, dan pengelola gedung adalah pencapaian terbaik kami.') }}
+                    </p>
+                </div>
+
+                <!-- Grid Testimonials -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    @foreach($testimonials as $testi)
+                        <div class="bg-white rounded-3xl p-6 border border-gray-200/80 shadow-2xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between space-y-4">
+                            <div class="space-y-3">
+                                <!-- Star Rating -->
+                                <div class="text-amber-400 text-sm tracking-tight">
+                                    @for($i = 1; $i <= 5; $i++)
+                                        <span>{{ $i <= $testi->rating ? '★' : '☆' }}</span>
+                                    @endfor
+                                </div>
+
+                                <!-- Content Quote -->
+                                <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
+                                    "{{ $testi->content }}"
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-100 space-y-0.5">
+                                <p class="font-bold text-sm text-gray-900 leading-tight">
+                                    {{ $testi->client_name }}
+                                </p>
+                                @if($testi->client_title)
+                                    <p class="text-[11px] text-gray-500 leading-tight">
+                                        {{ $testi->client_title }}
+                                    </p>
+                                @endif
+                                @if($testi->location)
+                                    <span class="inline-block mt-1 text-[10px] font-bold text-[#820003] bg-red-50 px-2 py-0.5 rounded-md">
+                                        {{ $testi->location }}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+    @endif
 
     <!-- Section 5: FAQ Accordion -->
     <section class="py-16 sm:py-20 bg-white">

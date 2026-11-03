@@ -143,6 +143,43 @@
             </div>
         </div>
 
+        <!-- Before-After & Testimonials Quick Management Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-neutral-100 text-[#820003] flex items-center justify-center font-bold">
+                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Transformasi Before-After</p>
+                        <p class="text-2xl font-black text-gray-900">{{ $totalTransformations }} <span class="text-xs font-medium text-gray-500">Studi Kasus Visual</span></p>
+                    </div>
+                </div>
+                <a href="{{ route('admin.transformations.index') }}" class="px-4 py-2 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
+                    Kelola Foto &rarr;
+                </a>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-neutral-100 text-amber-500 flex items-center justify-center font-bold">
+                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-gray-400 uppercase tracking-wider">Testimonial & Rating Klien</p>
+                        <p class="text-2xl font-black text-gray-900">{{ $totalTestimonials }} <span class="text-xs font-medium text-gray-500">Ulasan Pelanggan</span></p>
+                    </div>
+                </div>
+                <a href="{{ route('admin.testimonials.index') }}" class="px-4 py-2 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
+                    Kelola Ulasan &rarr;
+                </a>
+            </div>
+        </div>
+
         <!-- Recent Consultations Table -->
         <div class="bg-white rounded-3xl border border-gray-100 shadow-2xs overflow-hidden">
             <div class="p-6 border-b border-gray-100 flex items-center justify-between">
