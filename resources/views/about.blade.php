@@ -153,7 +153,7 @@
 
                         <div class="relative z-10 space-y-6">
                             <div class="flex items-center justify-between">
-                                <span class="inline-flex items-center px-3.5 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase bg-white/10 text-red-200 border border-white/10">
+                                <span class="text-xs font-bold tracking-widest uppercase text-red-300">
                                     {{ __('Visi Utama') }}
                                 </span>
                                 <span class="text-[11px] text-neutral-400 font-semibold tracking-wider uppercase">KOOTA SERVICES</span>
@@ -191,7 +191,7 @@
                     <article class="vision-reveal w-full flex flex-col justify-between rounded-3xl bg-white p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-xl">
                         <div>
                             <div class="flex items-center justify-between">
-                                <span class="inline-flex items-center px-3.5 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase bg-red-50 text-[#820003] border border-red-100">
+                                <span class="text-xs font-bold tracking-widest uppercase text-[#820003]">
                                     {{ __('Misi Kami') }}
                                 </span>
                                 <span class="text-[11px] text-gray-400 font-semibold tracking-wider uppercase">{{ __('Prinsip Kerja') }}</span>
@@ -203,42 +203,33 @@
 
                             <div class="mt-6 space-y-4">
                                 <!-- Pillar 1 -->
-                                <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
-                                    <div class="w-2.5 h-2.5 rounded-full bg-[#820003] mt-1.5 shrink-0"></div>
-                                    <div>
-                                        <h4 class="text-sm font-bold text-gray-900 leading-snug">
-                                            {{ __('Standar Kualitas Tertinggi') }}
-                                        </h4>
-                                        <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                            {{ __('Memberikan layanan pemeliharaan komersial dan residensial berstandar tinggi.') }}
-                                        </p>
-                                    </div>
+                                <div class="p-4 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
+                                    <h4 class="text-sm font-bold text-gray-900 leading-snug">
+                                        {{ __('Standar Kualitas Tertinggi') }}
+                                    </h4>
+                                    <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                        {{ __('Memberikan layanan pemeliharaan komersial dan residensial berstandar tinggi.') }}
+                                    </p>
                                 </div>
 
                                 <!-- Pillar 2 -->
-                                <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
-                                    <div class="w-2.5 h-2.5 rounded-full bg-[#820003] mt-1.5 shrink-0"></div>
-                                    <div>
-                                        <h4 class="text-sm font-bold text-gray-900 leading-snug">
-                                            {{ __('Solusi Ramah Lingkungan') }}
-                                        </h4>
-                                        <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                            {{ __('Menerapkan solusi ramah lingkungan dan teknologi modern dalam setiap operasional.') }}
-                                        </p>
-                                    </div>
+                                <div class="p-4 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
+                                    <h4 class="text-sm font-bold text-gray-900 leading-snug">
+                                        {{ __('Solusi Ramah Lingkungan') }}
+                                    </h4>
+                                    <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                        {{ __('Menerapkan solusi ramah lingkungan dan teknologi modern dalam setiap operasional.') }}
+                                    </p>
                                 </div>
 
                                 <!-- Pillar 3 -->
-                                <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
-                                    <div class="w-2.5 h-2.5 rounded-full bg-[#820003] mt-1.5 shrink-0"></div>
-                                    <div>
-                                        <h4 class="text-sm font-bold text-gray-900 leading-snug">
-                                            {{ __('Keselamatan & Kepuasan Prima') }}
-                                        </h4>
-                                        <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                            {{ __('Mengutamakan keselamatan kerja, ketepatan waktu, dan kepuasan pelanggan prima.') }}
-                                        </p>
-                                    </div>
+                                <div class="p-4 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
+                                    <h4 class="text-sm font-bold text-gray-900 leading-snug">
+                                        {{ __('Keselamatan & Kepuasan Prima') }}
+                                    </h4>
+                                    <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                        {{ __('Mengutamakan keselamatan kerja, ketepatan waktu, dan kepuasan pelanggan prima.') }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -339,79 +330,36 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 
                 <!-- Card 1: Ramah Lingkungan & Berkelanjutan -->
-                <div class="flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#820003]/30 group">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#820003] shadow-2xs group-hover:bg-[#820003] group-hover:text-white transition-colors duration-300">
-                            <!-- Leaf / Eco SVG Icon -->
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21a9 9 0 0 1-9-9c0-4.97 4.03-9 9-9 4.15 0 7.63 2.82 8.65 6.69M12 21c4.97 0 9-4.03 9-9 0-1.42-.33-2.76-.92-3.96M12 21V11m0 0a4 4 0 0 1 4-4m-4 4a4 4 0 0 0-4-4"/>
-                            </svg>
-                        </div>
+                <div class="p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#820003]/30">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+                        {{ __('Standar Ramah Lingkungan') }}
+                    </h3>
 
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
-                            {{ __('Standar Ramah Lingkungan') }}
-                        </h3>
-
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            {{ __('Penerapan bahan pembersih ramah lingkungan, manajemen limbah bertanggung jawab, serta efisiensi operasional untuk menjaga kelestarian alam.') }}
-                        </p>
-                    </div>
-
-                    <div class="mt-6 pt-5 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-[#820003]">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
-                        <span>{{ __('Operasional Berkelanjutan') }}</span>
-                    </div>
+                    <p class="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        {{ __('Penerapan bahan pembersih ramah lingkungan, manajemen limbah bertanggung jawab, serta efisiensi operasional untuk menjaga kelestarian alam.') }}
+                    </p>
                 </div>
 
                 <!-- Card 2: Kenyamanan & Ruang Hidup Higienis -->
-                <div class="flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#820003]/30 group">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#820003] shadow-2xs group-hover:bg-[#820003] group-hover:text-white transition-colors duration-300">
-                            <!-- Shield Check / Hygiene Icon -->
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                            </svg>
-                        </div>
+                <div class="p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#820003]/30">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+                        {{ __('Ruang Hidup Higienis') }}
+                    </h3>
 
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
-                            {{ __('Ruang Hidup Higienis') }}
-                        </h3>
-
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            {{ __('Menciptakan ruang hunian dan fasilitas bisnis yang bersih higienis, bebas polutan, dan tertata rapi demi kesehatan dan produktivitas penghuninya.') }}
-                        </p>
-                    </div>
-
-                    <div class="mt-6 pt-5 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-[#820003]">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
-                        <span>{{ __('Kenyamanan Maksimal') }}</span>
-                    </div>
+                    <p class="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        {{ __('Menciptakan ruang hunian dan fasilitas bisnis yang bersih higienis, bebas polutan, dan tertata rapi demi kesehatan dan produktivitas penghuninya.') }}
+                    </p>
                 </div>
 
                 <!-- Card 3: Standar Terpadu di 4 Wilayah -->
-                <div class="flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#820003]/30 group">
-                    <div class="space-y-4">
-                        <div class="w-12 h-12 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#820003] shadow-2xs group-hover:bg-[#820003] group-hover:text-white transition-colors duration-300">
-                            <!-- Map Pin / Building Network Icon -->
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                        </div>
+                <div class="p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#820003]/30">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
+                        {{ __('Integritas di 4 Wilayah') }}
+                    </h3>
 
-                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
-                            {{ __('Integritas di 4 Wilayah') }}
-                        </h3>
-
-                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            {{ __('Menjaga konsistensi standar mutu layanan fasilitas dengan SOP ketat dan jaminan pengerjaan bergaransi di Surabaya, Malang, Bali, dan Jakarta.') }}
-                        </p>
-                    </div>
-
-                    <div class="mt-6 pt-5 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-[#820003]">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
-                        <span>{{ __('Jangkauan Terpercaya') }}</span>
-                    </div>
+                    <p class="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                        {{ __('Menjaga konsistensi standar mutu layanan fasilitas dengan SOP ketat dan jaminan pengerjaan bergaransi di Surabaya, Malang, Bali, dan Jakarta.') }}
+                    </p>
                 </div>
 
             </div>

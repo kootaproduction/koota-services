@@ -269,33 +269,25 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Pillar 1 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-lg">
-                    </div>
+                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar1['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar1['desc'] }}</p>
                 </div>
 
                 <!-- Pillar 2 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-green-50 text-[#16a34a] flex items-center justify-center font-bold text-lg">
-                    </div>
+                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar2['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar2['desc'] }}</p>
                 </div>
 
                 <!-- Pillar 3 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold text-lg">
-                    </div>
+                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar3['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar3['desc'] }}</p>
                 </div>
 
                 <!-- Pillar 4 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-12 h-12 rounded-2xl bg-green-50 text-[#16a34a] flex items-center justify-center font-bold text-lg">
-                    </div>
+                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
                     <h3 class="text-base font-bold text-gray-900">{{ $pillar4['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar4['desc'] }}</p>
                 </div>

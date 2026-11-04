@@ -57,28 +57,9 @@
                             <div class="h-52 overflow-hidden rounded-t-3xl relative bg-gray-100">
                                 <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             </div>
-                            
-                            <!-- 3D Timbul Elevated Icon Badge -->
-                            <div class="relative -mt-7 ml-6 z-20">
-                                <div class="w-14 h-14 rounded-2xl bg-white text-[#820003] flex items-center justify-center shadow-lg border border-gray-100 ring-4 ring-white group-hover:scale-110 group-hover:shadow-2xl transition-all duration-300">
-                                    @if($service->slug === 'pengangkutan-sampah')
-                                        <svg class="w-7 h-7 stroke-current text-[#16a34a]" fill="none" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                                        </svg>
-                                    @elseif($service->slug === 'perbaikan-rumah' || str_contains($service->slug, 'tukang'))
-                                        <svg class="w-7 h-7 stroke-current text-[#820003]" fill="none" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
-                                        </svg>
-                                    @else
-                                        <svg class="w-7 h-7 stroke-current text-[#820003]" fill="none" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                                        </svg>
-                                    @endif
-                                </div>
-                            </div>
 
                             <!-- Content -->
-                            <div class="p-6 pt-3 space-y-3">
+                            <div class="p-6 space-y-3">
                                 <h3 class="text-xl font-bold text-[#1c1b1b] group-hover:text-[#820003] transition-colors leading-snug">
                                     {{ __($service->title) }}
                                 </h3>
@@ -120,7 +101,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- 1 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center font-extrabold text-sm">
+                    <div class="text-base font-black text-[#820003] tracking-tight">
                         01
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-gray-900">Didukung SDM Ahli & Berpengalaman</h3>
@@ -131,7 +112,7 @@
 
                 <!-- 2 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-green-50 text-[#16a34a] flex items-center justify-center font-extrabold text-sm">
+                    <div class="text-base font-black text-[#820003] tracking-tight">
                         02
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-gray-900">Jaminan Kualitas Hasil Kerja (Garansi)</h3>
@@ -142,7 +123,7 @@
 
                 <!-- 3 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-red-50 text-[#820003] flex items-center justify-center font-extrabold text-sm">
+                    <div class="text-base font-black text-[#820003] tracking-tight">
                         03
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-gray-900">Dukungan Layanan Pelanggan 24/7</h3>
@@ -153,7 +134,7 @@
 
                 <!-- 4 -->
                 <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-green-50 text-[#16a34a] flex items-center justify-center font-extrabold text-sm">
+                    <div class="text-base font-black text-[#820003] tracking-tight">
                         04
                     </div>
                     <h3 class="text-base sm:text-lg font-bold text-gray-900">Solusi Perawatan Rumah Terintegrasi</h3>

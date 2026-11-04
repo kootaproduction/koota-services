@@ -88,13 +88,6 @@
                         <!-- Dynamic Gradient Overlay with Signature KOOTA Dark Red on Hover -->
                         <div class="service-card-overlay"></div>
 
-                        <!-- Top Badge: Facility Service Only -->
-                        <div class="absolute top-5 left-5 z-10 pointer-events-none">
-                            <span class="px-3.5 py-1.5 rounded-full bg-black/45 backdrop-blur-md text-white text-xs font-semibold border border-white/20 shadow-sm transition-colors duration-300 group-hover:bg-[#820003] group-hover:border-[#820003]">
-                                {{ __('Facility Service') }}
-                            </span>
-                        </div>
-
                         <!-- Card Content -->
                         <div class="relative z-20 p-6 sm:p-7 flex flex-col justify-end w-full text-white pointer-events-auto">
                             <!-- Service Title -->
@@ -274,7 +267,7 @@
                             <!-- Content -->
                             <div class="p-6 sm:p-7 space-y-3">
                                 <div class="flex items-center justify-between">
-                                    <span class="px-3 py-1 rounded-full text-[11px] font-bold bg-white text-[#820003] border border-red-100 shadow-2xs">
+                                    <span class="text-xs font-bold text-[#820003] uppercase tracking-wider">
                                         {{ $item->category }}
                                     </span>
                                     @if($item->location)
