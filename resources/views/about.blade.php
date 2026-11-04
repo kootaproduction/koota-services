@@ -34,6 +34,91 @@
         </div>
     </section>
 
+    <!-- Section: Siapa Kami & Area Layanan -->
+    <section class="py-16 md:py-20 bg-white border-b border-gray-100">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+                <!-- Left Column: Siapa Kami -->
+                <div class="lg:col-span-5 space-y-5">
+                    <div class="inline-flex items-center gap-3">
+                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                            {{ __('Mengenal Lebih Dekat') }}
+                        </span>
+                    </div>
+
+                    <h2 class="font-serif-brand text-4xl sm:text-5xl font-semibold text-[#1c1b1b] tracking-tight leading-tight">
+                        {{ __('Siapa Kami?') }}
+                    </h2>
+
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
+                        {{ __('Dari kebersihan rutin hingga perawatan properti dan pengelolaan lingkungan, KOOTA SERVICES menyatukan berbagai kebutuhan fasilitas dalam satu mitra. Kami membantu rumah dan bisnis menjaga ruang tetap terawat, nyaman, dan siap beroperasi—dengan layanan yang disesuaikan dengan kebutuhan tiap lokasi.') }}
+                    </p>
+
+                    <div class="mt-2 border-t border-gray-200 pt-5">
+                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500">
+                            {{ __('Area Operasional:') }}
+                        </p>
+
+                        <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Surabaya</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Malang</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>{{ __('Denpasar (Bali)') }}</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Jakarta</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Service-Area Map -->
+                <div class="lg:col-span-7 min-w-0">
+                    <div class="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
+                            {{ __('Jangkauan Layanan KOOTA') }}
+                        </h3>
+                        <p class="text-xs text-gray-500">
+                            {{ __('Pilih penanda untuk melihat nama kota') }}
+                        </p>
+                    </div>
+
+                    @php
+                        $serviceLocations = [
+                            ['name' => 'Surabaya', 'latitude' => -7.2575, 'longitude' => 112.7521],
+                            ['name' => 'Malang', 'latitude' => -7.9666, 'longitude' => 112.6326],
+                            ['name' => __('Denpasar (Bali)'), 'latitude' => -8.6705, 'longitude' => 115.2126],
+                            ['name' => 'Jakarta', 'latitude' => -6.2088, 'longitude' => 106.8456],
+                        ];
+                    @endphp
+
+                    <div
+                        id="service-area-map"
+                        class="service-area-map relative z-0 w-full overflow-hidden rounded-2xl border border-[#e4beb8] bg-[#f0edec] shadow-[0_12px_32px_rgba(28,27,27,0.10)]"
+                        role="region"
+                        aria-label="{{ __('Peta area layanan KOOTA SERVICES') }}"
+                        data-locations="{{ json_encode($serviceLocations, JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_HEX_TAG) }}"
+                        data-marker-description="{{ __('Penanda perkiraan pusat kota') }}"
+                        data-unavailable="{{ __('Peta interaktif tidak tersedia saat ini. Daftar area layanan tetap tersedia di samping peta.') }}"
+                        data-tiles-unavailable="{{ __('Peta dasar tidak dapat dimuat. Penanda dan daftar area layanan tetap tersedia.') }}"
+                    >
+                        <p class="service-area-map__status" data-map-status role="status" aria-live="polite">
+                            {{ __('Memuat peta…') }}
+                        </p>
+
+                        <noscript>
+                            <p class="service-area-map__status">
+                                {{ __('Aktifkan JavaScript untuk melihat peta interaktif. Daftar area layanan tetap tersedia di samping peta.') }}
+                            </p>
+                        </noscript>
+                    </div>
+
+                    <p class="mt-3 text-xs leading-relaxed text-gray-500">
+                        {{ __('Penanda menunjukkan perkiraan pusat kota, bukan alamat kantor KOOTA SERVICES yang telah diverifikasi.') }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Section: Visi & Misi Kami -->
     <section id="vision-mission" class="py-16 md:py-20 bg-[#fcf9f8] border-b border-gray-100" aria-labelledby="vision-mission-title">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -227,102 +312,110 @@
         </script>
     </section>
 
-    <!-- Section: Siapa Kami & Area Layanan -->
-    <section class="py-12 md:py-16 bg-white border-b border-gray-100">
+    <!-- Section: Komitmen Kami (Brand Purpose & Environmental Commitment) -->
+    <section class="py-20 sm:py-24 bg-white border-b border-gray-100" aria-labelledby="commitment-title">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-
-                <!-- Left Column: Siapa Kami -->
-                <div class="lg:col-span-5 space-y-5">
-                    <h2 class="font-serif-brand text-4xl sm:text-5xl font-semibold text-[#1c1b1b] tracking-tight leading-tight">
-                        {{ __('Siapa Kami?') }}
-                    </h2>
-
-                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-lg">
-                        {{ __('Dari kebersihan rutin hingga perawatan properti dan pengelolaan lingkungan, KOOTA SERVICES menyatukan berbagai kebutuhan fasilitas dalam satu mitra. Kami membantu rumah dan bisnis menjaga ruang tetap terawat, nyaman, dan siap beroperasi—dengan layanan yang disesuaikan dengan kebutuhan tiap lokasi.') }}
-                    </p>
-
-                    <div class="mt-2 border-t border-gray-200 pt-5">
-                        <p class="text-xs font-bold uppercase tracking-wider text-gray-500">
-                            {{ __('Area Operasional:') }}
-                        </p>
-
-                        <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Surabaya</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Malang</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>{{ __('Denpasar (Bali)') }}</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Jakarta</div>
-                        </div>
-                    </div>
+            
+            <!-- Header Block -->
+            <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-16 space-y-4">
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Komitmen & Filosofi Kami') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
                 </div>
 
-                <!-- Right Column: Interactive Service-Area Map -->
-                <div class="lg:col-span-7 min-w-0">
-                    <div class="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-                        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-gray-900">
-                            {{ __('Jangkauan Layanan KOOTA') }}
-                        </h3>
-                        <p class="text-xs text-gray-500">
-                            {{ __('Pilih penanda untuk melihat nama kota') }}
-                        </p>
-                    </div>
-
-                    @php
-                        $serviceLocations = [
-                            ['name' => 'Surabaya', 'latitude' => -7.2575, 'longitude' => 112.7521],
-                            ['name' => 'Malang', 'latitude' => -7.9666, 'longitude' => 112.6326],
-                            ['name' => __('Denpasar (Bali)'), 'latitude' => -8.6705, 'longitude' => 115.2126],
-                            ['name' => 'Jakarta', 'latitude' => -6.2088, 'longitude' => 106.8456],
-                        ];
-                    @endphp
-
-                    <div
-                        id="service-area-map"
-                        class="service-area-map relative z-0 w-full overflow-hidden rounded-2xl border border-[#e4beb8] bg-[#f0edec] shadow-[0_12px_32px_rgba(28,27,27,0.10)]"
-                        role="region"
-                        aria-label="{{ __('Peta area layanan KOOTA SERVICES') }}"
-                        data-locations="{{ json_encode($serviceLocations, JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_HEX_TAG) }}"
-                        data-marker-description="{{ __('Penanda perkiraan pusat kota') }}"
-                        data-unavailable="{{ __('Peta interaktif tidak tersedia saat ini. Daftar area layanan tetap tersedia di samping peta.') }}"
-                        data-tiles-unavailable="{{ __('Peta dasar tidak dapat dimuat. Penanda dan daftar area layanan tetap tersedia.') }}"
-                    >
-                        <p class="service-area-map__status" data-map-status role="status" aria-live="polite">
-                            {{ __('Memuat peta…') }}
-                        </p>
-
-                        <noscript>
-                            <p class="service-area-map__status">
-                                {{ __('Aktifkan JavaScript untuk melihat peta interaktif. Daftar area layanan tetap tersedia di samping peta.') }}
-                            </p>
-                        </noscript>
-                    </div>
-
-                    <p class="mt-3 text-xs leading-relaxed text-gray-500">
-                        {{ __('Penanda menunjukkan perkiraan pusat kota, bukan alamat kantor KOOTA SERVICES yang telah diverifikasi.') }}
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section: Komitmen Kami -->
-    <section class="py-20 bg-white border-b border-gray-100 text-center">
-        <div class="relative isolate max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-1/2 h-52 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,rgba(130,0,3,0.10),transparent_68%)]"></div>
-
-            <div class="relative z-10 space-y-6">
-                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">
-                    {{ __('Komitmen Kami') }}
+                <h2 id="commitment-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c1b1b] leading-tight">
+                    <span class="font-serif-brand italic font-normal text-gray-300">“</span>{{ __('Kita Wujudkan') }} <span class="text-[#820003] underline decoration-[#820003]/20 underline-offset-8">{{ __('Kota Bersih') }}</span><span class="font-serif-brand italic font-normal text-gray-300">”</span>
                 </h2>
 
-                <div class="text-3xl sm:text-4xl font-extrabold italic text-[#820003] tracking-tight">
-                    "{{ __('Kita Wujudkan') }} <span class="text-[#16a34a]">{{ __('Kota Bersih') }}</span>"
-                </div>
-
-                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto pt-2">
                     {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
                 </p>
             </div>
+
+            <!-- 3 Clean Value / Commitment Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Card 1: Ramah Lingkungan & Berkelanjutan -->
+                <div class="flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#820003]/30 group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#820003] shadow-2xs group-hover:bg-[#820003] group-hover:text-white transition-colors duration-300">
+                            <!-- Leaf / Eco SVG Icon -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21a9 9 0 0 1-9-9c0-4.97 4.03-9 9-9 4.15 0 7.63 2.82 8.65 6.69M12 21c4.97 0 9-4.03 9-9 0-1.42-.33-2.76-.92-3.96M12 21V11m0 0a4 4 0 0 1 4-4m-4 4a4 4 0 0 0-4-4"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
+                            {{ __('Standar Ramah Lingkungan') }}
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            {{ __('Penerapan bahan pembersih ramah lingkungan, manajemen limbah bertanggung jawab, serta efisiensi operasional untuk menjaga kelestarian alam.') }}
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-[#820003]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                        <span>{{ __('Operasional Berkelanjutan') }}</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Kenyamanan & Ruang Hidup Higienis -->
+                <div class="flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#820003]/30 group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#820003] shadow-2xs group-hover:bg-[#820003] group-hover:text-white transition-colors duration-300">
+                            <!-- Shield Check / Hygiene Icon -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
+                            {{ __('Ruang Hidup Higienis') }}
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            {{ __('Menciptakan ruang hunian dan fasilitas bisnis yang bersih higienis, bebas polutan, dan tertata rapi demi kesehatan dan produktivitas penghuninya.') }}
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-[#820003]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                        <span>{{ __('Kenyamanan Maksimal') }}</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Standar Terpadu di 4 Wilayah -->
+                <div class="flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#820003]/30 group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-white border border-gray-200/80 flex items-center justify-center text-[#820003] shadow-2xs group-hover:bg-[#820003] group-hover:text-white transition-colors duration-300">
+                            <!-- Map Pin / Building Network Icon -->
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+
+                        <h3 class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
+                            {{ __('Integritas di 4 Wilayah') }}
+                        </h3>
+
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            {{ __('Menjaga konsistensi standar mutu layanan fasilitas dengan SOP ketat dan jaminan pengerjaan bergaransi di Surabaya, Malang, Bali, dan Jakarta.') }}
+                        </p>
+                    </div>
+
+                    <div class="mt-6 pt-5 border-t border-gray-200/60 flex items-center gap-2 text-xs font-semibold text-[#820003]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                        <span>{{ __('Jangkauan Terpercaya') }}</span>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
