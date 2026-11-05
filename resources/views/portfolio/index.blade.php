@@ -149,19 +149,79 @@
                 </div>
 
                 <div class="max-w-4xl mx-auto">
-                    <div class="space-y-4" x-data="{ activeFaq: 1 }">
+                    <div 
+                        class="space-y-3 pt-4 sm:pt-6" 
+                        x-data="{ activeFaq: null, pinnedFaq: null }"
+                        @click.away="pinnedFaq = null; activeFaq = null"
+                    >
+                        <div class="mb-4 flex items-center justify-between text-xs text-gray-500 px-2">
+                            <span class="flex items-center gap-2 font-medium">
+                                <svg class="w-4 h-4 text-[#820003] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
+                                </svg>
+                                {{ __('Arahkan kursor ke pertanyaan untuk melihat jawaban') }}
+                            </span>
+                            <span class="text-[11px] text-gray-400 hidden sm:inline">{{ __('Hover / Sentuh') }}</span>
+                        </div>
+
                         @foreach($faqs as $faq)
-                            <div class="border-b border-gray-200 pb-4">
-                                <button @click="activeFaq = (activeFaq === {{ $faq->id }} ? null : {{ $faq->id }})" class="w-full flex items-center justify-between py-3 text-left focus:outline-none group">
-                                    <span class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
-                                        0{{ $loop->iteration }} {{ __($faq->question) }}
+                            <div 
+                                class="relative"
+                                @mouseenter="activeFaq = {{ $faq->id }}"
+                                @mouseleave="if (!pinnedFaq) activeFaq = null"
+                                @click="pinnedFaq = (pinnedFaq === {{ $faq->id }} ? null : {{ $faq->id }}); activeFaq = pinnedFaq"
+                            >
+                                <!-- Question Bar (Hover Target) -->
+                                <div 
+                                    class="w-full flex items-center justify-between p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer select-none"
+                                    :class="activeFaq === {{ $faq->id }} ? 'bg-red-50/70 border-red-200 shadow-md translate-x-1' : 'bg-white border-gray-200/80 hover:border-red-200 hover:bg-neutral-50/50 shadow-2xs'"
+                                >
+                                    <span 
+                                        class="text-sm sm:text-base font-bold text-gray-900 transition-colors leading-relaxed pr-4"
+                                        :class="{ 'text-[#820003]': activeFaq === {{ $faq->id }} }"
+                                    >
+                                        <span class="text-xs font-black text-[#820003] mr-2">0{{ $loop->iteration }}</span>
+                                        {{ __($faq->question) }}
                                     </span>
-                                    <svg class="w-5 h-5 text-gray-400 transition-transform duration-200" :class="{ 'rotate-180 text-[#820003]': activeFaq === {{ $faq->id }} }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                                    </svg>
-                                </button>
-                                <div x-show="activeFaq === {{ $faq->id }}" x-collapse class="mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed pr-6">
-                                    {{ __($faq->answer) }}
+
+                                    <div 
+                                        class="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-200"
+                                        :class="activeFaq === {{ $faq->id }} ? 'bg-[#820003] text-white rotate-90 shadow-2xs' : 'bg-gray-100 text-gray-400'"
+                                    >
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Answer Card (Mengambang di Atas Pertanyaan) -->
+                                <div 
+                                    x-show="activeFaq === {{ $faq->id }}"
+                                    x-cloak
+                                    x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 translate-y-2 scale-95"
+                                    x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                                    x-transition:leave-end="opacity-0 translate-y-2 scale-95"
+                                    class="absolute bottom-full left-0 right-0 mb-3 z-30 p-5 sm:p-6 rounded-2xl bg-white text-gray-800 border border-red-100 shadow-[0_20px_45px_rgba(130,0,3,0.14)] pointer-events-none"
+                                >
+                                    <div class="space-y-2">
+                                        <div class="flex items-center justify-between pb-2 border-b border-gray-100">
+                                            <span class="text-xs font-bold text-[#820003] uppercase tracking-wider flex items-center gap-1.5">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                                                {{ __('Jawaban') }}
+                                            </span>
+                                            <span class="text-[11px] text-gray-400 font-semibold tracking-wider">KOOTA FAQ</span>
+                                        </div>
+
+                                        <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal">
+                                            {{ __($faq->answer) }}
+                                        </p>
+                                    </div>
+
+                                    <!-- Downward Arrow Pointing to the Question -->
+                                    <div class="absolute -bottom-1.5 left-8 w-3.5 h-3.5 bg-white transform rotate-45 border-r border-b border-red-100"></div>
                                 </div>
                             </div>
                         @endforeach
