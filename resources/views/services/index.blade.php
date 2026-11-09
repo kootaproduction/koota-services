@@ -130,44 +130,25 @@
                 @endphp
 
                 @foreach($featuresList as $f)
-                    <div class="relative pt-3 group flex flex-col">
-                        <!-- Top Desk Calendar Binding Rings -->
-                        <div class="absolute top-0 left-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
-                        <div class="absolute top-0 right-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
-
-                        <!-- Calendar Sheet Card -->
-                        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between flex-1 group-hover:border-[#820003]/30">
+                    <div class="flex flex-col group">
+                        <!-- Clean Calendar Sheet Card -->
+                        <div class="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between flex-1 overflow-hidden group-hover:border-[#820003]/40">
                             <!-- Calendar Red Header Strip -->
-                            <div class="bg-[#820003] text-white px-5 py-2.5 flex items-center justify-between border-b border-[#660002] relative">
+                            <div class="bg-[#820003] text-white px-5 py-2.5 flex items-center justify-between">
                                 <span class="text-[11px] font-black uppercase tracking-widest text-white">
                                     STANDAR {{ $f['num'] }}
                                 </span>
-                                <div class="flex items-center gap-1.5 text-[10px] text-red-200 font-semibold tracking-wider uppercase">
-                                    <span>KOOTA</span>
-                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
-                                </div>
-                            </div>
-
-                            <!-- Calendar Date Block & Perforated Tear Line -->
-                            <div class="bg-[#fcfbfb] px-6 py-4 border-b border-dashed border-gray-200 flex items-center justify-between">
-                                <div class="flex items-baseline gap-2">
-                                    <span class="text-3xl sm:text-4xl font-black text-[#820003] tracking-tight font-serif-brand">
-                                        {{ $f['num'] }}
-                                    </span>
-                                    <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400">
-                                        {{ $f['tag'] }}
-                                    </span>
-                                </div>
-                                <div class="w-7 h-7 rounded-lg bg-red-50 text-[#820003] flex items-center justify-center font-bold">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                    </svg>
-                                </div>
+                                <span class="text-[10px] text-red-200 font-semibold uppercase tracking-wider">
+                                    {{ $f['tag'] }}
+                                </span>
                             </div>
 
                             <!-- Content Body -->
-                            <div class="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
-                                <div class="space-y-2">
+                            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <span class="text-3xl sm:text-4xl font-black text-[#820003] font-serif-brand block leading-none">
+                                        {{ $f['num'] }}
+                                    </span>
                                     <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors leading-snug">
                                         {{ $f['title'] }}
                                     </h3>
@@ -177,11 +158,8 @@
                                 </div>
 
                                 <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
-                                    <span class="flex items-center gap-1 font-medium text-gray-500">
-                                        <svg class="w-3.5 h-3.5 text-[#820003]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                        SOP Terverifikasi
-                                    </span>
-                                    <span class="text-[#820003] font-bold text-xs group-hover:translate-x-0.5 transition-transform">✓</span>
+                                    <span class="font-medium text-gray-500">SOP Terstandarisasi</span>
+                                    <span class="text-[#820003] font-bold">✓</span>
                                 </div>
                             </div>
                         </div>

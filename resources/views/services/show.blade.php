@@ -284,9 +284,30 @@
         </div>
     </section>
 
-    <!-- 3. CORE PHILOSOPHY & 4 VALUE PILLARS -->
-    <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <!-- 3. CORE PHILOSOPHY & 4 VALUE PILLARS (STACKED CALENDAR DECK) -->
+    <section id="pillar-section" class="py-20 bg-[#fcf9f8] border-b border-gray-100 overflow-hidden">
+        <div 
+            class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10"
+            x-data="{
+                isSpread: false,
+                scrolledIn: false,
+                init() {
+                    if ('IntersectionObserver' in window) {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    this.scrolledIn = true;
+                                    this.isSpread = true;
+                                }
+                            });
+                        }, { threshold: 0.25 });
+                        observer.observe(this.$el);
+                    }
+                }
+            }"
+            @mouseenter="isSpread = true"
+            @mouseleave="if (!scrolledIn) isSpread = false"
+        >
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
                     <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
@@ -301,10 +322,27 @@
                 <p class="text-xs sm:text-sm text-gray-500">
                     Nilai-nilai fundamental yang kami pegang teguh dalam setiap pengerjaan layanan.
                 </p>
+
+                <!-- Interactive Hint Pill -->
+                <div class="pt-2 flex justify-center">
+                    <button 
+                        type="button"
+                        @click="isSpread = !isSpread"
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-600 hover:text-[#820003] hover:border-[#820003]/30 shadow-2xs transition-all cursor-pointer"
+                    >
+                        <svg class="w-3.5 h-3.5 text-[#820003] transition-transform duration-300" :class="{ 'rotate-180': isSpread }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                        <span x-text="isSpread ? 'Tumpuk Kembali Lembaran Kalender' : 'Arahkan Kursor / Klik Untuk Menyebarkan Lembaran'"></span>
+                    </button>
+                </div>
             </div>
 
-            <!-- Calendar Style 4 Value Pillars -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-2">
+            <!-- Calendar Cards Container with Deck Stack Animation -->
+            <div 
+                class="calendar-deck-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 pb-2"
+                :class="{ 'is-spread': isSpread }"
+            >
                 @php
                     $pillarsList = [
                         ['num' => '01', 'sub' => 'Standar Mutu', 'data' => $pillar1],
@@ -314,47 +352,28 @@
                     ];
                 @endphp
 
-                @foreach($pillarsList as $p)
-                    <div class="relative pt-3 group flex flex-col">
-                        <!-- Top Desk Calendar Binding Rings -->
-                        <div class="absolute top-0 left-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
-                        <div class="absolute top-0 right-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
-
-                        <!-- Calendar Sheet Card -->
-                        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between flex-1 group-hover:border-[#820003]/30">
+                @foreach($pillarsList as $idx => $p)
+                    <div class="calendar-deck-card flex flex-col group">
+                        <!-- Clean Calendar Sheet -->
+                        <div class="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between flex-1 overflow-hidden group-hover:border-[#820003]/40">
                             
-                            <!-- Calendar Red Header Strip -->
-                            <div class="bg-[#820003] text-white px-5 py-2.5 flex items-center justify-between border-b border-[#660002] relative">
-                                <span class="text-[11px] font-black uppercase tracking-widest text-white">
+                            <!-- Clean Crimson Header Bar -->
+                            <div class="bg-[#820003] text-white px-5 py-2.5 flex items-center justify-between">
+                                <span class="text-[11px] font-black uppercase tracking-widest">
                                     PILAR {{ $p['num'] }}
                                 </span>
-                                <div class="flex items-center gap-1.5 text-[10px] text-red-200 font-semibold tracking-wider uppercase">
-                                    <span>KOOTA</span>
-                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
-                                </div>
+                                <span class="text-[10px] text-red-200 font-semibold uppercase tracking-wider">
+                                    {{ $p['sub'] }}
+                                </span>
                             </div>
 
-                            <!-- Calendar Date Block & Perforated Tear Line -->
-                            <div class="bg-[#fcfbfb] px-6 py-4 border-b border-dashed border-gray-200 flex items-center justify-between">
-                                <div class="flex items-baseline gap-2">
-                                    <span class="text-3xl sm:text-4xl font-black text-[#820003] tracking-tight font-serif-brand">
+                            <!-- Clean Sheet Body -->
+                            <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+                                <div class="space-y-3">
+                                    <span class="text-3xl sm:text-4xl font-black text-[#820003] font-serif-brand block leading-none">
                                         {{ $p['num'] }}
                                     </span>
-                                    <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400">
-                                        {{ $p['sub'] }}
-                                    </span>
-                                </div>
-                                <div class="w-7 h-7 rounded-lg bg-red-50 text-[#820003] flex items-center justify-center font-bold">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                    </svg>
-                                </div>
-                            </div>
-
-                            <!-- Content Body -->
-                            <div class="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
-                                <div class="space-y-2">
-                                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors leading-snug">
+                                    <h3 class="text-base sm:text-lg font-bold text-gray-900 leading-snug group-hover:text-[#820003] transition-colors">
                                         {{ $p['data']['title'] }}
                                     </h3>
                                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
@@ -363,11 +382,8 @@
                                 </div>
 
                                 <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
-                                    <span class="flex items-center gap-1 font-medium text-gray-500">
-                                        <svg class="w-3.5 h-3.5 text-[#820003]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                        SOP Terverifikasi
-                                    </span>
-                                    <span class="text-[#820003] font-bold text-xs group-hover:translate-x-0.5 transition-transform">✓</span>
+                                    <span class="font-medium text-gray-500">SOP Terstandarisasi</span>
+                                    <span class="text-[#820003] font-bold">✓</span>
                                 </div>
                             </div>
                         </div>
@@ -375,6 +391,93 @@
                 @endforeach
             </div>
         </div>
+
+        <style>
+            /* Smooth Transition for Deck Stacking & Fanning Out */
+            .calendar-deck-grid {
+                position: relative;
+            }
+
+            .calendar-deck-card {
+                transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 400ms ease, opacity 400ms ease;
+                will-change: transform;
+            }
+
+            /* Desktop Stacking (<lg spread by default, lg stacked when :not(.is-spread)) */
+            @media (min-width: 1024px) {
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(1) {
+                    transform: translateX(calc(150% + 2.25rem)) translateY(12px) rotate(-8deg) scale(0.95);
+                    z-index: 10;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(2) {
+                    transform: translateX(calc(50% + 0.75rem)) translateY(6px) rotate(-3deg) scale(0.97);
+                    z-index: 20;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(3) {
+                    transform: translateX(calc(-50% - 0.75rem)) translateY(2px) rotate(3deg) scale(0.99);
+                    z-index: 30;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(4) {
+                    transform: translateX(calc(-150% - 2.25rem)) translateY(0px) rotate(7deg) scale(1.0);
+                    z-index: 40;
+                }
+
+                .calendar-deck-grid.is-spread .calendar-deck-card {
+                    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+                    z-index: 1;
+                }
+            }
+
+            /* Tablet Stacking */
+            @media (min-width: 640px) and (max-width: 1023px) {
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(1) {
+                    transform: translateX(calc(50% + 0.75rem)) translateY(10px) rotate(-5deg) scale(0.95);
+                    z-index: 10;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(2) {
+                    transform: translateX(calc(-50% - 0.75rem)) translateY(6px) rotate(-2deg) scale(0.97);
+                    z-index: 20;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(3) {
+                    transform: translateX(calc(50% + 0.75rem)) translateY(-100%) rotate(2deg) scale(0.99);
+                    z-index: 30;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(4) {
+                    transform: translateX(calc(-50% - 0.75rem)) translateY(-100%) rotate(5deg) scale(1.0);
+                    z-index: 40;
+                }
+
+                .calendar-deck-grid.is-spread .calendar-deck-card {
+                    transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+                    z-index: 1;
+                }
+            }
+
+            /* Mobile Stacking */
+            @media (max-width: 639px) {
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(1) {
+                    transform: translateY(16px) rotate(-4deg) scale(0.94);
+                    z-index: 10;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(2) {
+                    transform: translateY(10px) rotate(-2deg) scale(0.96);
+                    z-index: 20;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(3) {
+                    transform: translateY(5px) rotate(2deg) scale(0.98);
+                    z-index: 30;
+                }
+                .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(4) {
+                    transform: translateY(0px) rotate(4deg) scale(1.0);
+                    z-index: 40;
+                }
+
+                .calendar-deck-grid.is-spread .calendar-deck-card {
+                    transform: translateY(0) rotate(0deg) scale(1);
+                    z-index: 1;
+                }
+            }
+        </style>
     </section>
 
     <!-- 4. KENAPA KLIEN MEMILIH KOOTA SERVICE (6 BENEFIT CARDS) -->
