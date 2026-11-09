@@ -322,20 +322,6 @@
                 <p class="text-xs sm:text-sm text-gray-500">
                     Nilai-nilai fundamental yang kami pegang teguh dalam setiap pengerjaan layanan.
                 </p>
-
-                <!-- Interactive Hint Pill -->
-                <div class="pt-2 flex justify-center">
-                    <button 
-                        type="button"
-                        @click="isSpread = !isSpread"
-                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white border border-gray-200 text-gray-600 hover:text-[#820003] hover:border-[#820003]/30 shadow-2xs transition-all cursor-pointer"
-                    >
-                        <svg class="w-3.5 h-3.5 text-[#820003] transition-transform duration-300" :class="{ 'rotate-180': isSpread }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                        <span x-text="isSpread ? 'Tumpuk Kembali Lembaran Kalender' : 'Arahkan Kursor / Klik Untuk Menyebarkan Lembaran'"></span>
-                    </button>
-                </div>
             </div>
 
             <!-- Calendar Cards Container with Deck Stack Animation -->
@@ -353,7 +339,11 @@
                 @endphp
 
                 @foreach($pillarsList as $idx => $p)
-                    <div class="calendar-deck-card flex flex-col group">
+                    <div 
+                        class="calendar-deck-card flex flex-col group cursor-pointer select-none active:scale-[0.98] transition-transform"
+                        @click="isSpread = !isSpread"
+                        title="Klik untuk menumpuk / menyebarkan kartu"
+                    >
                         <!-- Clean Calendar Sheet -->
                         <div class="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between flex-1 overflow-hidden group-hover:border-[#820003]/40">
                             
