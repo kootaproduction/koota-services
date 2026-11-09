@@ -98,51 +98,95 @@
                 </h2>
             </div>
 
-            <!-- 4 Points Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- 1 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="text-base font-black text-[#820003] tracking-tight">
-                        01
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-gray-900">Didukung SDM Ahli & Berpengalaman</h3>
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Kami hanya mengirimkan tenaga kerja pilihan yang telah memiliki jam terbang tinggi di bidangnya, memastikan setiap sudut rumah Anda ditangani oleh tangan-tangan profesional yang terampil.
-                    </p>
-                </div>
+            <!-- 4 Points Calendar Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-2">
+                @php
+                    $featuresList = [
+                        [
+                            'num' => '01',
+                            'tag' => 'SDM Unggulan',
+                            'title' => 'Didukung SDM Ahli & Berpengalaman',
+                            'desc' => 'Kami hanya mengirimkan tenaga kerja pilihan yang telah memiliki jam terbang tinggi di bidangnya, memastikan setiap sudut properti Anda ditangani oleh tangan-tangan profesional yang terampil.'
+                        ],
+                        [
+                            'num' => '02',
+                            'tag' => 'Jaminan Nyata',
+                            'title' => 'Jaminan Kualitas Hasil Kerja (Garansi)',
+                            'desc' => 'Kenyamanan Anda adalah prioritas utama. Kami memberikan garansi penuh atas setiap layanan—jika hasil pekerjaan belum sesuai standar, kami siap memperbaikinya untuk Anda.'
+                        ],
+                        [
+                            'num' => '03',
+                            'tag' => 'Respon Siaga',
+                            'title' => 'Dukungan Layanan Pelanggan 24/7',
+                            'desc' => 'Tim Customer Service kami aktif dan siap sedia setiap saat untuk membantu kebutuhan mendesak Anda, lengkap dengan layanan purnajual (after-sales) yang responsif.'
+                        ],
+                        [
+                            'num' => '04',
+                            'tag' => 'Solusi Terpadu',
+                            'title' => 'Solusi Perawatan Fasilitas Terintegrasi',
+                            'desc' => 'Mulai dari pembersihan total, perawatan AC, perbaikan listrik/air, hingga jasa tukang harian—semua kebutuhan perawatan properti Anda tersedia dalam satu layanan praktis.'
+                        ],
+                    ];
+                @endphp
 
-                <!-- 2 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="text-base font-black text-[#820003] tracking-tight">
-                        02
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-gray-900">Jaminan Kualitas Hasil Kerja (Garansi)</h3>
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Kenyamanan Anda adalah prioritas utama. Kami memberikan garansi penuh atas setiap layanan—jika hasil pekerjaan belum sesuai standar, kami siap memperbaikinya untuk Anda.
-                    </p>
-                </div>
+                @foreach($featuresList as $f)
+                    <div class="relative pt-3 group flex flex-col">
+                        <!-- Top Desk Calendar Binding Rings -->
+                        <div class="absolute top-0 left-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
+                        <div class="absolute top-0 right-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
 
-                <!-- 3 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="text-base font-black text-[#820003] tracking-tight">
-                        03
-                    </div>
-                    <h3 class="text-base sm:text-lg font-bold text-gray-900">Dukungan Layanan Pelanggan 24/7</h3>
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Tim Customer Service kami aktif dan siap sedia setiap saat untuk membantu kebutuhan mendesak Anda, lengkap dengan layanan purnajual (after-sales) yang responsif.
-                    </p>
-                </div>
+                        <!-- Calendar Sheet Card -->
+                        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between flex-1 group-hover:border-[#820003]/30">
+                            <!-- Calendar Red Header Strip -->
+                            <div class="bg-[#820003] text-white px-5 py-2.5 flex items-center justify-between border-b border-[#660002] relative">
+                                <span class="text-[11px] font-black uppercase tracking-widest text-white">
+                                    STANDAR {{ $f['num'] }}
+                                </span>
+                                <div class="flex items-center gap-1.5 text-[10px] text-red-200 font-semibold tracking-wider uppercase">
+                                    <span>KOOTA</span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                                </div>
+                            </div>
 
-                <!-- 4 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-3">
-                    <div class="text-base font-black text-[#820003] tracking-tight">
-                        04
+                            <!-- Calendar Date Block & Perforated Tear Line -->
+                            <div class="bg-[#fcfbfb] px-6 py-4 border-b border-dashed border-gray-200 flex items-center justify-between">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-3xl sm:text-4xl font-black text-[#820003] tracking-tight font-serif-brand">
+                                        {{ $f['num'] }}
+                                    </span>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400">
+                                        {{ $f['tag'] }}
+                                    </span>
+                                </div>
+                                <div class="w-7 h-7 rounded-lg bg-red-50 text-[#820003] flex items-center justify-center font-bold">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Content Body -->
+                            <div class="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
+                                <div class="space-y-2">
+                                    <h3 class="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors leading-snug">
+                                        {{ $f['title'] }}
+                                    </h3>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                        {{ $f['desc'] }}
+                                    </p>
+                                </div>
+
+                                <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-medium text-gray-500">
+                                        <svg class="w-3.5 h-3.5 text-[#820003]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                        SOP Terverifikasi
+                                    </span>
+                                    <span class="text-[#820003] font-bold text-xs group-hover:translate-x-0.5 transition-transform">✓</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-base sm:text-lg font-bold text-gray-900">Solusi Perawatan Rumah Terintegrasi</h3>
-                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Mulai dari pembersihan total, perawatan AC, perbaikan listrik/air, hingga jasa tukang harian—semua kebutuhan perawatan properti Anda tersedia dalam satu layanan praktis.
-                    </p>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

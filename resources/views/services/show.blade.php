@@ -303,46 +303,76 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Pillar 1 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">01</span>
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
-                    </div>
-                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar1['title'] }}</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar1['desc'] }}</p>
-                </div>
+            <!-- Calendar Style 4 Value Pillars -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-2">
+                @php
+                    $pillarsList = [
+                        ['num' => '01', 'sub' => 'Standar Mutu', 'data' => $pillar1],
+                        ['num' => '02', 'sub' => 'Eksekusi Aman', 'data' => $pillar2],
+                        ['num' => '03', 'sub' => 'Tim Ahli SOP', 'data' => $pillar3],
+                        ['num' => '04', 'sub' => 'Hasil Bergaransi', 'data' => $pillar4],
+                    ];
+                @endphp
 
-                <!-- Pillar 2 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">02</span>
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
-                    </div>
-                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar2['title'] }}</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar2['desc'] }}</p>
-                </div>
+                @foreach($pillarsList as $p)
+                    <div class="relative pt-3 group flex flex-col">
+                        <!-- Top Desk Calendar Binding Rings -->
+                        <div class="absolute top-0 left-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
+                        <div class="absolute top-0 right-8 w-3 h-4 bg-neutral-300 rounded-full border border-neutral-400 shadow-2xs z-20"></div>
 
-                <!-- Pillar 3 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">03</span>
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
-                    </div>
-                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar3['title'] }}</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar3['desc'] }}</p>
-                </div>
+                        <!-- Calendar Sheet Card -->
+                        <div class="bg-white rounded-2xl overflow-hidden border border-gray-200/90 shadow-[0_4px_16px_rgba(0,0,0,0.03)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between flex-1 group-hover:border-[#820003]/30">
+                            
+                            <!-- Calendar Red Header Strip -->
+                            <div class="bg-[#820003] text-white px-5 py-2.5 flex items-center justify-between border-b border-[#660002] relative">
+                                <span class="text-[11px] font-black uppercase tracking-widest text-white">
+                                    PILAR {{ $p['num'] }}
+                                </span>
+                                <div class="flex items-center gap-1.5 text-[10px] text-red-200 font-semibold tracking-wider uppercase">
+                                    <span>KOOTA</span>
+                                    <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                                </div>
+                            </div>
 
-                <!-- Pillar 4 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">04</span>
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                            <!-- Calendar Date Block & Perforated Tear Line -->
+                            <div class="bg-[#fcfbfb] px-6 py-4 border-b border-dashed border-gray-200 flex items-center justify-between">
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-3xl sm:text-4xl font-black text-[#820003] tracking-tight font-serif-brand">
+                                        {{ $p['num'] }}
+                                    </span>
+                                    <span class="text-[11px] font-bold uppercase tracking-wider text-gray-400">
+                                        {{ $p['sub'] }}
+                                    </span>
+                                </div>
+                                <div class="w-7 h-7 rounded-lg bg-red-50 text-[#820003] flex items-center justify-center font-bold">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Content Body -->
+                            <div class="p-6 flex-1 flex flex-col justify-between space-y-4 bg-white">
+                                <div class="space-y-2">
+                                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors leading-snug">
+                                        {{ $p['data']['title'] }}
+                                    </h3>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                        {{ $p['data']['desc'] }}
+                                    </p>
+                                </div>
+
+                                <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
+                                    <span class="flex items-center gap-1 font-medium text-gray-500">
+                                        <svg class="w-3.5 h-3.5 text-[#820003]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                        SOP Terverifikasi
+                                    </span>
+                                    <span class="text-[#820003] font-bold text-xs group-hover:translate-x-0.5 transition-transform">✓</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar4['title'] }}</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar4['desc'] }}</p>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
