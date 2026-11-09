@@ -159,15 +159,21 @@
                         </div>
                         <ul class="text-xs sm:text-sm text-gray-700 space-y-2.5 leading-relaxed">
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                </span>
                                 <span>Pencegahan dini melalui pemeliharaan berkala jauh lebih hemat dibanding perbaikan kerusakan struktural.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                </span>
                                 <span>Pemilahan dan jadwal sanitasi teratur melindungi keluarga dan penghuni dari bibit penyakit serta alergen.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                </span>
                                 <span>Gunakan tenaga profesional bersertifikat untuk memastikan standar pengerjaan aman dan bergaransi resmi.</span>
                             </li>
                         </ul>

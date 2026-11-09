@@ -51,12 +51,12 @@ class ConsultationController extends Controller
         $adminPhone = '6281217597109'; // KOOTA Service admin phone
         $waMessage = rawurlencode(
             "Halo KOOTA SERVICES, saya *{$consultation->name}* ingin berkonsultasi mengenai *{$consultation->service_type}*.\n\n" .
-            "📍 Kota: {$consultation->location}\n" .
-            ($consultation->address ? "🏠 Alamat: {$consultation->address}\n" : "") .
-            "🏢 Jenis Properti: {$consultation->property_type}\n" .
-            "📱 WhatsApp: {$consultation->whatsapp}\n" .
-            "✉️ Email: {$consultation->email}\n" .
-            "📝 Catatan: {$consultation->notes}"
+            "- Kota: {$consultation->location}\n" .
+            ($consultation->address ? "- Alamat: {$consultation->address}\n" : "") .
+            "- Jenis Properti: {$consultation->property_type}\n" .
+            "- WhatsApp: {$consultation->whatsapp}\n" .
+            "- Email: {$consultation->email}\n" .
+            "- Catatan: {$consultation->notes}"
         );
         $waUrl = "https://wa.me/{$adminPhone}?text={$waMessage}";
 

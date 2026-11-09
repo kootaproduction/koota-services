@@ -279,9 +279,9 @@
                                             <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#820003]">
                                                 {{ __('Facility Service') }}
                                             </span>
-                                            <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all"
+                                            <span class="w-5 h-5 rounded-full flex items-center justify-center transition-all"
                                                   :class="selectedService === 'Pembersihan Rumah' || selectedService === 'Home Cleaning' || selectedService === 'Cleaning Service' ? 'bg-[#820003] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
-                                                ✓
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                             </span>
                                         </div>
 
@@ -306,9 +306,9 @@
                                             <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#820003]">
                                                 {{ __('Tukang & Renovasi') }}
                                             </span>
-                                            <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all"
+                                            <span class="w-5 h-5 rounded-full flex items-center justify-center transition-all"
                                                   :class="selectedService === 'Perbaikan Rumah' || selectedService === 'Jasa Tukang & Renovasi' ? 'bg-[#820003] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
-                                                ✓
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                             </span>
                                         </div>
 
@@ -333,9 +333,9 @@
                                             <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#820003]">
                                                 {{ __('Limbah & Puing') }}
                                             </span>
-                                            <span class="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all"
+                                            <span class="w-5 h-5 rounded-full flex items-center justify-center transition-all"
                                                   :class="selectedService === 'Pengangkutan Sampah' ? 'bg-[#820003] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
-                                                ✓
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                             </span>
                                         </div>
 

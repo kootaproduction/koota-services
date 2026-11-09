@@ -44,8 +44,9 @@
                          @click="currentPhoto = '{{ $photo }}'; lightbox = true">
                         <img src="{{ $photo }}" alt="{{ $project->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <span class="px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-gray-900 shadow-md">
-                                🔍 {{ __('Perbesar Foto') }}
+                            <span class="px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-gray-900 shadow-md flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                <span>{{ __('Perbesar Foto') }}</span>
                             </span>
                         </div>
                     </div>
