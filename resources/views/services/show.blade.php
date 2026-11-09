@@ -7,9 +7,9 @@
     <div class="bg-white border-b border-gray-100 py-3 text-xs text-gray-500">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-2">
             <a href="{{ route('home') }}" class="hover:text-[#820003] transition-colors">{{ __('Home') }}</a>
-            <span>›</span>
+            <span class="text-gray-300">/</span>
             <a href="{{ route('services.index') }}" class="hover:text-[#820003] transition-colors">{{ __('Layanan') }}</a>
-            <span>›</span>
+            <span class="text-gray-300">/</span>
             <span class="font-bold text-gray-900">{{ __($service->title) }}</span>
         </div>
     </div>
@@ -178,50 +178,59 @@
         }
     @endphp
 
-    <!-- 1. HERO SECTION (Hook + Scope Pills + Green Urgent CTA) -->
-    <section class="relative bg-neutral-900 text-white py-24 md:py-32 overflow-hidden border-b border-neutral-800">
+    <!-- 1. HERO SECTION -->
+    <section class="relative bg-neutral-950 text-white py-24 md:py-32 overflow-hidden border-b border-neutral-900">
+        <!-- Background Image with Editorial Vignette & Radial Crimson Glow -->
         <div class="absolute inset-0 z-0">
-            <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover opacity-35 filter brightness-90">
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-900/80 to-transparent"></div>
+            <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover opacity-25 filter brightness-75 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/85 to-neutral-950/60"></div>
+            <div aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#820003]/20 rounded-full blur-3xl pointer-events-none"></div>
         </div>
 
         <div class="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <!-- Badge Pill -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-[#25d366]/20 text-[#80f98b] border border-[#25d366]/40 backdrop-blur-md shadow-xs">
-                <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                <span>Standar Kualitas Premium KOOTA SERVICE</span>
+            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/15 backdrop-blur-md shadow-xs">
+                <span class="w-2 h-2 rounded-full bg-[#820003] animate-pulse"></span>
+                <span class="tracking-widest uppercase text-[11px] font-bold">KOOTA PREMIUM SERVICE</span>
             </div>
 
             <!-- Main Heading Hook -->
-            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight max-w-4xl mx-auto">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl mx-auto">
                 {{ $heroHook }}
             </h1>
 
             <!-- Sub Scope Pills -->
-            <p class="text-xs sm:text-sm text-gray-300 max-w-3xl mx-auto leading-relaxed font-semibold tracking-wide">
-                {{ $heroSubPills }}
-            </p>
+            <div class="flex flex-wrap justify-center items-center gap-2 max-w-3xl mx-auto pt-1">
+                @foreach(explode(', ', $heroSubPills) as $pill)
+                    <span class="px-3.5 py-1 rounded-full text-xs font-medium bg-white/10 text-gray-200 border border-white/15 backdrop-blur-xs">
+                        {{ $pill }}
+                    </span>
+                @endforeach
+            </div>
 
-            <!-- Urgent Green CTA WhatsApp -->
-            <div class="pt-4 flex justify-center">
-                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#25d366] hover:bg-[#20ba59] text-white font-extrabold text-sm sm:text-base transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 ring-4 ring-green-400/25">
+            <!-- Dual CTAs -->
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-sm sm:text-base transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
-                    <span>Konsultasi Gratis Sekarang</span>
+                    <span>Konsultasi via WhatsApp</span>
+                </a>
+
+                <a href="#detail-layanan" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base border border-white/20 backdrop-blur-md transition-all">
+                    <span>Pelajari Lingkup Layanan</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- 2. VENDOR CREDIBILITY & VALUE INTRO SECTION -->
-    <section class="py-20 bg-white border-b border-gray-100">
+    <section id="detail-layanan" class="py-20 bg-white border-b border-gray-100 scroll-mt-20">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-3 mb-1.5">
+                    <div class="inline-flex items-center gap-3">
                         <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
                         <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
                             {{ __('Komitmen Kualitas Tinggi') }}
@@ -236,19 +245,39 @@
                     <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
                         {{ $credP2 }}
                     </p>
-                    <div class="pt-2">
-                        <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold text-sm shadow-md hover:shadow-lg transition-all active:scale-95">
+                    <div class="pt-2 flex flex-wrap items-center gap-4">
+                        <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                             </svg>
-                            <span>Konsultasikan Sekarang!!</span>
+                            <span>{{ __('Konsultasi Layanan') }}</span>
+                        </a>
+
+                        <a href="{{ route('consultation.index') }}" class="inline-flex items-center px-6 py-3.5 rounded-xl border border-gray-300 hover:border-[#820003] bg-white text-gray-800 hover:text-[#820003] font-semibold text-xs sm:text-sm transition-all shadow-2xs">
+                            <span>{{ __('Form Estimasi Jadwal') }}</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5">
-                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white">
-                        <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-[400px] object-cover">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white group">
+                        <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+
+                        <!-- Trust Card Overlays -->
+                        <div class="absolute bottom-6 inset-x-6 space-y-2.5 z-10">
+                            <div class="flex items-center gap-2.5 p-3 rounded-2xl bg-white/95 backdrop-blur-md shadow-md text-xs font-bold text-gray-900">
+                                <span class="w-6 h-6 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                                </span>
+                                <span>Garansi Kualitas & SOP Pengerjaan Ketat</span>
+                            </div>
+
+                            <div class="flex items-center justify-between text-[11px] text-white/90 font-medium px-2">
+                                <span>Wilayah Layanan Resmi</span>
+                                <span class="font-bold text-white">Surabaya • Malang • Bali • Jakarta</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -259,6 +288,13 @@
     <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Fondasi Layanan') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     {{ $philTitle }}
                 </h2>
@@ -269,33 +305,49 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Pillar 1 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
-                    <h3 class="text-base font-bold text-gray-900">{{ $pillar1['title'] }}</h3>
+                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">01</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar1['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar1['desc'] }}</p>
                 </div>
 
                 <!-- Pillar 2 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
-                    <h3 class="text-base font-bold text-gray-900">{{ $pillar2['title'] }}</h3>
+                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">02</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar2['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar2['desc'] }}</p>
                 </div>
 
                 <!-- Pillar 3 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
-                    <h3 class="text-base font-bold text-gray-900">{{ $pillar3['title'] }}</h3>
+                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">03</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar3['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar3['desc'] }}</p>
                 </div>
 
                 <!-- Pillar 4 -->
-                <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs space-y-2">
-                    <h3 class="text-base font-bold text-gray-900">{{ $pillar4['title'] }}</h3>
+                <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 group">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-[#820003] tracking-widest uppercase">04</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                    </div>
+                    <h3 class="text-base font-bold text-gray-900 group-hover:text-[#820003] transition-colors">{{ $pillar4['title'] }}</h3>
                     <p class="text-xs text-gray-600 leading-relaxed">{{ $pillar4['desc'] }}</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. KENAPA KLIEN TERNAMA MEMILIH KOOTA SERVICE (6 BENEFIT CARDS) -->
+    <!-- 4. KENAPA KLIEN MEMILIH KOOTA SERVICE (6 BENEFIT CARDS) -->
     <section class="py-20 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
             <div class="text-center max-w-3xl mx-auto space-y-3">
@@ -307,7 +359,7 @@
                     <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
-                    Kenapa Klien Ternama Memilih KOOTA SERVICE?
+                    Kenapa Klien Memilih KOOTA SERVICE?
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {{ $whyLead }}
@@ -316,8 +368,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($whyCards as $idx => $card)
-                    <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-100 shadow-2xs hover:shadow-lg transition-all space-y-3">
-                        <span class="text-2xl font-black text-[#820003] block">0{{ $idx + 1 }}</span>
+                    <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3">
+                        <span class="text-2xl font-black text-[#820003] block tracking-tight">0{{ $idx + 1 }}</span>
                         <h3 class="text-lg font-bold text-gray-900">{{ $card['title'] }}</h3>
                         <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">{{ $card['desc'] }}</p>
                     </div>
@@ -329,9 +381,13 @@
     <!-- 5. NARRATIVE EXCELLENCE / CRAFTSMANSHIP -->
     <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
         <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-[#16a34a] block">
-                PENGALAMAN NYATA & BEBAS CEMAS
-            </span>
+            <div class="inline-flex items-center gap-3">
+                <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    {{ __('Pengalaman Nyata & Bebas Cemas') }}
+                </span>
+                <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+            </div>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1c1b1b] tracking-tight leading-tight">
                 {{ $narrativeHeading }}
             </h2>
@@ -341,62 +397,75 @@
             <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {{ $narrativeP2 }}
             </p>
-            <p class="text-xs sm:text-sm font-semibold text-gray-700 leading-relaxed bg-white p-6 rounded-2xl border border-gray-200 shadow-2xs">
-                {{ $narrativeP3 }}
-            </p>
+            <div class="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200/90 shadow-2xs border-l-4 border-l-[#820003] text-left max-w-3xl mx-auto">
+                <p class="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed italic">
+                    "{{ $narrativeP3 }}"
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- 6. SOCIAL PROOF & PROJECT GALLERY (TELAH DIPERCAYA RATUSAN KLIEN DARI BERBAGAI INDUSTRI) -->
+    <!-- 6. SOCIAL PROOF & PROJECT GALLERY -->
     <section class="py-20 bg-white border-b border-gray-100" x-data="{ activeCategory: '{{ $categories[0] }}' }">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <div class="space-y-3">
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Portofolio & Bukti Pengerjaan') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
-                    Telah Dipercaya Ratusan Klien Dari <span class="bg-gray-200 text-[#1c1b1b] px-2.5 py-0.5 rounded-lg">Berbagai Industri</span>
+                    Telah Dipercaya Ratusan Klien di Berbagai Sektor
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                    UMKM, Brand Nasional, Instansi Pemerintah, Restoran, Toko, Klinik, Cafe, hingga Mall.
+                    Hunian Pribadi, Apartemen, Kantor Bisnis, Kafe & Resto, hingga Fasilitas Komersial.
                 </p>
             </div>
 
-            <!-- Category Pills matching screenshot -->
-            <div class="flex flex-wrap justify-center items-center gap-3 pt-2">
+            <!-- Category Filter Pills -->
+            <div class="flex flex-wrap justify-center items-center gap-2.5 pt-2">
                 @foreach($categories as $cat)
                     <button type="button" 
                             @click="activeCategory = '{{ $cat }}'" 
-                            :class="activeCategory === '{{ $cat }}' ? 'bg-white text-gray-900 border border-gray-200 shadow-sm font-bold' : 'bg-[#1c1b1b] text-white hover:bg-neutral-800 font-medium'"
-                            class="px-6 py-2.5 rounded-full text-xs sm:text-sm transition-all cursor-pointer">
+                            :class="activeCategory === '{{ $cat }}' ? 'bg-[#820003] text-white shadow-xs font-bold' : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 font-medium'"
+                            class="px-5 py-2 rounded-full text-xs sm:text-sm transition-all cursor-pointer">
                         {{ $cat }}
                     </button>
                 @endforeach
             </div>
 
             <!-- Dynamic Sub-header: Project <activeCategory> -->
-            <div class="pt-2 pb-2">
-                <p class="text-sm sm:text-base font-medium text-gray-600">
-                    Project <span x-text="activeCategory" class="font-bold text-gray-900"></span>
+            <div class="pt-2 pb-1">
+                <p class="text-xs sm:text-sm font-medium text-gray-500">
+                    Kategori: <span x-text="activeCategory" class="font-bold text-[#820003]"></span>
                 </p>
             </div>
 
-            <!-- 3 Clean Photo Slots -->
+            <!-- 3 Clean Photo Showcase Cards -->
             @php
                 $displayProjects = $projects->where('is_video', false)->values();
             @endphp
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left">
                 @for($i = 0; $i < 3; $i++)
                     @if(isset($displayProjects[$i]))
-                        <div class="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 border border-gray-100 bg-white group aspect-[4/3] relative">
+                        <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
                             <img src="{{ $displayProjects[$i]->image }}" alt="{{ $displayProjects[$i]->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
+                                <span class="text-xs font-bold text-white drop-shadow-sm">{{ $displayProjects[$i]->title }}</span>
+                            </div>
                         </div>
                     @else
-                        <div class="rounded-2xl sm:rounded-3xl border-2 border-dashed border-gray-200 bg-gray-50/70 aspect-[4/3] flex flex-col items-center justify-center p-6 text-center group hover:border-gray-300 transition-colors">
-                            <div class="w-12 h-12 rounded-2xl bg-white border border-gray-200 flex items-center justify-center text-gray-400 shadow-2xs mb-2.5 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
+                        <!-- Fallback Service Feature Showcase (Clean, No Wireframe Text) -->
+                        <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
+                            <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent flex flex-col justify-end p-5 text-white">
+                                <span class="text-[10px] font-bold text-red-300 uppercase tracking-wider mb-1">Standar KOOTA SERVICE</span>
+                                <h4 class="text-sm font-bold leading-snug">
+                                    {{ $i === 0 ? 'Eksekusi Presisi di Lokasi' : ($i === 1 ? 'Peralatan & SOP Higienis' : 'Hasil Pengerjaan Bergaransi') }}
+                                </h4>
                             </div>
-                            <span class="text-xs font-bold text-gray-500">Slot Foto Dokumentasi</span>
-                            <span class="text-[11px] text-gray-400 mt-1">Area penambahan foto proyek</span>
                         </div>
                     @endif
                 @endfor
@@ -452,8 +521,8 @@
              @click="videoModal = false; currentVideoUrl = ''"
              style="display: none;">
             <div class="relative w-full max-w-md bg-black rounded-3xl overflow-hidden shadow-2xl aspect-[9/16] max-h-[85vh]" @click.stop>
-                <button @click="videoModal = false; currentVideoUrl = ''" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black transition-colors" aria-label="Tutup Video">
-                                    Tutup
+                <button @click="videoModal = false; currentVideoUrl = ''" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="Tutup Video">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
                 <template x-if="videoModal && currentVideoUrl">
                     <iframe :src="currentVideoUrl" class="w-full h-full border-0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
@@ -465,34 +534,48 @@
     <!-- 9. TESTIMONIAL PELANGGAN (6 AUTHENTIC REVIEWS) -->
     <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <span class="text-xs font-extrabold uppercase tracking-widest text-[#16a34a] block">
-                    ULASAN TESTIMONIAL PELANGGAN
-                </span>
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Kepuasan Pelanggan') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     Cerita Nyata Dari Klien Kami
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500">
-                    Bukan hanya menyelesaikan proyek, tapi juga menciptakan pengalaman dan kenyamanan bermakna.
+                    Bukan hanya menyelesaikan pekerjaan, tapi juga menciptakan kenyamanan dan standar higienis yang bermakna.
                 </p>
             </div>
 
-            <!-- Testimonial Cards Grid -->
+            <!-- Testimonial Cards Grid with SVG Star Ratings -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($testimonials as $testi)
-                    <div class="bg-white p-7 rounded-3xl border border-gray-100 shadow-2xs flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+                    <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-lg hover:border-[#820003]/20 transition-all flex flex-col justify-between space-y-5">
                         <div class="space-y-3">
+                            <!-- 5-Star Clean SVG Rating -->
+                            <div class="flex items-center gap-1 text-amber-400">
+                                @for($i = 1; $i <= 5; $i++)
+                                    <svg class="w-4 h-4 fill-amber-400 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                    </svg>
+                                @endfor
+                            </div>
+
                             <p class="text-xs sm:text-sm text-gray-700 leading-relaxed italic">
                                 "{{ $testi['text'] }}"
                             </p>
                         </div>
+
                         <div class="flex items-center gap-3 pt-3 border-t border-gray-100">
-                            <div class="w-10 h-10 rounded-full bg-red-50 text-[#820003] font-black text-xs flex items-center justify-center shrink-0">
+                            <div class="w-10 h-10 rounded-full bg-red-50 text-[#820003] font-black text-xs flex items-center justify-center shrink-0 border border-red-100">
                                 {{ $testi['initials'] }}
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold text-gray-900 leading-tight">{{ $testi['name'] }}</h4>
-                                <p class="text-[11px] text-gray-400">{{ $testi['role'] }} / {{ $testi['loc'] }}</p>
+                                <p class="text-[11px] text-gray-500 font-medium">{{ $testi['role'] }} • <span class="text-gray-400">{{ $testi['loc'] }}</span></p>
                             </div>
                         </div>
                     </div>
@@ -505,37 +588,44 @@
     <section class="py-20 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
+                <div class="inline-flex items-center justify-center gap-3">
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        {{ __('Metodologi Kerja') }}
+                    </span>
+                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
                     Proses Tertata Untuk Hasil Sempurna
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Setiap Tahapan Dirancang untuk Menjamin Kesempurnaan. Dari Perencanaan Hingga Eksekusi, Semua Terkelola dengan Presisi.
+                    Setiap tahapan dirancang untuk menjamin kesempurnaan dan kepuasan pelanggan secara transparan.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Step 1 -->
-                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-100 shadow-2xs space-y-3 relative">
-                    <span class="text-3xl font-black text-[#820003] block">01</span>
-                    <h3 class="text-lg font-bold text-gray-900">Konsultasi & Penjadwalan Cepat</h3>
+                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 relative group">
+                    <span class="text-3xl font-black text-[#820003] block tracking-tight">01</span>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors">Konsultasi & Penjadwalan Cepat</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         Diskusikan kebutuhan spesifik Anda bersama Customer Care kami via WhatsApp. Kami berikan estimasi transparan dan jadwalkan kunjungan tepat waktu.
                     </p>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-100 shadow-2xs space-y-3 relative">
-                    <span class="text-3xl font-black text-[#16a34a] block">02</span>
-                    <h3 class="text-lg font-bold text-gray-900">Fase Eksekusi Profesional & Berkualitas</h3>
+                <!-- Step 2 (Consistent Brand Styling) -->
+                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 relative group">
+                    <span class="text-3xl font-black text-[#820003] block tracking-tight">02</span>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors">Eksekusi Profesional Berstandar SOP</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         Tenaga kerja ahli pilihan kami hadir on-site dengan peralatan lengkap dan material terstandar, bekerja disiplin mengikuti SOP ketat.
                     </p>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-100 shadow-2xs space-y-3 relative">
-                    <span class="text-3xl font-black text-[#820003] block">03</span>
-                    <h3 class="text-lg font-bold text-gray-900">Quality Control & Aktivasi Garansi</h3>
+                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 relative group">
+                    <span class="text-3xl font-black text-[#820003] block tracking-tight">03</span>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors">Quality Control & Aktivasi Garansi</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         Pemeriksaan hasil akhir bersama klien untuk memastikan kepuasan menyeluruh. Jika ada yang belum sesuai, kami perbaiki tuntas bergaransi.
                     </p>
@@ -544,7 +634,7 @@
         </div>
     </section>
 
-    <!-- 11. BANNER CTA KONSULTASI (GAMBAR 3 WITH KENZO YANUAR) + URGENCY CLOSING -->
+    <!-- 11. BANNER CTA KONSULTASI PREMIUM (WITH KENZO YANUAR) -->
     <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <!-- Hook Heading -->
@@ -553,34 +643,49 @@
                     {{ $ctaHook }}
                 </h3>
                 <p class="text-xs sm:text-sm text-gray-600">
-                    Klik tombol di bawah dan dapatkan konsultasi gratis + penawaran spesial hari ini!
+                    Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik sesuai kebutuhan Anda.
                 </p>
             </div>
 
-            <!-- Card Banner Gambar 3 Exact Layout -->
-            <div class="relative bg-[#d6d8db] rounded-3xl overflow-hidden shadow-xl border border-gray-300">
-                <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            <!-- Card Banner Premium Dark -->
+            <div class="relative bg-[#1c1b1b] rounded-3xl overflow-hidden shadow-2xl border border-neutral-800 text-white">
+                <!-- Ambient Subtle Crimson Glow -->
+                <div aria-hidden="true" class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#820003]/25 blur-3xl pointer-events-none"></div>
+                <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#820003]/15 blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
                     <!-- Left Content -->
-                    <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-4 z-10">
-                        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1b1b] tracking-tight leading-snug">
+                    <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-red-200 text-xs font-semibold tracking-wide border border-white/10">
+                            <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                            <span>KONSULTASI BEBAS BIAYA</span>
+                        </div>
+
+                        <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                             Konsultasi Masalah dan Perawatan Rumah Gratis
                         </h3>
-                        <p class="text-gray-700 text-xs sm:text-sm sm:leading-relaxed max-w-xl">
-                            Ceritakan kebutuhan Anda, kami siap bantu jadwalkan kunjungan tenaga ahli untuk solusi rumah bersih dan terawat.
+
+                        <p class="text-gray-300 text-xs sm:text-sm sm:leading-relaxed max-w-xl">
+                            Ceritakan kebutuhan Anda, kami siap bantu jadwalkan kunjungan tenaga ahli untuk solusi hunian bersih, rapi, dan terawat.
                         </p>
-                        <div class="pt-3">
-                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all active:scale-95">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+
+                        <div class="pt-4 flex flex-wrap items-center gap-3">
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95">
+                                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                 </svg>
-                                <span>Konsultasi Dengan Ahlinya</span>
+                                <span>Konsultasi via WhatsApp</span>
+                            </a>
+
+                            <a href="{{ route('consultation.index') }}" class="inline-flex items-center px-6 py-3.5 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs sm:text-sm transition-all">
+                                <span>Form Reservasi</span>
                             </a>
                         </div>
                     </div>
 
                     <!-- Right Image: Kenzo Yanuar (CEO) -->
                     <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end pt-4 lg:pt-0 overflow-hidden">
-                        <img src="/images/kenzo-yanuar.png" alt="Kenzo Yanuar - CEO Koota Production" class="w-auto h-72 sm:h-80 md:h-96 object-contain object-bottom select-none">
+                        <img src="{{ asset('images/kenzo-yanuar.png') }}" alt="Kenzo Yanuar - CEO Koota Production" class="w-auto h-72 sm:h-80 md:h-96 object-contain object-bottom select-none drop-shadow-2xl">
                     </div>
                 </div>
             </div>
@@ -696,11 +801,11 @@
                             Tim kami siap membantu Anda! Hubungi kami langsung untuk konsultasi gratis dan solusi terbaik sesuai kebutuhan Anda.
                         </p>
                         <div class="pt-2">
-                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20tanya-tanya%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20tanya-tanya%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                 </svg>
-                                <span>Hubungi Konsultan Sekarang</span>
+                                <span>Hubungi Konsultan Kami</span>
                             </a>
                         </div>
                     </div>
