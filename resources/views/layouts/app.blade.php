@@ -22,10 +22,10 @@
         .font-serif-brand { font-family: 'Playfair Display', Georgia, serif; }
     </style>
 </head>
-<body class="bg-[#fcf9f8] text-[#1c1b1b] font-sans antialiased flex flex-col min-h-screen" x-data="{ sideDrawer: false }">
+<body class="bg-[#f8fafc] text-[#0f172a] font-sans antialiased flex flex-col min-h-screen" x-data="{ sideDrawer: false }">
 
     <!-- Header / Navbar with Bubble Gloss Hover & Slide-out Menu -->
-    <header x-data="{ openMegaMenu: false, openLang: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-gray-100">
+    <header x-data="{ openMegaMenu: false, openLang: false }" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200/70">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Brand Logo (Exact Official Image from User) -->
@@ -35,15 +35,15 @@
 
             <!-- Desktop Nav Links with Bubble Gloss Hover Effect -->
             <nav class="hidden lg:flex items-center space-x-1">
-                <a href="{{ route('home') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('home') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                <a href="{{ route('home') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(172,12,12,0.10)] hover:border hover:border-red-100/80 {{ request()->routeIs('home') ? 'text-[#ac0c0c] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#ac0c0c]' }}">
                     {{ __('Home') }}
                 </a>
 
                 <!-- Layanan Item: seluruh trigger membuka menu agar mudah digunakan di semua perangkat -->
                 <div class="relative">
-                    <button type="button" @click="openMegaMenu = !openMegaMenu" @click.outside="openMegaMenu = false" :aria-expanded="openMegaMenu" class="inline-flex items-center gap-1 px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('services.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                    <button type="button" @click="openMegaMenu = !openMegaMenu" @click.outside="openMegaMenu = false" :aria-expanded="openMegaMenu" class="inline-flex items-center gap-1 px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(172,12,12,0.10)] hover:border hover:border-red-100/80 {{ request()->routeIs('services.*') ? 'text-[#ac0c0c] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#ac0c0c]' }}">
                         <span>{{ __('Layanan') }}</span>
-                        <svg class="w-3.5 h-3.5 transition-transform duration-200 text-gray-500" :class="{ 'rotate-180 text-[#820003]': openMegaMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="w-3.5 h-3.5 transition-transform duration-200 text-gray-500" :class="{ 'rotate-180 text-[#ac0c0c]': openMegaMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
                         </svg>
                     </button>
@@ -62,42 +62,42 @@
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 lg:gap-6 text-left">
                             <!-- Home Cleaning -->
                             <a href="{{ route('services.show', 'home-cleaning') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
-                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Pembersihan Rumah') }}</h4>
+                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#ac0c0c] transition-colors">{{ __('Pembersihan Rumah') }}</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">{{ __('Pembersihan harian, pembersihan menyeluruh, sedot tungau kasur & sofa, sterilisasi hunian.') }}</p>
                             </a>
 
                             <!-- Perbaikan Rumah -->
                             <a href="{{ route('services.show', 'perbaikan-rumah') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
-                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Perbaikan Rumah') }}</h4>
+                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#ac0c0c] transition-colors">{{ __('Perbaikan Rumah') }}</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">{{ __('Tukang ahli, perbaikan kebocoran pipa, kelistrikan, servis AC & renovasi hunian.') }}</p>
                             </a>
 
                             <!-- Pengangkutan Sampah -->
                             <a href="{{ route('services.show', 'pengangkutan-sampah') }}" class="group block space-y-1.5 p-4 rounded-xl hover:bg-red-50/50 transition-colors">
-                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#820003] transition-colors">{{ __('Pengangkutan Sampah') }}</h4>
+                                <h4 class="font-bold text-sm text-gray-900 group-hover:text-[#ac0c0c] transition-colors">{{ __('Pengangkutan Sampah') }}</h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">{{ __('Pengangkutan rutin terjadwal, sampah komersial/kafe, dan evakuasi puing bangunan.') }}</p>
                             </a>
                         </div>
 
                         <!-- Bottom Link -->
                         <div class="mt-6 pt-5 border-t border-gray-100">
-                            <a href="{{ route('services.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:underline">
+                            <a href="{{ route('services.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#ac0c0c] hover:underline">
                                 <span>{{ __('Lihat Semua Layanan') }}</span>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <a href="{{ route('about') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('about') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                <a href="{{ route('about') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(172,12,12,0.10)] hover:border hover:border-red-100/80 {{ request()->routeIs('about') ? 'text-[#ac0c0c] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#ac0c0c]' }}">
                     {{ __('Tentang') }}
                 </a>
-                <a href="{{ route('portfolio.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('portfolio.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                <a href="{{ route('portfolio.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(172,12,12,0.10)] hover:border hover:border-red-100/80 {{ request()->routeIs('portfolio.*') ? 'text-[#ac0c0c] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#ac0c0c]' }}">
                     {{ __('Portofolio') }}
                 </a>
-                <a href="{{ route('blog.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('blog.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                <a href="{{ route('blog.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(172,12,12,0.10)] hover:border hover:border-red-100/80 {{ request()->routeIs('blog.*') ? 'text-[#ac0c0c] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#ac0c0c]' }}">
                     {{ __('Blog') }}
                 </a>
-                <a href="{{ route('consultation.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(130,0,3,0.12)] hover:border hover:border-red-100/80 {{ request()->routeIs('consultation.*') ? 'text-[#820003] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#820003]' }}">
+                <a href="{{ route('consultation.index') }}" class="px-4 py-2 rounded-full text-[14px] font-semibold transition-all duration-300 hover:bg-white hover:backdrop-blur-md hover:shadow-[0_4px_16px_rgba(172,12,12,0.10)] hover:border hover:border-red-100/80 {{ request()->routeIs('consultation.*') ? 'text-[#ac0c0c] font-bold bg-red-50/70 border border-red-100/60' : 'text-gray-700 hover:text-[#ac0c0c]' }}">
                     {{ __('Konsultasi & Reservasi') }}
                 </a>
             </nav>
@@ -106,7 +106,7 @@
             <div class="flex items-center space-x-3">
                 <!-- Consultation CTA Button with Urgency Green (WhatsApp Fast Response) -->
                 <div class="group relative hidden sm:block">
-                    <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi." target="_blank" aria-describedby="header-whatsapp-tooltip" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25d366] hover:bg-[#20ba59] text-white font-extrabold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg active:scale-95 ring-2 ring-green-400/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-green-500/40">
+                    <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi." target="_blank" aria-describedby="header-whatsapp-tooltip" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg active:scale-95 ring-2 ring-emerald-400/30 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-500/40">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                         </svg>
@@ -148,11 +148,11 @@
                          x-transition:leave-end="opacity-0 scale-95"
                          class="absolute right-0 mt-2 w-36 bg-white/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-100/80 py-2 z-50"
                          style="display: none;">
-                        <a href="{{ route('locale.switch', 'en') }}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold transition-colors {{ app()->getLocale() === 'en' ? 'text-[#820003] bg-red-50/60' : 'text-gray-700 hover:bg-gray-50' }}">
+                        <a href="{{ route('locale.switch', 'en') }}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold transition-colors {{ app()->getLocale() === 'en' ? 'text-[#ac0c0c] bg-red-50/60' : 'text-gray-700 hover:bg-gray-50' }}">
                             <img src="https://flagcdn.com/w40/us.png" alt="EN" class="w-5 h-3.5 rounded-sm object-cover shadow-xs">
                             <span>English</span>
                         </a>
-                        <a href="{{ route('locale.switch', 'id') }}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold transition-colors {{ app()->getLocale() === 'id' ? 'text-[#820003] bg-red-50/60' : 'text-gray-700 hover:bg-gray-50' }}">
+                        <a href="{{ route('locale.switch', 'id') }}" class="flex items-center gap-3 px-4 py-2.5 text-sm font-semibold transition-colors {{ app()->getLocale() === 'id' ? 'text-[#ac0c0c] bg-red-50/60' : 'text-gray-700 hover:bg-gray-50' }}">
                             <img src="https://flagcdn.com/w40/id.png" alt="ID" class="w-5 h-3.5 rounded-sm object-cover shadow-xs">
                             <span>Indonesia</span>
                         </a>
@@ -160,7 +160,7 @@
                 </div>
 
                 <!-- Mobile menu toggle -->
-                <button @click="sideDrawer = true" class="lg:hidden px-3 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-[#820003] hover:border-red-200 transition-all focus:outline-none" aria-label="Buka Menu">
+                <button @click="sideDrawer = true" class="lg:hidden px-3 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-[#ac0c0c] hover:border-red-200 transition-all focus:outline-none" aria-label="Buka Menu">
                     Menu
                 </button>
             </div>
@@ -199,7 +199,7 @@
                     <a href="{{ route('home') }}" class="flex items-center py-1">
                         <img src="{{ asset('images/logo.png') }}" alt="KOOTA SERVICE" class="h-10 sm:h-12 w-auto object-contain">
                     </a>
-                    <button @click="sideDrawer = false" class="w-10 h-10 rounded-full bg-red-50 text-[#820003] hover:bg-red-100 flex items-center justify-center transition-colors text-lg font-bold" aria-label="Tutup Menu">
+                    <button @click="sideDrawer = false" class="w-10 h-10 rounded-full bg-red-50 text-[#ac0c0c] hover:bg-red-100 flex items-center justify-center transition-colors text-lg font-bold" aria-label="Tutup Menu">
                         Tutup
                     </button>
                 </div>
@@ -209,11 +209,11 @@
                     
                     <!-- Layanan Accordion Header & Items (Image 1) -->
                     <div class="border-b border-gray-100 pb-4">
-                        <div class="flex items-center justify-between py-2 text-base font-bold text-[#820003]">
+                        <div class="flex items-center justify-between py-2 text-base font-bold text-[#ac0c0c]">
                             <a href="{{ route('services.index') }}" @click="sideDrawer = false" class="hover:underline">
                                 {{ __('Layanan') }}
                             </a>
-                            <button type="button" @click="openLayananMenu = !openLayananMenu" class="p-1 text-[#820003] focus:outline-none">
+                            <button type="button" @click="openLayananMenu = !openLayananMenu" class="p-1 text-[#ac0c0c] focus:outline-none">
                                 <svg class="w-4 h-4 transition-transform duration-200" :class="{ 'rotate-180': !openLayananMenu }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/>
                                 </svg>
@@ -224,7 +224,7 @@
                         <div x-show="openLayananMenu" x-collapse class="space-y-4 pt-3 pl-2">
                             <!-- Item 1: Pembersihan Rumah -->
                             <a href="{{ route('services.show', 'home-cleaning') }}" @click="sideDrawer = false" class="block group space-y-1">
-                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
+                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">
                                     {{ __('Pembersihan Rumah') }}
                                 </h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">
@@ -234,7 +234,7 @@
 
                             <!-- Item 2: Perbaikan Rumah -->
                             <a href="{{ route('services.show', 'perbaikan-rumah') }}" @click="sideDrawer = false" class="block group space-y-1">
-                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
+                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">
                                     {{ __('Perbaikan Rumah') }}
                                 </h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">
@@ -244,7 +244,7 @@
 
                             <!-- Item 3: Pengangkutan Sampah -->
                             <a href="{{ route('services.show', 'pengangkutan-sampah') }}" @click="sideDrawer = false" class="block group space-y-1">
-                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#820003] transition-colors">
+                                <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">
                                     {{ __('Pengangkutan Sampah') }}
                                 </h4>
                                 <p class="text-xs text-gray-500 leading-relaxed">
@@ -256,28 +256,28 @@
 
                     <!-- Tentang -->
                     <div class="border-b border-gray-100 pb-4">
-                        <a href="{{ route('about') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#820003] transition-colors">
+                        <a href="{{ route('about') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#ac0c0c] transition-colors">
                             {{ __('Tentang') }}
                         </a>
                     </div>
 
                     <!-- Portofolio -->
                     <div class="border-b border-gray-100 pb-4">
-                        <a href="{{ route('portfolio.index') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#820003] transition-colors">
+                        <a href="{{ route('portfolio.index') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#ac0c0c] transition-colors">
                             {{ __('Portofolio') }}
                         </a>
                     </div>
 
                     <!-- Blog -->
                     <div class="border-b border-gray-100 pb-4">
-                        <a href="{{ route('blog.index') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#820003] transition-colors">
+                        <a href="{{ route('blog.index') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#ac0c0c] transition-colors">
                             {{ __('Blog') }}
                         </a>
                     </div>
 
                     <!-- Konsultasi & Reservasi -->
                     <div class="border-b border-gray-100 pb-4">
-                        <a href="{{ route('consultation.index') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#820003] transition-colors">
+                        <a href="{{ route('consultation.index') }}" @click="sideDrawer = false" class="block py-2 text-base font-bold text-gray-800 hover:text-[#ac0c0c] transition-colors">
                             {{ __('Konsultasi & Reservasi') }}
                         </a>
                     </div>
@@ -285,8 +285,8 @@
             </div>
 
             <!-- Drawer Bottom Actions (WhatsApp Urgency Green) -->
-            <div class="p-6 border-t border-gray-100 bg-[#fcf9f8] space-y-4">
-                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi." target="_blank" @click="sideDrawer = false" class="flex items-center justify-center gap-2 w-full py-3.5 text-center rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-extrabold text-sm shadow-md transition-all active:scale-95">
+            <div class="p-6 border-t border-slate-200/70 bg-slate-50 space-y-4">
+                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi." target="_blank" @click="sideDrawer = false" class="flex items-center justify-center gap-2 w-full py-3.5 text-center rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-extrabold text-sm shadow-md transition-all active:scale-95">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
@@ -316,11 +316,11 @@
             class="mb-3 w-[min(94vw,380px)] overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.2)] flex flex-col max-h-[85vh] sm:max-h-[580px]"
         >
             <!-- Chat Header -->
-            <div class="flex items-center justify-between bg-gradient-to-r from-[#820003] to-[#ac0c0c] px-4 py-3.5 text-white shadow-xs">
+            <div class="flex items-center justify-between bg-gradient-to-r from-[#ac0c0c] to-[#ac0c0c] px-4 py-3.5 text-white shadow-xs">
                 <div class="flex items-center gap-3">
                     <div class="relative w-10 h-10 rounded-full bg-white/10 p-0.5 flex items-center justify-center shrink-0 border border-white/20">
                         <img src="{{ asset('images/bot.png') }}" alt="KOOTA Assistant" class="h-full w-full object-contain">
-                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#820003]"></span>
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#ac0c0c]"></span>
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
@@ -344,7 +344,7 @@
             </div>
 
             <!-- Messages Stream -->
-            <div x-ref="messageContainer" class="flex-1 overflow-y-auto p-4 space-y-3 bg-[#fbf9f8] min-h-[260px] max-h-[360px]">
+            <div x-ref="messageContainer" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50 min-h-[260px] max-h-[360px]">
                 <template x-for="(message, index) in messages" :key="index">
                     <div :class="message.role === 'user' ? 'flex justify-end' : 'flex justify-start gap-2.5'">
                         <template x-if="message.role === 'bot'">
@@ -356,7 +356,7 @@
                         <div
                             class="max-w-[85%] rounded-2xl px-4 py-2.5 text-xs sm:text-sm leading-relaxed whitespace-pre-line shadow-2xs font-normal"
                             :class="message.role === 'user'
-                                ? 'bg-[#820003] text-white rounded-br-xs'
+                                ? 'bg-[#ac0c0c] text-white rounded-br-xs'
                                 : 'bg-white text-gray-800 border border-gray-200 rounded-tl-xs'"
                             x-text="message.text"
                         ></div>
@@ -370,9 +370,9 @@
                     </div>
                     <div class="inline-flex items-center gap-2 rounded-2xl bg-white border border-gray-200 px-3.5 py-2 text-xs text-gray-600 shadow-2xs">
                         <span class="flex gap-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#820003] animate-bounce" style="animation-delay: 0ms"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#820003] animate-bounce" style="animation-delay: 150ms"></span>
-                            <span class="w-1.5 h-1.5 rounded-full bg-[#820003] animate-bounce" style="animation-delay: 300ms"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c] animate-bounce" style="animation-delay: 0ms"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c] animate-bounce" style="animation-delay: 150ms"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c] animate-bounce" style="animation-delay: 300ms"></span>
                         </span>
                         <span class="text-[11px] font-medium text-gray-500">Mengetik jawaban...</span>
                     </div>
@@ -385,7 +385,7 @@
                     <button
                         type="button"
                         @click="sendSuggestion(sug)"
-                        class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-gray-100 hover:bg-red-50 text-gray-700 hover:text-[#820003] hover:border-red-200 border border-transparent transition-colors cursor-pointer"
+                        class="shrink-0 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-gray-100 hover:bg-red-50 text-gray-700 hover:text-[#ac0c0c] hover:border-red-200 border border-transparent transition-colors cursor-pointer"
                         x-text="sug"
                     ></button>
                 </template>
@@ -398,12 +398,12 @@
                     x-model="draft"
                     type="text"
                     placeholder="Tanya harga, layanan, survei..."
-                    class="flex-1 rounded-full border border-gray-300 bg-gray-50 px-4 py-2 text-xs sm:text-sm text-gray-800 placeholder:text-gray-400 focus:bg-white focus:border-[#820003] focus:ring-1 focus:ring-[#820003] focus:outline-none"
+                    class="flex-1 rounded-full border border-gray-300 bg-gray-50 px-4 py-2 text-xs sm:text-sm text-gray-800 placeholder:text-gray-400 focus:bg-white focus:border-[#ac0c0c] focus:ring-1 focus:ring-[#ac0c0c] focus:outline-none"
                 >
                 <button
                     type="submit"
                     :disabled="isSending || !draft.trim()"
-                    class="h-9 w-9 rounded-full bg-[#820003] hover:bg-[#ba1a15] text-white flex items-center justify-center shrink-0 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shadow-xs"
+                    class="h-9 w-9 rounded-full bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white flex items-center justify-center shrink-0 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shadow-xs"
                     aria-label="Kirim pesan"
                 >
                     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -420,7 +420,7 @@
                 type="button"
                 x-show="!isOpen"
                 @click="toggleChat()"
-                class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-white border border-gray-200 shadow-md text-xs font-bold text-gray-800 hover:border-[#820003] hover:text-[#820003] transition-all cursor-pointer"
+                class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-white border border-gray-200 shadow-md text-xs font-bold text-gray-800 hover:border-[#ac0c0c] hover:text-[#ac0c0c] transition-all cursor-pointer"
             >
                 <span>Ada yang bisa dibantu?</span>
             </button>
@@ -429,7 +429,7 @@
             <button
                 type="button"
                 @click="toggleChat()"
-                class="group relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-white via-white to-red-50 p-1 shadow-[0_8px_25px_rgba(130,0,3,0.25)] border-2 border-[#820003] transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
+                class="group relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-white via-white to-red-50 p-1 shadow-[0_8px_25px_rgba(172,12,12,0.20)] border-2 border-[#ac0c0c] transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
                 aria-label="Buka Chatbot KOOTA"
             >
                 <img
@@ -446,7 +446,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-[#1c1b1b] text-white pt-16 pb-12 border-t border-neutral-800">
+    <footer class="bg-[#0f172a] text-white pt-16 pb-12 border-t border-slate-800">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
                 
@@ -510,9 +510,9 @@
                 <div class="md:col-span-4 space-y-3">
                     <h4 class="text-xs font-bold text-white uppercase tracking-wider">{{ __('Layanan Utama') }}</h4>
                     <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="{{ route('services.show', 'home-cleaning') }}" class="hover:text-[#25d366] transition-colors">{{ __('Home Cleaning') }}</a></li>
-                        <li><a href="{{ route('services.show', 'perbaikan-rumah') }}" class="hover:text-[#25d366] transition-colors">{{ __('Perbaikan Rumah') }}</a></li>
-                        <li><a href="{{ route('services.show', 'pengangkutan-sampah') }}" class="hover:text-[#25d366] transition-colors">{{ __('Pengangkutan Sampah') }}</a></li>
+                        <li><a href="{{ route('services.show', 'home-cleaning') }}" class="hover:text-emerald-400 transition-colors">{{ __('Home Cleaning') }}</a></li>
+                        <li><a href="{{ route('services.show', 'perbaikan-rumah') }}" class="hover:text-emerald-400 transition-colors">{{ __('Perbaikan Rumah') }}</a></li>
+                        <li><a href="{{ route('services.show', 'pengangkutan-sampah') }}" class="hover:text-emerald-400 transition-colors">{{ __('Pengangkutan Sampah') }}</a></li>
                     </ul>
                 </div>
 
@@ -520,20 +520,20 @@
                 <div class="md:col-span-3 space-y-3">
                     <h4 class="text-xs font-bold text-white uppercase tracking-wider">{{ __('Perusahaan') }}</h4>
                     <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="{{ route('about') }}" class="hover:text-[#25d366] transition-colors">{{ __('Tentang Kami') }}</a></li>
-                        <li><a href="{{ route('portfolio.index') }}" class="hover:text-[#25d366] transition-colors">{{ __('Portofolio') }}</a></li>
-                        <li><a href="{{ route('blog.index') }}" class="hover:text-[#25d366] transition-colors">{{ __('Blog') }}</a></li>
-                        <li><a href="{{ route('consultation.index') }}" class="hover:text-[#25d366] transition-colors">{{ __('Hubungi Kami') }}</a></li>
+                        <li><a href="{{ route('about') }}" class="hover:text-emerald-400 transition-colors">{{ __('Tentang Kami') }}</a></li>
+                        <li><a href="{{ route('portfolio.index') }}" class="hover:text-emerald-400 transition-colors">{{ __('Portofolio') }}</a></li>
+                        <li><a href="{{ route('blog.index') }}" class="hover:text-emerald-400 transition-colors">{{ __('Blog') }}</a></li>
+                        <li><a href="{{ route('consultation.index') }}" class="hover:text-emerald-400 transition-colors">{{ __('Hubungi Kami') }}</a></li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Copyright -->
-            <div class="pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
-                <p>© {{ date('Y') }} KOOTA SERVICE. {{ __('Kita Wujudkan') }} <span class="text-[#22c55e] font-bold">{{ __('Kota Bersih') }}</span></p>
+            <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                <p>© {{ date('Y') }} KOOTA SERVICE. {{ __('Kita Wujudkan') }} <span class="text-emerald-400 font-bold">{{ __('Kota Bersih') }}</span></p>
                 <div class="flex items-center gap-3">
                     <span>Surabaya, Malang, Bali, Jakarta</span>
-                    <a href="{{ route('admin.login') }}" class="text-neutral-600 hover:text-neutral-400 text-[11px] transition-colors" title="Akses Panel Internal Admin">
+                    <a href="{{ route('admin.login') }}" class="text-slate-500 hover:text-slate-300 text-[11px] transition-colors" title="Akses Panel Internal Admin">
                         • Admin Area
                     </a>
                 </div>

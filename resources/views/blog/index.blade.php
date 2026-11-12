@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- 1. Urutan Pertama: Slider Artikel Hits & Terbaru (Desain Sama Persis dengan Konten Kedua, Ukuran Lebih Besar, Hover Animation) -->
-    <section class="py-12 sm:py-16 bg-[#fcf9f8] overflow-hidden border-b border-gray-100 relative"
+    <section class="py-12 sm:py-16 bg-slate-50 overflow-hidden border-b border-gray-100 relative"
              x-data="{
                 isDown: false,
                 startX: 0,
@@ -35,7 +35,7 @@
         
         <!-- Header Rata Tengah (Tanpa Badge) -->
         <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center mb-8 sm:mb-12 space-y-3">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c1b1b] leading-tight">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
                 {{ __('Blog yang Lagi Hits & Terbaru') }}
             </h1>
             <p class="text-xs sm:text-sm md:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
@@ -69,7 +69,7 @@
 
                             <!-- Top Badges -->
                             <div class="absolute top-5 left-5 right-5 z-10 flex items-center justify-between pointer-events-none">
-                                <span class="px-3.5 py-1.5 rounded-full bg-black/45 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-sm transition-colors duration-300 group-hover:bg-[#820003] group-hover:border-[#820003]">
+                                <span class="px-3.5 py-1.5 rounded-full bg-black/45 backdrop-blur-md text-white text-xs font-bold border border-white/20 shadow-sm transition-colors duration-300 group-hover:bg-[#ac0c0c] group-hover:border-[#ac0c0c]">
                                     {{ __($hero->category) }}
                                 </span>
                                 <span class="px-3 py-1.5 rounded-full bg-black/45 backdrop-blur-md text-gray-200 text-xs font-medium border border-white/15">
@@ -99,7 +99,7 @@
                                         </p>
 
                                         <div class="blog-card-anim-item blog-card-anim-item-delay mt-5 pt-3.5 border-t border-white/20 flex items-center justify-between">
-                                            <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#820003] hover:bg-[#a10004] text-white text-xs sm:text-sm font-bold shadow-md transition-all group-hover:shadow-red-900/40">
+                                            <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs sm:text-sm font-bold shadow-md transition-all group-hover:shadow-red-900/40">
                                                 <span>{{ __('Baca Selengkapnya') }}</span>
                                                 <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -116,7 +116,7 @@
                             <!-- Clickable Link Overlay with drag safety -->
                             <a href="{{ route('blog.show', $hero->slug) }}" 
                                @click="if(isDragging) { $event.preventDefault(); $event.stopPropagation(); }"
-                               class="absolute inset-0 z-30 focus:outline-none focus:ring-2 focus:ring-[#820003] rounded-3xl" 
+                               class="absolute inset-0 z-30 focus:outline-none focus:ring-2 focus:ring-[#ac0c0c] rounded-3xl" 
                                aria-label="{{ __($hero->title) }}"></a>
                         </div>
                     </div>
@@ -126,13 +126,13 @@
     </section>
 
     <!-- 2. Urutan Kedua: Katalog Blog Lengkap dengan Filter Kategori & Kartu Animasi Hover -->
-    <section class="py-16 bg-[#fcf9f8]" x-data="{ currentFilter: '{{ $category ?? 'All' }}' }">
+    <section class="py-16 bg-slate-50" x-data="{ currentFilter: '{{ $category ?? 'All' }}' }">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             
             <!-- Section Header (Rata Tengah, Tanpa Label Merah Kecil) & Filter Tabs -->
             <div class="space-y-6">
                 <div class="text-center max-w-2xl mx-auto space-y-2">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                         {{ __('Eksplorasi Artikel & Panduan') }}
                     </h2>
                     <p class="text-xs sm:text-sm text-gray-600">
@@ -142,16 +142,16 @@
 
                 <!-- Category Filter Tabs -->
                 <div class="flex flex-wrap justify-center gap-2.5 pt-2">
-                    <button @click="currentFilter = 'All'" :class="currentFilter === 'All' || currentFilter === 'Semua' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                    <button @click="currentFilter = 'All'" :class="currentFilter === 'All' || currentFilter === 'Semua' ? 'bg-[#ac0c0c] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                         {{ __('Semua Kategori') }}
                     </button>
-                    <button @click="currentFilter = 'Pembersihan Rumah'" :class="currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning' || currentFilter === 'Cleaning Service' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                    <button @click="currentFilter = 'Pembersihan Rumah'" :class="currentFilter === 'Pembersihan Rumah' || currentFilter === 'Home Cleaning' || currentFilter === 'Cleaning Service' ? 'bg-[#ac0c0c] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                         {{ __('Pembersihan Rumah') }}
                     </button>
-                    <button @click="currentFilter = 'Perbaikan Rumah'" :class="currentFilter === 'Perbaikan Rumah' || currentFilter === 'Jasa Tukang & Renovasi' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                    <button @click="currentFilter = 'Perbaikan Rumah'" :class="currentFilter === 'Perbaikan Rumah' || currentFilter === 'Jasa Tukang & Renovasi' ? 'bg-[#ac0c0c] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                         {{ __('Perbaikan Rumah') }}
                     </button>
-                    <button @click="currentFilter = 'Pengangkutan Sampah'" :class="currentFilter === 'Pengangkutan Sampah' ? 'bg-[#820003] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
+                    <button @click="currentFilter = 'Pengangkutan Sampah'" :class="currentFilter === 'Pengangkutan Sampah' ? 'bg-[#ac0c0c] text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'" class="px-6 py-2.5 rounded-full text-xs font-bold transition-all">
                         {{ __('Pengangkutan Sampah') }}
                     </button>
                 </div>
@@ -174,7 +174,7 @@
 
                         <!-- Top Badges -->
                         <div class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
-                            <span class="px-3 py-1 rounded-full bg-black/45 backdrop-blur-md text-white text-[11px] font-bold border border-white/20 shadow-sm transition-colors duration-300 group-hover:bg-[#820003] group-hover:border-[#820003]">
+                            <span class="px-3 py-1 rounded-full bg-black/45 backdrop-blur-md text-white text-[11px] font-bold border border-white/20 shadow-sm transition-colors duration-300 group-hover:bg-[#ac0c0c] group-hover:border-[#ac0c0c]">
                                 {{ __($post->category) }}
                             </span>
                             <span class="px-2.5 py-1 rounded-full bg-black/45 backdrop-blur-md text-gray-200 text-[11px] font-medium border border-white/15">
@@ -204,7 +204,7 @@
                                     </p>
 
                                     <div class="blog-card-anim-item blog-card-anim-item-delay mt-4 pt-3 border-t border-white/20 flex items-center justify-between">
-                                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#820003] hover:bg-[#a10004] text-white text-xs font-bold shadow-md transition-all group-hover:shadow-red-900/40">
+                                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-md transition-all group-hover:shadow-red-900/40">
                                             <span>{{ __('Baca Selengkapnya') }}</span>
                                             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -219,7 +219,7 @@
                         </div>
 
                         <!-- Full Clickable Link Overlay -->
-                        <a href="{{ route('blog.show', $post->slug) }}" class="absolute inset-0 z-30 focus:outline-none focus:ring-2 focus:ring-[#820003] rounded-3xl" aria-label="{{ __($post->title) }}"></a>
+                        <a href="{{ route('blog.show', $post->slug) }}" class="absolute inset-0 z-30 focus:outline-none focus:ring-2 focus:ring-[#ac0c0c] rounded-3xl" aria-label="{{ __($post->title) }}"></a>
                     </div>
                 @empty
                     <div class="col-span-full py-16 text-center bg-white rounded-3xl border border-dashed border-gray-200 space-y-3">
@@ -230,7 +230,7 @@
             </div>
 
             <!-- 3. Urutan Ketiga: CTA Consultation Box -->
-            <div class="bg-[#820003] rounded-3xl p-10 sm:p-14 text-center max-w-4xl mx-auto space-y-5 text-white shadow-2xl mt-12">
+            <div class="bg-[#ac0c0c] rounded-3xl p-10 sm:p-14 text-center max-w-4xl mx-auto space-y-5 text-white shadow-2xl mt-12">
                 <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
                     {{ __('Ingin Konsultasi Masalah Fasilitas Anda?') }}
                 </h2>
@@ -238,10 +238,10 @@
                     {{ __('Diskusikan kendala kebersihan, limbah, atau perbaikan gedung bersama tim profesional Koota Services di Surabaya, Malang, Bali, dan Jakarta.') }}
                 </p>
                 <div class="pt-2 flex flex-wrap justify-center gap-4">
-                    <a href="{{ route('consultation.index') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-[#820003] hover:bg-gray-100 font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                    <a href="{{ route('consultation.index') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-[#ac0c0c] hover:bg-gray-100 font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
                         <span>{{ __('Konsultasi Sekarang') }}</span>
                     </a>
-                    <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20membaca%20blog%20dan%20ingin%20berkonsultasi." target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                    <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20membaca%20blog%20dan%20ingin%20berkonsultasi." target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
                         <span>Chat WhatsApp 0812-1759-7109</span>
                     </a>
                 </div>

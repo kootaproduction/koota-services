@@ -6,9 +6,9 @@
     <!-- Breadcrumb -->
     <div class="bg-white border-b border-gray-100 py-3 text-xs text-gray-500">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-2">
-            <a href="{{ route('home') }}" class="hover:text-[#820003] transition-colors">{{ __('Home') }}</a>
+            <a href="{{ route('home') }}" class="hover:text-[#ac0c0c] transition-colors">{{ __('Home') }}</a>
             <span class="text-gray-300">/</span>
-            <a href="{{ route('services.index') }}" class="hover:text-[#820003] transition-colors">{{ __('Layanan') }}</a>
+            <a href="{{ route('services.index') }}" class="hover:text-[#ac0c0c] transition-colors">{{ __('Layanan') }}</a>
             <span class="text-gray-300">/</span>
             <span class="font-bold text-gray-900">{{ __($service->title) }}</span>
         </div>
@@ -179,18 +179,18 @@
     @endphp
 
     <!-- 1. HERO SECTION -->
-    <section class="relative bg-neutral-950 text-white py-24 md:py-32 overflow-hidden border-b border-neutral-900">
+    <section class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden border-b border-slate-800">
         <!-- Background Image with Editorial Vignette & Radial Crimson Glow -->
         <div class="absolute inset-0 z-0">
             <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover opacity-25 filter brightness-75 scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/85 to-neutral-950/60"></div>
-            <div aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#820003]/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#ac0c0c]/20 rounded-full blur-3xl pointer-events-none"></div>
         </div>
 
         <div class="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <!-- Badge Pill -->
             <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/15 backdrop-blur-md shadow-xs">
-                <span class="w-2 h-2 rounded-full bg-[#820003] animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ac0c0c] animate-pulse"></span>
                 <span class="tracking-widest uppercase text-[11px] font-bold">KOOTA PREMIUM SERVICE</span>
             </div>
 
@@ -210,7 +210,7 @@
 
             <!-- Dual CTAs -->
             <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-sm sm:text-base transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95">
+                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white font-bold text-sm sm:text-base transition-all shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95">
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
@@ -231,12 +231,12 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
                     <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                             {{ __('Komitmen Kualitas Tinggi') }}
                         </span>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1b1b] tracking-tight leading-snug">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-snug">
                         {{ $credTitle }}
                     </h2>
                     <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -246,14 +246,14 @@
                         {{ $credP2 }}
                     </p>
                     <div class="pt-2 flex flex-wrap items-center gap-4">
-                        <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95">
+                        <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                             </svg>
                             <span>{{ __('Konsultasi Layanan') }}</span>
                         </a>
 
-                        <a href="{{ route('consultation.index') }}" class="inline-flex items-center px-6 py-3.5 rounded-xl border border-gray-300 hover:border-[#820003] bg-white text-gray-800 hover:text-[#820003] font-semibold text-xs sm:text-sm transition-all shadow-2xs">
+                        <a href="{{ route('consultation.index') }}" class="inline-flex items-center px-6 py-3.5 rounded-xl border border-gray-300 hover:border-[#ac0c0c] bg-white text-gray-800 hover:text-[#ac0c0c] font-semibold text-xs sm:text-sm transition-all shadow-2xs">
                             <span>{{ __('Form Estimasi Jadwal') }}</span>
                         </a>
                     </div>
@@ -267,7 +267,7 @@
                         <!-- Trust Card Overlays -->
                         <div class="absolute bottom-6 inset-x-6 space-y-2.5 z-10">
                             <div class="flex items-center gap-2.5 p-3 rounded-2xl bg-white/95 backdrop-blur-md shadow-md text-xs font-bold text-gray-900">
-                                <span class="w-6 h-6 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0">
+                                <span class="w-6 h-6 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
                                 <span>Garansi Kualitas & SOP Pengerjaan Ketat</span>
@@ -285,7 +285,7 @@
     </section>
 
     <!-- 3. CORE PHILOSOPHY & 4 VALUE PILLARS (STACKED CALENDAR DECK) -->
-    <section id="pillar-section" class="py-20 bg-[#fcf9f8] border-b border-gray-100 overflow-hidden">
+    <section id="pillar-section" class="py-20 bg-slate-50 border-b border-gray-100 overflow-hidden">
         <div 
             class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10"
             x-data="{
@@ -310,13 +310,13 @@
         >
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Fondasi Layanan') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ $philTitle }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500">
@@ -345,10 +345,10 @@
                         title="Klik untuk menumpuk / menyebarkan kartu"
                     >
                         <!-- Clean Calendar Sheet -->
-                        <div class="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between flex-1 overflow-hidden group-hover:border-[#820003]/40">
+                        <div class="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between flex-1 overflow-hidden group-hover:border-[#ac0c0c]/40">
                             
                             <!-- Clean Crimson Header Bar -->
-                            <div class="bg-[#820003] text-white px-5 py-2.5 flex items-center justify-between">
+                            <div class="bg-[#ac0c0c] text-white px-5 py-2.5 flex items-center justify-between">
                                 <span class="text-[11px] font-black uppercase tracking-widest">
                                     PILAR {{ $p['num'] }}
                                 </span>
@@ -360,10 +360,10 @@
                             <!-- Clean Sheet Body -->
                             <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
                                 <div class="space-y-3">
-                                    <span class="text-3xl sm:text-4xl font-black text-[#820003] font-serif-brand block leading-none">
+                                    <span class="text-3xl sm:text-4xl font-black text-[#ac0c0c] font-serif-brand block leading-none">
                                         {{ $p['num'] }}
                                     </span>
-                                    <h3 class="text-base sm:text-lg font-bold text-gray-900 leading-snug group-hover:text-[#820003] transition-colors">
+                                    <h3 class="text-base sm:text-lg font-bold text-gray-900 leading-snug group-hover:text-[#ac0c0c] transition-colors">
                                         {{ $p['data']['title'] }}
                                     </h3>
                                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
@@ -373,7 +373,7 @@
 
                                 <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
                                     <span class="font-medium text-gray-500">SOP Terstandarisasi</span>
-                                    <span class="text-[#820003] font-bold">✓</span>
+                                    <span class="text-[#ac0c0c] font-bold">✓</span>
                                 </div>
                             </div>
                         </div>
@@ -475,13 +475,13 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Keunggulan Utama') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     Kenapa Klien Memilih KOOTA SERVICE?
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
@@ -491,8 +491,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($whyCards as $idx => $card)
-                    <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3">
-                        <span class="text-2xl font-black text-[#820003] block tracking-tight">0{{ $idx + 1 }}</span>
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#ac0c0c]/30 transition-all space-y-3">
+                        <span class="text-2xl font-black text-[#ac0c0c] block tracking-tight">0{{ $idx + 1 }}</span>
                         <h3 class="text-lg font-bold text-gray-900">{{ $card['title'] }}</h3>
                         <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">{{ $card['desc'] }}</p>
                     </div>
@@ -502,16 +502,16 @@
     </section>
 
     <!-- 5. NARRATIVE EXCELLENCE / CRAFTSMANSHIP -->
-    <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
+    <section class="py-20 bg-slate-50 border-b border-gray-100">
         <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <div class="inline-flex items-center gap-3">
-                <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                     {{ __('Pengalaman Nyata & Bebas Cemas') }}
                 </span>
-                <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
             </div>
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1c1b1b] tracking-tight leading-tight">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                 {{ $narrativeHeading }}
             </h2>
             <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -520,7 +520,7 @@
             <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
                 {{ $narrativeP2 }}
             </p>
-            <div class="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200/90 shadow-2xs border-l-4 border-l-[#820003] text-left max-w-3xl mx-auto">
+            <div class="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200/90 shadow-2xs border-l-4 border-l-[#ac0c0c] text-left max-w-3xl mx-auto">
                 <p class="text-xs sm:text-sm font-semibold text-gray-800 leading-relaxed italic">
                     "{{ $narrativeP3 }}"
                 </p>
@@ -533,13 +533,13 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <div class="space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Portofolio & Bukti Pengerjaan') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     Telah Dipercaya Ratusan Klien di Berbagai Sektor
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
@@ -552,7 +552,7 @@
                 @foreach($categories as $cat)
                     <button type="button" 
                             @click="activeCategory = '{{ $cat }}'" 
-                            :class="activeCategory === '{{ $cat }}' ? 'bg-[#820003] text-white shadow-xs font-bold' : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 font-medium'"
+                            :class="activeCategory === '{{ $cat }}' ? 'bg-[#ac0c0c] text-white shadow-xs font-bold' : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 font-medium'"
                             class="px-5 py-2 rounded-full text-xs sm:text-sm transition-all cursor-pointer">
                         {{ $cat }}
                     </button>
@@ -562,7 +562,7 @@
             <!-- Dynamic Sub-header: Project <activeCategory> -->
             <div class="pt-2 pb-1">
                 <p class="text-xs sm:text-sm font-medium text-gray-500">
-                    Kategori: <span x-text="activeCategory" class="font-bold text-[#820003]"></span>
+                    Kategori: <span x-text="activeCategory" class="font-bold text-[#ac0c0c]"></span>
                 </p>
             </div>
 
@@ -601,13 +601,13 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-2">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Video Highlight') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     Lihat Hasil Project Kami
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
@@ -618,7 +618,7 @@
             <!-- Video Reels Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 @foreach($videoProjects->take(2) as $vProj)
-                    <div class="bg-[#fcf9f8] p-6 rounded-3xl border border-gray-100 shadow-2xs space-y-4">
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-gray-100 shadow-2xs space-y-4">
                         <div class="text-center space-y-1">
                             <h4 class="text-sm font-bold text-gray-900">{{ $vProj->title }}</h4>
                             <p class="text-[11px] text-gray-500">{{ $vProj->description }}</p>
@@ -627,7 +627,7 @@
                              @click="currentVideoUrl = '{{ str_replace(['shorts/', 'watch?v='], 'embed/', $vProj->video_url ?? 'https://www.youtube.com/embed/aqz-KE-bpKQ') }}?autoplay=1'; videoModal = true">
                             <img src="{{ $vProj->image }}" alt="{{ $vProj->title }}" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300">
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-14 h-14 rounded-full bg-[#820003] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                                <div class="w-14 h-14 rounded-full bg-[#ac0c0c] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
                                     <svg class="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                                 </div>
                             </div>
@@ -655,17 +655,17 @@
     </section>
 
     <!-- 9. TESTIMONIAL PELANGGAN (6 AUTHENTIC REVIEWS) -->
-    <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
+    <section class="py-20 bg-slate-50 border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Kepuasan Pelanggan') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     Cerita Nyata Dari Klien Kami
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500">
@@ -676,7 +676,7 @@
             <!-- Testimonial Cards Grid with SVG Star Ratings -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($testimonials as $testi)
-                    <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-lg hover:border-[#820003]/20 transition-all flex flex-col justify-between space-y-5">
+                    <div class="bg-white p-7 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-lg hover:border-[#ac0c0c]/20 transition-all flex flex-col justify-between space-y-5">
                         <div class="space-y-3">
                             <!-- 5-Star Clean SVG Rating -->
                             <div class="flex items-center gap-1 text-amber-400">
@@ -693,7 +693,7 @@
                         </div>
 
                         <div class="flex items-center gap-3 pt-3 border-t border-gray-100">
-                            <div class="w-10 h-10 rounded-full bg-red-50 text-[#820003] font-black text-xs flex items-center justify-center shrink-0 border border-red-100">
+                            <div class="w-10 h-10 rounded-full bg-red-50 text-[#ac0c0c] font-black text-xs flex items-center justify-center shrink-0 border border-red-100">
                                 {{ $testi['initials'] }}
                             </div>
                             <div>
@@ -712,13 +712,13 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Metodologi Kerja') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     Proses Tertata Untuk Hasil Sempurna
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
@@ -728,27 +728,27 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Step 1 -->
-                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 relative group">
-                    <span class="text-3xl font-black text-[#820003] block tracking-tight">01</span>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors">Konsultasi & Penjadwalan Cepat</h3>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#ac0c0c]/30 transition-all space-y-3 relative group">
+                    <span class="text-3xl font-black text-[#ac0c0c] block tracking-tight">01</span>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">Konsultasi & Penjadwalan Cepat</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         Diskusikan kebutuhan spesifik Anda bersama Customer Care kami via WhatsApp. Kami berikan estimasi transparan dan jadwalkan kunjungan tepat waktu.
                     </p>
                 </div>
 
                 <!-- Step 2 (Consistent Brand Styling) -->
-                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 relative group">
-                    <span class="text-3xl font-black text-[#820003] block tracking-tight">02</span>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors">Eksekusi Profesional Berstandar SOP</h3>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#ac0c0c]/30 transition-all space-y-3 relative group">
+                    <span class="text-3xl font-black text-[#ac0c0c] block tracking-tight">02</span>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">Eksekusi Profesional Berstandar SOP</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         Tenaga kerja ahli pilihan kami hadir on-site dengan peralatan lengkap dan material terstandar, bekerja disiplin mengikuti SOP ketat.
                     </p>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#820003]/30 transition-all space-y-3 relative group">
-                    <span class="text-3xl font-black text-[#820003] block tracking-tight">03</span>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#820003] transition-colors">Quality Control & Aktivasi Garansi</h3>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#ac0c0c]/30 transition-all space-y-3 relative group">
+                    <span class="text-3xl font-black text-[#ac0c0c] block tracking-tight">03</span>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">Quality Control & Aktivasi Garansi</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         Pemeriksaan hasil akhir bersama klien untuk memastikan kepuasan menyeluruh. Jika ada yang belum sesuai, kami perbaiki tuntas bergaransi.
                     </p>
@@ -758,11 +758,11 @@
     </section>
 
     <!-- 11. BANNER CTA KONSULTASI PREMIUM (WITH KENZO YANUAR) -->
-    <section class="py-20 bg-[#fcf9f8] border-b border-gray-100">
+    <section class="py-20 bg-slate-50 border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <!-- Hook Heading -->
             <div class="text-center max-w-3xl mx-auto space-y-2">
-                <h3 class="text-2xl sm:text-3xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ $ctaHook }}
                 </h3>
                 <p class="text-xs sm:text-sm text-gray-600">
@@ -771,10 +771,10 @@
             </div>
 
             <!-- Card Banner Premium Dark -->
-            <div class="relative bg-[#1c1b1b] rounded-3xl overflow-hidden shadow-2xl border border-neutral-800 text-white">
+            <div class="relative bg-[#0f172a] rounded-3xl overflow-hidden shadow-2xl border border-slate-800 text-white">
                 <!-- Ambient Subtle Crimson Glow -->
-                <div aria-hidden="true" class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#820003]/25 blur-3xl pointer-events-none"></div>
-                <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#820003]/15 blur-3xl pointer-events-none"></div>
+                <div aria-hidden="true" class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#ac0c0c]/25 blur-3xl pointer-events-none"></div>
+                <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#ac0c0c]/15 blur-3xl pointer-events-none"></div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
                     <!-- Left Content -->
@@ -793,7 +793,7 @@
                         </p>
 
                         <div class="pt-4 flex flex-wrap items-center gap-3">
-                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95">
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                 </svg>
@@ -820,13 +820,13 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-2">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Pertanyaan Umum (FAQ)') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     Pertanyaan yang Sering Ditanyakan
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500">
@@ -843,7 +843,7 @@
                 >
                     <div class="mb-4 flex items-center justify-between text-xs text-gray-500 px-2">
                         <span class="flex items-center gap-2 font-medium">
-                            <svg class="w-4 h-4 text-[#820003] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-[#ac0c0c] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
                             </svg>
                             {{ __('Arahkan kursor ke pertanyaan untuk melihat jawaban') }}
@@ -861,19 +861,19 @@
                             <!-- Question Bar (Hover Target) -->
                             <div 
                                 class="w-full flex items-center justify-between p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer select-none"
-                                :class="activeFaq === {{ $idx + 1 }} ? 'bg-red-50/70 border-red-200 shadow-md translate-x-1' : 'bg-white border-gray-200/80 hover:border-red-200 hover:bg-neutral-50/50 shadow-2xs'"
+                                :class="activeFaq === {{ $idx + 1 }} ? 'bg-red-50/70 border-red-200 shadow-md translate-x-1' : 'bg-white border-gray-200/80 hover:border-red-200 hover:bg-slate-50/70 shadow-2xs'"
                             >
                                 <span 
                                     class="text-sm sm:text-base font-bold text-gray-900 transition-colors leading-relaxed pr-4"
-                                    :class="{ 'text-[#820003]': activeFaq === {{ $idx + 1 }} }"
+                                    :class="{ 'text-[#ac0c0c]': activeFaq === {{ $idx + 1 }} }"
                                 >
-                                    <span class="text-xs font-black text-[#820003] mr-2">0{{ $idx + 1 }}</span>
+                                    <span class="text-xs font-black text-[#ac0c0c] mr-2">0{{ $idx + 1 }}</span>
                                     {{ $f['q'] }}
                                 </span>
 
                                 <div 
                                     class="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-200"
-                                    :class="activeFaq === {{ $idx + 1 }} ? 'bg-[#820003] text-white rotate-90 shadow-2xs' : 'bg-gray-100 text-gray-400'"
+                                    :class="activeFaq === {{ $idx + 1 }} ? 'bg-[#ac0c0c] text-white rotate-90 shadow-2xs' : 'bg-gray-100 text-gray-400'"
                                 >
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -891,12 +891,12 @@
                                 x-transition:leave="transition ease-in duration-150"
                                 x-transition:leave-start="opacity-100 translate-y-0 scale-100"
                                 x-transition:leave-end="opacity-0 translate-y-2 scale-95"
-                                class="absolute bottom-full left-0 right-0 mb-3 z-30 p-5 sm:p-6 rounded-2xl bg-white text-gray-800 border border-red-100 shadow-[0_20px_45px_rgba(130,0,3,0.14)] pointer-events-none"
+                                class="absolute bottom-full left-0 right-0 mb-3 z-30 p-5 sm:p-6 rounded-2xl bg-white text-gray-800 border border-red-100 shadow-[0_20px_45px_rgba(172,12,12,0.14)] pointer-events-none"
                             >
                                 <div class="space-y-2">
                                     <div class="flex items-center justify-between pb-2 border-b border-gray-100">
-                                        <span class="text-xs font-bold text-[#820003] uppercase tracking-wider flex items-center gap-1.5">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                                        <span class="text-xs font-bold text-[#ac0c0c] uppercase tracking-wider flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c]"></span>
                                             {{ __('Jawaban') }}
                                         </span>
                                         <span class="text-[11px] text-gray-400 font-semibold tracking-wider">KOOTA FAQ</span>
@@ -916,7 +916,7 @@
 
                 <!-- Right: Punya pertanyaan lain? -->
                 <div class="lg:col-span-4">
-                    <div class="bg-[#fcf9f8] p-8 rounded-3xl border border-gray-200 text-center space-y-5 shadow-xs">
+                    <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200 text-center space-y-5 shadow-xs">
                         <h3 class="text-xl font-bold text-gray-900 leading-tight">
                             Punya pertanyaan lain?
                         </h3>
@@ -924,7 +924,7 @@
                             Tim kami siap membantu Anda! Hubungi kami langsung untuk konsultasi gratis dan solusi terbaik sesuai kebutuhan Anda.
                         </p>
                         <div class="pt-2">
-                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20tanya-tanya%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#820003] hover:bg-[#660002] text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95">
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20tanya-tanya%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                 </svg>

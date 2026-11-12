@@ -5,10 +5,10 @@
 
 @section('content')
     <!-- Top Hero Section -->
-    <section class="bg-[#fcf9f8] border-b border-gray-100">
+    <section class="bg-slate-50 border-b border-gray-100">
         <div class="w-full">
-            <div class="relative isolate min-h-[480px] w-full overflow-hidden bg-[#101010] shadow-2xl ring-1 ring-black/10 sm:min-h-[560px] lg:min-h-[calc(100svh-5rem)]" aria-labelledby="about-hero-title">
-                <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(130,0,3,0.24),transparent_55%),linear-gradient(115deg,#080808_0%,#171515_48%,#0a0a0a_100%)]"></div>
+            <div class="relative isolate min-h-[480px] w-full overflow-hidden bg-slate-900 shadow-2xl ring-1 ring-black/10 sm:min-h-[560px] lg:min-h-[calc(100svh-5rem)]" aria-labelledby="about-hero-title">
+                <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(172,12,12,0.24),transparent_55%),linear-gradient(115deg,#0f172a_0%,#1e293b_48%,#0f172a_100%)]"></div>
 
                 <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
                     <source src="{{ asset('images/koota.mp4') }}" type="video/mp4">
@@ -18,9 +18,9 @@
 
                 <div class="absolute inset-0 z-10 flex items-center justify-center bg-white/55 px-5 py-8 text-center backdrop-blur-[2px] sm:px-10 lg:px-16">
                     <div class="w-full max-w-5xl">
-                        <h1 id="about-hero-title" class="text-3xl font-extrabold tracking-tight text-[#1c1b1b] leading-[1.1] sm:text-5xl lg:text-6xl">
+                        <h1 id="about-hero-title" class="text-3xl font-extrabold tracking-tight text-[#0f172a] leading-[1.1] sm:text-5xl lg:text-6xl">
                             {{ __('Tentang') }} <br>
-                            <span class="text-[#820003]">Koota Services</span>
+                            <span class="text-[#ac0c0c]">Koota Services</span>
                         </h1>
 
                         <p class="mx-auto mt-4 max-w-3xl text-sm text-gray-700 leading-relaxed sm:mt-5 sm:text-lg">
@@ -42,13 +42,13 @@
                 <!-- Left Column: Siapa Kami -->
                 <div class="lg:col-span-5 space-y-5">
                     <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                             {{ __('Mengenal Lebih Dekat') }}
                         </span>
                     </div>
 
-                    <h2 class="font-serif-brand text-4xl sm:text-5xl font-semibold text-[#1c1b1b] tracking-tight leading-tight">
+                    <h2 class="font-serif-brand text-4xl sm:text-5xl font-semibold text-[#0f172a] tracking-tight leading-tight">
                         {{ __('Siapa Kami?') }}
                     </h2>
 
@@ -62,10 +62,10 @@
                         </p>
 
                         <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Surabaya</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Malang</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>{{ __('Denpasar (Bali)') }}</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#820003]" aria-hidden="true"></span>Jakarta</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>Surabaya</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>Malang</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Denpasar (Bali)') }}</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>Jakarta</div>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
 
                     <div
                         id="service-area-map"
-                        class="service-area-map relative z-0 w-full overflow-hidden rounded-2xl border border-[#e4beb8] bg-[#f0edec] shadow-[0_12px_32px_rgba(28,27,27,0.10)]"
+                        class="service-area-map relative z-0 w-full overflow-hidden rounded-2xl border border-[#e2e8f0] bg-[#f1f5f9] shadow-[0_12px_32px_rgba(15,23,42,0.10)]"
                         role="region"
                         aria-label="{{ __('Peta area layanan KOOTA SERVICES') }}"
                         data-locations="{{ json_encode($serviceLocations, JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP | JSON_HEX_TAG) }}"
@@ -120,20 +120,20 @@
     </section>
 
     <!-- Section: Visi & Misi Kami -->
-    <section id="vision-mission" class="py-16 md:py-20 bg-[#fcf9f8] border-b border-gray-100" aria-labelledby="vision-mission-title">
+    <section id="vision-mission" class="py-16 md:py-20 bg-slate-50 border-b border-gray-100" aria-labelledby="vision-mission-title">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Section Header -->
             <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
                 <div class="inline-flex items-center justify-center gap-3 mb-3.5">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Arah & Prinsip Kerja') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
                 </div>
 
-                <h2 id="vision-mission-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c1b1b] leading-tight">
+                <h2 id="vision-mission-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
                     {{ __('Visi & Misi Kami') }}
                 </h2>
 
@@ -147,16 +147,16 @@
                 
                 <!-- Left: Visi Kami (Dark Editorial Statement Card) -->
                 <div class="lg:col-span-6 flex">
-                    <article class="vision-reveal w-full flex flex-col justify-between rounded-3xl bg-[#1c1b1b] p-8 sm:p-10 text-white relative overflow-hidden shadow-xl border border-neutral-800 transition-all duration-300 hover:shadow-2xl">
+                    <article class="vision-reveal w-full flex flex-col justify-between rounded-3xl bg-[#0f172a] p-8 sm:p-10 text-white relative overflow-hidden shadow-xl border border-slate-800 transition-all duration-300 hover:shadow-2xl">
                         <!-- Subtle ambient crimson glow -->
-                        <div aria-hidden="true" class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#820003]/25 blur-3xl pointer-events-none"></div>
+                        <div aria-hidden="true" class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#ac0c0c]/25 blur-3xl pointer-events-none"></div>
 
                         <div class="relative z-10 space-y-6">
                             <div class="flex items-center justify-between">
                                 <span class="text-xs font-bold tracking-widest uppercase text-red-300">
                                     {{ __('Visi Utama') }}
                                 </span>
-                                <span class="text-[11px] text-neutral-400 font-semibold tracking-wider uppercase">KOOTA SERVICES</span>
+                                <span class="text-[11px] text-slate-400 font-semibold tracking-wider uppercase">KOOTA SERVICES</span>
                             </div>
 
                             <blockquote class="font-serif-brand text-xl sm:text-2xl lg:text-[26px] font-normal italic text-white/95 leading-relaxed pt-2">
@@ -168,17 +168,17 @@
                         <div class="relative z-10 mt-8 pt-6 border-t border-white/15">
                             <dl class="grid grid-cols-3 gap-2 sm:gap-4 text-center">
                                 <div class="flex flex-col">
-                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-neutral-400 sm:text-xs uppercase tracking-wider">{{ __('Tahun Pengalaman') }}</dt>
+                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:text-xs uppercase tracking-wider">{{ __('Tahun Pengalaman') }}</dt>
                                     <dd class="order-1 text-2xl font-black leading-tight text-white sm:text-3xl">10+</dd>
                                 </div>
 
                                 <div class="flex flex-col border-x border-white/15">
-                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-neutral-400 sm:text-xs uppercase tracking-wider">{{ __('Klien') }}</dt>
+                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:text-xs uppercase tracking-wider">{{ __('Klien') }}</dt>
                                     <dd class="order-1 text-2xl font-black leading-tight text-white sm:text-3xl">200+</dd>
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-neutral-400 sm:text-xs uppercase tracking-wider">{{ __('Gedung') }}</dt>
+                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:text-xs uppercase tracking-wider">{{ __('Gedung') }}</dt>
                                     <dd class="order-1 text-2xl font-black leading-tight text-white sm:text-3xl">50+</dd>
                                 </div>
                             </dl>
@@ -191,7 +191,7 @@
                     <article class="vision-reveal w-full flex flex-col justify-between rounded-3xl bg-white p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-xl">
                         <div>
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold tracking-widest uppercase text-[#820003]">
+                                <span class="text-xs font-bold tracking-widest uppercase text-[#ac0c0c]">
                                     {{ __('Misi Kami') }}
                                 </span>
                                 <span class="text-[11px] text-gray-400 font-semibold tracking-wider uppercase">{{ __('Prinsip Kerja') }}</span>
@@ -203,7 +203,7 @@
 
                             <div class="mt-6 space-y-4">
                                 <!-- Pillar 1 -->
-                                <div class="p-4 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
+                                <div class="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/70 transition-colors hover:bg-slate-50">
                                     <h4 class="text-sm font-bold text-gray-900 leading-snug">
                                         {{ __('Standar Kualitas Tertinggi') }}
                                     </h4>
@@ -213,7 +213,7 @@
                                 </div>
 
                                 <!-- Pillar 2 -->
-                                <div class="p-4 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
+                                <div class="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/70 transition-colors hover:bg-slate-50">
                                     <h4 class="text-sm font-bold text-gray-900 leading-snug">
                                         {{ __('Solusi Ramah Lingkungan') }}
                                     </h4>
@@ -223,7 +223,7 @@
                                 </div>
 
                                 <!-- Pillar 3 -->
-                                <div class="p-4 rounded-2xl bg-neutral-50/70 border border-neutral-100 transition-colors hover:bg-neutral-50">
+                                <div class="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/70 transition-colors hover:bg-slate-50">
                                     <h4 class="text-sm font-bold text-gray-900 leading-snug">
                                         {{ __('Keselamatan & Kepuasan Prima') }}
                                     </h4>
@@ -237,7 +237,7 @@
                         <!-- Footer Note in Misi Card -->
                         <div class="mt-8 pt-5 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
                             <span class="font-medium text-[11px] text-gray-500">SOP Terstandar & Bergaransi</span>
-                            <span class="font-bold text-[11px] text-[#820003] tracking-wide">Surabaya • Malang • Bali • Jakarta</span>
+                            <span class="font-bold text-[11px] text-[#ac0c0c] tracking-wide">Surabaya • Malang • Bali • Jakarta</span>
                         </div>
                     </article>
                 </div>
@@ -245,12 +245,12 @@
 
             <!-- Bottom Action CTAs -->
             <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-                <a href="{{ route('services.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#820003] hover:bg-[#660002] text-white text-xs font-bold shadow-sm transition-all hover:scale-105 active:scale-95">
+                <a href="{{ route('services.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-all hover:scale-105 active:scale-95">
                     <span>{{ __('Lihat Layanan Kami') }}</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
 
-                <a href="{{ route('consultation.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-xl border border-gray-300 hover:border-[#820003] bg-white hover:bg-red-50/50 text-gray-800 hover:text-[#820003] text-xs font-bold transition-all shadow-2xs">
+                <a href="{{ route('consultation.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-xl border border-gray-300 hover:border-[#ac0c0c] bg-white hover:bg-red-50/50 text-gray-800 hover:text-[#ac0c0c] text-xs font-bold transition-all shadow-2xs">
                     <span>{{ __('Hubungi Kami') }}</span>
                 </a>
             </div>
@@ -310,15 +310,15 @@
             <!-- Header Block -->
             <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-16 space-y-4">
                 <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
+                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Komitmen & Filosofi Kami') }}
                     </span>
-                    <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full" aria-hidden="true"></span>
+                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
                 </div>
 
-                <h2 id="commitment-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c1b1b] leading-tight">
-                    <span class="font-serif-brand italic font-normal text-gray-300">“</span>{{ __('Kita Wujudkan') }} <span class="text-[#820003] underline decoration-[#820003]/20 underline-offset-8">{{ __('Kota Bersih') }}</span><span class="font-serif-brand italic font-normal text-gray-300">”</span>
+                <h2 id="commitment-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
+                    <span class="font-serif-brand italic font-normal text-gray-300">“</span>{{ __('Kita Wujudkan') }} <span class="text-[#ac0c0c] underline decoration-[#ac0c0c]/20 underline-offset-8">{{ __('Kota Bersih') }}</span><span class="font-serif-brand italic font-normal text-gray-300">”</span>
                 </h2>
 
                 <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto pt-2">
@@ -330,7 +330,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 
                 <!-- Card 1: Ramah Lingkungan & Berkelanjutan -->
-                <div class="p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#820003]/30">
+                <div class="p-7 sm:p-8 rounded-2xl bg-slate-50 border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#ac0c0c]/30">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
                         {{ __('Standar Ramah Lingkungan') }}
                     </h3>
@@ -341,7 +341,7 @@
                 </div>
 
                 <!-- Card 2: Kenyamanan & Ruang Hidup Higienis -->
-                <div class="p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#820003]/30">
+                <div class="p-7 sm:p-8 rounded-2xl bg-slate-50 border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#ac0c0c]/30">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
                         {{ __('Ruang Hidup Higienis') }}
                     </h3>
@@ -352,7 +352,7 @@
                 </div>
 
                 <!-- Card 3: Standar Terpadu di 4 Wilayah -->
-                <div class="p-7 sm:p-8 rounded-2xl bg-[#fcf9f8] border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#820003]/30">
+                <div class="p-7 sm:p-8 rounded-2xl bg-slate-50 border border-gray-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] transition-all duration-300 hover:shadow-md hover:border-[#ac0c0c]/30">
                     <h3 class="text-lg sm:text-xl font-bold text-gray-900 leading-snug">
                         {{ __('Integritas di 4 Wilayah') }}
                     </h3>
@@ -368,20 +368,20 @@
     </section>
 
     <!-- Why Us Section -->
-    <section class="py-24 bg-[#fcf9f8] border-b border-gray-100">
+    <section class="py-24 bg-slate-50 border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
                 <!-- Kolom Kiri -->
                 <div class="lg:col-span-5 space-y-6">
                     <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#820003]/30 rounded-full"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#820003] tracking-wide">
+                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                             {{ __('Kenapa Memilih Kami?') }}
                         </span>
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight leading-tight">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                         {{ __('Standar Kualitas Tertinggi untuk Kenyamanan Anda') }}
                     </h2>
 
@@ -450,7 +450,7 @@
                 position: relative;
                 min-width: 0;
                 margin-top: 14px;
-                border: 1px solid #f3eeee;
+                border: 1px solid #e2e8f0;
                 border-radius: 24px;
                 background: #fff;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, .08);
@@ -475,7 +475,7 @@
                 height: 38px;
                 padding: 0 16px;
                 border-radius: 0 17px 17px 0;
-                background: #a60008;
+                background: #ac0c0c;
                 color: #fff;
                 font-size: 14px;
                 font-weight: 700;
@@ -489,7 +489,7 @@
                 left: 0;
                 width: 0;
                 height: 0;
-                border-top: 8px solid #650005;
+                border-top: 8px solid #7f1d1d;
                 border-left: 8px solid transparent;
             }
 
@@ -523,7 +523,7 @@
     <!-- Consultation Banner -->
     <section class="py-16 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-[#dcdcdc] rounded-3xl overflow-hidden shadow-xl border border-gray-300 relative">
+            <div class="bg-gradient-to-br from-slate-100 to-slate-200/80 rounded-3xl overflow-hidden shadow-xl border border-gray-300 relative">
                 <div class="grid grid-cols-1 md:grid-cols-12 items-center">
 
                     <div class="p-8 sm:p-12 md:col-span-7 lg:col-span-8 space-y-6">
@@ -532,7 +532,7 @@
                         </h2>
 
                         <div class="pt-2">
-                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20perawatan%20rumah%20gratis." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-sm sm:text-base transition-all shadow-lg shadow-emerald-600/30 active:scale-95">
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20perawatan%20rumah%20gratis." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-sm sm:text-base transition-all shadow-lg shadow-emerald-600/30 active:scale-95">
                                 <span>{{ __('Konsultasi Dengan Ahlinya') }}</span>
                             </a>
                         </div>
@@ -547,11 +547,11 @@
     </section>
 
     <!-- FAQ Accordion Section -->
-    <section class="py-20 bg-[#fcf9f8]">
+    <section class="py-20 bg-slate-50">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
 
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     — {{ __('Temukan Jawabannya di Sini!') }}
                 </h2>
 
@@ -569,7 +569,7 @@
                 >
                     <div class="mb-4 flex items-center justify-between text-xs text-gray-500 px-2">
                         <span class="flex items-center gap-2 font-medium">
-                            <svg class="w-4 h-4 text-[#820003] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-4 h-4 text-[#ac0c0c] animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
                             </svg>
                             {{ __('Arahkan kursor ke pertanyaan untuk melihat jawaban') }}
@@ -587,19 +587,19 @@
                             <!-- Question Bar (Hover Target) -->
                             <div 
                                 class="w-full flex items-center justify-between p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer select-none"
-                                :class="activeFaq === {{ $faq->id }} ? 'bg-red-50/70 border-red-200 shadow-md translate-x-1' : 'bg-white border-gray-200/80 hover:border-red-200 hover:bg-neutral-50/50 shadow-2xs'"
+                                :class="activeFaq === {{ $faq->id }} ? 'bg-red-50/70 border-red-200 shadow-md translate-x-1' : 'bg-white border-gray-200/80 hover:border-red-200 hover:bg-slate-50/70 shadow-2xs'"
                             >
                                 <span 
                                     class="text-sm sm:text-base font-bold text-gray-900 transition-colors leading-relaxed pr-4"
-                                    :class="{ 'text-[#820003]': activeFaq === {{ $faq->id }} }"
+                                    :class="{ 'text-[#ac0c0c]': activeFaq === {{ $faq->id }} }"
                                 >
-                                    <span class="text-xs font-black text-[#820003] mr-2">0{{ $loop->iteration }}</span>
+                                    <span class="text-xs font-black text-[#ac0c0c] mr-2">0{{ $loop->iteration }}</span>
                                     {{ __($faq->question) }}
                                 </span>
 
                                 <div 
                                     class="w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all duration-200"
-                                    :class="activeFaq === {{ $faq->id }} ? 'bg-[#820003] text-white rotate-90 shadow-2xs' : 'bg-gray-100 text-gray-400'"
+                                    :class="activeFaq === {{ $faq->id }} ? 'bg-[#ac0c0c] text-white rotate-90 shadow-2xs' : 'bg-gray-100 text-gray-400'"
                                 >
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -617,12 +617,12 @@
                                 x-transition:leave="transition ease-in duration-150"
                                 x-transition:leave-start="opacity-100 translate-y-0 scale-100"
                                 x-transition:leave-end="opacity-0 translate-y-2 scale-95"
-                                class="absolute bottom-full left-0 right-0 mb-3 z-30 p-5 sm:p-6 rounded-2xl bg-white text-gray-800 border border-red-100 shadow-[0_20px_45px_rgba(130,0,3,0.14)] pointer-events-none"
+                                class="absolute bottom-full left-0 right-0 mb-3 z-30 p-5 sm:p-6 rounded-2xl bg-white text-gray-800 border border-red-100 shadow-[0_20px_45px_rgba(172,12,12,0.14)] pointer-events-none"
                             >
                                 <div class="space-y-2">
                                     <div class="flex items-center justify-between pb-2 border-b border-gray-100">
-                                        <span class="text-xs font-bold text-[#820003] uppercase tracking-wider flex items-center gap-1.5">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-[#820003]"></span>
+                                        <span class="text-xs font-bold text-[#ac0c0c] uppercase tracking-wider flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c]"></span>
                                             {{ __('Jawaban') }}
                                         </span>
                                         <span class="text-[11px] text-gray-400 font-semibold tracking-wider">KOOTA FAQ</span>
@@ -651,7 +651,7 @@
                         </p>
 
                         <div class="pt-2">
-                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
                                 <span>{{ __('Tanya Ahlinya via WA') }}</span>
                             </a>
                         </div>

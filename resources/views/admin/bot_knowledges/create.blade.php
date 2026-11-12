@@ -49,7 +49,7 @@
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Kategori Layanan / Topik <span class="text-red-500">*</span>
                     </label>
-                    <input type="text" name="category" list="category-list" value="{{ old('category', 'Home Cleaning') }}" required placeholder="Pilih atau ketik kategori baru" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="text" name="category" list="category-list" value="{{ old('category', 'Home Cleaning') }}" required placeholder="Pilih atau ketik kategori baru" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                     <datalist id="category-list">
                         <option value="Home Cleaning">
                         <option value="Perbaikan Rumah">
@@ -69,7 +69,7 @@
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Urutan Prioritas
                     </label>
-                    <input type="number" name="order" value="{{ old('order', $maxOrder) }}" min="1" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="number" name="order" value="{{ old('order', $maxOrder) }}" min="1" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                     <p class="text-[11px] text-gray-400">Semakin kecil angkanya, semakin tinggi prioritas pencocokan.</p>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                     Pertanyaan Yang Sering Diajukan User <span class="text-red-500">*</span>
                 </label>
-                <input type="text" name="question" value="{{ old('question', $prefillQuestion) }}" required placeholder="Contoh: Apakah melayani kuras tandon dan cuci toren air?" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm font-medium">
+                <input type="text" name="question" value="{{ old('question', $prefillQuestion) }}" required placeholder="Contoh: Apakah melayani kuras tandon dan cuci toren air?" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm font-medium">
                 <p class="text-[11px] text-gray-400">Tulis pertanyaan yang ringkas dan alami seperti yang biasa diketik oleh pengunjung.</p>
             </div>
 
@@ -88,7 +88,7 @@
                 <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                     Kata Kunci Pencocokan (Keywords)
                 </label>
-                <textarea name="keywords" rows="3" placeholder="Contoh: cuci toren, kuras tandon, toren lumutan, tangki air kotor, pembersih tandon" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">{{ old('keywords') }}</textarea>
+                <textarea name="keywords" rows="3" placeholder="Contoh: cuci toren, kuras tandon, toren lumutan, tangki air kotor, pembersih tandon" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">{{ old('keywords') }}</textarea>
                 <div class="p-3 bg-neutral-50 rounded-xl border border-neutral-200 text-[11px] text-neutral-600 space-y-1">
                     <span class="font-bold text-neutral-800">Tips Kata Kunci:</span>
                     <p>Pisahkan setiap kata kunci atau variasi kalimat dengan tanda koma (<code>,</code>). Cantumkan sinonim, istilah awam, atau kata slang yang mungkin diketik user (misal: <em>toren bocor, atap bocor, seng talang, hydro vacuum sofa</em>).</p>
@@ -100,21 +100,21 @@
                 <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                     Jawaban Lengkap Bot <span class="text-red-500">*</span>
                 </label>
-                <textarea name="answer" rows="7" required placeholder="Tulis jawaban lengkap yang profesional, ramah, dan solutif. Anda bisa menggunakan penomoran (1, 2, 3) dan menyebut nomor WhatsApp (0812-1759-7109) untuk tindakan lebih lanjut." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm leading-relaxed">{{ old('answer') }}</textarea>
+                <textarea name="answer" rows="7" required placeholder="Tulis jawaban lengkap yang profesional, ramah, dan solutif. Anda bisa menggunakan penomoran (1, 2, 3) dan menyebut nomor WhatsApp (0812-1759-7109) untuk tindakan lebih lanjut." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm leading-relaxed">{{ old('answer') }}</textarea>
                 <p class="text-[11px] text-gray-400">Format baris baru dan paragraf akan dipertahankan saat ditampilkan di jendela chat pengunjung.</p>
             </div>
 
             <!-- Checkbox Aktif -->
             <div class="pt-2">
                 <label class="inline-flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" name="is_active" value="1" {{ old('is_active', '1') == '1' ? 'checked' : '' }} class="w-4 h-4 text-[#820003] border-gray-300 rounded focus:ring-[#820003]">
+                    <input type="checkbox" name="is_active" value="1" {{ old('is_active', '1') == '1' ? 'checked' : '' }} class="w-4 h-4 text-[#ac0c0c] border-gray-300 rounded focus:ring-[#ac0c0c]">
                     <span class="text-sm font-bold text-gray-800">Aktifkan pengetahuan ini segera untuk menjawab chatbot</span>
                 </label>
             </div>
 
             <!-- Submit Buttons -->
             <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
-                <button type="submit" class="px-7 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#820003] transition-colors shadow-sm">
+                <button type="submit" class="px-7 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#8f0a0a] transition-colors shadow-sm">
                     Simpan Pengetahuan Bot
                 </button>
                 <a href="{{ route('admin.bot-knowledges.index') }}" class="px-5 py-3 rounded-xl bg-gray-100 text-gray-700 font-bold text-sm hover:bg-gray-200 transition-colors">

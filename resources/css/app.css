@@ -9,19 +9,19 @@
 @theme {
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
     --color-koota-red: #ac0c0c;
-    --color-koota-red-dark: #820003;
-    --color-koota-green: #28a745;
-    --color-koota-green-light: #80f98b;
-    --color-koota-wa: #25d366;
-    --color-koota-bg: #fcf9f8;
+    --color-koota-red-dark: #8f0a0a;
+    --color-koota-green: #059669;
+    --color-koota-green-light: #6ee7b7;
+    --color-koota-wa: #16a34a;
+    --color-koota-bg: #f8fafc;
     --color-koota-surface: #ffffff;
-    --color-koota-dark: #1c1b1b;
+    --color-koota-dark: #0f172a;
 }
 
 body {
     font-family: var(--font-sans);
-    background-color: #fcf9f8;
-    color: #1c1b1b;
+    background-color: #f8fafc;
+    color: #0f172a;
     margin: 0;
     padding: 0;
 }
@@ -55,10 +55,10 @@ body {
     border-bottom: 2px solid #ac0c0c;
     border-left: 2px solid #ac0c0c;
     border-bottom-left-radius: 1rem;
-    background: linear-gradient(135deg, #ac0c0c, #820003);
+    background: linear-gradient(135deg, #ac0c0c, #8f0a0a);
     padding: 0.625rem 1rem;
     color: #fff;
-    box-shadow: 0 4px 12px rgba(45, 0, 0, 0.28);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.16);
     font-size: 0.75rem;
     font-weight: 700;
     line-height: 1.25;
@@ -169,12 +169,12 @@ body {
     left: 1rem;
     max-width: calc(100% - 2rem);
     margin: 0;
-    border: 1px solid rgba(130, 0, 3, .13);
+    border: 1px solid rgba(172, 12, 12, .14);
     border-radius: .75rem;
     padding: .55rem .8rem;
-    background: rgba(255, 255, 255, .92);
-    color: #5b403c;
-    box-shadow: 0 4px 12px rgba(45, 0, 0, .08);
+    background: rgba(255, 255, 255, .95);
+    color: #334155;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, .06);
     font-size: .75rem;
     font-weight: 600;
 }
@@ -203,9 +203,9 @@ body {
     min-height: 400px;
     height: 100%;
     aspect-ratio: 4 / 5;
-    background-color: #171717;
+    background-color: #0f172a;
     isolation: isolate;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .blog-card-overlay {
@@ -214,9 +214,9 @@ body {
     pointer-events: none;
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.96) 0%,
-        rgba(0, 0, 0, 0.72) 42%,
-        rgba(0, 0, 0, 0.25) 70%,
+        rgba(15, 23, 42, 0.94) 0%,
+        rgba(15, 23, 42, 0.68) 42%,
+        rgba(15, 23, 42, 0.22) 70%,
         transparent 100%
     );
     transition: background 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
@@ -226,10 +226,10 @@ body {
 .group:focus-within .blog-card-overlay {
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.98) 0%,
-        rgba(0, 0, 0, 0.88) 55%,
-        rgba(0, 0, 0, 0.45) 85%,
-        rgba(0, 0, 0, 0.15) 100%
+        rgba(15, 23, 42, 0.97) 0%,
+        rgba(15, 23, 42, 0.85) 55%,
+        rgba(15, 23, 42, 0.42) 85%,
+        rgba(15, 23, 42, 0.12) 100%
     );
 }
 
@@ -294,7 +294,7 @@ body {
 
 /* Blog Single Article Editorial Typography */
 .blog-rich-content {
-    color: #2b2a2a;
+    color: #334155;
     font-size: 1.0625rem;
     line-height: 1.85;
 }
@@ -306,7 +306,7 @@ body {
 .blog-rich-content p.lead {
     font-size: 1.2rem;
     line-height: 1.75;
-    color: #3b3a3a;
+    color: #1e293b;
     font-weight: 500;
     padding-bottom: 0.5rem;
 }
@@ -314,19 +314,19 @@ body {
 .blog-rich-content h2 {
     font-size: 1.625rem;
     font-weight: 800;
-    color: #171717;
+    color: #0f172a;
     letter-spacing: -0.02em;
     margin-top: 2.25rem;
     margin-bottom: 1rem;
     padding-left: 1rem;
-    border-left: 4px solid #820003;
+    border-left: 4px solid #ac0c0c;
     line-height: 1.3;
 }
 
 .blog-rich-content h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #1c1b1b;
+    color: #0f172a;
     margin-top: 1.75rem;
     margin-bottom: 0.875rem;
     line-height: 1.4;
@@ -355,17 +355,17 @@ body {
 }
 
 .blog-rich-content li strong {
-    color: #171717;
+    color: #0f172a;
 }
 
 .blog-rich-content blockquote {
     margin: 2rem 0;
     padding: 1.5rem 1.75rem;
-    border-left: 4px solid #820003;
-    background-color: #fcf9f8;
+    border-left: 4px solid #ac0c0c;
+    background-color: #f8fafc;
     border-radius: 0.75rem;
     font-style: italic;
-    color: #4a4949;
+    color: #475569;
 }
 
 /* Service Interactive Card (Homepage Layanan Utama - Mirip Blog tapi Elemen Layanan Khas) */
@@ -375,7 +375,7 @@ body {
     border-radius: 1.5rem;
     min-height: 480px;
     height: 100%;
-    background-color: #171717;
+    background-color: #0f172a;
     isolation: isolate;
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -386,9 +386,9 @@ body {
     pointer-events: none;
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0.65) 45%,
-        rgba(0, 0, 0, 0.2) 75%,
+        rgba(15, 23, 42, 0.94) 0%,
+        rgba(15, 23, 42, 0.62) 45%,
+        rgba(15, 23, 42, 0.18) 75%,
         transparent 100%
     );
     transition: background 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
@@ -398,10 +398,10 @@ body {
 .group:focus-within .service-card-overlay {
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 0.98) 0%,
-        rgba(130, 0, 3, 0.88) 50%,
-        rgba(0, 0, 0, 0.5) 80%,
-        rgba(0, 0, 0, 0.2) 100%
+        rgba(15, 23, 42, 0.97) 0%,
+        rgba(172, 12, 12, 0.85) 50%,
+        rgba(15, 23, 42, 0.45) 80%,
+        rgba(15, 23, 42, 0.15) 100%
     );
 }
 

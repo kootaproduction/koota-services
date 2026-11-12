@@ -42,7 +42,7 @@
             </div>
 
             <div class="flex items-center gap-4 pt-4">
-                <button type="submit" class="px-6 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#820003] transition-colors shadow-sm">
+                <button type="submit" class="px-6 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#8f0a0a] transition-colors shadow-sm">
                     Perbarui FAQ
                 </button>
                 <a href="{{ route('admin.faqs.index') }}" class="text-xs font-bold text-gray-600 hover:underline">

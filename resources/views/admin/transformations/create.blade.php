@@ -35,14 +35,14 @@
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Judul Transformasi / Pekerjaan <span class="text-red-500">*</span>
                     </label>
-                    <input type="text" name="title" value="{{ old('title') }}" required placeholder="Contoh: Kuras Toren Air Berlumut Tebal 1.500L" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="text" name="title" value="{{ old('title') }}" required placeholder="Contoh: Kuras Toren Air Berlumut Tebal 1.500L" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
 
                 <div class="space-y-2">
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Kategori Layanan <span class="text-red-500">*</span>
                     </label>
-                    <select name="category" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <select name="category" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                         @foreach($categories as $cat)
                             <option value="{{ $cat }}" {{ old('category') === $cat ? 'selected' : '' }}>{{ $cat }}</option>
                         @endforeach
@@ -84,38 +84,38 @@
                 <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                     Deskripsi Masalah & Solusi KOOTA
                 </label>
-                <textarea name="description" rows="3" placeholder="Ceritakan kondisi sebelum ditangani, metode chemical/alat yang dipakai, dan kepuasan hasil pengerjaan..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">{{ old('description') }}</textarea>
+                <textarea name="description" rows="3" placeholder="Ceritakan kondisi sebelum ditangani, metode chemical/alat yang dipakai, dan kepuasan hasil pengerjaan..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">{{ old('description') }}</textarea>
             </div>
 
             <!-- Lokasi & Durasi & Urutan -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div class="space-y-2">
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">Lokasi / Kota</label>
-                    <input type="text" name="location" value="{{ old('location', 'Surabaya') }}" placeholder="Contoh: Surabaya Barat, Bali, Malang" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="text" name="location" value="{{ old('location', 'Surabaya') }}" placeholder="Contoh: Surabaya Barat, Bali, Malang" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
 
                 <div class="space-y-2">
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">Durasi Pengerjaan</label>
-                    <input type="text" name="duration" value="{{ old('duration', '3 Jam Pengerjaan') }}" placeholder="Contoh: 3 Jam, 1 Hari" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="text" name="duration" value="{{ old('duration', '3 Jam Pengerjaan') }}" placeholder="Contoh: 3 Jam, 1 Hari" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
 
                 <div class="space-y-2">
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">Urutan Tampil</label>
-                    <input type="number" name="order" value="{{ old('order', $maxOrder) }}" min="1" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="number" name="order" value="{{ old('order', $maxOrder) }}" min="1" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
             </div>
 
             <!-- Checkbox Unggulan -->
             <div class="pt-2">
                 <label class="inline-flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', '1') == '1' ? 'checked' : '' }} class="w-4 h-4 text-[#820003] border-gray-300 rounded focus:ring-[#820003]">
+                    <input type="checkbox" name="is_featured" value="1" {{ old('is_featured', '1') == '1' ? 'checked' : '' }} class="w-4 h-4 text-[#ac0c0c] border-gray-300 rounded focus:ring-[#ac0c0c]">
                     <span class="text-sm font-bold text-gray-800">Tampilkan sebagai Transformasi Unggulan di Halaman Utama (Homepage)</span>
                 </label>
             </div>
 
             <!-- Submit Buttons -->
             <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
-                <button type="submit" class="px-7 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#820003] transition-colors shadow-sm">
+                <button type="submit" class="px-7 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#8f0a0a] transition-colors shadow-sm">
                     Simpan Transformasi
                 </button>
                 <a href="{{ route('admin.transformations.index') }}" class="px-5 py-3 rounded-xl bg-gray-100 text-gray-700 font-bold text-sm hover:bg-gray-200 transition-colors">

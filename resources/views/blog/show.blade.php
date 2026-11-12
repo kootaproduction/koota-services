@@ -3,14 +3,14 @@
 @section('title', __($post->title) . ' - KOOTA SERVICES')
 
 @section('content')
-    <div class="bg-[#fcf9f8] min-h-screen pb-20" x-data="{ copied: false }">
+    <div class="bg-slate-50 min-h-screen pb-20" x-data="{ copied: false }">
 
         <!-- 1. Breadcrumbs & Top Navigation Bar -->
         <div class="border-b border-gray-200/70 bg-white/70 backdrop-blur-md sticky top-0 z-30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
                 <!-- Back Button -->
                 <a href="{{ route('blog.index') }}" 
-                   class="inline-flex items-center gap-2 text-xs font-bold text-gray-700 hover:text-[#820003] transition-colors py-1.5 px-3 rounded-xl hover:bg-gray-100/80 active:scale-95">
+                   class="inline-flex items-center gap-2 text-xs font-bold text-gray-700 hover:text-[#ac0c0c] transition-colors py-1.5 px-3 rounded-xl hover:bg-gray-100/80 active:scale-95">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
@@ -23,7 +23,7 @@
                     <span>/</span>
                     <a href="{{ route('blog.index') }}" class="hover:text-gray-900 transition-colors">{{ __('Blog') }}</a>
                     <span>/</span>
-                    <span class="text-[#820003] font-bold truncate max-w-[220px]">{{ __($post->category) }}</span>
+                    <span class="text-[#ac0c0c] font-bold truncate max-w-[220px]">{{ __($post->category) }}</span>
                 </nav>
             </div>
         </div>
@@ -37,8 +37,8 @@
                 <div class="flex flex-wrap items-center gap-3 text-xs">
                     <!-- Category Tag -->
                     <a href="{{ route('blog.index', ['category' => $post->category]) }}" 
-                       class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100/80 text-[#820003] font-extrabold uppercase tracking-wider text-[11px] border border-red-200 hover:bg-[#820003] hover:text-white transition-all shadow-2xs">
-                        <span class="w-1.5 h-1.5 rounded-full bg-[#820003] animate-pulse"></span>
+                       class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-100/80 text-[#ac0c0c] font-extrabold uppercase tracking-wider text-[11px] border border-red-200 hover:bg-[#ac0c0c] hover:text-white transition-all shadow-2xs">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c] animate-pulse"></span>
                         <span>{{ __($post->category) }}</span>
                     </a>
 
@@ -66,7 +66,7 @@
                 </div>
 
                 <!-- Headline -->
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#1c1b1b] tracking-tight leading-[1.18] sm:leading-[1.15]">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-[#0f172a] tracking-tight leading-[1.18] sm:leading-[1.15]">
                     {{ __($post->title) }}
                 </h1>
 
@@ -103,7 +103,7 @@
                         <a href="https://api.whatsapp.com/send?text={{ urlencode($post->title . ' - ' . url()->current()) }}" 
                            target="_blank"
                            rel="noopener noreferrer"
-                           class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white text-xs font-bold transition-all shadow-2xs hover:shadow-md active:scale-95"
+                           class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white text-xs font-bold transition-all shadow-2xs hover:shadow-md active:scale-95"
                            title="Bagikan ke WhatsApp">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                 <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.771.82 2.791.82 3.181 0 5.768-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.073.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
@@ -150,8 +150,8 @@
                     
                     <!-- Key Takeaways / Poin Intisari Box -->
                     <div class="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200/80 shadow-xs relative overflow-hidden">
-                        <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-[#820003]"></div>
-                        <div class="flex items-center gap-2.5 text-xs font-extrabold uppercase tracking-wider text-[#820003] mb-3">
+                        <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-[#ac0c0c]"></div>
+                        <div class="flex items-center gap-2.5 text-xs font-extrabold uppercase tracking-wider text-[#ac0c0c] mb-3">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
                                 <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.001z"/>
                             </svg>
@@ -159,19 +159,19 @@
                         </div>
                         <ul class="text-xs sm:text-sm text-gray-700 space-y-2.5 leading-relaxed">
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
                                 <span>Pencegahan dini melalui pemeliharaan berkala jauh lebih hemat dibanding perbaikan kerusakan struktural.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
                                 <span>Pemilahan dan jadwal sanitasi teratur melindungi keluarga dan penghuni dari bibit penyakit serta alergen.</span>
                             </li>
                             <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#820003] flex items-center justify-center shrink-0 mt-0.5">
+                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
                                 <span>Gunakan tenaga profesional bersertifikat untuk memastikan standar pengerjaan aman dan bergaransi resmi.</span>
@@ -191,7 +191,7 @@
                         </div>
 
                         <!-- Pro Tip Callout Box -->
-                        <div class="my-8 p-6 rounded-2xl bg-neutral-900 text-white relative overflow-hidden space-y-3">
+                        <div class="my-8 p-6 rounded-2xl bg-slate-900 text-white relative overflow-hidden space-y-3">
                             <div class="flex items-center gap-2.5 text-xs font-bold text-amber-400 uppercase tracking-wider">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -219,7 +219,7 @@
                                 <a href="https://api.whatsapp.com/send?text={{ urlencode($post->title . ' - ' . url()->current()) }}" 
                                    target="_blank" 
                                    rel="noopener noreferrer"
-                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25d366] text-white text-xs font-bold hover:bg-[#20ba59] transition-all">
+                                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#16a34a] text-white text-xs font-bold hover:bg-[#15803d] transition-all">
                                     <span>Bagikan</span>
                                 </a>
                             </div>
@@ -249,7 +249,7 @@
                     <div class="sticky top-20 space-y-6">
                         
                         <!-- 1. Consultation Direct Card (Branded & High Conversion) -->
-                        <div class="p-7 rounded-3xl bg-gradient-to-br from-[#820003] via-[#740003] to-[#4a0002] text-white shadow-xl relative overflow-hidden space-y-5">
+                        <div class="p-7 rounded-3xl bg-gradient-to-br from-[#ac0c0c] via-[#991b1b] to-[#7f1d1d] text-white shadow-xl relative overflow-hidden space-y-5">
                             <div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-white/5 pointer-events-none"></div>
 
                             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-bold tracking-wide">
@@ -286,7 +286,7 @@
                             <div class="space-y-2.5 pt-2">
                                 <a href="https://wa.me/6281217597109?text={{ urlencode('Halo KOOTA SERVICES, saya membaca artikel ' . $post->title . ' dan ingin konsultasi layanan.') }}" 
                                    target="_blank"
-                                   class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95">
+                                   class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95">
                                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                         <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.771.82 2.791.82 3.181 0 5.768-2.587 5.768-5.766.001-3.187-2.575-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.073.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/>
                                     </svg>
@@ -304,7 +304,7 @@
                         <div class="p-6 rounded-3xl bg-white border border-gray-200/80 shadow-xs space-y-4">
                             <div class="flex items-center justify-between border-b border-gray-100 pb-3">
                                 <h3 class="text-sm font-bold text-gray-900">{{ __('Artikel Terkait Lainnya') }}</h3>
-                                <a href="{{ route('blog.index') }}" class="text-[11px] font-bold text-[#820003] hover:underline">
+                                <a href="{{ route('blog.index') }}" class="text-[11px] font-bold text-[#ac0c0c] hover:underline">
                                     {{ __('Lihat Semua') }} &rarr;
                                 </a>
                             </div>
@@ -316,10 +316,10 @@
                                             <img src="{{ $rel->image }}" alt="{{ $rel->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                                         </div>
                                         <div class="space-y-1 min-w-0">
-                                            <span class="text-[10px] font-extrabold text-[#820003] uppercase tracking-wider block">
+                                            <span class="text-[10px] font-extrabold text-[#ac0c0c] uppercase tracking-wider block">
                                                 {{ __($rel->category) }}
                                             </span>
-                                            <h4 class="text-xs font-bold text-gray-800 group-hover:text-[#820003] transition-colors line-clamp-2 leading-snug">
+                                            <h4 class="text-xs font-bold text-gray-800 group-hover:text-[#ac0c0c] transition-colors line-clamp-2 leading-snug">
                                                 {{ __($rel->title) }}
                                             </h4>
                                             <p class="text-[10px] text-gray-400">
@@ -336,7 +336,7 @@
                         <!-- 3. Coverage Area Widget -->
                         <div class="p-5 rounded-2xl bg-gray-50 border border-gray-200/70 text-xs text-gray-600 space-y-2">
                             <div class="flex items-center gap-2 font-bold text-gray-900">
-                                <svg class="w-4 h-4 text-[#820003]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-[#ac0c0c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
@@ -356,14 +356,14 @@
             <section class="mt-20 pt-12 border-t border-gray-200 space-y-8">
                 <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                     <div>
-                        <span class="text-xs font-bold text-[#820003] uppercase tracking-wider block mb-1">
+                        <span class="text-xs font-bold text-[#ac0c0c] uppercase tracking-wider block mb-1">
                             {{ __('Rekomendasi Bacaan') }}
                         </span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#1c1b1b] tracking-tight">
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0f172a] tracking-tight">
                             {{ __('Jelajahi Artikel Lainnya') }}
                         </h2>
                     </div>
-                    <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#820003] hover:underline">
+                    <a href="{{ route('blog.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#ac0c0c] hover:underline">
                         <span>{{ __('Katalog Lengkap Blog') }}</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                     </a>
@@ -379,7 +379,7 @@
                             <div class="blog-card-overlay"></div>
 
                             <div class="absolute top-4 left-4 right-4 z-10 flex items-center justify-between pointer-events-none">
-                                <span class="px-3 py-1 rounded-full bg-black/45 backdrop-blur-md text-white text-[11px] font-bold border border-white/20 group-hover:bg-[#820003] group-hover:border-[#820003] transition-colors">
+                                <span class="px-3 py-1 rounded-full bg-black/45 backdrop-blur-md text-white text-[11px] font-bold border border-white/20 group-hover:bg-[#ac0c0c] group-hover:border-[#ac0c0c] transition-colors">
                                     {{ __($bottomPost->category) }}
                                 </span>
                                 <span class="px-2.5 py-1 rounded-full bg-black/45 backdrop-blur-md text-gray-200 text-[11px] font-medium border border-white/15">
@@ -402,7 +402,7 @@
                                             {{ __($bottomPost->excerpt) }}
                                         </p>
                                         <div class="blog-card-anim-item blog-card-anim-item-delay mt-4 pt-3 border-t border-white/20 flex items-center justify-between">
-                                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#820003] text-white text-xs font-bold shadow-md">
+                                            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#ac0c0c] text-white text-xs font-bold shadow-md">
                                                 <span>{{ __('Baca') }}</span>
                                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                                             </span>
@@ -412,7 +412,7 @@
                                 </div>
                             </div>
 
-                            <a href="{{ route('blog.show', $bottomPost->slug) }}" class="absolute inset-0 z-30 focus:outline-none focus:ring-2 focus:ring-[#820003] rounded-3xl" aria-label="{{ __($bottomPost->title) }}"></a>
+                            <a href="{{ route('blog.show', $bottomPost->slug) }}" class="absolute inset-0 z-30 focus:outline-none focus:ring-2 focus:ring-[#ac0c0c] rounded-3xl" aria-label="{{ __($bottomPost->title) }}"></a>
                         </div>
                     @endforeach
                 </div>

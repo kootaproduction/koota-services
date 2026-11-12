@@ -7,7 +7,7 @@
     <div class="space-y-6">
         <div class="flex items-center justify-between">
             <p class="text-sm text-gray-600">Daftar artikel tips & insight yang tampil di halaman Blog Publik.</p>
-            <a href="{{ route('admin.posts.create') }}" class="px-5 py-2.5 rounded-xl bg-[#820003] hover:bg-[#ba1a15] text-white text-xs font-bold shadow-sm transition-all active:scale-95">
+            <a href="{{ route('admin.posts.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-all active:scale-95">
                 + Tambah Artikel Baru
             </a>
         </div>
@@ -34,7 +34,7 @@
                                 {{ $p->title }}
                             </td>
                             <td class="py-4 px-6">
-                                <span class="px-2.5 py-1 rounded-full bg-red-50 text-[#820003] text-xs font-bold">
+                                <span class="px-2.5 py-1 rounded-full bg-red-50 text-[#ac0c0c] text-xs font-bold">
                                     {{ $p->category }}
                                 </span>
                             </td>
@@ -43,7 +43,7 @@
                             </td>
                             <td class="py-4 px-6">
                                 @if($p->is_featured)
-                                    <span class="px-2.5 py-1 rounded-full bg-red-100 text-[#820003] text-xs font-bold">Featured Top Card</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-red-100 text-[#ac0c0c] text-xs font-bold">Featured Top Card</span>
                                 @else
                                     <span class="text-xs text-gray-400">Standar</span>
                                 @endif

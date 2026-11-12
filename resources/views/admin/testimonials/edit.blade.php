@@ -36,14 +36,14 @@
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Nama Klien / Pemilik <span class="text-red-500">*</span>
                     </label>
-                    <input type="text" name="client_name" value="{{ old('client_name', $testimonial->client_name) }}" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="text" name="client_name" value="{{ old('client_name', $testimonial->client_name) }}" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
 
                 <div class="space-y-2">
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Keterangan / Tipe Properti
                     </label>
-                    <input type="text" name="client_title" value="{{ old('client_title', $testimonial->client_title) }}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="text" name="client_title" value="{{ old('client_title', $testimonial->client_title) }}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Rating Bintang <span class="text-red-500">*</span>
                     </label>
-                    <select name="rating" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <select name="rating" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                         <option value="5" {{ old('rating', $testimonial->rating) == 5 ? 'selected' : '' }}>★★★★★ (5 Bintang - Sangat Puas)</option>
                         <option value="4" {{ old('rating', $testimonial->rating) == 4 ? 'selected' : '' }}>★★★★☆ (4 Bintang - Puas)</option>
                         <option value="3" {{ old('rating', $testimonial->rating) == 3 ? 'selected' : '' }}>★★★☆☆ (3 Bintang - Cukup)</option>
@@ -64,7 +64,7 @@
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                         Kota / Wilayah Layanan
                     </label>
-                    <input type="text" name="location" value="{{ old('location', $testimonial->location) }}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="text" name="location" value="{{ old('location', $testimonial->location) }}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
             </div>
 
@@ -73,19 +73,19 @@
                 <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">
                     Isi Ulasan / Testimoni <span class="text-red-500">*</span>
                 </label>
-                <textarea name="content" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm leading-relaxed">{{ old('content', $testimonial->content) }}</textarea>
+                <textarea name="content" rows="4" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm leading-relaxed">{{ old('content', $testimonial->content) }}</textarea>
             </div>
 
             <!-- Urutan & Status Tayang -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center pt-2">
                 <div class="space-y-2">
                     <label class="block text-xs font-bold uppercase text-gray-700 tracking-wider">Urutan Tampil</label>
-                    <input type="number" name="order" value="{{ old('order', $testimonial->order) }}" min="1" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent text-sm">
+                    <input type="number" name="order" value="{{ old('order', $testimonial->order) }}" min="1" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
                 </div>
 
                 <div class="pt-6">
                     <label class="inline-flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" name="is_published" value="1" {{ old('is_published', $testimonial->is_published ? '1' : '0') == '1' ? 'checked' : '' }} class="w-4 h-4 text-[#820003] border-gray-300 rounded focus:ring-[#820003]">
+                        <input type="checkbox" name="is_published" value="1" {{ old('is_published', $testimonial->is_published ? '1' : '0') == '1' ? 'checked' : '' }} class="w-4 h-4 text-[#ac0c0c] border-gray-300 rounded focus:ring-[#ac0c0c]">
                         <span class="text-sm font-bold text-gray-800">Status Tayang di Website Publik</span>
                     </label>
                 </div>
@@ -93,7 +93,7 @@
 
             <!-- Submit Buttons -->
             <div class="flex items-center gap-4 pt-4 border-t border-gray-100">
-                <button type="submit" class="px-7 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#820003] transition-colors shadow-sm">
+                <button type="submit" class="px-7 py-3 rounded-xl bg-[#ac0c0c] text-white font-bold text-sm hover:bg-[#8f0a0a] transition-colors shadow-sm">
                     Simpan Perubahan
                 </button>
                 <a href="{{ route('admin.testimonials.index') }}" class="px-5 py-3 rounded-xl bg-gray-100 text-gray-700 font-bold text-sm hover:bg-gray-200 transition-colors">

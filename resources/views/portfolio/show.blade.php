@@ -6,24 +6,24 @@
     <!-- Breadcrumb -->
     <div class="bg-white border-b border-gray-100 py-3 text-xs text-gray-500">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center space-x-2">
-            <a href="{{ route('home') }}" class="hover:text-[#820003] transition-colors">{{ __('Home') }}</a>
+            <a href="{{ route('home') }}" class="hover:text-[#ac0c0c] transition-colors">{{ __('Home') }}</a>
             <span>›</span>
-            <a href="{{ route('portfolio.index') }}" class="hover:text-[#820003] transition-colors">{{ __('Portofolio') }}</a>
+            <a href="{{ route('portfolio.index') }}" class="hover:text-[#ac0c0c] transition-colors">{{ __('Portofolio') }}</a>
             <span>›</span>
             <span class="font-bold text-gray-900 truncate max-w-xs">{{ __($project->title) }}</span>
         </div>
     </div>
 
     <!-- Simple, Modern, Minimalist Photo Documentation -->
-    <section class="py-12 md:py-16 bg-[#fcf9f8]" x-data="{ lightbox: false, currentPhoto: '{{ $project->image }}' }">
+    <section class="py-12 md:py-16 bg-slate-50" x-data="{ lightbox: false, currentPhoto: '{{ $project->image }}' }">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             
             <!-- Simple Header (Title & Category Only) -->
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <span class="px-4 py-1.5 rounded-full bg-red-50 text-[#820003] text-xs font-bold border border-red-100 inline-block">
+                <span class="px-4 py-1.5 rounded-full bg-red-50 text-[#ac0c0c] text-xs font-bold border border-red-100 inline-block">
                     {{ __($project->category_name) }}
                 </span>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1c1b1b] tracking-tight">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ __($project->title) }}
                 </h1>
                 @if($project->location)
@@ -55,7 +55,7 @@
 
             <!-- Minimalist Action CTA Bar -->
             <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
-                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20tertarik%20konsultasi%20proyek%20{{ urlencode($project->title) }}." target="_blank" class="px-8 py-3.5 rounded-xl bg-[#25d366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-600/30 flex items-center gap-2 active:scale-95">
+                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20tertarik%20konsultasi%20proyek%20{{ urlencode($project->title) }}." target="_blank" class="px-8 py-3.5 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-600/30 flex items-center gap-2 active:scale-95">
                     <span>{{ __('Konsultasi Proyek Ini via WA') }}</span>
                 </a>
                 <a href="{{ route('portfolio.index') }}" class="px-6 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 font-bold text-xs sm:text-sm transition-all">

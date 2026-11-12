@@ -7,7 +7,7 @@
     <div class="space-y-6">
         <div class="flex items-center justify-between">
             <p class="text-sm text-gray-600">Daftar item FAQ accordion yang ditampilkan di Halaman Utama dan Blog.</p>
-            <a href="{{ route('admin.faqs.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#820003] text-white text-xs font-bold shadow-sm">
+            <a href="{{ route('admin.faqs.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm">
                 + Tambah FAQ Baru
             </a>
         </div>

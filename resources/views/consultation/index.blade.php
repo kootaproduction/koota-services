@@ -3,7 +3,7 @@
 @section('title', __('Konsultasi & Reservasi Layanan') . ' - KOOTA SERVICES')
 
 @section('content')
-    <div class="relative bg-[#fcf9f8] min-h-screen pb-24 pt-4 sm:pt-8" 
+    <div class="relative bg-slate-50 min-h-screen pb-24 pt-4 sm:pt-8" 
          x-data="{ 
             selectedService: '{{ old('service_type', $selectedService ?? 'Pembersihan Rumah') }}',
             scheduleChoice: 'Fleksibel',
@@ -27,7 +27,7 @@
          }">
         
         <!-- Subtle Top Ambient Glow -->
-        <div class="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-[#faeae7]/60 via-[#fcf5f4]/30 to-transparent pointer-events-none"></div>
+        <div class="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-[#fef2f2]/60 via-[#f8fafc]/30 to-transparent pointer-events-none"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
 
@@ -44,7 +44,7 @@
 
                         @if(session('wa_url'))
                             <a href="{{ session('wa_url') }}" target="_blank" 
-                               class="inline-flex items-center justify-center rounded-2xl bg-[#25d366] hover:bg-[#20ba59] px-6 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg shadow-green-600/25 transition-all hover:-translate-y-0.5 active:scale-95 shrink-0">
+                               class="inline-flex items-center justify-center rounded-2xl bg-[#16a34a] hover:bg-[#15803d] px-6 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg shadow-green-600/25 transition-all hover:-translate-y-0.5 active:scale-95 shrink-0">
                                 <span>{{ __('Lanjutkan Chat via WhatsApp') }} &rarr;</span>
                             </a>
                         @endif
@@ -55,12 +55,12 @@
             <!-- 1. Clean Minimal Hero Section (Typography-Focused, No Clutter Icons) -->
             <div class="text-center max-w-3xl mx-auto space-y-4 pt-4 sm:pt-6">
                 <!-- Trust Pill Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100/80 text-[#820003] border border-red-200/90 text-xs font-black uppercase tracking-wider">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100/80 text-[#ac0c0c] border border-red-200/90 text-xs font-black uppercase tracking-wider">
                     <span>{{ __('Layanan Siaga & Estimasi Biaya Transparan') }}</span>
                 </div>
 
                 <!-- Main Headline -->
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1c1b1b] tracking-tight leading-[1.18]">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0f172a] tracking-tight leading-[1.18]">
                     {{ __('Konsultasi & Reservasi Layanan Properti') }}
                 </h1>
 
@@ -72,7 +72,7 @@
                 <!-- Trust Metrics Bar (No Emojis or Icons) -->
                 <div class="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-semibold text-gray-600">
                     <div>
-                        <span class="text-[#820003] font-bold">4.9 / 5.0</span>
+                        <span class="text-[#ac0c0c] font-bold">4.9 / 5.0</span>
                         <span class="text-gray-500"> Kepuasan Klien (500+ Proyek)</span>
                     </div>
                     <span class="text-gray-300 hidden sm:inline">•</span>
@@ -115,7 +115,7 @@
                         <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi%20layanan%20properti." 
                            target="_blank"
                            rel="noopener noreferrer"
-                           class="group flex items-center justify-between gap-3 p-4 rounded-2xl bg-[#25d366] hover:bg-[#20ba59] text-white shadow-md transition-all active:scale-98">
+                           class="group flex items-center justify-between gap-3 p-4 rounded-2xl bg-[#16a34a] hover:bg-[#15803d] text-white shadow-md transition-all active:scale-98">
                             <div>
                                 <span class="block text-[10px] font-bold uppercase tracking-wider text-green-100">{{ __('WhatsApp Siaga Resmi') }}</span>
                                 <span class="block text-sm font-black tracking-tight">0812-1759-7109</span>
@@ -127,7 +127,7 @@
 
                         <!-- Email Direct -->
                         <a href="mailto:kootaproduction@gmail.com?subject=Konsultasi%20Layanan%20KOOTA%20SERVICES" 
-                           class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-neutral-50 border border-gray-200/80 hover:bg-neutral-100/80 transition-all text-gray-700">
+                           class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-slate-50 border border-gray-200/80 hover:bg-slate-100/80 transition-all text-gray-700">
                             <div class="min-w-0">
                                 <span class="block text-[10px] font-bold uppercase tracking-wider text-gray-500">{{ __('Email Resmi') }}</span>
                                 <span class="block text-xs font-bold text-gray-900 truncate">kootaproduction@gmail.com</span>
@@ -144,13 +144,13 @@
 
                     <!-- Card 2: 3 Core Guarantees & Why KOOTA -->
                     <div class="rounded-3xl border border-gray-200/90 bg-white p-6 sm:p-7 shadow-xs space-y-4">
-                        <h3 class="text-xs font-black uppercase tracking-wider text-[#820003]">
+                        <h3 class="text-xs font-black uppercase tracking-wider text-[#ac0c0c]">
                             {{ __('Jaminan Layanan KOOTA') }}
                         </h3>
 
                         <ul class="space-y-3.5 text-xs text-gray-700">
                             <li class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-lg bg-red-50 text-[#820003] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                                <div class="w-6 h-6 rounded-lg bg-red-50 text-[#ac0c0c] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                                     1
                                 </div>
                                 <div>
@@ -160,7 +160,7 @@
                             </li>
 
                             <li class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-lg bg-red-50 text-[#820003] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                                <div class="w-6 h-6 rounded-lg bg-red-50 text-[#ac0c0c] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                                     2
                                 </div>
                                 <div>
@@ -170,7 +170,7 @@
                             </li>
 
                             <li class="flex items-start gap-3">
-                                <div class="w-6 h-6 rounded-lg bg-red-50 text-[#820003] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                                <div class="w-6 h-6 rounded-lg bg-red-50 text-[#ac0c0c] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                                     3
                                 </div>
                                 <div>
@@ -232,7 +232,7 @@
                         @csrf
 
                         <!-- Form Header Banner -->
-                        <div class="p-6 sm:p-8 bg-gradient-to-r from-red-50/50 via-[#fcf9f8] to-white border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="p-6 sm:p-8 bg-gradient-to-r from-red-50/50 via-[#f8fafc] to-white border-b border-gray-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div>
                                 <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight">
                                     {{ __('Formulir Pemesanan & Survei') }}
@@ -255,7 +255,7 @@
                             <div class="space-y-4">
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center gap-2">
-                                        <span class="w-6 h-6 rounded-full bg-[#820003] text-white text-xs font-black flex items-center justify-center">1</span>
+                                        <span class="w-6 h-6 rounded-full bg-[#ac0c0c] text-white text-xs font-black flex items-center justify-center">1</span>
                                         <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider text-gray-900">
                                             {{ __('Pilih Jenis Layanan Utama') }} <span class="text-red-500">*</span>
                                         </h3>
@@ -271,22 +271,22 @@
                                     <!-- 1. Home Cleaning Card (Clean Minimal, No Icon Box) -->
                                     <div @click="selectedService = 'Pembersihan Rumah'"
                                          :class="selectedService === 'Pembersihan Rumah' || selectedService === 'Home Cleaning' || selectedService === 'Cleaning Service'
-                                            ? 'border-[#820003] bg-gradient-to-br from-red-50/70 via-white to-red-50/30 ring-2 ring-[#820003]/20 shadow-md -translate-y-1'
-                                            : 'border-gray-200 bg-[#fcfbfb] hover:border-gray-300 hover:bg-white'"
+                                            ? 'border-[#ac0c0c] bg-gradient-to-br from-red-50/70 via-white to-red-50/30 ring-2 ring-[#ac0c0c]/20 shadow-md -translate-y-1'
+                                            : 'border-gray-200 bg-slate-50/70 hover:border-gray-300 hover:bg-white'"
                                          class="relative rounded-2xl border p-5 cursor-pointer transition-all duration-200 flex flex-col justify-between min-h-[140px] group">
                                         
                                         <div class="flex items-center justify-between mb-2">
-                                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#820003]">
+                                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#ac0c0c]">
                                                 {{ __('Facility Service') }}
                                             </span>
                                             <span class="w-5 h-5 rounded-full flex items-center justify-center transition-all"
-                                                  :class="selectedService === 'Pembersihan Rumah' || selectedService === 'Home Cleaning' || selectedService === 'Cleaning Service' ? 'bg-[#820003] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
+                                                  :class="selectedService === 'Pembersihan Rumah' || selectedService === 'Home Cleaning' || selectedService === 'Cleaning Service' ? 'bg-[#ac0c0c] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
                                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                             </span>
                                         </div>
 
                                         <div>
-                                            <h4 class="text-base font-black text-gray-900 group-hover:text-[#820003] transition-colors">
+                                            <h4 class="text-base font-black text-gray-900 group-hover:text-[#ac0c0c] transition-colors">
                                                 {{ __('Pembersihan Rumah') }}
                                             </h4>
                                             <p class="text-xs text-gray-500 mt-1 leading-snug">
@@ -298,22 +298,22 @@
                                     <!-- 2. Home Repair Card (Clean Minimal, No Icon Box) -->
                                     <div @click="selectedService = 'Perbaikan Rumah'"
                                          :class="selectedService === 'Perbaikan Rumah' || selectedService === 'Jasa Tukang & Renovasi'
-                                            ? 'border-[#820003] bg-gradient-to-br from-red-50/70 via-white to-red-50/30 ring-2 ring-[#820003]/20 shadow-md -translate-y-1'
-                                            : 'border-gray-200 bg-[#fcfbfb] hover:border-gray-300 hover:bg-white'"
+                                            ? 'border-[#ac0c0c] bg-gradient-to-br from-red-50/70 via-white to-red-50/30 ring-2 ring-[#ac0c0c]/20 shadow-md -translate-y-1'
+                                            : 'border-gray-200 bg-slate-50/70 hover:border-gray-300 hover:bg-white'"
                                          class="relative rounded-2xl border p-5 cursor-pointer transition-all duration-200 flex flex-col justify-between min-h-[140px] group">
                                         
                                         <div class="flex items-center justify-between mb-2">
-                                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#820003]">
+                                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#ac0c0c]">
                                                 {{ __('Tukang & Renovasi') }}
                                             </span>
                                             <span class="w-5 h-5 rounded-full flex items-center justify-center transition-all"
-                                                  :class="selectedService === 'Perbaikan Rumah' || selectedService === 'Jasa Tukang & Renovasi' ? 'bg-[#820003] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
+                                                  :class="selectedService === 'Perbaikan Rumah' || selectedService === 'Jasa Tukang & Renovasi' ? 'bg-[#ac0c0c] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
                                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                             </span>
                                         </div>
 
                                         <div>
-                                            <h4 class="text-base font-black text-gray-900 group-hover:text-[#820003] transition-colors">
+                                            <h4 class="text-base font-black text-gray-900 group-hover:text-[#ac0c0c] transition-colors">
                                                 {{ __('Perbaikan Rumah') }}
                                             </h4>
                                             <p class="text-xs text-gray-500 mt-1 leading-snug">
@@ -325,22 +325,22 @@
                                     <!-- 3. Waste Management Card (Clean Minimal, No Icon Box) -->
                                     <div @click="selectedService = 'Pengangkutan Sampah'"
                                          :class="selectedService === 'Pengangkutan Sampah'
-                                            ? 'border-[#820003] bg-gradient-to-br from-red-50/70 via-white to-red-50/30 ring-2 ring-[#820003]/20 shadow-md -translate-y-1'
-                                            : 'border-gray-200 bg-[#fcfbfb] hover:border-gray-300 hover:bg-white'"
+                                            ? 'border-[#ac0c0c] bg-gradient-to-br from-red-50/70 via-white to-red-50/30 ring-2 ring-[#ac0c0c]/20 shadow-md -translate-y-1'
+                                            : 'border-gray-200 bg-slate-50/70 hover:border-gray-300 hover:bg-white'"
                                          class="relative rounded-2xl border p-5 cursor-pointer transition-all duration-200 flex flex-col justify-between min-h-[140px] group">
                                         
                                         <div class="flex items-center justify-between mb-2">
-                                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#820003]">
+                                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-[#ac0c0c]">
                                                 {{ __('Limbah & Puing') }}
                                             </span>
                                             <span class="w-5 h-5 rounded-full flex items-center justify-center transition-all"
-                                                  :class="selectedService === 'Pengangkutan Sampah' ? 'bg-[#820003] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
+                                                  :class="selectedService === 'Pengangkutan Sampah' ? 'bg-[#ac0c0c] text-white shadow-sm' : 'border border-gray-300 text-transparent'">
                                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
                                             </span>
                                         </div>
 
                                         <div>
-                                            <h4 class="text-base font-black text-gray-900 group-hover:text-[#820003] transition-colors">
+                                            <h4 class="text-base font-black text-gray-900 group-hover:text-[#ac0c0c] transition-colors">
                                                 {{ __('Pengangkutan Sampah') }}
                                             </h4>
                                             <p class="text-xs text-gray-500 mt-1 leading-snug">
@@ -357,7 +357,7 @@
                             <!-- ============================================== -->
                             <div class="space-y-5 pt-8 border-t border-gray-100">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-[#820003] text-white text-xs font-black flex items-center justify-center">2</span>
+                                    <span class="w-6 h-6 rounded-full bg-[#ac0c0c] text-white text-xs font-black flex items-center justify-center">2</span>
                                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider text-gray-900">
                                         {{ __('Informasi Properti & Lokasi') }} <span class="text-red-500">*</span>
                                     </h3>
@@ -369,7 +369,7 @@
                                         <label class="block text-xs font-bold text-gray-800">
                                             {{ __('Kota Operasional') }} <span class="text-red-500">*</span>
                                         </label>
-                                        <select name="location" required class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-[#fdfdfd] text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#820003] focus:ring-4 focus:ring-[#820003]/10 transition-all outline-none">
+                                        <select name="location" required class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none">
                                             <option value="Surabaya" {{ old('location') === 'Surabaya' ? 'selected' : '' }}>Surabaya</option>
                                             <option value="Sidoarjo" {{ old('location') === 'Sidoarjo' ? 'selected' : '' }}>Sidoarjo</option>
                                             <option value="Gresik" {{ old('location') === 'Gresik' ? 'selected' : '' }}>Gresik</option>
@@ -386,7 +386,7 @@
                                         <label class="block text-xs font-bold text-gray-800">
                                             {{ __('Tipe Properti / Bangunan') }} <span class="text-red-500">*</span>
                                         </label>
-                                        <select name="property_type" required class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-[#fdfdfd] text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#820003] focus:ring-4 focus:ring-[#820003]/10 transition-all outline-none">
+                                        <select name="property_type" required class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none">
                                             <option value="Rumah Tinggal / Hunian" {{ old('property_type') === 'Rumah Tinggal / Hunian' ? 'selected' : '' }}>Rumah Tinggal / Residensial</option>
                                             <option value="Apartemen / Studio" {{ old('property_type') === 'Apartemen / Studio' ? 'selected' : '' }}>Apartemen / Studio</option>
                                             <option value="Ruko / Tempat Usaha" {{ old('property_type') === 'Ruko / Tempat Usaha' ? 'selected' : '' }}>Ruko / Kantor Ruko</option>
@@ -405,7 +405,7 @@
                                         {{ __('Alamat Lengkap Lokasi Properti') }}
                                         <span class="text-gray-400 font-normal">({{ __('Nama jalan, nomor rumah/unit, RT/RW, kelurahan/kecamatan') }})</span>
                                     </label>
-                                    <textarea name="address" rows="2" placeholder="Contoh: Jl. Mayjen Sungkono No. 45, Dukuh Pakis, Surabaya Barat (Dekat Bundaran Satelit)..." class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-[#fdfdfd] text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#820003] focus:ring-4 focus:ring-[#820003]/10 transition-all outline-none leading-relaxed">{{ old('address') }}</textarea>
+                                    <textarea name="address" rows="2" placeholder="Contoh: Jl. Mayjen Sungkono No. 45, Dukuh Pakis, Surabaya Barat (Dekat Bundaran Satelit)..." class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none leading-relaxed">{{ old('address') }}</textarea>
                                     @error('address') <span class="text-[11px] text-red-600 block">{{ $message }}</span> @enderror
                                 </div>
                             </div>
@@ -415,7 +415,7 @@
                             <!-- ============================================== -->
                             <div class="space-y-5 pt-8 border-t border-gray-100">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-[#820003] text-white text-xs font-black flex items-center justify-center">3</span>
+                                    <span class="w-6 h-6 rounded-full bg-[#ac0c0c] text-white text-xs font-black flex items-center justify-center">3</span>
                                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider text-gray-900">
                                         {{ __('Informasi Pemohon & Jadwal Survei') }} <span class="text-red-500">*</span>
                                     </h3>
@@ -427,7 +427,7 @@
                                         <label class="block text-xs font-bold text-gray-800">
                                             {{ __('Nama Lengkap / Instansi') }} <span class="text-red-500">*</span>
                                         </label>
-                                        <input type="text" name="name" value="{{ old('name') }}" required placeholder="Contoh: Bpk. Hendra Gunawan" class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-[#fdfdfd] text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#820003] focus:ring-4 focus:ring-[#820003]/10 transition-all outline-none">
+                                        <input type="text" name="name" value="{{ old('name') }}" required placeholder="Contoh: Bpk. Hendra Gunawan" class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none">
                                         @error('name') <span class="text-[11px] text-red-600 block">{{ $message }}</span> @enderror
                                     </div>
 
@@ -436,7 +436,7 @@
                                         <label class="block text-xs font-bold text-gray-800">
                                             {{ __('Nomor WhatsApp Aktif') }} <span class="text-red-500">*</span>
                                         </label>
-                                        <input type="tel" name="whatsapp" value="{{ old('whatsapp') }}" required placeholder="0812-xxxx-xxxx" class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-[#fdfdfd] text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#820003] focus:ring-4 focus:ring-[#820003]/10 transition-all outline-none">
+                                        <input type="tel" name="whatsapp" value="{{ old('whatsapp') }}" required placeholder="0812-xxxx-xxxx" class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none">
                                         @error('whatsapp') <span class="text-[11px] text-red-600 block">{{ $message }}</span> @enderror
                                     </div>
                                 </div>
@@ -447,7 +447,7 @@
                                         <label class="block text-xs font-bold text-gray-800">
                                             {{ __('Alamat Email') }} <span class="text-red-500">*</span>
                                         </label>
-                                        <input type="email" name="email" value="{{ old('email') }}" required placeholder="email@perusahaan.com" class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-[#fdfdfd] text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#820003] focus:ring-4 focus:ring-[#820003]/10 transition-all outline-none">
+                                        <input type="email" name="email" value="{{ old('email') }}" required placeholder="email@perusahaan.com" class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none">
                                         @error('email') <span class="text-[11px] text-red-600 block">{{ $message }}</span> @enderror
                                     </div>
 
@@ -459,17 +459,17 @@
                                         
                                         <div class="grid grid-cols-3 gap-2">
                                             <button type="button" @click="scheduleChoice = 'Hari Ini'"
-                                                    :class="scheduleChoice === 'Hari Ini' ? 'bg-[#820003] text-white font-bold border-[#820003] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
+                                                    :class="scheduleChoice === 'Hari Ini' ? 'bg-[#ac0c0c] text-white font-bold border-[#ac0c0c] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
                                                     class="py-2.5 px-2 rounded-xl border text-xs text-center font-medium transition-all">
                                                 Hari Ini
                                             </button>
                                             <button type="button" @click="scheduleChoice = 'Besok'"
-                                                    :class="scheduleChoice === 'Besok' ? 'bg-[#820003] text-white font-bold border-[#820003] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
+                                                    :class="scheduleChoice === 'Besok' ? 'bg-[#ac0c0c] text-white font-bold border-[#ac0c0c] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
                                                     class="py-2.5 px-2 rounded-xl border text-xs text-center font-medium transition-all">
                                                 Besok
                                             </button>
                                             <button type="button" @click="scheduleChoice = 'Fleksibel'"
-                                                    :class="scheduleChoice === 'Fleksibel' ? 'bg-[#820003] text-white font-bold border-[#820003] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
+                                                    :class="scheduleChoice === 'Fleksibel' ? 'bg-[#ac0c0c] text-white font-bold border-[#ac0c0c] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
                                                     class="py-2.5 px-2 rounded-xl border text-xs text-center font-medium transition-all">
                                                 Fleksibel
                                             </button>
@@ -483,7 +483,7 @@
                             <!-- ============================================== -->
                             <div class="space-y-5 pt-8 border-t border-gray-100">
                                 <div class="flex items-center gap-2">
-                                    <span class="w-6 h-6 rounded-full bg-[#820003] text-white text-xs font-black flex items-center justify-center">4</span>
+                                    <span class="w-6 h-6 rounded-full bg-[#ac0c0c] text-white text-xs font-black flex items-center justify-center">4</span>
                                     <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider text-gray-900">
                                         {{ __('Foto Kondisi & Detail Kebutuhan') }}
                                     </h3>
@@ -541,7 +541,7 @@
                                     <label class="block text-xs font-bold text-gray-800">
                                         {{ __('Catatan Spesifik Kebutuhan & Kendala Properti') }}
                                     </label>
-                                    <textarea name="notes" rows="4" placeholder="Ceritakan detail kendala (misal: luas ruangan perkiraan, jumlah kamar mandi berkerak, pipa plafon bocor aktif, atau volume sampah yang perlu diangkut)..." class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-[#fdfdfd] text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#820003] focus:ring-4 focus:ring-[#820003]/10 transition-all outline-none leading-relaxed">{{ old('notes', request('notes')) }}</textarea>
+                                    <textarea name="notes" rows="4" placeholder="Ceritakan detail kendala (misal: luas ruangan perkiraan, jumlah kamar mandi berkerak, pipa plafon bocor aktif, atau volume sampah yang perlu diangkut)..." class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none leading-relaxed">{{ old('notes', request('notes')) }}</textarea>
                                 </div>
                             </div>
 
@@ -559,7 +559,7 @@
                                     </p>
 
                                     <button type="submit" 
-                                            class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-[#820003] via-[#9e0509] to-[#ac0c0c] hover:brightness-110 text-white font-black text-xs sm:text-sm shadow-xl shadow-red-950/20 hover:shadow-2xl hover:shadow-red-900/30 transition-all hover:-translate-y-0.5 active:scale-95">
+                                            class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-[#ac0c0c] via-[#b91c1c] to-[#ac0c0c] hover:brightness-110 text-white font-black text-xs sm:text-sm shadow-xl shadow-red-950/20 hover:shadow-2xl hover:shadow-red-900/30 transition-all hover:-translate-y-0.5 active:scale-95">
                                         <span>{{ __('Kirim Permintaan Konsultasi & Jadwalkan Survei') }} &rarr;</span>
                                     </button>
                                 </div>

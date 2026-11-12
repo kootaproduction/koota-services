@@ -31,18 +31,18 @@
                 @csrf
                 <div class="space-y-2">
                     <label class="block text-xs font-bold text-gray-700 uppercase">Pesan Pemberitahuan untuk Pengunjung</label>
-                    <input type="text" name="maintenance_message" value="{{ $maintenanceMessage }}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] text-xs sm:text-sm">
+                    <input type="text" name="maintenance_message" value="{{ $maintenanceMessage }}" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] text-xs sm:text-sm">
                 </div>
 
                 <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
                     <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" name="is_maintenance" value="1" {{ $isMaintenance ? 'checked' : '' }} class="w-5 h-5 rounded text-[#820003] focus:ring-[#820003]">
+                        <input type="checkbox" name="is_maintenance" value="1" {{ $isMaintenance ? 'checked' : '' }} class="w-5 h-5 rounded text-[#ac0c0c] focus:ring-[#ac0c0c]">
                         <span class="text-xs sm:text-sm font-bold text-gray-800">
                             Aktifkan Maintenance Mode (Tutup Akses Publik Sementara)
                         </span>
                     </label>
 
-                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#820003] hover:bg-[#ba1a15] text-white font-bold text-xs sm:text-sm transition-all shadow-sm active:scale-95">
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white font-bold text-xs sm:text-sm transition-all shadow-sm active:scale-95">
                         Simpan Status Pemeliharaan
                     </button>
                 </div>
@@ -53,7 +53,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Stat 1: Total Konsultasi -->
             <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#ac0c0c] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
@@ -66,7 +66,7 @@
 
             <!-- Stat 2: Total Layanan -->
             <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#ac0c0c] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
                     </svg>
@@ -79,7 +79,7 @@
 
             <!-- Stat 3: Total Projects -->
             <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#ac0c0c] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
@@ -92,7 +92,7 @@
 
             <!-- Stat 4: Total Posts -->
             <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center gap-4">
-                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#820003] flex items-center justify-center font-bold">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#ac0c0c] flex items-center justify-center font-bold">
                     <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                     </svg>
@@ -108,7 +108,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center justify-between">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-neutral-100 text-[#820003] flex items-center justify-center font-bold">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-100 text-[#ac0c0c] flex items-center justify-center font-bold">
                         <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
                         </svg>
@@ -118,7 +118,7 @@
                         <p class="text-2xl font-black text-gray-900">{{ $totalBotKnowledges }} <span class="text-xs font-medium text-gray-500">Pertanyaan Database</span></p>
                     </div>
                 </div>
-                <a href="{{ route('admin.bot-knowledges.index') }}" class="px-4 py-2 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
+                <a href="{{ route('admin.bot-knowledges.index') }}" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
                     Kelola Q&A &rarr;
                 </a>
             </div>
@@ -137,7 +137,7 @@
                         </p>
                     </div>
                 </div>
-                <a href="{{ route('admin.bot-knowledges.logs', ['status' => 'unresolved']) }}" class="px-4 py-2 rounded-xl {{ $unresolvedBotLogsCount > 0 ? 'bg-amber-600 hover:bg-amber-700 text-white' : 'bg-neutral-100 hover:bg-neutral-200 text-gray-800' }} text-xs font-bold transition-colors">
+                <a href="{{ route('admin.bot-knowledges.logs', ['status' => 'unresolved']) }}" class="px-4 py-2 rounded-xl {{ $unresolvedBotLogsCount > 0 ? 'bg-amber-600 hover:bg-amber-700 text-white' : 'bg-slate-100 hover:bg-neutral-200 text-gray-800' }} text-xs font-bold transition-colors">
                     Lihat Log Chat &rarr;
                 </a>
             </div>
@@ -147,7 +147,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center justify-between">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-neutral-100 text-[#820003] flex items-center justify-center font-bold">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-100 text-[#ac0c0c] flex items-center justify-center font-bold">
                         <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
                         </svg>
@@ -157,14 +157,14 @@
                         <p class="text-2xl font-black text-gray-900">{{ $totalTransformations }} <span class="text-xs font-medium text-gray-500">Studi Kasus Visual</span></p>
                     </div>
                 </div>
-                <a href="{{ route('admin.transformations.index') }}" class="px-4 py-2 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
+                <a href="{{ route('admin.transformations.index') }}" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
                     Kelola Foto &rarr;
                 </a>
             </div>
 
             <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-2xs flex items-center justify-between">
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-neutral-100 text-amber-500 flex items-center justify-center font-bold">
+                    <div class="w-12 h-12 rounded-2xl bg-slate-100 text-amber-500 flex items-center justify-center font-bold">
                         <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
                         </svg>
@@ -174,7 +174,7 @@
                         <p class="text-2xl font-black text-gray-900">{{ $totalTestimonials }} <span class="text-xs font-medium text-gray-500">Ulasan Pelanggan</span></p>
                     </div>
                 </div>
-                <a href="{{ route('admin.testimonials.index') }}" class="px-4 py-2 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
+                <a href="{{ route('admin.testimonials.index') }}" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-neutral-200 text-xs font-bold text-gray-800 transition-colors">
                     Kelola Ulasan &rarr;
                 </a>
             </div>
@@ -187,7 +187,7 @@
                     <h3 class="text-lg font-bold text-gray-900">Permintaan Konsultasi Terbaru</h3>
                     <p class="text-xs text-gray-500">Daftar calon klien yang mengisi form konsultasi website</p>
                 </div>
-                <a href="{{ route('admin.consultations.index') }}" class="text-xs font-bold text-[#820003] hover:underline">
+                <a href="{{ route('admin.consultations.index') }}" class="text-xs font-bold text-[#ac0c0c] hover:underline">
                     Lihat Semua Konsultasi
                 </a>
             </div>
@@ -195,7 +195,7 @@
             <div class="overflow-x-auto">
                 <table class="w-full text-left border-collapse">
                     <thead>
-                        <tr class="bg-[#fcf9f8] border-b border-gray-100 text-xs font-bold text-gray-400 uppercase">
+                        <tr class="bg-slate-50 border-b border-gray-100 text-xs font-bold text-gray-400 uppercase">
                             <th class="py-3.5 px-6">Layanan</th>
                             <th class="py-3.5 px-6">Nama Pelanggan</th>
                             <th class="py-3.5 px-6">No. WhatsApp</th>
@@ -208,7 +208,7 @@
                         @forelse($recentConsultations as $c)
                             <tr class="hover:bg-gray-50 transition-colors">
                                 <td class="py-4 px-6 font-bold text-gray-900">
-                                    <span class="px-2.5 py-1 rounded-full bg-red-50 text-[#820003] text-[11px] font-semibold">
+                                    <span class="px-2.5 py-1 rounded-full bg-red-50 text-[#ac0c0c] text-[11px] font-semibold">
                                         {{ $c->service_type }}
                                     </span>
                                 </td>

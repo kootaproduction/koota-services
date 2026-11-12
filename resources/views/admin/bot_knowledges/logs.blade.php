@@ -15,7 +15,7 @@
             <a href="{{ route('admin.bot-knowledges.index') }}" class="px-4 py-2.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-bold transition-colors">
                 &larr; Basis Pengetahuan (Q&A)
             </a>
-            <a href="{{ route('admin.bot-knowledges.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#820003] text-white text-xs font-bold transition-colors">
+            <a href="{{ route('admin.bot-knowledges.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold transition-colors">
                 + Tambah Pengetahuan Baru
             </a>
         </div>
@@ -42,7 +42,7 @@
                 @if(request('status'))
                     <input type="hidden" name="status" value="{{ request('status') }}">
                 @endif
-                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari pesan atau jawaban..." class="px-3.5 py-1.5 text-xs rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#820003] focus:border-transparent w-64">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari pesan atau jawaban..." class="px-3.5 py-1.5 text-xs rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent w-64">
                 <button type="submit" class="px-3 py-1.5 rounded-xl bg-gray-800 text-white text-xs font-bold hover:bg-gray-900 transition-colors">
                     Cari
                 </button>
@@ -82,7 +82,7 @@
                                 </p>
                             </td>
                             <td class="py-4 px-6">
-                                <span class="inline-block px-2.5 py-1 rounded-lg text-[11px] font-bold {{ Str::contains($log->matched_source, 'Belum Terjawab') ? 'bg-red-100 text-red-800' : 'bg-neutral-100 text-neutral-800 border border-neutral-200' }}">
+                                <span class="inline-block px-2.5 py-1 rounded-lg text-[11px] font-bold {{ Str::contains($log->matched_source, 'Belum Terjawab') ? 'bg-red-100 text-red-800' : 'bg-slate-100 text-neutral-800 border border-neutral-200' }}">
                                     {{ $log->matched_source ?? 'Tidak Diketahui' }}
                                 </span>
                             </td>
@@ -104,7 +104,7 @@
                             </td>
                             <td class="py-4 px-6 text-right space-y-1 whitespace-nowrap">
                                 @if(!$log->is_resolved)
-                                    <a href="{{ route('admin.bot-knowledges.create', ['from_question' => $log->user_message, 'from_log_id' => $log->id]) }}" class="px-2.5 py-1 rounded-lg bg-[#ac0c0c] text-white hover:bg-[#820003] text-[11px] font-bold transition-colors inline-block shadow-2xs">
+                                    <a href="{{ route('admin.bot-knowledges.create', ['from_question' => $log->user_message, 'from_log_id' => $log->id]) }}" class="px-2.5 py-1 rounded-lg bg-[#ac0c0c] text-white hover:bg-[#8f0a0a] text-[11px] font-bold transition-colors inline-block shadow-2xs">
                                         + Jadikan Pengetahuan
                                     </a>
                                 @endif

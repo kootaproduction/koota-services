@@ -19,7 +19,7 @@
         <div class="bg-white p-5 rounded-2xl border border-gray-200 shadow-2xs space-y-1">
             <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Total Pertanyaan Terjawab</span>
             <div class="flex items-baseline justify-between">
-                <span class="text-2xl font-black text-[#820003]">{{ number_format($totalHits) }}</span>
+                <span class="text-2xl font-black text-[#ac0c0c]">{{ number_format($totalHits) }}</span>
                 <span class="text-xs font-bold text-gray-500">Hits Terpanggil</span>
             </div>
             <p class="text-[11px] text-gray-400">Frekuensi bot mencocokkan data database</p>
@@ -40,7 +40,7 @@
             <p class="text-[11px] text-gray-400">Pertanyaan user yang perlu Anda lengkapi</p>
         </div>
 
-        <div class="bg-gradient-to-br from-[#820003] to-[#450002] p-5 rounded-2xl text-white shadow-2xs flex flex-col justify-between">
+        <div class="bg-gradient-to-br from-[#ac0c0c] to-[#450002] p-5 rounded-2xl text-white shadow-2xs flex flex-col justify-between">
             <div>
                 <span class="text-[11px] uppercase tracking-wider font-bold text-red-200 block">Riwayat Interaksi</span>
                 <p class="text-sm font-semibold mt-1">Pantau pertanyaan asli dari pengunjung</p>
@@ -64,7 +64,7 @@
                     <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                     <span>Evaluasi Belum Terjawab ({{ $unresolvedLogsCount }})</span>
                 </a>
-                <a href="{{ route('admin.bot-knowledges.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#820003] text-white text-xs font-bold shadow-sm transition-colors inline-flex items-center gap-1.5">
+                <a href="{{ route('admin.bot-knowledges.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-colors inline-flex items-center gap-1.5">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     <span>Tambah Pengetahuan Baru</span>
                 </a>
@@ -74,10 +74,10 @@
         <!-- Filter Form -->
         <form method="GET" action="{{ route('admin.bot-knowledges.index') }}" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-3 border-t border-gray-100">
             <div>
-                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari pertanyaan, jawaban, atau kata kunci..." class="w-full px-3.5 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-[#820003] focus:border-transparent">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari pertanyaan, jawaban, atau kata kunci..." class="w-full px-3.5 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent">
             </div>
             <div>
-                <select name="category" class="w-full px-3.5 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-[#820003] focus:border-transparent">
+                <select name="category" class="w-full px-3.5 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent">
                     <option value="">Semua Kategori</option>
                     @foreach($categories as $cat)
                         <option value="{{ $cat }}" {{ request('category') === $cat ? 'selected' : '' }}>{{ $cat }}</option>
@@ -85,7 +85,7 @@
                 </select>
             </div>
             <div>
-                <select name="status" class="w-full px-3.5 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-[#820003] focus:border-transparent">
+                <select name="status" class="w-full px-3.5 py-2 rounded-xl border border-gray-300 text-xs focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent">
                     <option value="">Semua Status</option>
                     <option value="active" {{ request('status') === 'active' ? 'selected' : '' }}>Hanya Aktif</option>
                     <option value="inactive" {{ request('status') === 'inactive' ? 'selected' : '' }}>Nonaktif</option>
@@ -126,7 +126,7 @@
                                 #{{ $k->order }}
                             </td>
                             <td class="py-4 px-6">
-                                <span class="inline-block px-2.5 py-1 rounded-lg text-[11px] font-bold bg-neutral-100 text-neutral-800 border border-neutral-200">
+                                <span class="inline-block px-2.5 py-1 rounded-lg text-[11px] font-bold bg-slate-100 text-neutral-800 border border-neutral-200">
                                     {{ $k->category }}
                                 </span>
                             </td>
@@ -137,7 +137,7 @@
                                 @if($k->keywords)
                                     <div class="flex flex-wrap gap-1">
                                         @foreach(array_slice(explode(',', $k->keywords), 0, 5) as $kw)
-                                            <span class="text-[10px] bg-red-50 text-[#820003] font-medium px-2 py-0.5 rounded-md border border-red-100">
+                                            <span class="text-[10px] bg-red-50 text-[#ac0c0c] font-medium px-2 py-0.5 rounded-md border border-red-100">
                                                 {{ trim($kw) }}
                                             </span>
                                         @endforeach

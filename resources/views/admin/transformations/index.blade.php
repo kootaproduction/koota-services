@@ -12,10 +12,10 @@
             <div class="flex items-center gap-3 mt-1 text-xs text-gray-400">
                 <span>Total: <strong class="text-gray-700">{{ $totalCount }}</strong> data</span>
                 <span>•</span>
-                <span>Unggulan Publik: <strong class="text-[#820003]">{{ $featuredCount }}</strong></span>
+                <span>Unggulan Publik: <strong class="text-[#ac0c0c]">{{ $featuredCount }}</strong></span>
             </div>
         </div>
-        <a href="{{ route('admin.transformations.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#820003] text-white text-xs font-bold shadow-sm transition-colors inline-flex items-center gap-2">
+        <a href="{{ route('admin.transformations.create') }}" class="px-5 py-2.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-colors inline-flex items-center gap-2">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             <span>+ Tambah Transformasi Baru</span>
         </a>
@@ -45,7 +45,7 @@
                     <!-- Details -->
                     <div class="p-5 space-y-2.5">
                         <div class="flex items-center justify-between">
-                            <span class="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-neutral-100 text-neutral-800 border border-neutral-200">
+                            <span class="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-slate-100 text-neutral-800 border border-neutral-200">
                                 {{ $t->category }}
                             </span>
                             @if($t->location)
