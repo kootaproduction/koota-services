@@ -5,9 +5,9 @@
 
 @section('content')
     <!-- Top Hero Section -->
-    <section class="bg-slate-50 border-b border-gray-100">
+    <section class="bg-slate-50 border-b border-slate-200/70">
         <div class="w-full">
-            <div class="relative isolate min-h-[480px] w-full overflow-hidden bg-slate-900 shadow-2xl ring-1 ring-black/10 sm:min-h-[560px] lg:min-h-[calc(100svh-5rem)]" aria-labelledby="about-hero-title">
+            <div class="relative isolate min-h-[320px] w-full overflow-hidden bg-slate-900 shadow-lg ring-1 ring-black/10 sm:min-h-[380px] lg:min-h-[420px]" aria-labelledby="about-hero-title">
                 <div aria-hidden="true" class="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(172,12,12,0.24),transparent_55%),linear-gradient(115deg,#0f172a_0%,#1e293b_48%,#0f172a_100%)]"></div>
 
                 <video class="absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
@@ -35,7 +35,7 @@
     </section>
 
     <!-- Section: Siapa Kami & Area Layanan -->
-    <section class="py-16 md:py-20 bg-white border-b border-gray-100">
+    <section class="py-12 md:py-16 bg-white border-b border-slate-200/70">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
@@ -120,12 +120,12 @@
     </section>
 
     <!-- Section: Visi & Misi Kami -->
-    <section id="vision-mission" class="py-16 md:py-20 bg-slate-50 border-b border-gray-100" aria-labelledby="vision-mission-title">
+    <section id="vision-mission" class="py-14 md:py-16 bg-slate-50 border-b border-slate-200/70" aria-labelledby="vision-mission-title">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            
+
             <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-                <div class="inline-flex items-center justify-center gap-3 mb-3.5">
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+                <div class="inline-flex items-center justify-center gap-3 mb-2.5">
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
                     <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
                         {{ __('Arah & Prinsip Kerja') }}
@@ -133,126 +133,126 @@
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
                 </div>
 
-                <h2 id="vision-mission-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
+                <h2 id="vision-mission-title" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
                     {{ __('Visi & Misi Kami') }}
                 </h2>
 
-                <p class="mt-4 text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
+                <p class="mt-2.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {{ __('Dedikasi dan Standar Kualitas untuk Setiap Ruang') }}
                 </p>
             </div>
 
-            <!-- Vision & Mission 2-Column Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-                
-                <!-- Left: Visi Kami (Dark Editorial Statement Card) -->
-                <div class="lg:col-span-6 flex">
-                    <article class="vision-reveal w-full flex flex-col justify-between rounded-3xl bg-[#0f172a] p-8 sm:p-10 text-white relative overflow-hidden shadow-xl border border-slate-800 transition-all duration-300 hover:shadow-2xl">
-                        <!-- Subtle ambient crimson glow -->
-                        <div aria-hidden="true" class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#ac0c0c]/25 blur-3xl pointer-events-none"></div>
+            <!-- Compact Vision Statement + Metrics Banner (Zero Empty Void) -->
+            <article class="vision-reveal rounded-3xl bg-[#0f172a] p-6 sm:p-8 lg:p-10 text-white relative overflow-hidden shadow-lg border border-slate-800">
+                <div aria-hidden="true" class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#ac0c0c]/25 blur-3xl pointer-events-none"></div>
 
-                        <div class="relative z-10 space-y-6">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold tracking-widest uppercase text-red-300">
-                                    {{ __('Visi Utama') }}
-                                </span>
-                                <span class="text-[11px] text-slate-400 font-semibold tracking-wider uppercase">KOOTA SERVICES</span>
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+                    <!-- Left: Core Vision Quote -->
+                    <div class="lg:col-span-7 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-red-300">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c]"></span>
+                                {{ __('Visi Utama') }}
+                            </span>
+                            <span class="text-slate-600">•</span>
+                            <span class="text-[11px] text-slate-400 font-semibold tracking-wider uppercase">KOOTA SERVICES</span>
+                        </div>
+
+                        <blockquote class="font-serif-brand text-lg sm:text-xl lg:text-[23px] font-normal italic text-white/95 leading-relaxed">
+                            "{{ __('Menjadi penyedia layanan perawatan fasilitas, kebersihan profesional, dan manajemen lingkungan terkemuka di Indonesia dengan standar kualitas unggul, inovatif, dan berkelanjutan.') }}"
+                        </blockquote>
+                    </div>
+
+                    <!-- Right: Compact Stats Metrics Grid -->
+                    <div class="lg:col-span-5">
+                        <dl class="grid grid-cols-3 gap-2 sm:gap-3 rounded-2xl bg-white/5 border border-white/10 p-4 sm:p-5 text-center backdrop-blur-xs">
+                            <div class="flex flex-col px-1">
+                                <dd class="text-xl sm:text-2xl lg:text-3xl font-black leading-tight text-white">10+</dd>
+                                <dt class="mt-1 text-[10px] sm:text-[11px] font-medium leading-snug text-slate-300 uppercase tracking-wider">{{ __('Tahun Pengalaman') }}</dt>
                             </div>
 
-                            <blockquote class="font-serif-brand text-xl sm:text-2xl lg:text-[26px] font-normal italic text-white/95 leading-relaxed pt-2">
-                                "{{ __('Menjadi penyedia layanan perawatan fasilitas, kebersihan profesional, dan manajemen lingkungan terkemuka di Indonesia dengan standar kualitas unggul, inovatif, dan berkelanjutan.') }}"
-                            </blockquote>
-                        </div>
+                            <div class="flex flex-col px-1 border-x border-white/15">
+                                <dd class="text-xl sm:text-2xl lg:text-3xl font-black leading-tight text-white">200+</dd>
+                                <dt class="mt-1 text-[10px] sm:text-[11px] font-medium leading-snug text-slate-300 uppercase tracking-wider">{{ __('Klien') }}</dt>
+                            </div>
 
-                        <!-- Stats Metrics Row -->
-                        <div class="relative z-10 mt-8 pt-6 border-t border-white/15">
-                            <dl class="grid grid-cols-3 gap-2 sm:gap-4 text-center">
-                                <div class="flex flex-col">
-                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:text-xs uppercase tracking-wider">{{ __('Tahun Pengalaman') }}</dt>
-                                    <dd class="order-1 text-2xl font-black leading-tight text-white sm:text-3xl">10+</dd>
-                                </div>
+                            <div class="flex flex-col px-1">
+                                <dd class="text-xl sm:text-2xl lg:text-3xl font-black leading-tight text-white">50+</dd>
+                                <dt class="mt-1 text-[10px] sm:text-[11px] font-medium leading-snug text-slate-300 uppercase tracking-wider">{{ __('Gedung') }}</dt>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </article>
 
-                                <div class="flex flex-col border-x border-white/15">
-                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:text-xs uppercase tracking-wider">{{ __('Klien') }}</dt>
-                                    <dd class="order-1 text-2xl font-black leading-tight text-white sm:text-3xl">200+</dd>
-                                </div>
+            <!-- Mission Header & 3-Column Horizontal Mission Cards -->
+            <div class="mt-8 space-y-5">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 px-1">
+                    <div>
+                        <span class="text-xs font-bold tracking-widest uppercase text-[#ac0c0c]">
+                            {{ __('Misi Kami') }} • {{ __('Prinsip Kerja') }}
+                        </span>
+                        <h3 class="mt-1 text-xl sm:text-2xl font-extrabold text-[#0f172a] tracking-tight leading-snug">
+                            {{ __('Komitmen Nyata di Setiap Operasional') }}
+                        </h3>
+                    </div>
+                    <span class="text-xs font-bold text-[#ac0c0c] tracking-wide">
+                        Surabaya • Malang • Bali • Jakarta
+                    </span>
+                </div>
 
-                                <div class="flex flex-col">
-                                    <dt class="order-2 mt-1 text-[11px] font-medium leading-snug text-slate-400 sm:text-xs uppercase tracking-wider">{{ __('Gedung') }}</dt>
-                                    <dd class="order-1 text-2xl font-black leading-tight text-white sm:text-3xl">50+</dd>
-                                </div>
-                            </dl>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- Pillar 1 -->
+                    <article class="vision-reveal rounded-2xl bg-white p-6 border border-slate-200/90 border-t-4 border-t-[#ac0c0c] shadow-2xs hover:shadow-md transition-all duration-300">
+                        <span class="inline-block text-[11px] font-black text-[#ac0c0c] tracking-widest uppercase">01</span>
+                        <h4 class="mt-1.5 text-base font-bold text-[#0f172a] leading-snug">
+                            {{ __('Standar Kualitas Tertinggi') }}
+                        </h4>
+                        <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            {{ __('Memberikan layanan pemeliharaan komersial dan residensial berstandar tinggi.') }}
+                        </p>
+                    </article>
+
+                    <!-- Pillar 2 -->
+                    <article class="vision-reveal rounded-2xl bg-white p-6 border border-slate-200/90 border-t-4 border-t-[#ac0c0c] shadow-2xs hover:shadow-md transition-all duration-300">
+                        <span class="inline-block text-[11px] font-black text-[#ac0c0c] tracking-widest uppercase">02</span>
+                        <h4 class="mt-1.5 text-base font-bold text-[#0f172a] leading-snug">
+                            {{ __('Solusi Ramah Lingkungan') }}
+                        </h4>
+                        <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            {{ __('Menerapkan solusi ramah lingkungan dan teknologi modern dalam setiap operasional.') }}
+                        </p>
+                    </article>
+
+                    <!-- Pillar 3 -->
+                    <article class="vision-reveal rounded-2xl bg-white p-6 border border-slate-200/90 border-t-4 border-t-[#ac0c0c] shadow-2xs hover:shadow-md transition-all duration-300">
+                        <span class="inline-block text-[11px] font-black text-[#ac0c0c] tracking-widest uppercase">03</span>
+                        <h4 class="mt-1.5 text-base font-bold text-[#0f172a] leading-snug">
+                            {{ __('Keselamatan & Kepuasan Prima') }}
+                        </h4>
+                        <p class="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            {{ __('Mengutamakan keselamatan kerja, ketepatan waktu, dan kepuasan pelanggan prima.') }}
+                        </p>
                     </article>
                 </div>
 
-                <!-- Right: Misi Kami (Pillars of Excellence Card) -->
-                <div class="lg:col-span-6 flex">
-                    <article class="vision-reveal w-full flex flex-col justify-between rounded-3xl bg-white p-8 sm:p-10 border border-gray-200/90 shadow-[0_10px_30px_rgba(0,0,0,0.04)] transition-all duration-300 hover:shadow-xl">
-                        <div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold tracking-widest uppercase text-[#ac0c0c]">
-                                    {{ __('Misi Kami') }}
-                                </span>
-                                <span class="text-[11px] text-gray-400 font-semibold tracking-wider uppercase">{{ __('Prinsip Kerja') }}</span>
-                            </div>
+                <!-- Compact Trust & Action Bar -->
+                <div class="pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <span class="text-xs font-medium text-slate-500">
+                        SOP Terstandar & Bergaransi
+                    </span>
 
-                            <h3 class="mt-5 text-xl sm:text-2xl font-extrabold text-gray-900 tracking-tight leading-snug">
-                                {{ __('Komitmen Nyata di Setiap Operasional') }}
-                            </h3>
+                    <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+                        <a href="{{ route('services.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-all active:scale-95">
+                            <span>{{ __('Lihat Layanan Kami') }}</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
 
-                            <div class="mt-6 space-y-4">
-                                <!-- Pillar 1 -->
-                                <div class="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/70 transition-colors hover:bg-slate-50">
-                                    <h4 class="text-sm font-bold text-gray-900 leading-snug">
-                                        {{ __('Standar Kualitas Tertinggi') }}
-                                    </h4>
-                                    <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                        {{ __('Memberikan layanan pemeliharaan komersial dan residensial berstandar tinggi.') }}
-                                    </p>
-                                </div>
-
-                                <!-- Pillar 2 -->
-                                <div class="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/70 transition-colors hover:bg-slate-50">
-                                    <h4 class="text-sm font-bold text-gray-900 leading-snug">
-                                        {{ __('Solusi Ramah Lingkungan') }}
-                                    </h4>
-                                    <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                        {{ __('Menerapkan solusi ramah lingkungan dan teknologi modern dalam setiap operasional.') }}
-                                    </p>
-                                </div>
-
-                                <!-- Pillar 3 -->
-                                <div class="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/70 transition-colors hover:bg-slate-50">
-                                    <h4 class="text-sm font-bold text-gray-900 leading-snug">
-                                        {{ __('Keselamatan & Kepuasan Prima') }}
-                                    </h4>
-                                    <p class="mt-1 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                                        {{ __('Mengutamakan keselamatan kerja, ketepatan waktu, dan kepuasan pelanggan prima.') }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Footer Note in Misi Card -->
-                        <div class="mt-8 pt-5 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-                            <span class="font-medium text-[11px] text-gray-500">SOP Terstandar & Bergaransi</span>
-                            <span class="font-bold text-[11px] text-[#ac0c0c] tracking-wide">Surabaya • Malang • Bali • Jakarta</span>
-                        </div>
-                    </article>
+                        <a href="{{ route('consultation.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3 rounded-xl border border-slate-300 hover:border-[#ac0c0c] bg-white hover:bg-red-50/50 text-slate-800 hover:text-[#ac0c0c] text-xs font-bold transition-all shadow-2xs">
+                            <span>{{ __('Hubungi Kami') }}</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Bottom Action CTAs -->
-            <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-                <a href="{{ route('services.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-all hover:scale-105 active:scale-95">
-                    <span>{{ __('Lihat Layanan Kami') }}</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
-
-                <a href="{{ route('consultation.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center px-7 py-3.5 rounded-xl border border-gray-300 hover:border-[#ac0c0c] bg-white hover:bg-red-50/50 text-gray-800 hover:text-[#ac0c0c] text-xs font-bold transition-all shadow-2xs">
-                    <span>{{ __('Hubungi Kami') }}</span>
-                </a>
             </div>
 
         </div>
@@ -304,11 +304,11 @@
     </section>
 
     <!-- Section: Komitmen Kami (Brand Purpose & Environmental Commitment) -->
-    <section class="py-20 sm:py-24 bg-white border-b border-gray-100" aria-labelledby="commitment-title">
+    <section class="py-14 sm:py-16 bg-white border-b border-slate-200/70" aria-labelledby="commitment-title">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Header Block -->
-            <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-16 space-y-4">
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
                     <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
@@ -368,7 +368,7 @@
     </section>
 
     <!-- Why Us Section -->
-    <section class="py-24 bg-slate-50 border-b border-gray-100">
+    <section class="py-14 sm:py-16 bg-slate-50 border-b border-slate-200/70">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -521,7 +521,7 @@
     </section>
 
     <!-- Consultation Banner -->
-    <section class="py-16 bg-white border-b border-gray-100">
+    <section class="py-12 sm:py-14 bg-white border-b border-slate-200/70">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-gradient-to-br from-slate-100 to-slate-200/80 rounded-3xl overflow-hidden shadow-xl border border-gray-300 relative">
                 <div class="grid grid-cols-1 md:grid-cols-12 items-center">
@@ -547,8 +547,8 @@
     </section>
 
     <!-- FAQ Accordion Section -->
-    <section class="py-20 bg-slate-50">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section class="py-14 sm:py-16 bg-slate-50">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
 
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
