@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 
-@section('title', 'Tentang KOOTA SERVICES - Solusi Fasilitas Terintegrasi')
+@section('title', __('Tentang KOOTA SERVICES - Solusi Fasilitas Terintegrasi'))
 
 @section('content')
     <!-- Top Hero Section -->
@@ -62,10 +62,10 @@
                         </p>
 
                         <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>Surabaya</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>Malang</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Surabaya') }}</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Malang') }}</div>
                             <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Denpasar (Bali)') }}</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>Jakarta</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Jakarta') }}</div>
                         </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
                         </h3>
                     </div>
                     <span class="text-xs font-bold text-[#ac0c0c] tracking-wide">
-                        Surabaya • Malang • Bali • Jakarta
+                        {{ __('Surabaya • Malang • Bali • Jakarta') }}
                     </span>
                 </div>
 
@@ -239,7 +239,7 @@
                 <!-- Compact Trust & Action Bar -->
                 <div class="pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                     <span class="text-xs font-medium text-slate-500">
-                        SOP Terstandar & Bergaransi
+                        {{ __('SOP Terstandar & Bergaransi') }}
                     </span>
 
                     <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">

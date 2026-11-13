@@ -162,19 +162,19 @@
                                 <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
-                                <span>Pencegahan dini melalui pemeliharaan berkala jauh lebih hemat dibanding perbaikan kerusakan struktural.</span>
+                                <span>{{ __('Pencegahan dini melalui pemeliharaan berkala jauh lebih hemat dibanding perbaikan kerusakan struktural.') }}</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
-                                <span>Pemilahan dan jadwal sanitasi teratur melindungi keluarga dan penghuni dari bibit penyakit serta alergen.</span>
+                                <span>{{ __('Pemilahan dan jadwal sanitasi teratur melindungi keluarga dan penghuni dari bibit penyakit serta alergen.') }}</span>
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
                                     <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
-                                <span>Gunakan tenaga profesional bersertifikat untuk memastikan standar pengerjaan aman dan bergaransi resmi.</span>
+                                <span>{{ __('Gunakan tenaga profesional bersertifikat untuk memastikan standar pengerjaan aman dan bergaransi resmi.') }}</span>
                             </li>
                         </ul>
                     </div>
@@ -220,7 +220,7 @@
                                    target="_blank" 
                                    rel="noopener noreferrer"
                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#16a34a] text-white text-xs font-bold hover:bg-[#15803d] transition-all">
-                                    <span>Bagikan</span>
+                                    <span>{{ __('Bagikan') }}</span>
                                 </a>
                             </div>
                         </div>
@@ -234,7 +234,7 @@
                         <div class="space-y-2">
                             <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
                                 <h3 class="text-base font-bold text-gray-900">{{ __('Diterbitkan oleh KOOTA SERVICES') }}</h3>
-                                <span class="text-xs px-2.5 py-0.5 rounded-full bg-green-50 text-green-700 font-bold border border-green-200 inline-block self-center sm:self-auto">Penyedia Jasa Resmi</span>
+                                <span class="text-xs px-2.5 py-0.5 rounded-full bg-green-50 text-green-700 font-bold border border-green-200 inline-block self-center sm:self-auto">{{ __('Penyedia Jasa Resmi') }}</span>
                             </div>
                             <p class="text-xs text-gray-600 leading-relaxed">
                                 {{ __('KOOTA SERVICES adalah penyedia layanan terpadu profesional untuk Home Cleaning, Perbaikan Rumah, dan Pengangkutan Sampah berlisensi di Surabaya, Malang, Sidoarjo, Gresik, Bali, dan Jakarta. Seluruh artikel disusun berdasarkan pengalaman teknis nyata di lapangan.') }}
@@ -254,7 +254,7 @@
 
                             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-bold tracking-wide">
                                 <span class="w-2 h-2 rounded-full bg-green-400"></span>
-                                <span>Layanan Siaga</span>
+                                <span>{{ __('Layanan Siaga') }}</span>
                             </div>
 
                             <div class="space-y-2">
@@ -270,15 +270,15 @@
                             <ul class="text-xs text-red-100 space-y-2 pt-1 border-t border-white/15">
                                 <li class="flex items-center gap-2">
                                     <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Teknisi & kru berpengalaman terlatih</span>
+                                    <span>{{ __('Teknisi & kru berpengalaman terlatih') }}</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Peralatan modern & ramah lingkungan</span>
+                                    <span>{{ __('Peralatan modern & ramah lingkungan') }}</span>
                                 </li>
                                 <li class="flex items-center gap-2">
                                     <svg class="w-4 h-4 text-green-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                    <span>Respon cepat WhatsApp dalam hitungan menit</span>
+                                    <span>{{ __('Respon cepat WhatsApp dalam hitungan menit') }}</span>
                                 </li>
                             </ul>
 

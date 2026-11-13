@@ -19,162 +19,321 @@
         $isCleaning = ($slug === 'home-cleaning' || $slug === 'cleaning-service');
         $isTukang = ($slug === 'perbaikan-rumah' || $slug === 'jasa-tukang-perbaikan-dan-renovasi' || $slug === 'jasa-tukang');
         $isWaste = ($slug === 'pengangkutan-sampah');
+        $isEn = (app()->getLocale() === 'en');
 
-        // Dynamic Content Setup following the Booth Landing Page Template
         if ($isCleaning) {
-            $heroHook = "Ingin Rumah Bersih, Higienis & Sehat Dengan Standar Premium?";
-            $heroSubPills = "Pembersihan Menyeluruh, Pembersihan Harian, Sedot Tungau Kasur & Sofa, Sterilisasi Ruangan, Pasca Renovasi";
-            $credTitle = "Vendor Pembersihan Rumah Premium & Terpercaya Untuk Tingkatkan Kualitas Hidup Anda";
-            $credP1 = "Kebersihan rumah adalah investasi kesehatan keluarga. Kami memastikan pembersihan dan sanitasi hunian Anda memancarkan kesegaran serta kenyamanan maksimal sejak detik pertama Anda melangkah masuk.";
-            $credP2 = "Standar kualitas kami sangat jelas. Ketelitian pengerjaan, penggunaan cairan pembersih ramah lingkungan (food-grade safe), dan peralatan modern seperti hydro vacuum HEPA adalah prioritas utama. Tim terlatih kami siap menghadirkan hunian yang higienis, wangi, dan bebas alergen.";
-            
-            $philTitle = "Bukan sekadar membersihkan. Kami membangun kenyamanan & higienitas keluarga Anda.";
-            $pillar1 = ["title" => "Higienis Total & Bebas Alergen", "desc" => "Basmi tungau, debu mikro, jamur, dan bakteri penyebab alergi secara tuntas."];
-            $pillar2 = ["title" => "Formula Ramah Lingkungan & Aman Keluarga", "desc" => "Menggunakan formula pembersih bersertifikasi aman untuk pernapasan dan kulit sensitif."];
-            $pillar3 = ["title" => "Tenaga Kerja Terlatih & Terpercaya", "desc" => "Tim terlatih dengan background check ketat, ramah, jujur, dan ber-SOP tinggi."];
-            $pillar4 = ["title" => "Fleksibel untuk Hunian & Properti", "desc" => "Cocok untuk rumah tapak, apartemen, ruko bisnis, villa, hingga kantor perwakilan."];
+            if ($isEn) {
+                $heroHook = "Looking for a Clean, Hygienic & Healthy Home with Premium Standards?";
+                $heroSubPills = "Deep Cleaning, Daily Cleaning, Mattress & Sofa Mite Vacuuming, Room Sterilization, Post-Renovation";
+                $credTitle = "Premium & Trusted Home Cleaning Vendor to Elevate Your Quality of Life";
+                $credP1 = "A clean home is an investment in your family's health. We ensure your residential cleaning and sanitation radiates maximum freshness and comfort from the moment you step inside.";
+                $credP2 = "Our quality standards are unmistakable. Meticulous workmanship, eco-friendly (food-grade safe) cleaning solutions, and modern equipment like hydro vacuum HEPA are top priorities. Our trained team delivers a hygienic, fragrant, and allergen-free living space.";
+                
+                $philTitle = "Not just cleaning. We build comfort & hygiene for your entire family.";
+                $pillar1 = ["title" => "Total Hygiene & Allergen Free", "desc" => "Thoroughly eliminate mites, micro dust, mold, and allergy-causing bacteria."];
+                $pillar2 = ["title" => "Eco-Friendly & Family Safe Formula", "desc" => "Using certified cleaning formulas safe for respiration and sensitive skin."];
+                $pillar3 = ["title" => "Trained & Trusted Workforce", "desc" => "Professionally trained team with strict background checks, friendly, honest, and high SOP compliance."];
+                $pillar4 = ["title" => "Flexible for Homes & Properties", "desc" => "Suitable for landed houses, apartments, shophouses, villas, to representative offices."];
 
-            $whyLead = "Kami memahami bahwa keluarga dan properti Anda membutuhkan perawatan higienis terbaik yang mengutamakan kesehatan dan privasi tanpa kompromi.";
-            $whyCards = [
-                ["title" => "Pengalaman 5+ Tahun di Industri Perawatan Fasilitas", "desc" => "Dari ratusan hunian residensial hingga kantor ternama – kami hadirkan standar kebersihan prima tanpa cela."],
-                ["title" => "Solusi Khusus Sesuai Kondisi & Luas Rumah", "desc" => "Bukan pembersihan ala kadarnya — kami susun checklist detail sesuai kebutuhan spesifik setiap ruangan Anda."],
-                ["title" => "Peralatan Sedot Debu Uap & Ekstraktor Modern", "desc" => "Teknologi penyedot debu basah-kering dan ekstraktor modern untuk hasil pembersihan serat kain terdalam."],
-                ["title" => "Pengerjaan Cepat & Tepat Waktu – Jadwal Aman!", "desc" => "Kami sangat menghargai waktu Anda. Tim datang tepat waktu dan bekerja efektif sesuai durasi yang disepakati."],
-                ["title" => "Garansi Kebersihan Penuh & Layanan Siaga", "desc" => "Bukan sekadar datang menyapu — jika ada sudut ruangan yang belum sesuai kesepakatan, kami bersihkan ulang gratis."],
-                ["title" => "Layanan Konsultasi Cepat & Tanpa Biaya Tersembunyi", "desc" => "Estimasi harga transparan sejak awal berdasarkan luas ruangan, tanpa ada biaya tambahan mendadak."]
-            ];
+                $whyLead = "We understand that your family and property deserve the best hygienic care, prioritizing health and privacy without compromise.";
+                $whyCards = [
+                    ["title" => "5+ Years Experience in Facility Care", "desc" => "From hundreds of residential homes to renowned offices – we deliver flawless hygiene standards."],
+                    ["title" => "Tailored Solutions for Your Home's Size & Condition", "desc" => "Never generic cleaning — we design a detailed checklist customized to each of your rooms."],
+                    ["title" => "Modern Steam Vacuum & Extractor Technology", "desc" => "Wet-dry vacuum and advanced extractor technology for deep fabric fiber cleaning."],
+                    ["title" => "Punctual & Fast Work – Reliable Schedules!", "desc" => "We respect your time. Our team arrives on schedule and works effectively within the agreed timeframe."],
+                    ["title" => "Full Cleanliness Guarantee & Standby Support", "desc" => "Not just sweeping through — if any corner is not up to agreement, we reclean it for free."],
+                    ["title" => "Transparent Consultation & No Hidden Fees", "desc" => "Transparent price estimates upfront based on room size, with zero unexpected charges."]
+                ];
 
-            $narrativeHeading = "Standar Higienis Premium, Eksekusi Presisi, dan Siap Ditempati";
-            $narrativeP1 = "Kami tidak hanya membuat lantai dan perabotan Anda terlihat bersih berkilau. Kami merancangnya menjadi lingkungan yang menyehatkan, bebas kuman, dan memberikan ketenangan batin saat Anda beristirahat di rumah.";
-            $narrativeP2 = "Fokuskan waktu berharga Anda untuk berkumpul bersama keluarga atau menjalankan karir. Serahkan urusan pembersihan menyeluruh sepenuhnya kepada kami. Tim kami menangani setiap sudut sempit, nat keramik, kerak toilet, dan sela sofa dengan tingkat ketelitian tinggi.";
-            $narrativeP3 = "Didukung oleh staf pelaksana on-site yang jujur dan berdedikasi, kami memastikan proses pembersihan berjalan tertib dan aman bagi seluruh perabotan berharga Anda.";
+                $narrativeHeading = "Premium Hygiene Standards, Precision Execution, Ready to Inhabit";
+                $narrativeP1 = "We don't just make your floors and furniture look sparkling clean. We design them into a healthy, germ-free environment that brings true peace of mind when resting at home.";
+                $narrativeP2 = "Focus your valuable time on family or career. Leave the deep cleaning entirely to us. Our team handles every narrow corner, tile grout, toilet limescale, and sofa crevice with high precision.";
+                $narrativeP3 = "Backed by honest and dedicated on-site staff, we ensure the cleaning process runs orderly and safe for all your valuable furnishings.";
 
-            $categories = ["Rumah Residensial", "Apartemen & Studio", "Pembersihan Kerak Kamar Mandi", "Sedot Tungau Kasur & Sofa", "Pembersihan Pasca Renovasi"];
-            $seeMoreText = "Lihat Dokumentasi Pembersihan Rumah";
+                $categories = ["Residential Homes", "Apartments & Studios", "Bathroom Scale Cleaning", "Mattress & Sofa Mite Vacuum", "Post-Renovation Cleaning"];
+                $seeMoreText = "View Home Cleaning Documentation";
 
-            $testimonials = [
-                ["initials" => "CK", "name" => "Citra Kirana", "role" => "Pembersihan Menyeluruh Rumah", "loc" => "Citraland, Surabaya", "text" => "Sempat trauma dengan jasa cleaning lain yang hasilnya asal-asalan. Tapi di Koota Service, kerak kamar mandi yang membandel bertahun-tahun bisa kinclong kembali! Timnya sangat sopan, rapi, dan wanginya tahan lama."],
-                ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Pembersihan Pasca Renovasi", "loc" => "Puri Surya Jaya, Sidoarjo", "text" => "Pembersihan pasca renovasi rumah saya sangat terbantu. Debu semen halus dan cipratan cat di lantai terangkat sempurna tanpa menggores granit. Rumah langsung siap dihuni tanpa perlu repot."],
-                ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Sedot Tungau Kasur & Sofa", "loc" => "Pakuwon City, Surabaya", "text" => "Investasi terbaik untuk kesehatan anak saya yang punya alergi debu. Air hasil sedot tungau kasur dan sofa sampai hitam pekat! Setelah dibersihkan Koota, tidur jadi jauh lebih pulas."],
-                ["initials" => "DR", "name" => "Denny R.", "role" => "Pembersihan Harian Rutin", "loc" => "Araya, Malang", "text" => "Sangat puas dengan kedisiplinan tim Koota Services. Datang tepat waktu dengan peralatan lengkap. Dapur dan area service yang berminyak disikat bersih sampai ke sela-sela terkecil."],
-                ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Pembersihan Mendalam Hunian", "loc" => "Canggu, Bali", "text" => "Fokus saya jadi bisa sepenuhnya untuk bekerja, karena urusan kebersihan rumah sudah di-handle sempurna oleh Koota. Peralatannya modern dan formulanya ramah lingkungan, tidak menyengat di hidung."],
-                ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Pembersihan Kantor & Rumah", "loc" => "Kebayoran Baru, Jakarta", "text" => "Pilihan tepat untuk perawatan berkala properti kami. Timnya sangat detail memeriksa sudut-sudut mati yang jarang terjangkau. Pelayanan after-sales dan garansinya terbukti nyata!"]
-            ];
+                $testimonials = [
+                    ["initials" => "CK", "name" => "Citra Kirana", "role" => "Home Deep Cleaning", "loc" => "Citraland, Surabaya", "text" => "I used to be skeptical of cleaning services after sloppy experiences. But with Koota Service, stubborn years-old bathroom scale was wiped clean! The team was polite, neat, and the fragrance lasted for days."],
+                    ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Post-Renovation Cleaning", "loc" => "Puri Surya Jaya, Sidoarjo", "text" => "Post-renovation cleaning was immensely helpful. Fine cement dust and paint splatters on the floor were removed completely without scratching the granite. Ready to move in right away!"],
+                    ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Mattress & Sofa Vacuum", "loc" => "Pakuwon City, Surabaya", "text" => "The best investment for my child's dust allergy. The wastewater from the mattress and sofa mite extraction came out pitch black! Sleep quality improved noticeably."],
+                    ["initials" => "DR", "name" => "Denny R.", "role" => "Routine Daily Cleaning", "loc" => "Araya, Malang", "text" => "Very satisfied with the discipline of the Koota Services crew. Arrived on time with full gear. Even greasy kitchen and service areas were scrubbed clean down to every corner."],
+                    ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Residential Deep Cleaning", "loc" => "Canggu, Bali", "text" => "I can focus completely on work knowing our home's cleanliness is handled flawlessly. Equipment is modern and the eco-friendly formula has no harsh odors."],
+                    ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Office & Home Cleaning", "loc" => "Kebayoran Baru, Jakarta", "text" => "The ideal choice for routine facility maintenance. The crew thoroughly inspects blind spots rarely reached. Their warranty and after-sales support are top tier!"]
+                ];
 
-            $ctaHook = "Tingkatkan kebersihan, higienitas, dan kenyamanan hunian Anda bersama tim ahli!";
-            
-            $faqsList = [
-                ["q" => "01 Apa perbedaan Pembersihan Harian (Daily) dan Pembersihan Menyeluruh (Deep Cleaning)?", "a" => "Pembersihan Harian mencakup pembersihan rutin seperti menyapu, mengepel, mengelap debu perabot, dan pembersihan permukaan. Sedangkan Pembersihan Menyeluruh (Deep Cleaning) mencakup pembersihan intensif dan tuntas hingga kerak membandel kamar mandi, nat lantai, sudut tersembunyi, kusen, dan sanitasi perabotan secara mendalam."],
-                ["q" => "02 Apakah cairan pembersih yang digunakan aman?", "a" => "Ya, seluruh cairan pembersih yang kami gunakan telah teruji ramah lingkungan, bebas zat berbahaya karsinogenik, dan aman untuk bayi, anak-anak, serta hewan peliharaan."],
-                ["q" => "03 Apakah saya harus menyediakan peralatan sendiri?", "a" => "Tidak perlu repot! Tim kami datang lengkap dengan vacuum cleaner industri, mesin poles, tangga portabel, kain mikrofiber steril, hingga formula pembersih khusus."],
-                ["q" => "04 Berapa lama estimasi durasi pengerjaan?", "a" => "Durasi bergantung pada luasan dan kondisi properti. Untuk pembersihan harian rumah standar rata-rata membutuhkan 2-4 jam, sedangkan pembersihan menyeluruh total 4-8 jam dengan tim 2-4 orang teknisi."],
-                ["q" => "05 Apakah layanan Pembersihan Rumah tersedia untuk luar kota?", "a" => "Kami melayani seluruh area metropolitan Surabaya, Malang, Bali, dan Jakarta, serta kawasan penyangga sekitarnya."],
-                ["q" => "06 Apakah ada jaminan garansi jika hasil pembersihan belum puas?", "a" => "Tentu! Kami memberikan Garansi Kualitas. Jika supervisor kami atau Anda menemukan area yang belum bersih sesuai checklist, tim kami langsung membersihkannya kembali tanpa biaya tambahan."],
-                ["q" => "07 Bagaimana alur reservasi dan sistem pembayarannya?", "a" => "Cukup hubungi Customer Care via WhatsApp untuk konsultasi jadwal dan estimasi harga. Pembayaran dapat dilakukan via transfer bank resmi setelah pekerjaan selesai diperiksa bersama."]
-            ];
+                $ctaHook = "Elevate your property's cleanliness, hygiene, and comfort with our expert team!";
+                
+                $faqsList = [
+                    ["q" => "01 What is the difference between Daily Cleaning and Deep Cleaning?", "a" => "Daily Cleaning covers standard routines such as sweeping, mopping, dusting, and surface wiping. Deep Cleaning provides intensive sanitation tackling stubborn bathroom scale, floor grout, hidden corners, window frames, and in-depth upholstery sanitation."],
+                    ["q" => "02 Are the cleaning chemicals safe for kids and pets?", "a" => "Yes, all cleaning solutions we use are certified eco-friendly, non-toxic, free from harmful carcinogens, and completely safe for infants, children, and pets."],
+                    ["q" => "03 Do I need to provide any equipment or supplies?", "a" => "Not at all! Our team arrives fully equipped with industrial vacuum cleaners, polishing machines, portable ladders, sterile microfiber cloths, and specialized formulas."],
+                    ["q" => "04 How long does a cleaning session usually take?", "a" => "Duration depends on property size and condition. Standard daily cleaning takes 2–4 hours on average, while total deep cleaning takes 4–8 hours with a crew of 2–4 technicians."],
+                    ["q" => "05 Is Home Cleaning service available outside major cities?", "a" => "We serve the entire metropolitan areas of Surabaya, Malang, Bali, and Jakarta, including their surrounding buffer zones."],
+                    ["q" => "06 Is there a quality guarantee if I'm not satisfied with the results?", "a" => "Absolutely! We provide a Quality Guarantee. If you or our supervisor identify any area not cleaned according to the checklist, our team will reclean it immediately at no additional cost."],
+                    ["q" => "07 How does the booking and payment process work?", "a" => "Simply reach out via WhatsApp to schedule and receive a price estimate. Payment is completed via official bank transfer after the work is inspected and approved together."]
+                ];
+            } else {
+                $heroHook = "Ingin Rumah Bersih, Higienis & Sehat Dengan Standar Premium?";
+                $heroSubPills = "Pembersihan Menyeluruh, Pembersihan Harian, Sedot Tungau Kasur & Sofa, Sterilisasi Ruangan, Pasca Renovasi";
+                $credTitle = "Vendor Pembersihan Rumah Premium & Terpercaya Untuk Tingkatkan Kualitas Hidup Anda";
+                $credP1 = "Kebersihan rumah adalah investasi kesehatan keluarga. Kami memastikan pembersihan dan sanitasi hunian Anda memancarkan kesegaran serta kenyamanan maksimal sejak detik pertama Anda melangkah masuk.";
+                $credP2 = "Standar kualitas kami sangat jelas. Ketelitian pengerjaan, penggunaan cairan pembersih ramah lingkungan (food-grade safe), dan peralatan modern seperti hydro vacuum HEPA adalah prioritas utama. Tim terlatih kami siap menghadirkan hunian yang higienis, wangi, dan bebas alergen.";
+                
+                $philTitle = "Bukan sekadar membersihkan. Kami membangun kenyamanan & higienitas keluarga Anda.";
+                $pillar1 = ["title" => "Higienis Total & Bebas Alergen", "desc" => "Basmi tungau, debu mikro, jamur, dan bakteri penyebab alergi secara tuntas."];
+                $pillar2 = ["title" => "Formula Ramah Lingkungan & Aman Keluarga", "desc" => "Menggunakan formula pembersih bersertifikasi aman untuk pernapasan dan kulit sensitif."];
+                $pillar3 = ["title" => "Tenaga Kerja Terlatih & Terpercaya", "desc" => "Tim terlatih dengan background check ketat, ramah, jujur, dan ber-SOP tinggi."];
+                $pillar4 = ["title" => "Fleksibel untuk Hunian & Properti", "desc" => "Cocok untuk rumah tapak, apartemen, ruko bisnis, villa, hingga kantor perwakilan."];
+
+                $whyLead = "Kami memahami bahwa keluarga dan properti Anda membutuhkan perawatan higienis terbaik yang mengutamakan kesehatan dan privasi tanpa kompromi.";
+                $whyCards = [
+                    ["title" => "Pengalaman 5+ Tahun di Industri Perawatan Fasilitas", "desc" => "Dari ratusan hunian residensial hingga kantor ternama – kami hadirkan standar kebersihan prima tanpa cela."],
+                    ["title" => "Solusi Khusus Sesuai Kondisi & Luas Rumah", "desc" => "Bukan pembersihan ala kadarnya — kami susun checklist detail sesuai kebutuhan spesifik setiap ruangan Anda."],
+                    ["title" => "Peralatan Sedot Debu Uap & Ekstraktor Modern", "desc" => "Teknologi penyedot debu basah-kering dan ekstraktor modern untuk hasil pembersihan serat kain terdalam."],
+                    ["title" => "Pengerjaan Cepat & Tepat Waktu – Jadwal Aman!", "desc" => "Kami sangat menghargai waktu Anda. Tim datang tepat waktu dan bekerja efektif sesuai durasi yang disepakati."],
+                    ["title" => "Garansi Kebersihan Penuh & Layanan Siaga", "desc" => "Bukan sekadar datang menyapu — jika ada sudut ruangan yang belum sesuai kesepakatan, kami bersihkan ulang gratis."],
+                    ["title" => "Layanan Konsultasi Cepat & Tanpa Biaya Tersembunyi", "desc" => "Estimasi harga transparan sejak awal berdasarkan luas ruangan, tanpa ada biaya tambahan mendadak."]
+                ];
+
+                $narrativeHeading = "Standar Higienis Premium, Eksekusi Presisi, dan Siap Ditempati";
+                $narrativeP1 = "Kami tidak hanya membuat lantai dan perabotan Anda terlihat bersih berkilau. Kami merancangnya menjadi lingkungan yang menyehatkan, bebas kuman, dan memberikan ketenangan batin saat Anda beristirahat di rumah.";
+                $narrativeP2 = "Fokuskan waktu berharga Anda untuk berkumpul bersama keluarga atau menjalankan karir. Serahkan urusan pembersihan menyeluruh sepenuhnya kepada kami. Tim kami menangani setiap sudut sempit, nat keramik, kerak toilet, dan sela sofa dengan tingkat ketelitian tinggi.";
+                $narrativeP3 = "Didukung oleh staf pelaksana on-site yang jujur dan berdedikasi, kami memastikan proses pembersihan berjalan tertib dan aman bagi seluruh perabotan berharga Anda.";
+
+                $categories = ["Rumah Residensial", "Apartemen & Studio", "Pembersihan Kerak Kamar Mandi", "Sedot Tungau Kasur & Sofa", "Pembersihan Pasca Renovasi"];
+                $seeMoreText = "Lihat Dokumentasi Pembersihan Rumah";
+
+                $testimonials = [
+                    ["initials" => "CK", "name" => "Citra Kirana", "role" => "Pembersihan Menyeluruh Rumah", "loc" => "Citraland, Surabaya", "text" => "Sempat trauma dengan jasa cleaning lain yang hasilnya asal-asalan. Tapi di Koota Service, kerak kamar mandi yang membandel bertahun-tahun bisa kinclong kembali! Timnya sangat sopan, rapi, dan wanginya tahan lama."],
+                    ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Pembersihan Pasca Renovasi", "loc" => "Puri Surya Jaya, Sidoarjo", "text" => "Pembersihan pasca renovasi rumah saya sangat terbantu. Debu semen halus dan cipratan cat di lantai terangkat sempurna tanpa menggores granit. Rumah langsung siap dihuni tanpa perlu repot."],
+                    ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Sedot Tungau Kasur & Sofa", "loc" => "Pakuwon City, Surabaya", "text" => "Investasi terbaik untuk kesehatan anak saya yang punya alergi debu. Air hasil sedot tungau kasur dan sofa sampai hitam pekat! Setelah dibersihkan Koota, tidur jadi jauh lebih pulas."],
+                    ["initials" => "DR", "name" => "Denny R.", "role" => "Pembersihan Harian Rutin", "loc" => "Araya, Malang", "text" => "Sangat puas dengan kedisiplinan tim Koota Services. Datang tepat waktu dengan peralatan lengkap. Dapur dan area service yang berminyak disikat bersih sampai ke sela-sela terkecil."],
+                    ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Pembersihan Mendalam Hunian", "loc" => "Canggu, Bali", "text" => "Fokus saya jadi bisa sepenuhnya untuk bekerja, karena urusan kebersihan rumah sudah di-handle sempurna oleh Koota. Peralatannya modern dan formulanya ramah lingkungan, tidak menyengat di hidung."],
+                    ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Pembersihan Kantor & Rumah", "loc" => "Kebayoran Baru, Jakarta", "text" => "Pilihan tepat untuk perawatan berkala properti kami. Timnya sangat detail memeriksa sudut-sudut mati yang jarang terjangkau. Pelayanan after-sales dan garansinya terbukti nyata!"]
+                ];
+
+                $ctaHook = "Tingkatkan kebersihan, higienitas, dan kenyamanan hunian Anda bersama tim ahli!";
+                
+                $faqsList = [
+                    ["q" => "01 Apa perbedaan Pembersihan Harian (Daily) dan Pembersihan Menyeluruh (Deep Cleaning)?", "a" => "Pembersihan Harian mencakup pembersihan rutin seperti menyapu, mengepel, mengelap debu perabot, dan pembersihan permukaan. Sedangkan Pembersihan Menyeluruh (Deep Cleaning) mencakup pembersihan intensif dan tuntas hingga kerak membandel kamar mandi, nat lantai, sudut tersembunyi, kusen, dan sanitasi perabotan secara mendalam."],
+                    ["q" => "02 Apakah cairan pembersih yang digunakan aman?", "a" => "Ya, seluruh cairan pembersih yang kami gunakan telah teruji ramah lingkungan, bebas zat berbahaya karsinogenik, dan aman untuk bayi, anak-anak, serta hewan peliharaan."],
+                    ["q" => "03 Apakah saya harus menyediakan peralatan sendiri?", "a" => "Tidak perlu repot! Tim kami datang lengkap dengan vacuum cleaner industri, mesin poles, tangga portabel, kain mikrofiber steril, hingga formula pembersih khusus."],
+                    ["q" => "04 Berapa lama estimasi durasi pengerjaan?", "a" => "Durasi bergantung pada luasan dan kondisi properti. Untuk pembersihan harian rumah standar rata-rata membutuhkan 2-4 jam, sedangkan pembersihan menyeluruh total 4-8 jam dengan tim 2-4 orang teknisi."],
+                    ["q" => "05 Apakah layanan Pembersihan Rumah tersedia untuk luar kota?", "a" => "Kami melayani seluruh area metropolitan Surabaya, Malang, Bali, dan Jakarta, serta kawasan penyangga sekitarnya."],
+                    ["q" => "06 Apakah ada jaminan garansi jika hasil pembersihan belum puas?", "a" => "Tentu! Kami memberikan Garansi Kualitas. Jika supervisor kami atau Anda menemukan area yang belum bersih sesuai checklist, tim kami langsung membersihkannya kembali tanpa biaya tambahan."],
+                    ["q" => "07 Bagaimana alur reservasi dan sistem pembayarannya?", "a" => "Cukup hubungi Customer Care via WhatsApp untuk konsultasi jadwal dan estimasi harga. Pembayaran dapat dilakukan via transfer bank resmi setelah pekerjaan selesai diperiksa bersama."]
+                ];
+            }
         } elseif ($isTukang) {
-            $heroHook = "Ingin Perbaikan & Renovasi Rumah Presisi Dengan Standar Premium?";
-            $heroSubPills = "Tukang Harian/Borongan, Perbaikan Pipa Bocor, Instalasi Listrik, Servis & Cuci AC, Pengecatan Dinding, Renovasi Interior";
-            $credTitle = "Vendor Perbaikan Rumah & Jasa Tukang Ahli Untuk Keamanan Properti Anda";
-            $credP1 = "Rumah yang terawat adalah jaminan keamanan dan kenyamanan jangka panjang. Kami memastikan perbaikan teknis dan renovasi rumah Anda ditangani dengan presisi struktur serta hasil finishing yang rapi dan kokoh.";
-            $credP2 = "Standar kualitas kami sangat jelas. Akurasi diagnosa kebocoran atau korsleting, penggunaan material SNI berkualitas tinggi, dan disiplin waktu adalah prioritas utama. Tim tukang berpengalaman kami siap mengatasi masalah rumah tinggal secara tuntas tanpa tambal sulam.";
-            
-            $philTitle = "Bukan sekadar memperbaiki. Kami membangun keamanan & kenyamanan hunian jangka panjang.";
-            $pillar1 = ["title" => "Diagnosa Akurat & Solusi Tuntas", "desc" => "Mendeteksi sumber kebocoran dan kerusakan secara tepat tanpa membongkar sembarangan."];
-            $pillar2 = ["title" => "Material Berkualitas SNI", "desc" => "Memakai bahan pipa, kabel, semen, dan cat dengan standar mutu terbaik untuk ketahanan maksimal."];
-            $pillar3 = ["title" => "SDM Tukang Ahli Berpengalaman", "desc" => "Tenaga kerja spesialis plumbing, elektrikal, sipil, dan finishing dengan jam terbang tinggi."];
-            $pillar4 = ["title" => "Pengerjaan Rapi & Siap Pakai", "desc" => "Selesai pengerjaan, area kerja selalu dibersihkan dan dirapikan kembali seperti semula."];
+            if ($isEn) {
+                $heroHook = "Looking for Precision Home Repair & Renovation with Premium Standards?";
+                $heroSubPills = "Daily/Contract Handymen, Leaking Pipe Repair, Electrical Installation, AC Service & Wash, Wall Painting, Interior Renovation";
+                $credTitle = "Expert Home Repair & Skilled Handyman Vendor to Safeguard Your Property";
+                $credP1 = "A well-maintained home ensures long-term safety and comfort. We ensure structural precision and neat, durable finishing for every repair and renovation project.";
+                $credP2 = "Our quality standards are unmistakable. Accurate leak and electrical diagnosis, premium SNI-certified materials, and strict punctuality are top priorities. Our experienced technicians solve residential issues thoroughly without patchwork.";
+                
+                $philTitle = "Not just repairs. We build long-term safety & peace of mind for your home.";
+                $pillar1 = ["title" => "Accurate Diagnosis & Complete Solutions", "desc" => "Precisely identify leak origins and damage without careless structural demolition."];
+                $pillar2 = ["title" => "SNI-Certified Quality Materials", "desc" => "Using pipes, cables, cement, and paint that meet top standards for maximum durability."];
+                $pillar3 = ["title" => "Experienced & Certified Technicians", "desc" => "Specialists in plumbing, electrical, civil, and finishing with proven field experience."];
+                $pillar4 = ["title" => "Neat Workmanship & Ready to Use", "desc" => "Upon completion, the work area is thoroughly cleaned and tidied back to its original state."];
 
-            $whyLead = "Kami memahami bahwa pemilik rumah menginginkan perbaikan yang tuntas tanpa harus berulang kali memanggil tukang untuk masalah yang sama.";
-            $whyCards = [
-                ["title" => "Pengalaman 10+ Tahun di Bidang Konstruksi & Perawatan", "desc" => "Telah menangani ribuan proyek perbaikan rumah tapak, ruko komersial, hingga interior gedung."],
-                ["title" => "Penanganan Komprehensif Berbagai Bidang", "desc" => "Satu pintu untuk urusan pipa bocor, instalasi listrik, perbaikan atap bocor, hingga pengecatan."],
-                ["title" => "Material Terstandar & Transparan", "desc" => "Rincian kebutuhan bahan bangunan disajikan secara terbuka dengan harga yang jujur dan kompetitif."],
-                ["title" => "Pengerjaan Disiplin Waktu – Deadline Terjaga", "desc" => "Tim teknisi kami bekerja tertib sesuai jadwal yang telah disepakati bersama klien."],
-                ["title" => "Garansi Penuh Atas Hasil Pekerjaan", "desc" => "Kenyamanan Anda terlindungi garansi purnajual—jika kebocoran atau kerusakan muncul kembali, kami perbaiki tuntas."],
-                ["title" => "Survey Gratis & Konsultasi Teknis Responsif", "desc" => "Tim kami siap berdiskusi dan memberikan saran teknis paling efisien sesuai anggaran Anda."]
-            ];
+                $whyLead = "We understand homeowners want definitive repairs without the hassle of repeatedly calling handymen for the same problem.";
+                $whyCards = [
+                    ["title" => "10+ Years Experience in Construction & Maintenance", "desc" => "Handled thousands of repair projects across landed homes, commercial shophouses, and building interiors."],
+                    ["title" => "Comprehensive Multi-Disciplinary Services", "desc" => "A single trusted provider for leaking pipes, electrical wiring, roof repairs, to wall painting."],
+                    ["title" => "Standardized & Transparent Materials", "desc" => "Material breakdowns are presented openly with competitive and honest pricing."],
+                    ["title" => "Punctual Delivery – Deadlines Respected", "desc" => "Our technicians work orderly in accordance with schedules agreed upon with clients."],
+                    ["title" => "Full Workmanship Warranty", "desc" => "Your peace of mind is backed by an after-sales guarantee—if leaks or faults reoccur, we fix them promptly."],
+                    ["title" => "Free Survey & Responsive Technical Advice", "desc" => "Our team discusses and recommends the most cost-efficient technical solution for your budget."]
+                ];
 
-            $narrativeHeading = "Eksekusi Presisi, Struktur Kokoh, dan Bergaransi Penuh";
-            $narrativeP1 = "Kami tidak hanya menambal kerusakan permukaan. Kami mencari sumber akar masalah kerusakan properti Anda agar hunian tetap aman dan nyaman dihuni bertahun-tahun ke depan.";
-            $narrativeP2 = "Serahkan urusan teknis yang membingungkan dan berbahaya seperti kelistrikan atau atap bocor sepenuhnya kepada para ahlinya. Tim kami dilengkapi peralatan proteksi standar dan perkakas presisi tinggi.";
-            $narrativeP3 = "Hasil pengerjaan yang Anda dapatkan adalah struktur yang kokoh, instalasi yang rapi, dan rasa tenang bebas cemas.";
+                $narrativeHeading = "Precision Execution, Solid Structures, and Full Warranty";
+                $narrativeP1 = "We don't merely patch surface damage. We track down the root cause so your home remains safe and comfortable for years to come.";
+                $narrativeP2 = "Leave confusing and hazardous technical tasks like high-voltage wiring or high roof leaks to certified experts equipped with standard protective gear.";
+                $narrativeP3 = "The result you receive is sturdy structural integrity, clean installations, and worry-free living.";
 
-            $categories = ["Perbaikan Pipa & Saluran", "Kelistrikan & Panel Listrik", "Perbaikan Atap & Bocor", "Servis AC Rumah", "Pengecatan & Plafon"];
-            $seeMoreText = "Lihat Dokumentasi Perbaikan Rumah";
+                $categories = ["Pipes & Drainage Repair", "Electrical & Breaker Panels", "Roof & Leak Repair", "Residential AC Service", "Painting & Ceilings"];
+                $seeMoreText = "View Home Repair Documentation";
 
-            $testimonials = [
-                ["initials" => "CK", "name" => "Citra Kirana", "role" => "Perbaikan Pipa Bocor", "loc" => "Darmo Permai, Surabaya", "text" => "Pipa air dalam dinding bocor bikin rembes ke kamar tidur. Tukang Koota datang cepat, diagnosanya tepat sasaran dan bobokan temboknya sangat rapi. Setelah diplester ulang hasilnya mulus!"],
-                ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Instalasi Listrik & Lampu", "loc" => "Graha Family, Surabaya", "text" => "Sering jeglek saat AC dan oven dinyalakan. Teknisi kelistrikan Koota langsung menata ulang jalur pembagian beban MCB. Sekarang listrik rumah stabil dan kabel-kabel rapi terbungkus."],
-                ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Renovasi Plafon & Atap", "loc" => "Bumi Serpong Damai, Tangerang", "text" => "Plafon gypsum jebol karena talang bocor. Tim Koota mengganti talang seng dengan material anti karat dan memasang plafon baru. Pengerjaannya cepat dan tidak berantakan."],
-                ["initials" => "DR", "name" => "Denny R.", "role" => "Pengecatan Ulang Hunian", "loc" => "Ijen Boulevard, Malang", "text" => "Pengecatan dinding luar dan dalam seluas 350 m2 selesai sesuai jadwal 5 hari. Warnanya rata, plamirnya halus, dan sisa cat dibersihkan tuntas. Sangat profesional!"],
-                ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Servis & Cuci AC Rumah", "loc" => "Sanur, Bali", "text" => "Servis 4 unit AC rumah yang bocor air dan berisik. Teknisi bekerja sopan, pakai pelindung terpal rapi, dan udara AC langsung dingin menggigit. Mantap!"],
-                ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Perbaikan Rumah Terpadu", "loc" => "Kelapa Gading, Jakarta", "text" => "Layanan tukang paling terpercaya yang pernah saya gunakan. Ada garansi pengerjaannya jadi kita tidak was-was. Sangat recomended untuk urusan renovasi rumah!"]
-            ];
+                $testimonials = [
+                    ["initials" => "CK", "name" => "Citra Kirana", "role" => "Leaking Pipe Repair", "loc" => "Darmo Permai, Surabaya", "text" => "In-wall pipe leak was soaking through into the bedroom. Koota's technician came quickly, diagnosed the exact spot, and the wall chipping was exceptionally tidy. Smooth finish!"],
+                    ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Electrical Wiring & Lighting", "loc" => "Graha Family, Surabaya", "text" => "Breakers kept tripping whenever the AC and oven were on. Koota's electrician redistributed the MCB circuit loads. Power is stable and wiring is neatly encased."],
+                    ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Ceiling & Roof Renovation", "loc" => "Bumi Serpong Damai, Tangerang", "text" => "Gypsum ceiling collapsed due to leaking gutters. The crew replaced rusty zinc gutters with anti-corrosion materials and installed fresh ceiling panels without leaving a mess."],
+                    ["initials" => "DR", "name" => "Denny R.", "role" => "Residential Repainting", "loc" => "Ijen Boulevard, Malang", "text" => "Complete interior and exterior painting of 350 m2 finished right on schedule in 5 days. Even coat, smooth putty, and leftover paint cleaned up neatly."],
+                    ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Home AC Service & Wash", "loc" => "Sanur, Bali", "text" => "Serviced 4 noisy and leaking AC units. Technicians were respectful, used neat protective tarps, and the air blew crisp and cold immediately. Excellent!"],
+                    ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Integrated Home Repair", "loc" => "Kelapa Gading, Jakarta", "text" => "The most reliable handyman service I have used. Having a workmanship guarantee removes all anxiety. Highly recommended for home renovations!"]
+                ];
 
-            $ctaHook = "Selesaikan masalah kerusakan rumah Anda sekarang sebelum bertambah parah!";
+                $ctaHook = "Resolve your property repair issues now before damage escalates!";
 
-            $faqsList = [
-                ["q" => "01 Apa saja lingkup perbaikan yang bisa ditangani Koota Service?", "a" => "Kami menangani perbaikan kebocoran pipa air, kran mampet, kelistrikan & MCB, perbaikan atap bocor, pengecatan dinding, pemasangan partisi gypsum, servis AC, hingga renovasi ruangan."],
-                ["q" => "02 Apakah ada garansi untuk jasa perbaikan?", "a" => "Ya, kami memberikan garansi pengerjaan hingga 30 hari tergantung jenis pekerjaan. Jika masalah yang sama timbul kembali selama masa garansi, kami perbaiki tanpa tambahan biaya tukang."],
-                ["q" => "03 Bagaimana sistem penyediaan material bangunannya?", "a" => "Sangat fleksibel. Anda dapat menyediakan material sendiri, atau menyerahkan pengadaan material kepada tim kami dengan nota transparan dan material standar SNI pilihan terbaik."],
-                ["q" => "04 Apakah bisa memesan untuk perbaikan skala kecil?", "a" => "Tentu saja! Kami melayani perbaikan kecil harian seperti penggantian kran, saklar rusak, engsel pintu, hingga renovasi skala besar."],
-                ["q" => "05 Bagaimana cara meminta jadwal survey ke lokasi?", "a" => "Cukup klik tombol Konsultasi WhatsApp, kirimkan foto/video bagian yang rusak, dan tim admin kami akan segera menjadwalkan kunjungan teknisi ke lokasi Anda."],
-                ["q" => "06 Apakah tukang yang dikirim dapat dipercaya?", "a" => "Seluruh tenaga kerja kami telah melalui proses verifikasi identitas, uji keahlian lapangan, dan dibekali SOP kerja yang sopan, jujur, serta menjaga privasi rumah klien."],
-                ["q" => "07 Kapan waktu operasional layanan perbaikan rumah?", "a" => "Layanan konsultasi dan penjadwalan beroperasi 24/7, sedangkan pengerjaan on-site teknisi dapat disesuaikan mulai jam 08.00 hingga 17.00 WIB setiap hari."]
-            ];
+                $faqsList = [
+                    ["q" => "01 What types of repairs can Koota Service handle?", "a" => "We handle leaking water pipes, clogged drains, electrical wiring & MCB panels, roof leaks, wall repainting, gypsum partition installation, AC servicing, to room renovations."],
+                    ["q" => "02 Is there a warranty for repair services?", "a" => "Yes, we provide up to 30 days workmanship warranty depending on job scope. If the same issue reoccurs during the warranty period, we fix it at no labor charge."],
+                    ["q" => "03 How are building materials sourced and billed?", "a" => "Completely flexible. You may supply your own materials, or let our team handle procurement with transparent receipts and top-quality SNI-certified materials."],
+                    ["q" => "04 Can I book for small-scale household repairs?", "a" => "Of course! We handle minor daily repairs like replacing faucets, faulty switches, door hinges, up to extensive renovations."],
+                    ["q" => "05 How do I request an on-site survey?", "a" => "Simply click the WhatsApp button, share photos or videos of the damaged area, and our support team will schedule a technician visit."],
+                    ["q" => "06 Are the handymen vetted and trustworthy?", "a" => "All personnel undergo identity verification, skill assessments, and are trained with polite, honest SOPs that respect client privacy."],
+                    ["q" => "07 What are your operating hours for repair services?", "a" => "Customer consultation and scheduling operate 24/7, while on-site technician work runs from 08:00 to 17:00 WIB daily."]
+                ];
+            } else {
+                $heroHook = "Ingin Perbaikan & Renovasi Rumah Presisi Dengan Standar Premium?";
+                $heroSubPills = "Tukang Harian/Borongan, Perbaikan Pipa Bocor, Instalasi Listrik, Servis & Cuci AC, Pengecatan Dinding, Renovasi Interior";
+                $credTitle = "Vendor Perbaikan Rumah & Jasa Tukang Ahli Untuk Keamanan Properti Anda";
+                $credP1 = "Rumah yang terawat adalah jaminan keamanan dan kenyamanan jangka panjang. Kami memastikan perbaikan teknis dan renovasi rumah Anda ditangani dengan presisi struktur serta hasil finishing yang rapi dan kokoh.";
+                $credP2 = "Standar kualitas kami sangat jelas. Akurasi diagnosa kebocoran atau korsleting, penggunaan material SNI berkualitas tinggi, dan disiplin waktu adalah prioritas utama. Tim tukang berpengalaman kami siap mengatasi masalah rumah tinggal secara tuntas tanpa tambal sulam.";
+                
+                $philTitle = "Bukan sekadar memperbaiki. Kami membangun keamanan & kenyamanan hunian jangka panjang.";
+                $pillar1 = ["title" => "Diagnosa Akurat & Solusi Tuntas", "desc" => "Mendeteksi sumber kebocoran dan kerusakan secara tepat tanpa membongkar sembarangan."];
+                $pillar2 = ["title" => "Material Berkualitas SNI", "desc" => "Memakai bahan pipa, kabel, semen, dan cat dengan standar mutu terbaik untuk ketahanan maksimal."];
+                $pillar3 = ["title" => "SDM Tukang Ahli Berpengalaman", "desc" => "Tenaga kerja spesialis plumbing, elektrikal, sipil, dan finishing dengan jam terbang tinggi."];
+                $pillar4 = ["title" => "Pengerjaan Rapi & Siap Pakai", "desc" => "Selesai pengerjaan, area kerja selalu dibersihkan dan dirapikan kembali seperti semula."];
+
+                $whyLead = "Kami memahami bahwa pemilik rumah menginginkan perbaikan yang tuntas tanpa harus berulang kali memanggil tukang untuk masalah yang sama.";
+                $whyCards = [
+                    ["title" => "Pengalaman 10+ Tahun di Bidang Konstruksi & Perawatan", "desc" => "Telah menangani ribuan proyek perbaikan rumah tapak, ruko komersial, hingga interior gedung."],
+                    ["title" => "Penanganan Komprehensif Berbagai Bidang", "desc" => "Satu pintu untuk urusan pipa bocor, instalasi listrik, perbaikan atap bocor, hingga pengecatan."],
+                    ["title" => "Material Terstandar & Transparan", "desc" => "Rincian kebutuhan bahan bangunan disajikan secara terbuka dengan harga yang jujur dan kompetitif."],
+                    ["title" => "Pengerjaan Disiplin Waktu – Deadline Terjaga", "desc" => "Tim teknisi kami bekerja tertib sesuai jadwal yang telah disepakati bersama klien."],
+                    ["title" => "Garansi Penuh Atas Hasil Pekerjaan", "desc" => "Kenyamanan Anda terlindungi garansi purnajual—jika kebocoran atau kerusakan muncul kembali, kami perbaiki tuntas."],
+                    ["title" => "Survey Gratis & Konsultasi Teknis Responsif", "desc" => "Tim kami siap berdiskusi dan memberikan saran teknis paling efisien sesuai anggaran Anda."]
+                ];
+
+                $narrativeHeading = "Eksekusi Presisi, Struktur Kokoh, dan Bergaransi Penuh";
+                $narrativeP1 = "Kami tidak hanya menambal kerusakan permukaan. Kami mencari sumber akar masalah kerusakan properti Anda agar hunian tetap aman dan nyaman dihuni bertahun-tahun ke depan.";
+                $narrativeP2 = "Serahkan urusan teknis yang membingungkan dan berbahaya seperti kelistrikan atau atap bocor sepenuhnya kepada para ahlinya. Tim kami dilengkapi peralatan proteksi standar dan perkakas presisi tinggi.";
+                $narrativeP3 = "Hasil pengerjaan yang Anda dapatkan adalah struktur yang kokoh, instalasi yang rapi, dan rasa tenang bebas cemas.";
+
+                $categories = ["Perbaikan Pipa & Saluran", "Kelistrikan & Panel Listrik", "Perbaikan Atap & Bocor", "Servis AC Rumah", "Pengecatan & Plafon"];
+                $seeMoreText = "Lihat Dokumentasi Perbaikan Rumah";
+
+                $testimonials = [
+                    ["initials" => "CK", "name" => "Citra Kirana", "role" => "Perbaikan Pipa Bocor", "loc" => "Darmo Permai, Surabaya", "text" => "Pipa air dalam dinding bocor bikin rembes ke kamar tidur. Tukang Koota datang cepat, diagnosanya tepat sasaran dan bobokan temboknya sangat rapi. Setelah diplester ulang hasilnya mulus!"],
+                    ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Instalasi Listrik & Lampu", "loc" => "Graha Family, Surabaya", "text" => "Sering jeglek saat AC dan oven dinyalakan. Teknisi kelistrikan Koota langsung menata ulang jalur pembagian beban MCB. Sekarang listrik rumah stabil dan kabel-kabel rapi terbungkus."],
+                    ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Renovasi Plafon & Atap", "loc" => "Bumi Serpong Damai, Tangerang", "text" => "Plafon gypsum jebol karena talang bocor. Tim Koota mengganti talang seng dengan material anti karat dan memasang plafon baru. Pengerjaannya cepat dan tidak berantakan."],
+                    ["initials" => "DR", "name" => "Denny R.", "role" => "Pengecatan Ulang Hunian", "loc" => "Ijen Boulevard, Malang", "text" => "Pengecatan dinding luar dan dalam seluas 350 m2 selesai sesuai jadwal 5 hari. Warnanya rata, plamirnya halus, dan sisa cat dibersihkan tuntas. Sangat profesional!"],
+                    ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Servis & Cuci AC Rumah", "loc" => "Sanur, Bali", "text" => "Servis 4 unit AC rumah yang bocor air dan berisik. Teknisi bekerja sopan, pakai pelindung terpal rapi, dan udara AC langsung dingin menggigit. Mantap!"],
+                    ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Perbaikan Rumah Terpadu", "loc" => "Kelapa Gading, Jakarta", "text" => "Layanan tukang paling terpercaya yang pernah saya gunakan. Ada garansi pengerjaannya jadi kita tidak was-was. Sangat recomended untuk urusan renovasi rumah!"]
+                ];
+
+                $ctaHook = "Selesaikan masalah kerusakan rumah Anda sekarang sebelum bertambah parah!";
+
+                $faqsList = [
+                    ["q" => "01 Apa saja lingkup perbaikan yang bisa ditangani Koota Service?", "a" => "Kami menangani perbaikan kebocoran pipa air, kran mampet, kelistrikan & MCB, perbaikan atap bocor, pengecatan dinding, pemasangan partisi gypsum, servis AC, hingga renovasi ruangan."],
+                    ["q" => "02 Apakah ada garansi untuk jasa perbaikan?", "a" => "Ya, kami memberikan garansi pengerjaan hingga 30 hari tergantung jenis pekerjaan. Jika masalah yang sama timbul kembali selama masa garansi, kami perbaiki tanpa tambahan biaya tukang."],
+                    ["q" => "03 Bagaimana sistem penyediaan material bangunannya?", "a" => "Sangat fleksibel. Anda dapat menyediakan material sendiri, atau menyerahkan pengadaan material kepada tim kami dengan nota transparan dan material standar SNI pilihan terbaik."],
+                    ["q" => "04 Apakah bisa memesan untuk perbaikan skala kecil?", "a" => "Tentu saja! Kami melayani perbaikan kecil harian seperti penggantian kran, saklar rusak, engsel pintu, hingga renovasi skala besar."],
+                    ["q" => "05 Bagaimana cara meminta jadwal survey ke lokasi?", "a" => "Cukup klik tombol Konsultasi WhatsApp, kirimkan foto/video bagian yang rusak, dan tim admin kami akan segera menjadwalkan kunjungan teknisi ke lokasi Anda."],
+                    ["q" => "06 Apakah tukang yang dikirim dapat dipercaya?", "a" => "Seluruh tenaga kerja kami telah melalui proses verifikasi identitas, uji keahlian lapangan, dan dibekali SOP kerja yang sopan, jujur, serta menjaga privasi rumah klien."],
+                    ["q" => "07 Kapan waktu operasional layanan perbaikan rumah?", "a" => "Layanan konsultasi dan penjadwalan beroperasi 24/7, sedangkan pengerjaan on-site teknisi dapat disesuaikan mulai jam 08.00 hingga 17.00 WIB setiap hari."]
+                ];
+            }
         } else {
             // Pengangkutan Sampah
-            $heroHook = "Ingin Pengangkutan Sampah Teratur & Bebas Bau Dengan Standar Premium?";
-            $heroSubPills = "Pengangkutan Sampah Terjadwal, Sampah Komersial Kafe & Resto, Evakuasi Puing Bangunan, Pembuangan Barang Bekas Besar, Truk Tertutup";
-            $credTitle = "Vendor Pengangkutan Sampah Terpadu & Terjadwal Untuk Lingkungan Bersih";
-            $credP1 = "Pengelolaan sampah yang tertib adalah kunci kenyamanan hunian dan kredibilitas bisnis Anda. Kami memastikan sampah Anda diangkut tepat waktu dengan armada truk tertutup yang higienis dan bebas bau ceceran.";
-            $credP2 = "Standar kualitas kami sangat jelas. Jadwal kedatangan yang disiplin, tim armada berseragam rapi, dan pembuangan legal ke TPA resmi adalah prioritas utama. Kami siap melayani perumahan, klaster, restoran, kafe, hingga proyek konstruksi.";
-            
-            $philTitle = "Bukan sekadar mengangkut. Kami membangun tata kelola lingkungan yang sehat & tertib.";
-            $pillar1 = ["title" => "Jadwal Rutin & Disiplin Waktu", "desc" => "Pengambilan sampah terjadwal pasti agar tidak menumpuk dan menimbulkan bau di pekarangan."];
-            $pillar2 = ["title" => "Armada Truk Bersih & Tertutup", "desc" => "Menggunakan truk tertutup terpal/hidrolik sehingga aman dari ceceran air lindi di jalanan."];
-            $pillar3 = ["title" => "Pembuangan Resmi & Legal", "desc" => "Semua sampah dialirkan ke Tempat Pembuangan Akhir (TPA) resmi sesuai regulasi Dinas Lingkungan Hidup."];
-            $pillar4 = ["title" => "Evakuasi Puing & Limbah Besar", "desc" => "Mampu mengangkut puing sisa bongkaran, kayu, semen, dan furnitur rusak ukuran besar."];
+            if ($isEn) {
+                $heroHook = "Looking for Scheduled & Odor-Free Waste Removal with Premium Standards?";
+                $heroSubPills = "Scheduled Waste Pickup, Commercial Cafe & Resto Waste, Renovation Debris Evacuation, Bulky Item Disposal, Enclosed Trucks";
+                $credTitle = "Integrated & Scheduled Waste Management Vendor for Clean Environments";
+                $credP1 = "Disciplined waste management is key to residential comfort and business credibility. We ensure your waste is hauled on time with hygienic, enclosed trucks free from leachate spills.";
+                $credP2 = "Our quality standards are unmistakable. Punctual schedules, uniformed crews, and legal disposal at certified landfills are top priorities. We serve residential clusters, restaurants, cafes, and construction sites.";
+                
+                $philTitle = "Not just hauling. We build healthy & orderly environmental management.";
+                $pillar1 = ["title" => "Routine Schedule & Punctuality", "desc" => "Guaranteed scheduled waste collection so garbage never piles up or causes foul odors."];
+                $pillar2 = ["title" => "Clean & Enclosed Truck Fleet", "desc" => "Utilizing tarp-covered or hydraulic enclosed trucks safe from leachate spills on roads."];
+                $pillar3 = ["title" => "Official & Legal Landfill Disposal", "desc" => "All waste is transported to official government landfills (TPA) adhering to environmental regulations."];
+                $pillar4 = ["title" => "Debris & Bulky Waste Evacuation", "desc" => "Equipped to haul demolition rubble, timber, cement sacks, and oversized broken furniture."];
 
-            $whyLead = "Kami memahami bahwa lingkungan bersih bebas bau sampah mencerminkan kualitas hidup dan citra positif bisnis Anda.";
-            $whyCards = [
-                ["title" => "Pengalaman Luas Pengelolaan Sampah Kawasan", "desc" => "Telah melayani puluhan klaster hunian dan ratusan unit usaha F&B di berbagai kota besar."],
-                ["title" => "Paket Jadwal Fleksibel (Harian/Mingguan)", "desc" => "Sesuaikan frekuensi pengangkutan sesuai volume sampah residensial maupun bisnis komersial Anda."],
-                ["title" => "Armada Siap Siaga Volume Kecil & Besar", "desc" => "Didukung armada pikap tertutup hingga dump truck kapasitas besar untuk kebutuhan on-demand."],
-                ["title" => "Pekerja Terlatih, Sigap & Ramah", "desc" => "Petugas armada selalu menggunakan perlengkapan keselamatan kerja (APD) dan bekerja cepat serta rapi."],
-                ["title" => "Jaminan Bebas Bau & Area Bersih Tuntas", "desc" => "Petugas memastikan tempat sampah disapu bersih dan tidak ada sampah tercecer setelah proses muat."],
-                ["title" => "Kontrak Fleksibel & Tanpa Kerumitan", "desc" => "Tersedia pilihan langganan bulanan tanpa ikatan rumit, maupun sistem panggilan insidental."]
-            ];
+                $whyLead = "We understand that an odor-free, clean environment directly reflects your quality of life and positive business image.";
+                $whyCards = [
+                    ["title" => "Extensive Regional Waste Management Experience", "desc" => "Serving dozens of residential clusters and hundreds of F&B businesses across major metropolitan areas."],
+                    ["title" => "Flexible Schedule Plans (Daily / Weekly)", "desc" => "Tailor pickup frequencies to match residential volumes or commercial business output."],
+                    ["title" => "Fleet Ready for Small & Large Volumes", "desc" => "Backed by enclosed pickups to large-capacity dump trucks for on-demand requirements."],
+                    ["title" => "Trained, Prompt & Courteous Personnel", "desc" => "Crew members always wear protective gear (PPE) and work swiftly and neatly."],
+                    ["title" => "Odor-Free Guarantee & Cleaned Area", "desc" => "Staff sweep trash areas thoroughly to ensure no scattered debris remains after loading."],
+                    ["title" => "Flexible Contracts Without Complexity", "desc" => "Monthly subscription options without lock-in commitments, as well as on-demand calls."]
+                ];
 
-            $narrativeHeading = "Eksekusi Cepat, Armada Siap, dan Lingkungan Bebas Tumpukan Sampah";
-            $narrativeP1 = "Tumpukan sampah yang telat diangkut mengundang lalat, kecoa, dan menimbulkan bau busuk yang mengganggu tetangga maupun pelanggan usaha Anda.";
-            $narrativeP2 = "Serahkan jadwal pengangkutan sampah secara teratur kepada Koota Services. Kami beroperasi dengan jadwal yang terukur setiap minggu sehingga tong sampah Anda selalu kosong dan higienis.";
-            $narrativeP3 = "Hasilnya adalah pekarangan rumah yang asri, lingkungan klaster yang bersih, dan kenyamanan hidup maksimal tanpa gangguan bau sampah.";
+                $narrativeHeading = "Fast Execution, Ready Fleet, and Zero Garbage Build-Up";
+                $narrativeP1 = "Garbage left uncollected invites flies, cockroaches, and foul odors that disrupt neighbors and customers alike.";
+                $narrativeP2 = "Entrust your routine waste hauling to Koota Services. We operate on reliable weekly schedules so bins stay empty and sanitized.";
+                $narrativeP3 = "The result is a pleasant yard, a clean neighborhood cluster, and maximum living comfort free from waste stench.";
 
-            $categories = ["Sampah Residensial Terjadwal", "Sampah Komersial Kafe & Resto", "Puing Sisa Renovasi Bangunan", "Pembuangan Barang Bekas Besar", "Sampah Acara & Pameran"];
-            $seeMoreText = "Lihat Dokumentasi Pengangkutan Sampah";
+                $categories = ["Scheduled Residential Waste", "Commercial Cafe & Resto Waste", "Renovation Rubble & Debris", "Bulky Furniture Disposal", "Event & Exhibition Waste"];
+                $seeMoreText = "View Waste Management Documentation";
 
-            $testimonials = [
-                ["initials" => "CK", "name" => "Citra Kirana", "role" => "Pengangkutan Sampah Kafe", "loc" => "Gubeng, Surabaya", "text" => "Untuk operasional coffee shop, sampah basah ampas kopi dan sisa makanan harus diangkut setiap pagi. Armada Koota sangat disiplin waktu dan petugasnya sangat sopan. Tempat sampah selalu disapu bersih!"],
-                ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Pengangkutan Klaster Perumahan", "loc" => "Klaster Harmoni, Sidoarjo", "text" => "Sebagai pengurus RT klaster perumahan 150 KK, koordinasi dengan vendor sampah Koota Services sangat mudah. Armada truknya tertutup dan tidak bau menetes di jalan komplek."],
-                ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Evakuasi Puing Renovasi", "loc" => "Kebayoran Baru, Jakarta", "text" => "Sisa puing bongkaran tembok dan genteng sebanyak 2 dump truck langsung ludes terangkut dalam setengah hari. Petugasnya sigap mengangkut sampai ke sapuan terakhir."],
-                ["initials" => "DR", "name" => "Denny R.", "role" => "Pembuangan Barang Bekas Besar", "loc" => "Soekarno Hatta, Malang", "text" => "Pindahan rumah mau membuang sofa tua, kasur busa rusak, dan lemari kayu lapuk. Sangat terbantu dengan layanan on-demand Koota Services, harganya sangat masuk akal."],
-                ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Sampah Restoran & Dapur", "loc" => "Seminyak, Bali", "text" => "Restoran kami membutuhkan higienitas tinggi. Sistem pengangkutan terjadwal Koota Services membantu kami menjaga kebersihan dapur dan lolos audit sanitasi berkala."],
-                ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Pengangkutan Rutin Mingguan", "loc" => "Rungkut, Surabaya", "text" => "Pelayanan profesional, armada siap sedia, dan customer service sangat tanggap saat kami butuh jadwal pengangkutan tambahan di hari libur. Recomended vendor!"]
-            ];
+                $testimonials = [
+                    ["initials" => "CK", "name" => "Citra Kirana", "role" => "Cafe Waste Removal", "loc" => "Gubeng, Surabaya", "text" => "For our coffee shop operations, wet coffee grounds and food waste must be collected every morning. Koota's crew is punctual and very polite. The bin area is always swept clean!"],
+                    ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Residential Cluster Hauling", "loc" => "Klaster Harmoni, Sidoarjo", "text" => "Managing waste for 150 households is seamless with Koota Services. Enclosed trucks mean zero unpleasant leaks or smell across complex roads."],
+                    ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Renovation Debris Evacuation", "loc" => "Kebayoran Baru, Jakarta", "text" => "Two dump trucks of wall rubble and broken tiles hauled away in half a day. The crew swept thoroughly down to the last grain of dust."],
+                    ["initials" => "DR", "name" => "Denny R.", "role" => "Bulky Furniture Disposal", "loc" => "Soekarno Hatta, Malang", "text" => "Moving house and needed to dispose of an old sofa, damaged mattress, and weathered cabinets. Koota's on-demand service was extremely reasonable and helpful."],
+                    ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Restaurant & Kitchen Waste", "loc" => "Seminyak, Bali", "text" => "Our restaurant demands pristine hygiene. Koota's scheduled hauling helps us maintain kitchen sanitation and pass periodic health audits effortlessly."],
+                    ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Routine Weekly Pickup", "loc" => "Rungkut, Surabaya", "text" => "Professional service, dependable trucks, and responsive customer service when extra holiday pickups are needed. Highly recommended vendor!"]
+                ];
 
-            $ctaHook = "Wujudkan lingkungan hunian dan usaha yang bersih, higienis, dan bebas bau sampah!";
+                $ctaHook = "Achieve a clean, hygienic, and odor-free living and business environment!";
 
-            $faqsList = [
-                ["q" => "01 Bagaimana sistem jadwal pengangkutan sampah residensial?", "a" => "Pengangkutan dapat diatur sesuai kesepakatan, misalnya 2x seminggu, 3x seminggu, atau setiap hari kerja untuk kawasan bisnis/perumahan."],
-                ["q" => "02 Apakah Koota melayani pembuangan puing material bangunan?", "a" => "Ya, kami melayani evakuasi puing sisa bongkaran renovasi (pecahan batu bata, semen, genteng, kayu) menggunakan armada dump truck dengan tim angkut yang terlatih."],
-                ["q" => "03 Apakah bisa membuang barang berukuran besar (bulky waste)?", "a" => "Tentu saja. Kami melayani panggilan insidental untuk pembuangan kasur bekas, lemari rusak, sofa lapuk, dan perabot besar lainnya."],
-                ["q" => "04 Ke mana sampah tersebut akan dibuang?", "a" => "Seluruh sampah yang kami angkut dibuang ke Tempat Pemrosesan Akhir (TPA) resmi yang terdaftar di Dinas Lingkungan Hidup kota setempat, memastikan tidak ada pembuangan liar."],
-                ["q" => "05 Berapa biaya langganan pengangkutan sampah?", "a" => "Biaya disesuaikan dengan volume sampah, frekuensi pengambilan, dan jenis properti (rumah tangga, kafe, ruko, atau komplek klaster). Hubungi WA kami untuk penawaran terbaik."],
-                ["q" => "06 Apakah armada yang digunakan menimbulkan bau ceceran di jalan?", "a" => "Tidak. Armada kami menggunakan truk dengan penutup terpal rapat dan wadah tertutup kedap air lindi untuk menjaga kebersihan jalanan umum."],
-                ["q" => "07 Bagaimana cara mendaftar atau memesan pengangkutan mendesak?", "a" => "Sangat mudah, klik tombol Konsultasi WhatsApp, kirimkan detail lokasi dan foto estimasi sampah Anda, tim operasional kami siap menjadwalkan penjemputan."]
-            ];
+                $faqsList = [
+                    ["q" => "01 How does the residential waste collection schedule work?", "a" => "Pickup frequency is arranged per agreement, such as 2x weekly, 3x weekly, or daily for commercial and residential clusters."],
+                    ["q" => "02 Does Koota handle construction and renovation debris?", "a" => "Yes, we evacuate renovation debris (bricks, cement, roof tiles, timber) using dump trucks with trained hauling crews."],
+                    ["q" => "03 Can I dispose of oversized items (bulky waste)?", "a" => "Certainly. We accept on-demand calls for disposing of old mattresses, broken cabinets, sofas, and other large furniture."],
+                    ["q" => "04 Where is collected waste disposed of?", "a" => "All waste is transported to official municipal landfills registered with the Environmental Agency, ensuring zero illegal dumping."],
+                    ["q" => "05 How much does a waste hauling subscription cost?", "a" => "Cost is customized based on waste volume, pickup frequency, and property type. Contact our WhatsApp for the best quote."],
+                    ["q" => "06 Does the truck cause odor or leachate leaks on roads?", "a" => "No. Our fleet utilizes tightly tarped beds or watertight enclosed bodies to maintain public road hygiene."],
+                    ["q" => "07 How do I register or request urgent waste pickup?", "a" => "Simply click WhatsApp, send your location and estimated waste photos, and our operations team will schedule your pickup."]
+                ];
+            } else {
+                $heroHook = "Ingin Pengangkutan Sampah Teratur & Bebas Bau Dengan Standar Premium?";
+                $heroSubPills = "Pengangkutan Sampah Terjadwal, Sampah Komersial Kafe & Resto, Evakuasi Puing Bangunan, Pembuangan Barang Bekas Besar, Truk Tertutup";
+                $credTitle = "Vendor Pengangkutan Sampah Terpadu & Terjadwal Untuk Lingkungan Bersih";
+                $credP1 = "Pengelolaan sampah yang tertib adalah kunci kenyamanan hunian dan kredibilitas bisnis Anda. Kami memastikan sampah Anda diangkut tepat waktu dengan armada truk tertutup yang higienis dan bebas bau ceceran.";
+                $credP2 = "Standar kualitas kami sangat jelas. Jadwal kedatangan yang disiplin, tim armada berseragam rapi, dan pembuangan legal ke TPA resmi adalah prioritas utama. Kami siap melayani perumahan, klaster, restoran, kafe, hingga proyek konstruksi.";
+                
+                $philTitle = "Bukan sekadar mengangkut. Kami membangun tata kelola lingkungan yang sehat & tertib.";
+                $pillar1 = ["title" => "Jadwal Rutin & Disiplin Waktu", "desc" => "Pengambilan sampah terjadwal pasti agar tidak menumpuk dan menimbulkan bau di pekarangan."];
+                $pillar2 = ["title" => "Armada Truk Bersih & Tertutup", "desc" => "Menggunakan truk tertutup terpal/hidrolik sehingga aman dari ceceran air lindi di jalanan."];
+                $pillar3 = ["title" => "Pembuangan Resmi & Legal", "desc" => "Semua sampah dialirkan ke Tempat Pembuangan Akhir (TPA) resmi sesuai regulasi Dinas Lingkungan Hidup."];
+                $pillar4 = ["title" => "Evakuasi Puing & Limbah Besar", "desc" => "Mampu mengangkut puing sisa bongkaran, kayu, semen, dan furnitur rusak ukuran besar."];
+
+                $whyLead = "Kami memahami bahwa lingkungan bersih bebas bau sampah mencerminkan kualitas hidup dan citra positif bisnis Anda.";
+                $whyCards = [
+                    ["title" => "Pengalaman Luas Pengelolaan Sampah Kawasan", "desc" => "Telah melayani puluhan klaster hunian dan ratusan unit usaha F&B di berbagai kota besar."],
+                    ["title" => "Paket Jadwal Fleksibel (Harian/Mingguan)", "desc" => "Sesuaikan frekuensi pengangkutan sesuai volume sampah residensial maupun bisnis komersial Anda."],
+                    ["title" => "Armada Siap Siaga Volume Kecil & Besar", "desc" => "Didukung armada pikap tertutup hingga dump truck kapasitas besar untuk kebutuhan on-demand."],
+                    ["title" => "Pekerja Terlatih, Sigap & Ramah", "desc" => "Petugas armada selalu menggunakan perlengkapan keselamatan kerja (APD) dan bekerja cepat serta rapi."],
+                    ["title" => "Jaminan Bebas Bau & Area Bersih Tuntas", "desc" => "Petugas memastikan tempat sampah disapu bersih dan tidak ada sampah tercecer setelah proses muat."],
+                    ["title" => "Kontrak Fleksibel & Tanpa Kerumitan", "desc" => "Tersedia pilihan langganan bulanan tanpa ikatan rumit, maupun sistem panggilan insidental."]
+                ];
+
+                $narrativeHeading = "Eksekusi Cepat, Armada Siap, dan Lingkungan Bebas Tumpukan Sampah";
+                $narrativeP1 = "Tumpukan sampah yang telat diangkut mengundang lalat, kecoa, dan menimbulkan bau busuk yang mengganggu tetangga maupun pelanggan usaha Anda.";
+                $narrativeP2 = "Serahkan jadwal pengangkutan sampah secara teratur kepada Koota Services. Kami beroperasi dengan jadwal yang terukur setiap minggu sehingga tong sampah Anda selalu kosong dan higienis.";
+                $narrativeP3 = "Hasilnya adalah pekarangan rumah yang asri, lingkungan klaster yang bersih, dan kenyamanan hidup maksimal tanpa gangguan bau sampah.";
+
+                $categories = ["Sampah Residensial Terjadwal", "Sampah Komersial Kafe & Resto", "Puing Sisa Renovasi Bangunan", "Pembuangan Barang Bekas Besar", "Sampah Acara & Pameran"];
+                $seeMoreText = "Lihat Dokumentasi Pengangkutan Sampah";
+
+                $testimonials = [
+                    ["initials" => "CK", "name" => "Citra Kirana", "role" => "Pengangkutan Sampah Kafe", "loc" => "Gubeng, Surabaya", "text" => "Untuk operasional coffee shop, sampah basah ampas kopi dan sisa makanan harus diangkut setiap pagi. Armada Koota sangat disiplin waktu dan petugasnya sangat sopan. Tempat sampah selalu disapu bersih!"],
+                    ["initials" => "DP", "name" => "Dimas Pratama", "role" => "Pengangkutan Klaster Perumahan", "loc" => "Klaster Harmoni, Sidoarjo", "text" => "Sebagai pengurus RT klaster perumahan 150 KK, koordinasi dengan vendor sampah Koota Services sangat mudah. Armada truknya tertutup dan tidak bau menetes di jalan komplek."],
+                    ["initials" => "SL", "name" => "Sophia Latjuba", "role" => "Evakuasi Puing Renovasi", "loc" => "Kebayoran Baru, Jakarta", "text" => "Sisa puing bongkaran tembok dan genteng sebanyak 2 dump truck langsung ludes terangkut dalam setengah hari. Petugasnya sigap mengangkut sampai ke sapuan terakhir."],
+                    ["initials" => "DR", "name" => "Denny R.", "role" => "Pembuangan Barang Bekas Besar", "loc" => "Soekarno Hatta, Malang", "text" => "Pindahan rumah mau membuang sofa tua, kasur busa rusak, dan lemari kayu lapuk. Sangat terbantu dengan layanan on-demand Koota Services, harganya sangat masuk akal."],
+                    ["initials" => "HS", "name" => "Hani Syarifah", "role" => "Sampah Restoran & Dapur", "loc" => "Seminyak, Bali", "text" => "Restoran kami membutuhkan higienitas tinggi. Sistem pengangkutan terjadwal Koota Services membantu kami menjaga kebersihan dapur dan lolos audit sanitasi berkala."],
+                    ["initials" => "RH", "name" => "Rian Hermawan", "role" => "Pengangkutan Rutin Mingguan", "loc" => "Rungkut, Surabaya", "text" => "Pelayanan profesional, armada siap sedia, dan customer service sangat tanggap saat kami butuh jadwal pengangkutan tambahan di hari libur. Recomended vendor!"]
+                ];
+
+                $ctaHook = "Wujudkan lingkungan hunian dan usaha yang bersih, higienis, dan bebas bau sampah!";
+
+                $faqsList = [
+                    ["q" => "01 Bagaimana sistem jadwal pengangkutan sampah residensial?", "a" => "Pengangkutan dapat diatur sesuai kesepakatan, misalnya 2x seminggu, 3x seminggu, atau setiap hari kerja untuk kawasan bisnis/perumahan."],
+                    ["q" => "02 Apakah Koota melayani pembuangan puing material bangunan?", "a" => "Ya, kami melayani evakuasi puing sisa bongkaran renovasi (pecahan batu bata, semen, genteng, kayu) menggunakan armada dump truck dengan tim angkut yang terlatih."],
+                    ["q" => "03 Apakah bisa membuang barang berukuran besar (bulky waste)?", "a" => "Tentu saja. Kami melayani panggilan insidental untuk pembuangan kasur bekas, lemari rusak, sofa lapuk, dan perabot besar lainnya."],
+                    ["q" => "04 Ke mana sampah tersebut akan dibuang?", "a" => "Seluruh sampah yang kami angkut dibuang ke Tempat Pemrosesan Akhir (TPA) resmi yang terdaftar di Dinas Lingkungan Hidup kota setempat, memastikan tidak ada pembuangan liar."],
+                    ["q" => "05 Berapa biaya langganan pengangkutan sampah?", "a" => "Biaya disesuaikan dengan volume sampah, frekuensi pengambilan, dan jenis properti (rumah tangga, kafe, ruko, atau komplek klaster). Hubungi WA kami untuk penawaran terbaik."],
+                    ["q" => "06 Apakah armada yang digunakan menimbulkan bau ceceran di jalan?", "a" => "Tidak. Armada kami menggunakan truk dengan penutup terpal rapat dan wadah tertutup kedap air lindi untuk menjaga kebersihan jalanan umum."],
+                    ["q" => "07 Bagaimana cara mendaftar atau memesan pengangkutan mendesak?", "a" => "Sangat mudah, klik tombol Konsultasi WhatsApp, kirimkan detail lokasi dan foto estimasi sampah Anda, tim operasional kami siap menjadwalkan penjemputan."]
+                ];
+            }
         }
     @endphp
 
@@ -182,7 +341,7 @@
     <section class="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden border-b border-slate-800">
         <!-- Background Image with Editorial Vignette & Radial Crimson Glow -->
         <div class="absolute inset-0 z-0">
-            <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover opacity-25 filter brightness-75 scale-105">
+            <img src="{{ $service->hero_image }}" alt="{{ __($service->title) }}" class="w-full h-full object-cover opacity-25 filter brightness-75 scale-105">
             <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/85 to-neutral-950/60"></div>
             <div aria-hidden="true" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#ac0c0c]/20 rounded-full blur-3xl pointer-events-none"></div>
         </div>
@@ -191,7 +350,7 @@
             <!-- Badge Pill -->
             <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/15 backdrop-blur-md shadow-xs">
                 <span class="w-2 h-2 rounded-full bg-[#ac0c0c] animate-pulse"></span>
-                <span class="tracking-widest uppercase text-[11px] font-bold">KOOTA PREMIUM SERVICE</span>
+                <span class="tracking-widest uppercase text-[11px] font-bold">{{ __('KOOTA PREMIUM SERVICE') }}</span>
             </div>
 
             <!-- Main Heading Hook -->
@@ -214,11 +373,11 @@
                     <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                     </svg>
-                    <span>Konsultasi via WhatsApp</span>
+                    <span>{{ __('Konsultasi via WhatsApp') }}</span>
                 </a>
 
                 <a href="#detail-layanan" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white font-semibold text-sm sm:text-base border border-white/20 backdrop-blur-md transition-all">
-                    <span>Pelajari Lingkup Layanan</span>
+                    <span>{{ __('Pelajari Lingkup Layanan') }}</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                 </a>
             </div>
@@ -261,7 +420,7 @@
 
                 <div class="lg:col-span-5">
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white group">
-                        <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <img src="{{ $service->hero_image }}" alt="{{ __($service->title) }}" class="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
 
                         <!-- Trust Card Overlays -->
@@ -270,12 +429,12 @@
                                 <span class="w-6 h-6 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
                                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                 </span>
-                                <span>Garansi Kualitas & SOP Pengerjaan Ketat</span>
+                                <span>{{ __('Garansi Kualitas & SOP Pengerjaan Ketat') }}</span>
                             </div>
 
                             <div class="flex items-center justify-between text-[11px] text-white/90 font-medium px-2">
-                                <span>Wilayah Layanan Resmi</span>
-                                <span class="font-bold text-white">Surabaya • Malang • Bali • Jakarta</span>
+                                <span>{{ __('Wilayah Layanan Resmi') }}</span>
+                                <span class="font-bold text-white">{{ __('Surabaya • Malang • Bali • Jakarta') }}</span>
                             </div>
                         </div>
                     </div>
@@ -320,7 +479,7 @@
                     {{ $philTitle }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500">
-                    Nilai-nilai fundamental yang kami pegang teguh dalam setiap pengerjaan layanan.
+                    {{ __('Nilai-nilai fundamental yang kami pegang teguh dalam setiap pengerjaan layanan.') }}
                 </p>
             </div>
 
@@ -331,10 +490,10 @@
             >
                 @php
                     $pillarsList = [
-                        ['num' => '01', 'sub' => 'Standar Mutu', 'data' => $pillar1],
-                        ['num' => '02', 'sub' => 'Eksekusi Aman', 'data' => $pillar2],
-                        ['num' => '03', 'sub' => 'Tim Ahli SOP', 'data' => $pillar3],
-                        ['num' => '04', 'sub' => 'Hasil Bergaransi', 'data' => $pillar4],
+                        ['num' => '01', 'sub' => __('Standar Mutu'), 'data' => $pillar1],
+                        ['num' => '02', 'sub' => __('Eksekusi Aman'), 'data' => $pillar2],
+                        ['num' => '03', 'sub' => __('Tim Ahli SOP'), 'data' => $pillar3],
+                        ['num' => '04', 'sub' => __('Hasil Bergaransi'), 'data' => $pillar4],
                     ];
                 @endphp
 
@@ -342,7 +501,7 @@
                     <div 
                         class="calendar-deck-card flex flex-col group cursor-pointer select-none active:scale-[0.98] transition-transform"
                         @click="isSpread = !isSpread"
-                        title="Klik untuk menumpuk / menyebarkan kartu"
+                        title="{{ __('Klik untuk menumpuk / menyebarkan kartu') }}"
                     >
                         <!-- Clean Calendar Sheet -->
                         <div class="bg-white rounded-2xl sm:rounded-3xl border border-gray-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 flex flex-col justify-between flex-1 overflow-hidden group-hover:border-[#ac0c0c]/40">
@@ -350,7 +509,7 @@
                             <!-- Clean Crimson Header Bar -->
                             <div class="bg-[#ac0c0c] text-white px-5 py-2.5 flex items-center justify-between">
                                 <span class="text-[11px] font-black uppercase tracking-widest">
-                                    PILAR {{ $p['num'] }}
+                                    {{ __('PILAR') }} {{ $p['num'] }}
                                 </span>
                                 <span class="text-[10px] text-red-200 font-semibold uppercase tracking-wider">
                                     {{ $p['sub'] }}
@@ -372,7 +531,7 @@
                                 </div>
 
                                 <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
-                                    <span class="font-medium text-gray-500">SOP Terstandarisasi</span>
+                                    <span class="font-medium text-gray-500">{{ __('SOP Terstandarisasi') }}</span>
                                     <span class="text-[#ac0c0c] font-bold">✓</span>
                                 </div>
                             </div>
@@ -383,7 +542,6 @@
         </div>
 
         <style>
-            /* Smooth Transition for Deck Stacking & Fanning Out */
             .calendar-deck-grid {
                 position: relative;
             }
@@ -393,7 +551,6 @@
                 will-change: transform;
             }
 
-            /* Desktop Stacking (<lg spread by default, lg stacked when :not(.is-spread)) */
             @media (min-width: 1024px) {
                 .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(1) {
                     transform: translateX(calc(150% + 2.25rem)) translateY(12px) rotate(-8deg) scale(0.95);
@@ -418,7 +575,6 @@
                 }
             }
 
-            /* Tablet Stacking */
             @media (min-width: 640px) and (max-width: 1023px) {
                 .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(1) {
                     transform: translateX(calc(50% + 0.75rem)) translateY(10px) rotate(-5deg) scale(0.95);
@@ -443,7 +599,6 @@
                 }
             }
 
-            /* Mobile Stacking */
             @media (max-width: 639px) {
                 .calendar-deck-grid:not(.is-spread) .calendar-deck-card:nth-child(1) {
                     transform: translateY(16px) rotate(-4deg) scale(0.94);
@@ -482,7 +637,7 @@
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    Kenapa Klien Memilih KOOTA SERVICE?
+                    {{ __('Kenapa Klien Memilih KOOTA SERVICE?') }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {{ $whyLead }}
@@ -540,10 +695,10 @@
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    Telah Dipercaya Ratusan Klien di Berbagai Sektor
+                    {{ __('Telah Dipercaya Ratusan Klien di Berbagai Sektor') }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                    Hunian Pribadi, Apartemen, Kantor Bisnis, Kafe & Resto, hingga Fasilitas Komersial.
+                    {{ __('Hunian Pribadi, Apartemen, Kantor Bisnis, Kafe & Resto, hingga Fasilitas Komersial.') }}
                 </p>
             </div>
 
@@ -562,7 +717,7 @@
             <!-- Dynamic Sub-header: Project <activeCategory> -->
             <div class="pt-2 pb-1">
                 <p class="text-xs sm:text-sm font-medium text-gray-500">
-                    Kategori: <span x-text="activeCategory" class="font-bold text-[#ac0c0c]"></span>
+                    {{ __('Kategori:') }} <span x-text="activeCategory" class="font-bold text-[#ac0c0c]"></span>
                 </p>
             </div>
 
@@ -574,19 +729,19 @@
                 @for($i = 0; $i < 3; $i++)
                     @if(isset($displayProjects[$i]))
                         <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
-                            <img src="{{ $displayProjects[$i]->image }}" alt="{{ $displayProjects[$i]->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="{{ $displayProjects[$i]->image }}" alt="{{ __($displayProjects[$i]->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
-                                <span class="text-xs font-bold text-white drop-shadow-sm">{{ $displayProjects[$i]->title }}</span>
+                                <span class="text-xs font-bold text-white drop-shadow-sm">{{ __($displayProjects[$i]->title) }}</span>
                             </div>
                         </div>
                     @else
                         <!-- Fallback Service Feature Showcase (Clean, No Wireframe Text) -->
                         <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
-                            <img src="{{ $service->hero_image }}" alt="{{ $service->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="{{ $service->hero_image }}" alt="{{ __($service->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent flex flex-col justify-end p-5 text-white">
-                                <span class="text-[10px] font-bold text-red-300 uppercase tracking-wider mb-1">Standar KOOTA SERVICE</span>
+                                <span class="text-[10px] font-bold text-red-300 uppercase tracking-wider mb-1">{{ __('Standar KOOTA SERVICE') }}</span>
                                 <h4 class="text-sm font-bold leading-snug">
-                                    {{ $i === 0 ? 'Eksekusi Presisi di Lokasi' : ($i === 1 ? 'Peralatan & SOP Higienis' : 'Hasil Pengerjaan Bergaransi') }}
+                                    {{ $i === 0 ? __('Eksekusi Presisi di Lokasi') : ($i === 1 ? __('Peralatan & SOP Higienis') : __('Hasil Pengerjaan Bergaransi')) }}
                                 </h4>
                             </div>
                         </div>
@@ -608,10 +763,10 @@
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    Lihat Hasil Project Kami
+                    {{ __('Lihat Hasil Project Kami') }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                    Simak dokumentasi video singkat dari beberapa project yang telah kami kerjakan, langsung dari sudut pandang klien kami.
+                    {{ __('Simak dokumentasi video singkat dari beberapa project yang telah kami kerjakan, langsung dari sudut pandang klien kami.') }}
                 </p>
             </div>
 
@@ -620,12 +775,12 @@
                 @foreach($videoProjects->take(2) as $vProj)
                     <div class="bg-slate-50 p-6 rounded-3xl border border-gray-100 shadow-2xs space-y-4">
                         <div class="text-center space-y-1">
-                            <h4 class="text-sm font-bold text-gray-900">{{ $vProj->title }}</h4>
-                            <p class="text-[11px] text-gray-500">{{ $vProj->description }}</p>
+                            <h4 class="text-sm font-bold text-gray-900">{{ __($vProj->title) }}</h4>
+                            <p class="text-[11px] text-gray-500">{{ __($vProj->description) }}</p>
                         </div>
                         <div class="h-64 sm:h-72 rounded-2xl overflow-hidden relative bg-black cursor-pointer group"
                              @click="currentVideoUrl = '{{ str_replace(['shorts/', 'watch?v='], 'embed/', $vProj->video_url ?? 'https://www.youtube.com/embed/aqz-KE-bpKQ') }}?autoplay=1'; videoModal = true">
-                            <img src="{{ $vProj->image }}" alt="{{ $vProj->title }}" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300">
+                            <img src="{{ $vProj->image }}" alt="{{ __($vProj->title) }}" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300">
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="w-14 h-14 rounded-full bg-[#ac0c0c] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
                                     <svg class="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -644,7 +799,7 @@
              @click="videoModal = false; currentVideoUrl = ''"
              style="display: none;">
             <div class="relative w-full max-w-md bg-black rounded-3xl overflow-hidden shadow-2xl aspect-[9/16] max-h-[85vh]" @click.stop>
-                <button @click="videoModal = false; currentVideoUrl = ''" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="Tutup Video">
+                <button @click="videoModal = false; currentVideoUrl = ''" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="{{ __('Tutup Video') }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
                 <template x-if="videoModal && currentVideoUrl">
@@ -666,10 +821,10 @@
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    Cerita Nyata Dari Klien Kami
+                    {{ __('Cerita Nyata Dari Klien Kami') }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500">
-                    Bukan hanya menyelesaikan pekerjaan, tapi juga menciptakan kenyamanan dan standar higienis yang bermakna.
+                    {{ __('Bukan hanya menyelesaikan pekerjaan, tapi juga menciptakan kenyamanan dan standar higienis yang bermakna.') }}
                 </p>
             </div>
 
@@ -719,10 +874,10 @@
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    Proses Tertata Untuk Hasil Sempurna
+                    {{ __('Proses Tertata Untuk Hasil Sempurna') }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                    Setiap tahapan dirancang untuk menjamin kesempurnaan dan kepuasan pelanggan secara transparan.
+                    {{ __('Setiap tahapan dirancang untuk menjamin kesempurnaan dan kepuasan pelanggan secara transparan.') }}
                 </p>
             </div>
 
@@ -730,27 +885,27 @@
                 <!-- Step 1 -->
                 <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#ac0c0c]/30 transition-all space-y-3 relative group">
                     <span class="text-3xl font-black text-[#ac0c0c] block tracking-tight">01</span>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">Konsultasi & Penjadwalan Cepat</h3>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">{{ __('Konsultasi & Penjadwalan Cepat') }}</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Diskusikan kebutuhan spesifik Anda bersama Customer Care kami via WhatsApp. Kami berikan estimasi transparan dan jadwalkan kunjungan tepat waktu.
+                        {{ __('Diskusikan kebutuhan spesifik Anda bersama Customer Care kami via WhatsApp. Kami berikan estimasi transparan dan jadwalkan kunjungan tepat waktu.') }}
                     </p>
                 </div>
 
-                <!-- Step 2 (Consistent Brand Styling) -->
+                <!-- Step 2 -->
                 <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#ac0c0c]/30 transition-all space-y-3 relative group">
                     <span class="text-3xl font-black text-[#ac0c0c] block tracking-tight">02</span>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">Eksekusi Profesional Berstandar SOP</h3>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">{{ __('Eksekusi Profesional Berstandar SOP') }}</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Tenaga kerja ahli pilihan kami hadir on-site dengan peralatan lengkap dan material terstandar, bekerja disiplin mengikuti SOP ketat.
+                        {{ __('Tenaga kerja ahli pilihan kami hadir on-site dengan peralatan lengkap dan material terstandar, bekerja disiplin mengikuti SOP ketat.') }}
                     </p>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200/80 shadow-2xs hover:shadow-md hover:border-[#ac0c0c]/30 transition-all space-y-3 relative group">
                     <span class="text-3xl font-black text-[#ac0c0c] block tracking-tight">03</span>
-                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">Quality Control & Aktivasi Garansi</h3>
+                    <h3 class="text-lg font-bold text-gray-900 group-hover:text-[#ac0c0c] transition-colors">{{ __('Quality Control & Aktivasi Garansi') }}</h3>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        Pemeriksaan hasil akhir bersama klien untuk memastikan kepuasan menyeluruh. Jika ada yang belum sesuai, kami perbaiki tuntas bergaransi.
+                        {{ __('Pemeriksaan hasil akhir bersama klien untuk memastikan kepuasan menyeluruh. Jika ada yang belum sesuai, kami perbaiki tuntas bergaransi.') }}
                     </p>
                 </div>
             </div>
@@ -766,7 +921,7 @@
                     {{ $ctaHook }}
                 </h3>
                 <p class="text-xs sm:text-sm text-gray-600">
-                    Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik sesuai kebutuhan Anda.
+                    {{ __('Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik sesuai kebutuhan Anda.') }}
                 </p>
             </div>
 
@@ -781,15 +936,15 @@
                     <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-4">
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-red-200 text-xs font-semibold tracking-wide border border-white/10">
                             <span class="w-2 h-2 rounded-full bg-red-400"></span>
-                            <span>KONSULTASI BEBAS BIAYA</span>
+                            <span>{{ __('KONSULTASI BEBAS BIAYA') }}</span>
                         </div>
 
                         <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
-                            Konsultasi Masalah dan Perawatan Rumah Gratis
+                            {{ __('Konsultasi Masalah dan Perawatan Rumah Gratis') }}
                         </h3>
 
                         <p class="text-gray-300 text-xs sm:text-sm sm:leading-relaxed max-w-xl">
-                            Ceritakan kebutuhan Anda, kami siap bantu jadwalkan kunjungan tenaga ahli untuk solusi hunian bersih, rapi, dan terawat.
+                            {{ __('Ceritakan kebutuhan Anda, kami siap bantu jadwalkan kunjungan tenaga ahli untuk solusi hunian bersih, rapi, dan terawat.') }}
                         </p>
 
                         <div class="pt-4 flex flex-wrap items-center gap-3">
@@ -797,11 +952,11 @@
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                 </svg>
-                                <span>Konsultasi via WhatsApp</span>
+                                <span>{{ __('Konsultasi via WhatsApp') }}</span>
                             </a>
 
                             <a href="{{ route('consultation.index') }}" class="inline-flex items-center px-6 py-3.5 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs sm:text-sm transition-all">
-                                <span>Form Reservasi</span>
+                                <span>{{ __('Form Reservasi') }}</span>
                             </a>
                         </div>
                     </div>
@@ -827,10 +982,10 @@
                     <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    Pertanyaan yang Sering Ditanyakan
+                    {{ __('Pertanyaan yang Sering Ditanyakan') }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-500">
-                    Kami rangkum info penting agar Anda lebih yakin dan mudah dalam mengambil keputusan.
+                    {{ __('Kami rangkum info penting agar Anda lebih yakin dan mudah dalam mengambil keputusan.') }}
                 </p>
             </div>
 
@@ -918,17 +1073,17 @@
                 <div class="lg:col-span-4">
                     <div class="bg-slate-50 p-8 rounded-3xl border border-gray-200 text-center space-y-5 shadow-xs">
                         <h3 class="text-xl font-bold text-gray-900 leading-tight">
-                            Punya pertanyaan lain?
+                            {{ __('Punya pertanyaan lain?') }}
                         </h3>
                         <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                            Tim kami siap membantu Anda! Hubungi kami langsung untuk konsultasi gratis dan solusi terbaik sesuai kebutuhan Anda.
+                            {{ __('Tim kami siap membantu Anda! Hubungi kami langsung untuk konsultasi gratis dan solusi terbaik sesuai kebutuhan Anda.') }}
                         </p>
                         <div class="pt-2">
                             <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20tanya-tanya%20layanan%20{{ urlencode($service->title) }}." target="_blank" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white font-bold text-xs sm:text-sm transition-all shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95">
                                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
                                 </svg>
-                                <span>Hubungi Konsultan Kami</span>
+                                <span>{{ __('Hubungi Konsultan Kami') }}</span>
                             </a>
                         </div>
                     </div>

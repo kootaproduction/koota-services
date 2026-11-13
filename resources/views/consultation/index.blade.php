@@ -73,17 +73,17 @@
                 <div class="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-semibold text-gray-600">
                     <div>
                         <span class="text-[#ac0c0c] font-bold">4.9 / 5.0</span>
-                        <span class="text-gray-500"> Kepuasan Klien (500+ Proyek)</span>
+                        <span class="text-gray-500"> {{ __('Kepuasan Klien (500+ Proyek)') }}</span>
                     </div>
                     <span class="text-gray-300 hidden sm:inline">•</span>
                     <div>
-                        <span class="font-bold text-gray-800">Respon WhatsApp</span>
-                        <span class="text-gray-500"> Kurang dari 15 Menit</span>
+                        <span class="font-bold text-gray-800">{{ __('Respon WhatsApp') }}</span>
+                        <span class="text-gray-500"> {{ __('Kurang dari 15 Menit') }}</span>
                     </div>
                     <span class="text-gray-300 hidden sm:inline">•</span>
                     <div>
-                        <span class="font-bold text-gray-800">Survei Lokasi</span>
-                        <span class="text-gray-500"> Bebas Biaya</span>
+                        <span class="font-bold text-gray-800">{{ __('Survei Lokasi') }}</span>
+                        <span class="text-gray-500"> {{ __('Bebas Biaya') }}</span>
                     </div>
                 </div>
             </div>
@@ -187,7 +187,7 @@
                             {{ __('Wilayah Layanan Aktif') }}
                         </span>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            Surabaya Raya (Surabaya, Sidoarjo, Gresik), Malang Raya, Bali (Denpasar, Badung, Sanur), dan DKI Jakarta.
+                            {{ __('Surabaya Raya (Surabaya, Sidoarjo, Gresik), Malang Raya, Bali (Denpasar, Badung, Sanur), dan DKI Jakarta.') }}
                         </p>
                     </div>
 
@@ -243,7 +243,7 @@
                             </div>
 
                             <span class="text-[11px] font-bold text-gray-400 self-start sm:self-auto">
-                                Terenkripsi & Terlindungi
+                                {{ __('Terenkripsi & Terlindungi') }}
                             </span>
                         </div>
 
@@ -290,7 +290,7 @@
                                                 {{ __('Pembersihan Rumah') }}
                                             </h4>
                                             <p class="text-xs text-gray-500 mt-1 leading-snug">
-                                                Deep cleaning, sedot tungau, sanitasi kamar mandi & pascarenovasi.
+                                                {{ __('Deep cleaning, sedot tungau, sanitasi kamar mandi & pascarenovasi.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -317,7 +317,7 @@
                                                 {{ __('Perbaikan Rumah') }}
                                             </h4>
                                             <p class="text-xs text-gray-500 mt-1 leading-snug">
-                                                Pipa bocor, atap rembes, cat dinding, kelistrikan & kusen.
+                                                {{ __('Pipa bocor, atap rembes, cat dinding, kelistrikan & kusen.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -344,7 +344,7 @@
                                                 {{ __('Pengangkutan Sampah') }}
                                             </h4>
                                             <p class="text-xs text-gray-500 mt-1 leading-snug">
-                                                Sampah residensial, kafe/resto, puing semen & kayu sisa renovasi.
+                                                {{ __('Sampah residensial, kafe/resto, puing semen & kayu sisa renovasi.') }}
                                             </p>
                                         </div>
                                     </div>
@@ -373,9 +373,9 @@
                                             <option value="Surabaya" {{ old('location') === 'Surabaya' ? 'selected' : '' }}>Surabaya</option>
                                             <option value="Sidoarjo" {{ old('location') === 'Sidoarjo' ? 'selected' : '' }}>Sidoarjo</option>
                                             <option value="Gresik" {{ old('location') === 'Gresik' ? 'selected' : '' }}>Gresik</option>
-                                            <option value="Malang" {{ old('location') === 'Malang' ? 'selected' : '' }}>Malang Raya</option>
-                                            <option value="Bali" {{ old('location') === 'Bali' ? 'selected' : '' }}>Bali (Denpasar & Sekitarnya)</option>
-                                            <option value="Jakarta" {{ old('location') === 'Jakarta' ? 'selected' : '' }}>DKI Jakarta & Sekitarnya</option>
+                                            <option value="Malang" {{ old('location') === 'Malang' ? 'selected' : '' }}>{{ __('Malang Raya') }}</option>
+                                            <option value="Bali" {{ old('location') === 'Bali' ? 'selected' : '' }}>{{ __('Bali (Denpasar & Sekitarnya)') }}</option>
+                                            <option value="Jakarta" {{ old('location') === 'Jakarta' ? 'selected' : '' }}>{{ __('DKI Jakarta & Sekitarnya') }}</option>
                                             <option value="Lainnya" {{ old('location') === 'Lainnya' ? 'selected' : '' }}>{{ __('Kota Lainnya') }}</option>
                                         </select>
                                         @error('location') <span class="text-[11px] text-red-600 block">{{ $message }}</span> @enderror
@@ -387,12 +387,12 @@
                                             {{ __('Tipe Properti / Bangunan') }} <span class="text-red-500">*</span>
                                         </label>
                                         <select name="property_type" required class="w-full px-4 py-3 rounded-2xl border border-gray-200/90 bg-white text-xs sm:text-sm text-gray-900 font-medium focus:bg-white focus:border-[#ac0c0c] focus:ring-4 focus:ring-[#ac0c0c]/10 transition-all outline-none">
-                                            <option value="Rumah Tinggal / Hunian" {{ old('property_type') === 'Rumah Tinggal / Hunian' ? 'selected' : '' }}>Rumah Tinggal / Residensial</option>
-                                            <option value="Apartemen / Studio" {{ old('property_type') === 'Apartemen / Studio' ? 'selected' : '' }}>Apartemen / Studio</option>
-                                            <option value="Ruko / Tempat Usaha" {{ old('property_type') === 'Ruko / Tempat Usaha' ? 'selected' : '' }}>Ruko / Kantor Ruko</option>
-                                            <option value="Restoran / Cafe / Rumah Makan" {{ old('property_type') === 'Restoran / Cafe / Rumah Makan' ? 'selected' : '' }}>Kafe / Restoran / Rumah Makan</option>
-                                            <option value="Kantor / Gedung Bisnis" {{ old('property_type') === 'Kantor / Gedung Bisnis' ? 'selected' : '' }}>Gedung Kantor / Perusahaan</option>
-                                            <option value="Pabrik / Gudang" {{ old('property_type') === 'Pabrik / Gudang' ? 'selected' : '' }}>Gudang / Pabrik Komersial</option>
+                                            <option value="Rumah Tinggal / Hunian" {{ old('property_type') === 'Rumah Tinggal / Hunian' ? 'selected' : '' }}>{{ __('Rumah Tinggal / Residensial') }}</option>
+                                            <option value="Apartemen / Studio" {{ old('property_type') === 'Apartemen / Studio' ? 'selected' : '' }}>{{ __('Apartemen / Studio') }}</option>
+                                            <option value="Ruko / Tempat Usaha" {{ old('property_type') === 'Ruko / Tempat Usaha' ? 'selected' : '' }}>{{ __('Ruko / Kantor Ruko') }}</option>
+                                            <option value="Restoran / Cafe / Rumah Makan" {{ old('property_type') === 'Restoran / Cafe / Rumah Makan' ? 'selected' : '' }}>{{ __('Kafe / Restoran / Rumah Makan') }}</option>
+                                            <option value="Kantor / Gedung Bisnis" {{ old('property_type') === 'Kantor / Gedung Bisnis' ? 'selected' : '' }}>{{ __('Gedung Kantor / Perusahaan') }}</option>
+                                            <option value="Pabrik / Gudang" {{ old('property_type') === 'Pabrik / Gudang' ? 'selected' : '' }}>{{ __('Gudang / Pabrik Komersial') }}</option>
                                             <option value="Lainnya" {{ old('property_type') === 'Lainnya' ? 'selected' : '' }}>{{ __('Lainnya') }}</option>
                                         </select>
                                         @error('property_type') <span class="text-[11px] text-red-600 block">{{ $message }}</span> @enderror
@@ -461,17 +461,17 @@
                                             <button type="button" @click="scheduleChoice = 'Hari Ini'"
                                                     :class="scheduleChoice === 'Hari Ini' ? 'bg-[#ac0c0c] text-white font-bold border-[#ac0c0c] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
                                                     class="py-2.5 px-2 rounded-xl border text-xs text-center font-medium transition-all">
-                                                Hari Ini
+                                                {{ __('Hari Ini') }}
                                             </button>
                                             <button type="button" @click="scheduleChoice = 'Besok'"
                                                     :class="scheduleChoice === 'Besok' ? 'bg-[#ac0c0c] text-white font-bold border-[#ac0c0c] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
                                                     class="py-2.5 px-2 rounded-xl border text-xs text-center font-medium transition-all">
-                                                Besok
+                                                {{ __('Besok') }}
                                             </button>
                                             <button type="button" @click="scheduleChoice = 'Fleksibel'"
                                                     :class="scheduleChoice === 'Fleksibel' ? 'bg-[#ac0c0c] text-white font-bold border-[#ac0c0c] shadow-xs' : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'"
                                                     class="py-2.5 px-2 rounded-xl border text-xs text-center font-medium transition-all">
-                                                Fleksibel
+                                                {{ __('Fleksibel') }}
                                             </button>
                                         </div>
                                     </div>
@@ -502,7 +502,7 @@
                                         <template x-if="photoPreview">
                                             <div class="space-y-3">
                                                 <div class="relative inline-block mx-auto rounded-xl overflow-hidden border border-gray-200 shadow-sm max-h-48">
-                                                    <img :src="photoPreview" alt="Preview Foto" class="h-44 w-auto object-cover rounded-xl">
+                                                    <img :src="photoPreview" alt="{{ __('Preview Foto') }}" class="h-44 w-auto object-cover rounded-xl">
                                                 </div>
                                                 <div class="flex items-center justify-center gap-3">
                                                     <span class="text-xs font-semibold text-gray-700 truncate max-w-xs" x-text="photoName + ' (' + photoSize + ')'"></span>

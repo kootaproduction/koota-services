@@ -160,8 +160,8 @@
                 </div>
 
                 <!-- Mobile menu toggle -->
-                <button @click="sideDrawer = true" class="lg:hidden px-3 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-[#ac0c0c] hover:border-red-200 transition-all focus:outline-none" aria-label="Buka Menu">
-                    Menu
+                <button @click="sideDrawer = true" class="lg:hidden px-3 py-2 rounded-xl border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50 hover:text-[#ac0c0c] hover:border-red-200 transition-all focus:outline-none" aria-label="{{ __('Buka Menu') }}">
+                    {{ __('Menu') }}
                 </button>
             </div>
         </div>
@@ -199,8 +199,8 @@
                     <a href="{{ route('home') }}" class="flex items-center py-1">
                         <img src="{{ asset('images/logo.png') }}" alt="KOOTA SERVICE" class="h-10 sm:h-12 w-auto object-contain">
                     </a>
-                    <button @click="sideDrawer = false" class="w-10 h-10 rounded-full bg-red-50 text-[#ac0c0c] hover:bg-red-100 flex items-center justify-center transition-colors text-lg font-bold" aria-label="Tutup Menu">
-                        Tutup
+                    <button @click="sideDrawer = false" class="w-10 h-10 rounded-full bg-red-50 text-[#ac0c0c] hover:bg-red-100 flex items-center justify-center transition-colors text-lg font-bold" aria-label="{{ __('Tutup Menu') }}">
+                        {{ __('Tutup') }}
                     </button>
                 </div>
 
@@ -281,6 +281,21 @@
                             {{ __('Konsultasi & Reservasi') }}
                         </a>
                     </div>
+
+                    <!-- Language Switcher in Mobile Drawer -->
+                    <div class="pt-2 flex items-center justify-between text-xs font-bold text-gray-600">
+                        <span>{{ __('Pilihan Bahasa') }}</span>
+                        <div class="flex items-center gap-2">
+                            <a href="{{ route('locale.switch', 'id') }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-extrabold transition-all {{ app()->getLocale() === 'id' ? 'bg-[#ac0c0c] text-white border-[#ac0c0c] shadow-xs' : 'bg-white text-gray-700 border-gray-200' }}">
+                                <img src="https://flagcdn.com/w40/id.png" alt="ID" class="w-4 h-3 rounded-xs object-cover">
+                                <span>ID</span>
+                            </a>
+                            <a href="{{ route('locale.switch', 'en') }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-extrabold transition-all {{ app()->getLocale() === 'en' ? 'bg-[#ac0c0c] text-white border-[#ac0c0c] shadow-xs' : 'bg-white text-gray-700 border-gray-200' }}">
+                                <img src="https://flagcdn.com/w40/us.png" alt="EN" class="w-4 h-3 rounded-xs object-cover">
+                                <span>EN</span>
+                            </a>
+                        </div>
+                    </div>
                 </nav>
             </div>
 
@@ -302,7 +317,18 @@
     </main>
 
     <!-- Floating Chatbot Widget -->
-    <div x-data="kootaChatbot" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] flex flex-col items-end">
+    <div x-data="kootaChatbot"
+         x-init="
+            messages = [{ role: 'bot', text: '{{ addslashes(__('Halo! Saya asisten virtual KOOTA Services. Ada yang bisa kami bantu seputar pembersihan rumah (home cleaning), perbaikan & tukang, atau pengangkutan sampah?')) }}' }];
+            suggestions = [
+                '{{ addslashes(__('Cuci toren air & tandon')) }}',
+                '{{ addslashes(__('Sedot tungau kasur & sofa')) }}',
+                '{{ addslashes(__('Perbaikan atap bocor')) }}',
+                '{{ addslashes(__('Angkut puing renovasi')) }}',
+                '{{ addslashes(__('Apakah survei gratis?')) }}'
+            ];
+         "
+         class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[100] flex flex-col items-end">
         <!-- Chatbot Room Window -->
         <div
             x-show="isOpen"
@@ -327,7 +353,7 @@
                             <p class="text-sm font-bold leading-tight">KOOTA Assistant</p>
                             <span class="px-1.5 py-0.2 rounded text-[9px] font-extrabold uppercase bg-white/20 text-white tracking-wider">AI Bot</span>
                         </div>
-                        <p class="text-[11px] text-red-100 font-medium">Online • Siap Menjawab 24/7</p>
+                        <p class="text-[11px] text-red-100 font-medium">{{ __('Online • Siap Menjawab 24/7') }}</p>
                     </div>
                 </div>
 
@@ -335,7 +361,7 @@
                     type="button"
                     @click="closeChat()"
                     class="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition cursor-pointer"
-                    aria-label="Tutup chat"
+                    aria-label="{{ __('Tutup chat') }}"
                 >
                     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
@@ -374,7 +400,7 @@
                             <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c] animate-bounce" style="animation-delay: 150ms"></span>
                             <span class="w-1.5 h-1.5 rounded-full bg-[#ac0c0c] animate-bounce" style="animation-delay: 300ms"></span>
                         </span>
-                        <span class="text-[11px] font-medium text-gray-500">Mengetik jawaban...</span>
+                        <span class="text-[11px] font-medium text-gray-500">{{ __('Mengetik jawaban...') }}</span>
                     </div>
                 </div>
             </div>
@@ -397,14 +423,14 @@
                     x-ref="chatInput"
                     x-model="draft"
                     type="text"
-                    placeholder="Tanya harga, layanan, survei..."
+                    placeholder="{{ __('Tanya harga, layanan, survei...') }}"
                     class="flex-1 rounded-full border border-gray-300 bg-gray-50 px-4 py-2 text-xs sm:text-sm text-gray-800 placeholder:text-gray-400 focus:bg-white focus:border-[#ac0c0c] focus:ring-1 focus:ring-[#ac0c0c] focus:outline-none"
                 >
                 <button
                     type="submit"
                     :disabled="isSending || !draft.trim()"
                     class="h-9 w-9 rounded-full bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white flex items-center justify-center shrink-0 transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer shadow-xs"
-                    aria-label="Kirim pesan"
+                    aria-label="{{ __('Kirim pesan') }}"
                 >
                     <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/>
@@ -422,7 +448,7 @@
                 @click="toggleChat()"
                 class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-white border border-gray-200 shadow-md text-xs font-bold text-gray-800 hover:border-[#ac0c0c] hover:text-[#ac0c0c] transition-all cursor-pointer"
             >
-                <span>Ada yang bisa dibantu?</span>
+                <span>{{ __('Ada yang bisa dibantu?') }}</span>
             </button>
 
             <!-- Mascot Button -->
@@ -430,7 +456,7 @@
                 type="button"
                 @click="toggleChat()"
                 class="group relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-white via-white to-red-50 p-1 shadow-[0_8px_25px_rgba(172,12,12,0.20)] border-2 border-[#ac0c0c] transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer"
-                aria-label="Buka Chatbot KOOTA"
+                aria-label="{{ __('Buka Chatbot KOOTA') }}"
             >
                 <img
                     src="{{ asset('images/bot.png') }}"
