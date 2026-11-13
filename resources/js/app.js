@@ -24,6 +24,7 @@ Alpine.data('kootaChatbot', () => ({
     ],
     toggleChat() {
         this.isOpen = !this.isOpen;
+        window.dispatchEvent(new CustomEvent('koota-chat-state', { detail: { isOpen: this.isOpen } }));
         if (this.isOpen) {
             this.$nextTick(() => {
                 this.scrollToBottom();
@@ -35,6 +36,7 @@ Alpine.data('kootaChatbot', () => ({
     },
     closeChat() {
         this.isOpen = false;
+        window.dispatchEvent(new CustomEvent('koota-chat-state', { detail: { isOpen: false } }));
     },
     sendSuggestion(text) {
         if (this.isSending) return;

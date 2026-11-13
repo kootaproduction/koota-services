@@ -471,6 +471,49 @@
         </div>
     </div>
 
+    <!-- Scroll to Top Floating Button -->
+    <div
+        x-data="{
+            showTopBtn: false,
+            chatOpen: false,
+            init() {
+                const updateVisibility = () => {
+                    this.showTopBtn = (window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0) > 300;
+                };
+                window.addEventListener('scroll', updateVisibility, { passive: true });
+                updateVisibility();
+            },
+            scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        }"
+        @koota-chat-state.window="chatOpen = Boolean($event.detail?.isOpen)"
+        x-show="showTopBtn && !chatOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 translate-y-4 scale-90"
+        x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+        x-transition:leave-end="opacity-0 translate-y-4 scale-90"
+        class="fixed bottom-[82px] right-[22px] sm:bottom-[102px] sm:right-[32px] z-40"
+        x-cloak
+    >
+        <button
+            type="button"
+            @click="scrollToTop()"
+            class="group flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/95 backdrop-blur-md text-[#ac0c0c] border border-slate-200/90 shadow-[0_6px_20px_rgba(0,0,0,0.12)] hover:bg-[#ac0c0c] hover:text-white hover:border-[#ac0c0c] hover:shadow-[0_8px_24px_rgba(172,12,12,0.35)] active:scale-95 transition-all duration-300 cursor-pointer"
+            aria-label="{{ __('Kembali ke Atas') }}"
+            title="{{ __('Kembali ke Atas') }}"
+        >
+            <svg class="h-5 w-5 transition-transform duration-300 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </button>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-[#0f172a] text-white pt-16 pb-12 border-t border-slate-800">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
