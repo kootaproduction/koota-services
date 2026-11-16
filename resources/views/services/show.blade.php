@@ -752,62 +752,180 @@
     </section>
 
     <!-- 8. VIDEO HIGHLIGHT (LIHAT HASIL PROJECT KAMI) -->
-    <section class="py-20 bg-white border-b border-gray-100" x-data="{ videoModal: false, currentVideoUrl: '' }">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <div class="text-center max-w-3xl mx-auto space-y-2">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Video Highlight') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+    @if(isset($videoProjects) && $videoProjects->isNotEmpty())
+        <section class="py-16 sm:py-20 bg-white border-b border-gray-100" x-data="{ videoModal: false, currentVideoUrl: '' }" @keydown.escape.window="videoModal = false; currentVideoUrl = ''">
+            <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-2.5">
+                    <div class="inline-flex items-center justify-center gap-3">
+                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
+                            {{ __('Video Highlight') }}
+                        </span>
+                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
+                        {{ __('Lihat Hasil Project Kami') }}
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto">
+                        {{ __('Simak dokumentasi video singkat dari beberapa project yang telah kami kerjakan, langsung dari sudut pandang klien kami.') }}
+                    </p>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    {{ __('Lihat Hasil Project Kami') }}
-                </h2>
-                <p class="text-xs sm:text-sm text-gray-500 leading-relaxed">
-                    {{ __('Simak dokumentasi video singkat dari beberapa project yang telah kami kerjakan, langsung dari sudut pandang klien kami.') }}
-                </p>
-            </div>
 
-            <!-- Video Reels Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                @foreach($videoProjects->take(2) as $vProj)
-                    <div class="bg-slate-50 p-6 rounded-3xl border border-gray-100 shadow-2xs space-y-4">
-                        <div class="text-center space-y-1">
-                            <h4 class="text-sm font-bold text-gray-900">{{ __($vProj->title) }}</h4>
-                            <p class="text-[11px] text-gray-500">{{ __($vProj->description) }}</p>
-                        </div>
-                        <div class="h-64 sm:h-72 rounded-2xl overflow-hidden relative bg-black cursor-pointer group"
-                             @click="currentVideoUrl = '{{ str_replace(['shorts/', 'watch?v='], 'embed/', $vProj->video_url ?? 'https://www.youtube.com/embed/aqz-KE-bpKQ') }}?autoplay=1'; videoModal = true">
-                            <img src="{{ $vProj->image }}" alt="{{ __($vProj->title) }}" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="w-14 h-14 rounded-full bg-[#ac0c0c] text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
-                                    <svg class="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                @if($videoProjects->count() === 1)
+                    @php $vProj = $videoProjects->first(); @endphp
+                    <!-- Single Video: Clean Split Feature Showcase (Symmetrical & High-End) -->
+                    <div class="bg-gradient-to-br from-slate-50 via-white to-slate-50/80 rounded-3xl border border-slate-200/90 p-5 sm:p-7 lg:p-9 shadow-xs hover:shadow-md transition-all duration-300">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                            
+                            <!-- Video Screen (lg:col-span-7) -->
+                            <div class="lg:col-span-7">
+                                <div class="aspect-video w-full rounded-2xl overflow-hidden relative bg-black group cursor-pointer shadow-md"
+                                     @click="currentVideoUrl = '{{ str_replace(['shorts/', 'watch?v='], 'embed/', $vProj->video_url ?? 'https://www.youtube.com/embed/aqz-KE-bpKQ') }}?autoplay=1'; videoModal = true">
+                                    <img src="{{ $vProj->image }}" alt="{{ __($vProj->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    
+                                    <!-- Cinematic Gradient Overlay -->
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+
+                                    <!-- Top Left Badge -->
+                                    <div class="absolute top-3.5 left-3.5 sm:top-4 sm:left-4">
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold border border-white/15">
+                                            <span class="w-2 h-2 rounded-full bg-[#ac0c0c] animate-pulse"></span>
+                                            {{ __('Dokumentasi Riil') }}
+                                        </span>
+                                    </div>
+
+                                    <!-- Centered Clean Play Button -->
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#ac0c0c] text-white flex items-center justify-center shadow-[0_10px_30px_rgba(172,12,12,0.45)] group-hover:scale-110 group-active:scale-95 transition-all duration-300">
+                                            <svg class="w-7 h-7 sm:w-8 sm:h-8 fill-current translate-x-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bottom Info Bar -->
+                                    <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-white/90">
+                                        <div class="flex items-center gap-1.5 text-[11px] font-medium drop-shadow-sm">
+                                            <svg class="w-4 h-4 text-red-400 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                            <span>{{ __('Klik untuk memutar') }}</span>
+                                        </div>
+                                        <span class="px-2.5 py-0.5 rounded-md bg-black/50 backdrop-blur-md text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">
+                                            Reels • HD
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- Video Context & Trust Details (lg:col-span-5) -->
+                            <div class="lg:col-span-5 space-y-5 text-left">
+                                <div class="space-y-2">
+                                    <span class="text-[11px] font-extrabold uppercase tracking-widest text-[#ac0c0c] block">
+                                        {{ __('Dokumentasi Pengerjaan') }}
+                                    </span>
+                                    <h3 class="text-xl sm:text-2xl font-extrabold text-[#0f172a] leading-snug">
+                                        {{ __($vProj->title) }}
+                                    </h3>
+                                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                        {{ __($vProj->description) }}
+                                    </p>
+                                </div>
+
+                                <!-- Trust Checklist -->
+                                <ul class="space-y-2.5 pt-1 text-xs text-gray-700">
+                                    <li class="flex items-center gap-2.5">
+                                        <div class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <span>{{ __('Eksekusi langsung oleh tenaga ahli bersertifikat') }}</span>
+                                    </li>
+                                    <li class="flex items-center gap-2.5">
+                                        <div class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <span>{{ __('Peralatan modern & SOP pengerjaan higienis') }}</span>
+                                    </li>
+                                    <li class="flex items-center gap-2.5">
+                                        <div class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                                        </div>
+                                        <span>{{ __('Hasil rapi tuntas dan bergaransi resmi') }}</span>
+                                    </li>
+                                </ul>
+
+                                <!-- Action Button -->
+                                <div class="pt-2 flex flex-wrap items-center gap-3">
+                                    <button
+                                        type="button"
+                                        @click="currentVideoUrl = '{{ str_replace(['shorts/', 'watch?v='], 'embed/', $vProj->video_url ?? 'https://www.youtube.com/embed/aqz-KE-bpKQ') }}?autoplay=1'; videoModal = true"
+                                        class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs sm:text-sm font-bold shadow-xs hover:shadow-md transition-all active:scale-95 cursor-pointer">
+                                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        <span>{{ __('Putar Video Dokumentasi') }}</span>
+                                    </button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                @endforeach
-            </div>
-        </div>
 
-        <!-- Video Modal -->
-        <div x-show="videoModal" 
-             x-transition 
-             class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
-             @click="videoModal = false; currentVideoUrl = ''"
-             style="display: none;">
-            <div class="relative w-full max-w-md bg-black rounded-3xl overflow-hidden shadow-2xl aspect-[9/16] max-h-[85vh]" @click.stop>
-                <button @click="videoModal = false; currentVideoUrl = ''" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="{{ __('Tutup Video') }}">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
-                <template x-if="videoModal && currentVideoUrl">
-                    <iframe :src="currentVideoUrl" class="w-full h-full border-0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-                </template>
+                @else
+                    <!-- 2+ Videos: Balanced Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        @foreach($videoProjects->take(2) as $vProj)
+                            <div class="bg-white rounded-3xl border border-slate-200/80 p-5 sm:p-6 shadow-2xs hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-4">
+                                <div class="aspect-video w-full rounded-2xl overflow-hidden relative bg-black group cursor-pointer shadow-sm"
+                                     @click="currentVideoUrl = '{{ str_replace(['shorts/', 'watch?v='], 'embed/', $vProj->video_url ?? 'https://www.youtube.com/embed/aqz-KE-bpKQ') }}?autoplay=1'; videoModal = true">
+                                    <img src="{{ $vProj->image }}" alt="{{ __($vProj->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="w-14 h-14 rounded-full bg-[#ac0c0c] text-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                            <svg class="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        </div>
+                                    </div>
+                                    <div class="absolute bottom-3 right-3">
+                                        <span class="px-2 py-0.5 rounded bg-black/60 backdrop-blur-md text-[10px] font-bold uppercase text-white border border-white/10">Reels</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-1.5 text-left flex-1">
+                                    <h4 class="text-base font-bold text-gray-900 leading-snug">{{ __($vProj->title) }}</h4>
+                                    <p class="text-xs text-gray-600 leading-relaxed">{{ __($vProj->description) }}</p>
+                                </div>
+                                <div class="pt-2 text-left">
+                                    <button
+                                        type="button"
+                                        @click="currentVideoUrl = '{{ str_replace(['shorts/', 'watch?v='], 'embed/', $vProj->video_url ?? 'https://www.youtube.com/embed/aqz-KE-bpKQ') }}?autoplay=1'; videoModal = true"
+                                        class="inline-flex items-center gap-1.5 text-xs font-bold text-[#ac0c0c] hover:underline cursor-pointer">
+                                        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        <span>{{ __('Putar Video') }}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endif
+
             </div>
-        </div>
-    </section>
+
+            <!-- Video Modal (Shorts Vertical Format 9:16) -->
+            <div x-show="videoModal" 
+                 x-transition:enter="transition ease-out duration-300"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-200"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+                 @click="videoModal = false; currentVideoUrl = ''"
+                 style="display: none;"
+                 x-cloak>
+                <div class="relative w-full max-w-sm sm:max-w-md bg-black rounded-3xl overflow-hidden shadow-2xl aspect-[9/16] max-h-[85vh] border border-white/10" @click.stop>
+                    <button @click="videoModal = false; currentVideoUrl = ''" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition-colors cursor-pointer" aria-label="{{ __('Tutup Video') }}">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                    <template x-if="videoModal && currentVideoUrl">
+                        <iframe :src="currentVideoUrl" class="w-full h-full border-0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                    </template>
+                </div>
+            </div>
+        </section>
+    @endif
 
     <!-- 9. TESTIMONIAL PELANGGAN (6 AUTHENTIC REVIEWS) -->
     <section class="py-20 bg-slate-50 border-b border-gray-100">
