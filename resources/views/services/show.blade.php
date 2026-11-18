@@ -721,32 +721,19 @@
                 </p>
             </div>
 
-            <!-- 3 Clean Photo Showcase Cards -->
+            <!-- 3 Clean Photo Showcase Cards (Distinct Project Photos) -->
             @php
                 $displayProjects = $projects->where('is_video', false)->values();
             @endphp
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left">
-                @for($i = 0; $i < 3; $i++)
-                    @if(isset($displayProjects[$i]))
-                        <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
-                            <img src="{{ $displayProjects[$i]->image }}" alt="{{ __($displayProjects[$i]->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
-                                <span class="text-xs font-bold text-white drop-shadow-sm">{{ __($displayProjects[$i]->title) }}</span>
-                            </div>
+                @foreach($displayProjects->take(3) as $dp)
+                    <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
+                        <img src="{{ $dp->image }}" alt="{{ __($dp->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
+                            <span class="text-xs font-bold text-white drop-shadow-sm">{{ __($dp->title) }}</span>
                         </div>
-                    @else
-                        <!-- Fallback Service Feature Showcase (Clean, No Wireframe Text) -->
-                        <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
-                            <img src="{{ $service->hero_image }}" alt="{{ __($service->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent flex flex-col justify-end p-5 text-white">
-                                <span class="text-[10px] font-bold text-red-300 uppercase tracking-wider mb-1">{{ __('Standar KOOTA SERVICE') }}</span>
-                                <h4 class="text-sm font-bold leading-snug">
-                                    {{ $i === 0 ? __('Eksekusi Presisi di Lokasi') : ($i === 1 ? __('Peralatan & SOP Higienis') : __('Hasil Pengerjaan Bergaransi')) }}
-                                </h4>
-                            </div>
-                        </div>
-                    @endif
-                @endfor
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

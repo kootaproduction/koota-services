@@ -100,7 +100,7 @@ class DatabaseSeeder extends Seeder
             'service_id' => $cleaningService->id,
             'title' => 'Hydro Vacuum & Sedot Tungau',
             'description' => 'Pembersihan kasur, sofa, karpet, dan gorden dari tungau, debu mikro, dan alergen menggunakan teknologi hydro cleaning vacuum berkekuatan tinggi.',
-            'image' => 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=80',
             'icon' => 'sparkles',
             'order' => 3,
         ]);
@@ -108,7 +108,7 @@ class DatabaseSeeder extends Seeder
             'service_id' => $cleaningService->id,
             'title' => 'Pembersihan Pasca Renovasi',
             'description' => 'Pembersihan total debu semen, sisa cat, serpihan gypsum, dan kotoran konstruksi hingga rumah siap ditempati dengan higienis.',
-            'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80',
             'icon' => 'building',
             'order' => 4,
         ]);
@@ -126,7 +126,7 @@ class DatabaseSeeder extends Seeder
             'service_id' => $handymanService->id,
             'title' => 'Instalasi & Servis Kelistrikan',
             'description' => 'Perbaikan korsleting, pemasangan stop kontak, saklar, lampu dekoratif, MCB panel, dan instalasi jalur kabel rapi terstandar.',
-            'image' => 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=800&q=80',
             'icon' => 'settings',
             'order' => 2,
         ]);
@@ -160,7 +160,7 @@ class DatabaseSeeder extends Seeder
             'service_id' => $wasteService->id,
             'title' => 'Sampah Komersial & Restoran / Kafe',
             'description' => 'Evakuasi sampah organik dan anorganik volume besar untuk kafe, resto, toko, dan ruko dengan standar higienitas bebas bau.',
-            'image' => 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=800&q=80',
             'icon' => 'commercial',
             'order' => 2,
         ]);
@@ -168,7 +168,7 @@ class DatabaseSeeder extends Seeder
             'service_id' => $wasteService->id,
             'title' => 'Evakuasi Puing & Sisa Bangunan',
             'description' => 'Pembersihan dan angkut sisa puing bongkaran tembok, genteng, semen, dan kayu pascarenovasi dengan armada dump truck.',
-            'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+            'image' => 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80',
             'icon' => 'hazard',
             'order' => 3,
         ]);
@@ -181,7 +181,8 @@ class DatabaseSeeder extends Seeder
             'order' => 4,
         ]);
 
-        // 4. Projects Showcase Data
+        // 4. Projects Showcase Data (3 Unique Photo Projects per Service)
+        // Home Cleaning Projects
         Project::create([
             'service_id' => $cleaningService->id,
             'category_name' => 'Home Cleaning',
@@ -193,14 +194,50 @@ class DatabaseSeeder extends Seeder
             'completion_date' => 'Agustus 2024',
             'image' => '/images/home-cleaning.jpg',
             'gallery_images' => [
-                '/images/home-cleaning.jpg',
-                'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
                 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80',
                 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
             ],
             'is_featured' => true,
         ]);
 
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Home Cleaning',
+            'title' => 'Hydro-Vacuum Sedot Tungau Kasur, Karpet & Sofa Kain',
+            'slug' => 'sedot-tungau-sofa-kasur-pakuwon',
+            'description' => 'Pembersihan intensif hydro vacuum alergen kasur king size, sofa ruang keluarga, dan karpet wol premium di hunian Pakuwon City.',
+            'client' => 'Bapak Dennis Setiawan',
+            'location' => 'Pakuwon City, Surabaya Timur',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80',
+            'gallery_images' => [
+                'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80',
+            ],
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Home Cleaning',
+            'title' => 'Restorasi Kaca Buram & Kerak Keramik Kamar Mandi Utama',
+            'slug' => 'restorasi-kerak-kamar-mandi-graha-family',
+            'description' => 'Penghilangan kerak kalsium menahun, pemolesan kaca shower buram, dan sanitasi nat keramik kamar mandi master suite.',
+            'client' => 'Ibu Stephanie Wijaya',
+            'location' => 'Graha Family, Surabaya Barat',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
+            'gallery_images' => [
+                'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80',
+            ],
+            'is_featured' => true,
+        ]);
+
+        // Perbaikan Rumah Projects
         Project::create([
             'service_id' => $handymanService->id,
             'category_name' => 'Perbaikan Rumah',
@@ -212,13 +249,50 @@ class DatabaseSeeder extends Seeder
             'completion_date' => 'Juli 2024',
             'image' => '/images/perbaikan-rumah.jpg',
             'gallery_images' => [
-                '/images/perbaikan-rumah.jpg',
                 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
                 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
             ],
             'is_featured' => true,
         ]);
 
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Perbaikan Rumah',
+            'title' => 'Deteksi Presisi & Penggantian Jalur Pipa Air Bocor Dalam Dinding',
+            'slug' => 'deteksi-pipa-bocor-darmo-permai',
+            'description' => 'Pemeriksaan kebocoran pipa air bersih dengan sensor tekanan tanpa pembongkaran berlebih dan plester ulang rapi.',
+            'client' => 'Bapak Irwan Susanto',
+            'location' => 'Darmo Permai, Surabaya Barat',
+            'completion_date' => 'Agustus 2024',
+            'image' => 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80',
+            'gallery_images' => [
+                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=1200&q=80',
+            ],
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Perbaikan Rumah',
+            'title' => 'Penataan Ulang Jalur Panel Listrik MCB & Servis AC Hunian',
+            'slug' => 'penataan-panel-listrik-bukit-darmo',
+            'description' => 'Redistribusi beban arus listrik 3-fase, penggantian MCB aus, dan perawatan cuci berkala 6 unit AC inverter rumah tinggal.',
+            'client' => 'Bapak Hartono Tanujaya',
+            'location' => 'Bukit Darmo Golf, Surabaya Barat',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80',
+            'gallery_images' => [
+                'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
+            ],
+            'is_featured' => true,
+        ]);
+
+        // Pengangkutan Sampah Projects
         Project::create([
             'service_id' => $wasteService->id,
             'category_name' => 'Pengangkutan Sampah',
@@ -230,21 +304,57 @@ class DatabaseSeeder extends Seeder
             'completion_date' => 'Agustus 2024',
             'image' => '/images/pengangkutan-sampah.jpg',
             'gallery_images' => [
-                '/images/pengangkutan-sampah.jpg',
                 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80',
                 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80',
             ],
             'is_featured' => true,
         ]);
 
-        // Video Highlight Reels Projects
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Pengangkutan Sampah',
+            'title' => 'Manajemen Pembuangan Sampah Basah & Kering Kafe Komersial',
+            'slug' => 'sampah-komersial-resto-gubeng',
+            'description' => 'Pengangkutan harian limbah sisa makanan, ampas kopi, dan kardus kemasan F&B dengan armada pikap tertutup sanitasi tinggi.',
+            'client' => 'Manajemen Kafe & Roastery Kroma',
+            'location' => 'Gubeng, Surabaya Pusat',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1200&q=80',
+            'gallery_images' => [
+                'https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80',
+            ],
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Pengangkutan Sampah',
+            'title' => 'Evakuasi Puing Sisa Bongkaran Tembok & Puing Renovasi Hunian',
+            'slug' => 'evakuasi-puing-kebayoran-baru',
+            'description' => 'Evakuasi 2 unit dump truck puing semen, pecahan keramik, dan kayu bongkaran rumah tinggal hingga sapuan akhir bersih rapi.',
+            'client' => 'Bapak Aditya Nugraha',
+            'location' => 'Kebayoran Baru, Jakarta Selatan',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1200&q=80',
+            'gallery_images' => [
+                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80',
+            ],
+            'is_featured' => true,
+        ]);
+
+        // Video Highlight Reels Projects (1 Distinct Video per Service)
         Project::create([
             'service_id' => $cleaningService->id,
             'category_name' => 'Home Cleaning',
             'title' => 'Aksi Cepat Tim Home Cleaning KOOTA SERVICE',
             'slug' => 'video-home-cleaning-koota',
             'description' => 'Transformasi rumah bersih berkilau dan bebas tungau bersama tim profesional Koota Services.',
-            'image' => '/images/home-cleaning.jpg',
+            'image' => 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
             'video_url' => 'https://www.youtube.com/shorts/aqz-KE-bpKQ',
             'video_type' => 'shorts',
             'is_video' => true,
@@ -257,21 +367,34 @@ class DatabaseSeeder extends Seeder
             'title' => 'Proses Perbaikan & Renovasi Interior Presisi',
             'slug' => 'video-perbaikan-rumah-koota',
             'description' => 'Dari perbaikan pipa bocor hingga finishing dinding rapi oleh tukang ahli Koota Services.',
-            'image' => '/images/perbaikan-rumah.jpg',
+            'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
             'video_url' => 'https://www.youtube.com/shorts/aqz-KE-bpKQ',
             'video_type' => 'shorts',
             'is_video' => true,
             'is_featured' => true,
         ]);
 
-        // 5. Blog Posts Data
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Pengangkutan Sampah',
+            'title' => 'Armada Truk Pengangkutan Sampah Terjadwal & Higienis',
+            'slug' => 'video-pengangkutan-sampah-koota',
+            'description' => 'Pengangkutan sampah rutin tertib tanpa bau ceceran dengan armada tertutup ramah lingkungan.',
+            'image' => 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80',
+            'video_url' => 'https://www.youtube.com/shorts/aqz-KE-bpKQ',
+            'video_type' => 'shorts',
+            'is_video' => true,
+            'is_featured' => true,
+        ]);
+
+        // 5. Blog Posts Data (Each with Distinct Topic-Specific Photo)
         Post::create([
             'title' => '5 Tips Menjaga Kebersihan dan Higienitas Rumah Agar Bebas Tungau & Alergen',
             'slug' => '5-tips-kebersihan-rumah-bebas-tungau',
             'category' => 'Home Cleaning',
             'excerpt' => 'Menjaga rumah tetap sehat bukan sekadar menyapu dan mengepel. Pelajari langkah deep cleaning rutin untuk mencegah tungau kasur dan alergen.',
             'content' => '<p>Kesehatan keluarga berawal dari kualitas udara dan kebersihan sudut rumah Anda. Melalui jadwal pembersihan rutin, sedot tungau kasur berkala, dan penggunaan disinfektan aman, rumah Anda akan selalu menjadi tempat istirahat yang aman dan menyegarkan.</p>',
-            'image' => '/images/home-cleaning.jpg',
+            'image' => 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => true,
             'published_at' => now(),
         ]);
@@ -282,7 +405,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Home Cleaning',
             'excerpt' => 'Pahami kapan rumah Anda cukup dibersihkan secara harian atau membutuhkan chemical khusus dan penanganan deep cleaning tuntas.',
             'content' => '<p>Pembersihan menyeluruh (deep cleaning) membersihkan sudut-sudut mati, celah furnitur, serta sanitasi mendalam yang tidak terjangkau pembersihan biasa.</p>',
-            'image' => '/images/home-cleaning.jpg',
+            'image' => 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => false,
             'published_at' => now()->subDays(2),
         ]);
@@ -293,7 +416,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Home Cleaning',
             'excerpt' => 'Panduan membersihkan kerak air dan jamur membandel di kamar mandi menggunakan teknik pembersihan profesional aman keramik.',
             'content' => '<p>Kerak kalsium dan sabun yang menumpuk bertahun-tahun membutuhkan chemical pembersih khusus dengan pH seimbang agar nat keramik tidak rusak.</p>',
-            'image' => '/images/home-cleaning.jpg',
+            'image' => 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => false,
             'published_at' => now()->subDays(6),
         ]);
@@ -304,7 +427,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Perbaikan Rumah',
             'excerpt' => 'Kenali tanda-tanda awal kebocoran air tersembunyi dan indikasi korsleting listrik sebelum merusak struktur plafon serta dinding rumah Anda.',
             'content' => '<p>Bercak lembap pada dinding atau tagihan listrik yang tiba-tiba membengkak sering kali menjadi pertanda adanya masalah instalasi. Tim tukang ahli Koota Services siap membantu melakukan inspeksi menyeluruh.</p>',
-            'image' => '/images/perbaikan-rumah.jpg',
+            'image' => 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => true,
             'published_at' => now()->subDays(3),
         ]);
@@ -315,7 +438,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Perbaikan Rumah',
             'excerpt' => 'Langkah preventif memeriksa talang air, waterproofing dak beton, dan perbaikan retak rambut dinding sebelum curah hujan tinggi tiba.',
             'content' => '<p>Pemeriksaan berkala pada waterproofing talang dan sambungan atap mencegah kerusakan plafon gypsum yang mahal biaya perbaikannya.</p>',
-            'image' => '/images/perbaikan-rumah.jpg',
+            'image' => 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => false,
             'published_at' => now()->subDays(7),
         ]);
@@ -326,7 +449,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Perbaikan Rumah',
             'excerpt' => 'Hindari renovasi mangkrak dan pembengkakan biaya dengan memahami sistem kerja tukang terstandarisasi dan bergaransi resmi.',
             'content' => '<p>Tukang profesional selalu memberikan estimasi material dan waktu kerja yang terukur sebelum pekerjaan dimulai.</p>',
-            'image' => '/images/perbaikan-rumah.jpg',
+            'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => false,
             'published_at' => now()->subDays(10),
         ]);
@@ -337,7 +460,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Pengangkutan Sampah',
             'excerpt' => 'Tips memilah sampah organik dapur dan jadwal pengangkutan sampah teratur agar lingkungan perumahan tetap asri, higienis, dan sehat.',
             'content' => '<p>Pengangkutan sampah yang terjadwal mencegah penumpukan limbah dan perkembangbiakan lalat serta bakteri berbahaya di pekarangan rumah Anda.</p>',
-            'image' => '/images/pengangkutan-sampah.jpg',
+            'image' => 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => true,
             'published_at' => now()->subDays(5),
         ]);
@@ -348,7 +471,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Pengangkutan Sampah',
             'excerpt' => 'Cara mudah memisahkan sampah basah dapur dan kemasan daur ulang untuk mencegah bau menyengat serta mempermudah daur ulang.',
             'content' => '<p>Pemisahan sejak dari tempat sampah rumah membuat lingkungan lebih bersih dan mencegah timbulan bau tak sedap di sekitar tempat tinggal.</p>',
-            'image' => '/images/pengangkutan-sampah.jpg',
+            'image' => 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => false,
             'published_at' => now()->subDays(8),
         ]);
@@ -359,7 +482,7 @@ class DatabaseSeeder extends Seeder
             'category' => 'Pengangkutan Sampah',
             'excerpt' => 'Solusi bersih tuntas sisa puing renovasi dan sampah kafe atau ruko dengan armada truk tertutup yang higienis dan terstandar.',
             'content' => '<p>Puing bangunan tidak boleh dibuang sembarangan. KOOTA Service menyediakan layanan evakuasi terpadu hingga area kembali bersih rapi.</p>',
-            'image' => '/images/pengangkutan-sampah.jpg',
+            'image' => 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1200&q=80',
             'is_featured' => false,
             'published_at' => now()->subDays(12),
         ]);
