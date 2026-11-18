@@ -52,38 +52,66 @@
                 </div>
             @endif
 
-            <!-- 1. Clean Minimal Hero Section (Typography-Focused, No Clutter Icons) -->
-            <div class="text-center max-w-3xl mx-auto space-y-4 pt-4 sm:pt-6">
-                <!-- Trust Pill Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-100/80 text-[#ac0c0c] border border-red-200/90 text-xs font-black uppercase tracking-wider">
-                    <span>{{ __('Layanan Siaga & Estimasi Biaya Transparan') }}</span>
+            <!-- 1. Refined Editorial Header (Modern, Concise, Zero AI Fluff) -->
+            <div class="pt-2 sm:pt-4 pb-2 border-b border-gray-200/80">
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6">
+                    <div class="space-y-2 max-w-2xl">
+                        <div class="inline-flex items-center gap-2.5">
+                            <span class="w-6 h-[1.5px] bg-[#ac0c0c]"></span>
+                            <span class="font-serif-brand italic text-sm font-bold text-[#ac0c0c] tracking-wide">
+                                {{ __('Layanan Properti Terpadu') }}
+                            </span>
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
+                            {{ __('Konsultasi & Reservasi') }}
+                        </h1>
+                        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">
+                            {{ __('Sampaikan kebutuhan perawatan properti Anda untuk mendapatkan estimasi biaya transparan dan jadwal survei gratis.') }}
+                        </p>
+                    </div>
+
+                    <!-- Fast WhatsApp Action Shortcut (Clean Direct Channel) -->
+                    <div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-2 shrink-0">
+                        <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20berkonsultasi%20layanan%20properti." 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2.5 px-5 py-3 rounded-2xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow transition-all active:scale-95">
+                            <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                            </svg>
+                            <span>{{ __('Konsultasi Cepat WhatsApp') }}</span>
+                        </a>
+                        <span class="text-[11px] text-gray-500 font-medium lg:text-right">
+                            {{ __('Respon dalam hitungan menit • 0812-1759-7109') }}
+                        </span>
+                    </div>
                 </div>
 
-                <!-- Main Headline -->
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0f172a] tracking-tight leading-[1.18]">
-                    {{ __('Konsultasi & Reservasi Layanan Properti') }}
-                </h1>
-
-                <!-- Subtitle -->
-                <p class="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto">
-                    {{ __('Dapatkan analisis kebutuhan, jadwal survei lokasi tanpa biaya, serta rincian biaya yang jelas dari teknisi dan tim terpercaya KOOTA SERVICES.') }}
-                </p>
-
-                <!-- Trust Metrics Bar (No Emojis or Icons) -->
-                <div class="pt-2 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs font-semibold text-gray-600">
-                    <div>
-                        <span class="text-[#ac0c0c] font-bold">4.9 / 5.0</span>
-                        <span class="text-gray-500"> {{ __('Kepuasan Klien (500+ Proyek)') }}</span>
+                <!-- Minimal Trust Badges (Horizontal Clean Bar) -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 text-xs font-semibold text-gray-700">
+                    <div class="flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>{{ __('Survei Lokasi 100% Bebas Biaya') }}</span>
                     </div>
-                    <span class="text-gray-300 hidden sm:inline">•</span>
-                    <div>
-                        <span class="font-bold text-gray-800">{{ __('Respon WhatsApp') }}</span>
-                        <span class="text-gray-500"> {{ __('Kurang dari 15 Menit') }}</span>
+                    <div class="flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>{{ __('Estimasi Biaya Transparan di Awal') }}</span>
                     </div>
-                    <span class="text-gray-300 hidden sm:inline">•</span>
-                    <div>
-                        <span class="font-bold text-gray-800">{{ __('Survei Lokasi') }}</span>
-                        <span class="text-gray-500"> {{ __('Bebas Biaya') }}</span>
+                    <div class="flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>{{ __('Teknisi Terverifikasi & SOP Ketat') }}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>{{ __('Garansi Mutu Pengerjaan') }}</span>
                     </div>
                 </div>
             </div>
@@ -108,7 +136,7 @@
                         </div>
 
                         <p class="text-xs text-gray-600 leading-relaxed">
-                            {{ __('Punya kendala darurat, ingin negosiasi kontrak korporat, atau membutuhkan respon langsung detik ini?') }}
+                            {{ __('Butuh konsultasi mendesak atau penawaran kontrak perusahaan? Tim konsultan kami siap merespon langsung.') }}
                         </p>
 
                         <!-- Direct WhatsApp Action Button (Clean Text Button) -->
