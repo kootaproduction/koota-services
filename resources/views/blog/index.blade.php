@@ -229,24 +229,9 @@
                 @endforelse
             </div>
 
-            <!-- 3. Urutan Ketiga: CTA Consultation Box -->
-            <div class="bg-[#ac0c0c] rounded-3xl p-10 sm:p-14 text-center max-w-4xl mx-auto space-y-5 text-white shadow-2xl mt-12">
-                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                    {{ __('Ingin Konsultasi Masalah Fasilitas Anda?') }}
-                </h2>
-                <p class="text-xs sm:text-sm text-red-100 max-w-lg mx-auto leading-relaxed">
-                    {{ __('Diskusikan kendala kebersihan, limbah, atau perbaikan gedung bersama tim profesional Koota Services di Surabaya, Malang, Bali, dan Jakarta.') }}
-                </p>
-                <div class="pt-2 flex flex-wrap justify-center gap-4">
-                    <a href="{{ route('consultation.index') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-[#ac0c0c] hover:bg-gray-100 font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                        <span>{{ __('Konsultasi Sekarang') }}</span>
-                    </a>
-                    <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20membaca%20blog%20dan%20ingin%20berkonsultasi." target="_blank" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm transition-all shadow-md active:scale-95">
-                        <span>Chat WhatsApp 0812-1759-7109</span>
-                    </a>
-                </div>
-            </div>
-
         </div>
     </section>
+
+    <!-- Consultation Banner Unified -->
+    @include('partials.consultation-cta')
 @endsection

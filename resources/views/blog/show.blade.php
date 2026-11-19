@@ -417,7 +417,9 @@
                     @endforeach
                 </div>
             </section>
-
         </main>
     </div>
+
+    <!-- Consultation Banner Unified -->
+    @include('partials.consultation-cta')
 @endsection

@@ -231,4 +231,7 @@
 
         </div>
     </section>
+
+    <!-- Consultation Banner Unified -->
+    @include('partials.consultation-cta')
 @endsection

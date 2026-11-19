@@ -520,31 +520,8 @@
         </style>
     </section>
 
-    <!-- Consultation Banner -->
-    <section class="py-12 sm:py-14 bg-white border-b border-slate-200/70">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-slate-100 to-slate-200/80 rounded-3xl overflow-hidden shadow-xl border border-gray-300 relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 items-center">
-
-                    <div class="p-8 sm:p-12 md:col-span-7 lg:col-span-8 space-y-6">
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 leading-tight">
-                            {{ __('Konsultasi Masalah dan Perawatan Rumah Gratis') }}
-                        </h2>
-
-                        <div class="pt-2">
-                            <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20ingin%20konsultasi%20perawatan%20rumah%20gratis." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-sm sm:text-base transition-all shadow-lg shadow-emerald-600/30 active:scale-95">
-                                <span>{{ __('Konsultasi Dengan Ahlinya') }}</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="md:col-span-5 lg:col-span-4 flex justify-center md:justify-end items-end pt-4 pr-0 sm:pr-8">
-                        <img src="{{ asset('images/kenzo-yanuar.png') }}" alt="Kenzo Yanuar - Founder & CEO Koota Services" class="h-64 sm:h-76 md:h-84 object-contain drop-shadow-2xl">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Consultation Banner Unified -->
+    @include('partials.consultation-cta')
 
     <!-- FAQ Accordion Section -->
     <section class="py-14 sm:py-16 bg-slate-50">
