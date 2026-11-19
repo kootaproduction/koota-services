@@ -397,12 +397,6 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                            {{ __('Komitmen Kualitas Tinggi') }}
-                        </span>
-                    </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-snug">
                         {{ $credTitle }}
                     </h2>
@@ -476,13 +470,6 @@
             @mouseleave="if (!scrolledIn) isSpread = false"
         >
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Fondasi Layanan') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                </div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ $philTitle }}
                 </h2>
@@ -637,13 +624,6 @@
     <section class="py-20 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Keunggulan Utama') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ __('Kenapa Klien Memilih KOOTA SERVICE?') }}
                 </h2>
@@ -667,13 +647,6 @@
     <!-- 5. NARRATIVE EXCELLENCE / CRAFTSMANSHIP -->
     <section class="py-20 bg-slate-50 border-b border-gray-100">
         <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <div class="inline-flex items-center gap-3">
-                <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                    {{ __('Pengalaman Nyata & Bebas Cemas') }}
-                </span>
-                <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-            </div>
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                 {{ $narrativeHeading }}
             </h2>
@@ -699,13 +672,6 @@
              }">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <div class="space-y-3">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Portofolio & Bukti Pengerjaan') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                </div>
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ __('Telah Dipercaya Ratusan Klien di Berbagai Sektor') }}
                 </h2>
@@ -782,13 +748,6 @@
         <section class="py-16 sm:py-20 bg-white border-b border-gray-100" x-data="{ videoModal: false, currentVideoUrl: '' }" @keydown.escape.window="videoModal = false; currentVideoUrl = ''">
             <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
                 <div class="text-center max-w-2xl mx-auto space-y-2">
-                    <div class="inline-flex items-center justify-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                            {{ __('Video Highlight') }}
-                        </span>
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                         {{ __('Lihat Hasil Project Kami') }}
                     </h2>
@@ -881,13 +840,6 @@
     <section class="py-20 bg-slate-50 border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Kepuasan Pelanggan') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ __('Cerita Nyata Dari Klien Kami') }}
                 </h2>
@@ -934,13 +886,6 @@
     <section class="py-20 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Metodologi Kerja') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ __('Proses Tertata Untuk Hasil Sempurna') }}
                 </h2>
@@ -987,13 +932,6 @@
     <section class="py-20 bg-white">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-2">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Pertanyaan Umum (FAQ)') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ __('Pertanyaan yang Sering Ditanyakan') }}
                 </h2>

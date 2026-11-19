@@ -60,13 +60,6 @@
     <section id="layanan-utama" class="py-20 bg-white border-b border-gray-100">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
             <div class="text-center max-w-3xl mx-auto space-y-3">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Layanan Terpadu') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                     {{ __('Layanan Utama Kami') }}
                 </h2>
@@ -145,13 +138,7 @@
                 <!-- Right: Official 4 Poin Why Us -->
                 <div class="lg:col-span-7 space-y-6">
                     <div>
-                        <div class="inline-flex items-center gap-3 mb-1.5">
-                            <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                            <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                                {{ __('Kenapa Memilih Kami') }}
-                            </span>
-                        </div>
-                        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight mt-1 leading-snug">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-snug">
                             {{ __('Standar Terbaik untuk Perawatan Rumah Anda') }}
                         </h2>
                     </div>
@@ -229,13 +216,6 @@
             <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto space-y-3">
-                    <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                            {{ __('Hasil Nyata Pengerjaan') }}
-                        </span>
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                         {{ __('Transformasi Before & After') }}
                     </h2>
@@ -310,13 +290,6 @@
             <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
                 <!-- Section Header -->
                 <div class="text-center max-w-3xl mx-auto space-y-3">
-                    <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                            {{ __('Kepuasan Klien Kami') }}
-                        </span>
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                    </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
                         {{ __('Apa Kata Mereka Tentang KOOTA?') }}
                     </h2>
@@ -372,7 +345,7 @@
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    — {{ __('Temukan Jawabannya di Sini!') }}
+                    {{ __('Temukan Jawabannya di Sini!') }}
                 </h2>
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                     {{ __('Pertanyaan yang sering diajukan seputar layanan terpadu Koota Services di berbagai kota operasional kami.') }}

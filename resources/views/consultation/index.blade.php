@@ -56,12 +56,6 @@
             <div class="pt-2 sm:pt-4 pb-2 border-b border-gray-200/80">
                 <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6">
                     <div class="space-y-2 max-w-2xl">
-                        <div class="inline-flex items-center gap-2.5">
-                            <span class="w-6 h-[1.5px] bg-[#ac0c0c]"></span>
-                            <span class="font-serif-brand italic text-sm font-bold text-[#ac0c0c] tracking-wide">
-                                {{ __('Layanan Properti Terpadu') }}
-                            </span>
-                        </div>
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                             {{ __('Konsultasi & Reservasi') }}
                         </h1>

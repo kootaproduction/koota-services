@@ -141,7 +141,7 @@
             <div class="bg-white p-8 sm:p-12 rounded-3xl border border-gray-100 shadow-xs space-y-12">
                 <div class="text-center max-w-3xl mx-auto space-y-3">
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                        — {{ __('Temukan Jawabannya di Sini!') }}
+                        {{ __('Temukan Jawabannya di Sini!') }}
                     </h2>
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
                         {{ __('Pertanyaan yang sering diajukan seputar pelaksanaan proyek dan jaminan standar kualitas Koota Services.') }}

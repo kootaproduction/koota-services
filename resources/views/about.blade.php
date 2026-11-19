@@ -41,14 +41,7 @@
 
                 <!-- Left Column: Siapa Kami -->
                 <div class="lg:col-span-5 space-y-5">
-                    <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                            {{ __('Mengenal Lebih Dekat') }}
-                        </span>
-                    </div>
-
-                    <h2 class="font-serif-brand text-4xl sm:text-5xl font-semibold text-[#0f172a] tracking-tight leading-tight">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                         {{ __('Siapa Kami?') }}
                     </h2>
 
@@ -125,14 +118,6 @@
 
             <!-- Section Header -->
             <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-                <div class="inline-flex items-center justify-center gap-3 mb-2.5">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Arah & Prinsip Kerja') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
-                </div>
-
                 <h2 id="vision-mission-title" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
                     {{ __('Visi & Misi Kami') }}
                 </h2>
@@ -309,14 +294,6 @@
             
             <!-- Header Block -->
             <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
-                <div class="inline-flex items-center justify-center gap-3">
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
-                    <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Komitmen & Filosofi Kami') }}
-                    </span>
-                    <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full" aria-hidden="true"></span>
-                </div>
-
                 <h2 id="commitment-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
                     <span class="font-serif-brand italic font-normal text-gray-300">“</span>{{ __('Kita Wujudkan') }} <span class="text-[#ac0c0c] underline decoration-[#ac0c0c]/20 underline-offset-8">{{ __('Kota Bersih') }}</span><span class="font-serif-brand italic font-normal text-gray-300">”</span>
                 </h2>
@@ -374,13 +351,6 @@
 
                 <!-- Kolom Kiri -->
                 <div class="lg:col-span-5 space-y-6">
-                    <div class="inline-flex items-center gap-3">
-                        <span class="w-8 h-[1.5px] bg-[#ac0c0c]/30 rounded-full"></span>
-                        <span class="font-serif-brand italic text-base sm:text-lg font-bold text-[#ac0c0c] tracking-wide">
-                            {{ __('Kenapa Memilih Kami?') }}
-                        </span>
-                    </div>
-
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
                         {{ __('Standar Kualitas Tertinggi untuk Kenyamanan Anda') }}
                     </h2>
@@ -529,7 +499,7 @@
 
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-                    — {{ __('Temukan Jawabannya di Sini!') }}
+                    {{ __('Temukan Jawabannya di Sini!') }}
                 </h2>
 
                 <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
