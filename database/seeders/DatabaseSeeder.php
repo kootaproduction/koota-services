@@ -181,170 +181,635 @@ class DatabaseSeeder extends Seeder
             'order' => 4,
         ]);
 
-        // 4. Projects Showcase Data (3 Unique Photo Projects per Service)
-        // Home Cleaning Projects
+                // 4. Projects Portfolio Data (3 distinct projects for every category, 45 total + 3 video reels)
         Project::create([
             'service_id' => $cleaningService->id,
-            'category_name' => 'Home Cleaning',
+            'category_name' => 'Rumah Residensial',
             'title' => 'Deep Cleaning & Sanitasi Menyeluruh Hunian 2 Lantai',
-            'slug' => 'deep-cleaning-hunian-citraland',
-            'description' => 'Pembersihan total seluruh kamar, kamar mandi berkerak, lantai granit, kaca jendela tinggi, dan sterilisasi ruangan di kawasan hunian Citraland.',
-            'client' => 'Ibu Maya & Keluarga',
-            'location' => 'Surabaya Barat, Jawa Timur',
-            'completion_date' => 'Agustus 2024',
-            'image' => '/images/home-cleaning.jpg',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'slug' => 'deep-cleaning-sanitasi-hunian-2-lantai',
+            'description' => 'Pembersihan menyeluruh seluruh kamar, kaca jendela tinggi, lantai marmer, dan sanitasi ruang keluarga hunian dua lantai.',
+            'client' => 'Bapak Hendra Gunawan',
+            'location' => 'Citraland, Surabaya',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
             'is_featured' => true,
         ]);
 
         Project::create([
             'service_id' => $cleaningService->id,
-            'category_name' => 'Home Cleaning',
-            'title' => 'Hydro-Vacuum Sedot Tungau Kasur, Karpet & Sofa Kain',
-            'slug' => 'sedot-tungau-sofa-kasur-pakuwon',
-            'description' => 'Pembersihan intensif hydro vacuum alergen kasur king size, sofa ruang keluarga, dan karpet wol premium di hunian Pakuwon City.',
-            'client' => 'Bapak Dennis Setiawan',
-            'location' => 'Pakuwon City, Surabaya Timur',
+            'category_name' => 'Rumah Residensial',
+            'title' => 'General Cleaning & Disinfeksi Menyeluruh Rumah Klasik',
+            'slug' => 'general-cleaning-disinfeksi-rumah-klasik',
+            'description' => 'Layanan perawatan kebersihan harian intensif, poles lantai granit, pembersihan area dapur, dan sterilisasi udara kamar tidur utama.',
+            'client' => 'Ibu Maya Rosalina',
+            'location' => 'Darmo, Surabaya Pusat',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Rumah Residensial',
+            'title' => 'Pembersihan Total Pekarangan & Interior Rumah Tinggal',
+            'slug' => 'pembersihan-total-pekarangan-interior-rumah',
+            'description' => 'Pembersihan kerak teras luar, kisi-kisi jendela kaca, garasi mobil, serta penataan ulang higienitas ruang keluarga.',
+            'client' => 'Bapak Agus Wicaksono',
+            'location' => 'Puri Surya Jaya, Sidoarjo',
             'completion_date' => 'September 2024',
-            'image' => 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'image' => 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Apartemen & Studio',
+            'title' => 'Pembersihan & Sterilisasi Higienis Unit Apartemen 2-Bedroom',
+            'slug' => 'pembersihan-sterilisasi-unit-apartemen-2br',
+            'description' => 'Pembersihan intensif unit apartemen modern, deep clean kitchen sink berminyak, kabinet, kamar mandi, dan kaca balkon tinggi.',
+            'client' => 'Ibu Olivia Hartanto',
+            'location' => 'Pakuwon Mall Mansion, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
             'is_featured' => true,
         ]);
 
         Project::create([
             'service_id' => $cleaningService->id,
-            'category_name' => 'Home Cleaning',
+            'category_name' => 'Apartemen & Studio',
+            'title' => 'Deep Cleaning Unit Studio Minimalis Siap Huni',
+            'slug' => 'deep-cleaning-unit-studio-minimalis',
+            'description' => 'Layanan express turn-over cleaning untuk unit studio sewa, mencakup sedot debu matras, pembersihan microwave, dan sanitasi toilet.',
+            'client' => 'Bapak Kevin Sanjaya',
+            'location' => 'Benson Tower, Surabaya Barat',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Apartemen & Studio',
+            'title' => 'Sanitasi Menyeluruh Penthouse & Balkon Kaca Panoramik',
+            'slug' => 'sanitasi-menyeluruh-penthouse-balkon-kaca',
+            'description' => 'Pembersihan kaca tempered void luar ruangan, poles lantai marmer living room, dan pembersihan kisi AC sentral penthouse.',
+            'client' => 'Bapak Richard Tan',
+            'location' => 'Waterplace Residence, Surabaya',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Pembersihan Kerak Kamar Mandi',
             'title' => 'Restorasi Kaca Buram & Kerak Keramik Kamar Mandi Utama',
-            'slug' => 'restorasi-kerak-kamar-mandi-graha-family',
+            'slug' => 'restorasi-kaca-kerak-kamar-mandi-utama',
             'description' => 'Penghilangan kerak kalsium menahun, pemolesan kaca shower buram, dan sanitasi nat keramik kamar mandi master suite.',
             'client' => 'Ibu Stephanie Wijaya',
-            'location' => 'Graha Family, Surabaya Barat',
+            'location' => 'Graha Family, Surabaya',
             'completion_date' => 'Oktober 2024',
             'image' => 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80',
-            ],
-            'is_featured' => true,
-        ]);
-
-        // Perbaikan Rumah Projects
-        Project::create([
-            'service_id' => $handymanService->id,
-            'category_name' => 'Perbaikan Rumah',
-            'title' => 'Perbaikan Kebocoran Atap, Pengecatan Ulang & Partisi Interior',
-            'slug' => 'perbaikan-rumah-pakuwon-city',
-            'description' => 'Pengerjaan komprehensif penambalan talang bocor, perbaikan plafon gypsum yang lapuk, serta pengecatan ulang ruang utama rumah tinggal.',
-            'client' => 'Bapak Hendra Gunawan',
-            'location' => 'Surabaya Timur, Jawa Timur',
-            'completion_date' => 'Juli 2024',
-            'image' => '/images/perbaikan-rumah.jpg',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'is_video' => false,
             'is_featured' => true,
         ]);
 
         Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Pembersihan Kerak Kamar Mandi',
+            'title' => 'Pembersihan Kerak Kalsium & Nat Lantai Kamar Mandi Marmer',
+            'slug' => 'pembersihan-kerak-kalsium-nat-lantai-marmer',
+            'description' => 'Pengangkatan noda air keras pada bathtub, wastafel marmer, kloset duduk, dan penggantian nat anti-lumut higienis.',
+            'client' => 'Bapak Daniel Subekti',
+            'location' => 'Bukit Darmo Golf, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Pembersihan Kerak Kamar Mandi',
+            'title' => 'Penghilangan Jamur Kaca Shower & Sanitasi Sanitair Villa',
+            'slug' => 'penghilangan-jamur-kaca-shower-villa',
+            'description' => 'Restorasi partisi kaca shower room berjamur dan chemical descaling pada shower head kuningan villa privat.',
+            'client' => 'Ibu Made Ayu Dewi',
+            'location' => 'Sanur, Bali',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Sedot Tungau Kasur & Sofa',
+            'title' => 'Hydro-Vacuum Sedot Tungau Kasur, Karpet & Sofa Kain',
+            'slug' => 'hydro-vacuum-sedot-tungau-kasur-sofa',
+            'description' => 'Pembersihan intensif hydro vacuum alergen kasur king size, sofa ruang keluarga, dan karpet wol premium di hunian Pakuwon City.',
+            'client' => 'Bapak Dennis Setiawan',
+            'location' => 'Pakuwon City, Surabaya',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Sedot Tungau Kasur & Sofa',
+            'title' => 'Pembersihan Tungau Sofa L-Shape & Karpet Wol Ruang Tamu',
+            'slug' => 'pembersihan-tungau-sofa-l-shape-karpet',
+            'description' => 'Ekstraksi debu mikro dan tungau pada bahan fabric sofa modular, kursi makan bernoda, dan karpet turki ruang tamu.',
+            'client' => 'Ibu Cindy Permata',
+            'location' => 'Kebayoran Baru, Jakarta',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Sedot Tungau Kasur & Sofa',
+            'title' => 'Ekstraksi Alergen Matras Anak & Daybed Keluarga Berkala',
+            'slug' => 'ekstraksi-alergen-matras-anak-daybed',
+            'description' => 'Sanitasi uap panas anti-bakteri pada matras hypoallergenic anak, bantal bulu angsa, dan daybed santai keluarga.',
+            'client' => 'Ibu dr. Rina Marlina',
+            'location' => 'Araya, Malang',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Pembersihan Pasca Renovasi',
+            'title' => 'Pembersihan Menyeluruh Debu Konstruksi Pasca Renovasi',
+            'slug' => 'pembersihan-menyeluruh-debu-konstruksi',
+            'description' => 'Pembersihan total debu semen halus, sisa cat di lantai granit, dan serpihan gypsum hingga rumah siap dihuni dengan higienis.',
+            'client' => 'Bapak Dimas Pratama',
+            'location' => 'Araya, Malang',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Pembersihan Pasca Renovasi',
+            'title' => 'Pembersihan Sisa Semen, Cat & Gypsum Hunian Baru',
+            'slug' => 'pembersihan-sisa-semen-cat-gypsum-hunian',
+            'description' => 'Scrubbing mesin lantai porselen, pembersihan profil pintu kayu, serta pengangkatan bekas lem stiker kaca bangunan baru.',
+            'client' => 'Bapak Ir. Bambang Tri',
+            'location' => 'Citraland Driyorejo, Gresik',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $cleaningService->id,
+            'category_name' => 'Pembersihan Pasca Renovasi',
+            'title' => 'Poles Lantai Granit & Pembersihan Kaca Kusen Pasca Bangun',
+            'slug' => 'poles-lantai-granit-kaca-kusen-pasca-bangun',
+            'description' => 'Kristalisasi lantai marmer kusam pascarenovasi, pembersihan cat kusen aluminium, dan pembersihan sanitasi dapur bersih.',
+            'client' => 'Ibu Ratna Juwita',
+            'location' => 'Kertajaya Indah, Surabaya',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
             'service_id' => $handymanService->id,
-            'category_name' => 'Perbaikan Rumah',
+            'category_name' => 'Perbaikan Pipa & Saluran',
             'title' => 'Deteksi Presisi & Penggantian Jalur Pipa Air Bocor Dalam Dinding',
-            'slug' => 'deteksi-pipa-bocor-darmo-permai',
+            'slug' => 'deteksi-pipa-air-bocor-dalam-dinding',
             'description' => 'Pemeriksaan kebocoran pipa air bersih dengan sensor tekanan tanpa pembongkaran berlebih dan plester ulang rapi.',
             'client' => 'Bapak Irwan Susanto',
-            'location' => 'Darmo Permai, Surabaya Barat',
+            'location' => 'Darmo Permai, Surabaya',
             'completion_date' => 'Agustus 2024',
             'image' => 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1200&q=80',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'is_video' => false,
             'is_featured' => true,
         ]);
 
         Project::create([
             'service_id' => $handymanService->id,
-            'category_name' => 'Perbaikan Rumah',
-            'title' => 'Penataan Ulang Jalur Panel Listrik MCB & Servis AC Hunian',
-            'slug' => 'penataan-panel-listrik-bukit-darmo',
-            'description' => 'Redistribusi beban arus listrik 3-fase, penggantian MCB aus, dan perawatan cuci berkala 6 unit AC inverter rumah tinggal.',
+            'category_name' => 'Perbaikan Pipa & Saluran',
+            'title' => 'Pelancaran Saluran Pembuangan Mampet & Pipa PVC Baru',
+            'slug' => 'pelancaran-saluran-mampet-pipa-pvc',
+            'description' => 'Pembersihan pipa pembuangan lemak dapur tersumbat dengan spiral pipe cleaner dan penggantian fitting pipa uPVC tebal.',
+            'client' => 'Ibu Farida Hanum',
+            'location' => 'Rungkut, Surabaya Timur',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Perbaikan Pipa & Saluran',
+            'title' => 'Instalasi Pompa Pendorong Booster & Pipa Tandon Air Bersih',
+            'slug' => 'instalasi-pompa-booster-tandon-air',
+            'description' => 'Pemasangan pompa otomatis pendorong air lantai atas, bypass pipa filter air bersih, dan pembersihan tandon stainless.',
+            'client' => 'Bapak Arif Rahman',
+            'location' => 'Puri Harmoni, Malang',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Kelistrikan & Panel Listrik',
+            'title' => 'Penataan Ulang Jalur Panel Listrik MCB & Servis Kelistrikan',
+            'slug' => 'penataan-panel-listrik-mcb-servis',
+            'description' => 'Redistribusi beban arus listrik 3-fase, penggantian MCB aus, perapian jalur kabel panel, dan instalasi fitting lampu hunian.',
             'client' => 'Bapak Hartono Tanujaya',
-            'location' => 'Bukit Darmo Golf, Surabaya Barat',
+            'location' => 'Bukit Darmo Golf, Surabaya',
             'completion_date' => 'September 2024',
             'image' => 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=80',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'is_video' => false,
             'is_featured' => true,
         ]);
 
-        // Pengangkutan Sampah Projects
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Kelistrikan & Panel Listrik',
+            'title' => 'Perbaikan Korsleting & Penggantian Jalur Kabel Standar SNI',
+            'slug' => 'perbaikan-korsleting-kabel-sni',
+            'description' => 'Pelacakan titik korsleting dalam dinding akibat gigitan tikus, penggantian kabel NYM tembaga murni, dan isolasi pipa conduit.',
+            'client' => 'Bapak Surya Kencana',
+            'location' => 'Kebayoran Baru, Jakarta',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Kelistrikan & Panel Listrik',
+            'title' => 'Pemasangan Titik Lampu Downlight & Stop Kontak Arde',
+            'slug' => 'pemasangan-lampu-downlight-stop-kontak',
+            'description' => 'Instalasi 18 titik lampu warm white recessed ceiling, saklar ganda modern, dan penambahan stop kontak arde pengaman anak.',
+            'client' => 'Ibu Felicia Gunawan',
+            'location' => 'Graha Family, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Perbaikan Atap & Bocor',
+            'title' => 'Waterproofing Dak Beton & Perbaikan Talang Atap Bocor',
+            'slug' => 'waterproofing-dak-talang-atap-bocor',
+            'description' => 'Pelapisan membran waterproofing elastis pada dak beton dan penggantian talang seng bocor untuk mencegah rembesan saat hujan lebat.',
+            'client' => 'Bapak Hendra Gunawan',
+            'location' => 'BSD, Tangerang',
+            'completion_date' => 'Juli 2024',
+            'image' => 'https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Perbaikan Atap & Bocor',
+            'title' => 'Penggantian Genteng Retak & Tambal Talang Seng Anti Bocor',
+            'slug' => 'penggantian-genteng-retak-talang-seng',
+            'description' => 'Pemeriksaan struktur kuda-kuda atap kayu, reposisi genteng keramik geser, dan aplikasi serat fiber poliuretan pada sudut nok atap.',
+            'client' => 'Bapak Wahyu Hidayat',
+            'location' => 'Ijen Boulevard, Malang',
+            'completion_date' => 'Agustus 2024',
+            'image' => 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Perbaikan Atap & Bocor',
+            'title' => 'Pelapisan Anti Rembes Dinding Luar & Flashing Seng Atap',
+            'slug' => 'pelapisan-anti-rembes-dinding-flashing',
+            'description' => 'Injeksi semen elastis pada retak rambut dinding eksterior lantai dua dan pemasangan flashing seng galvanis penutup sambungan tembok.',
+            'client' => 'Ibu Veronica S.',
+            'location' => 'Citraland, Surabaya',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Servis AC Rumah',
+            'title' => 'Servis Cuci Berkala & Perbaikan AC Inverter Tidak Dingin',
+            'slug' => 'servis-cuci-ac-inverter-tidak-dingin',
+            'description' => 'Perawatan cuci chemical evaporator AC, pembersihan blower indoor/outdoor, pengisian freon R32, dan perbaikan keluhan air menetes.',
+            'client' => 'Ibu Hani Syarifah',
+            'location' => 'Sanur, Bali',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Servis AC Rumah',
+            'title' => 'Penanganan Kebocoran Air Evaporator & Pengisian Freon AC',
+            'slug' => 'penanganan-kebocoran-air-evaporator-ac',
+            'description' => 'Pembersihan talang pembuangan air AC berlendir, flushing selang kondensasi mampet, dan perbaikan getaran kompresor outdoor.',
+            'client' => 'Bapak Gede Sukarma',
+            'location' => 'Seminyak, Bali',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Servis AC Rumah',
+            'title' => 'Maintenance Rutin 6 Unit AC Split Hunian Keluarga',
+            'slug' => 'maintenance-rutin-6-unit-ac-split',
+            'description' => 'Pengecekan arus ampere listrik kompresor, desinfeksi filter anti-bakteri, dan uji temperatur dingin ruang kamar hunian.',
+            'client' => 'Bapak Chandra Kusuma',
+            'location' => 'Pakuwon Indah, Surabaya',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Pengecatan & Plafon',
+            'title' => 'Perbaikan Plafon Gypsum Jebol & Pengecatan Ulang Interior',
+            'slug' => 'perbaikan-plafon-gypsum-pengecatan-interior',
+            'description' => 'Pemasangan rangka hollow baru dan kompon plafon gypsum rapi, dilanjutkan plamir serta pengecatan premium dua lapis dinding rumah tinggal.',
+            'client' => 'Bapak Denny R.',
+            'location' => 'Ijen Boulevard, Malang',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Pengecatan & Plafon',
+            'title' => 'Pengecatan Weatherproof Dinding Eksterior Rumah 2 Lantai',
+            'slug' => 'pengecatan-weatherproof-dinding-eksterior',
+            'description' => 'Pengerokan cat lama mengelupas, aplikasi sealer alkali tahan cuaca ekstrim, dan pengecatan cat pelindung dinding luar anti-jamur.',
+            'client' => 'Bapak Rudy Susanto',
+            'location' => 'Darmo Permai, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $handymanService->id,
+            'category_name' => 'Pengecatan & Plafon',
+            'title' => 'Pemasangan Partisi Gypsum & Drop Ceiling Ruang Tamu',
+            'slug' => 'pemasangan-partisi-gypsum-drop-ceiling',
+            'description' => 'Pembuatan sekat ruangan partisi dua muka peredam suara dan drop ceiling aksen lampu tersembunyi ruang pertemuan keluarga.',
+            'client' => 'Ibu Anita Wibowo',
+            'location' => 'Puri Surya Jaya, Sidoarjo',
+            'completion_date' => 'Agustus 2024',
+            'image' => 'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
         Project::create([
             'service_id' => $wasteService->id,
-            'category_name' => 'Pengangkutan Sampah',
+            'category_name' => 'Sampah Residensial Terjadwal',
             'title' => 'Pengangkutan Rutin Terpadu Kawasan Klaster Puri Harmoni',
-            'slug' => 'pengangkutan-sampah-puri-harmoni',
+            'slug' => 'pengangkutan-rutin-klaster-puri-harmoni',
             'description' => 'Pengangkutan sampah rumah tangga terjadwal 3x seminggu untuk 250 unit rumah tinggal dengan armada truk tertutup ramah lingkungan.',
             'client' => 'Pengurus RT/RW Klaster Puri Harmoni',
             'location' => 'Malang, Jawa Timur',
             'completion_date' => 'Agustus 2024',
-            'image' => '/images/pengangkutan-sampah.jpg',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'image' => 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
             'is_featured' => true,
         ]);
 
         Project::create([
             'service_id' => $wasteService->id,
-            'category_name' => 'Pengangkutan Sampah',
+            'category_name' => 'Sampah Residensial Terjadwal',
+            'title' => 'Jadwal Pengangkutan Sampah Warga Perumahan 3x Seminggu',
+            'slug' => 'jadwal-pengangkutan-sampah-warga-perumahan',
+            'description' => 'Pengelolaan sampah terjadwal tertib, penyediaan tong sampah pilah organik dan anorganik, serta pembersihan area bak sampah lingkungan.',
+            'client' => 'Paguyuban Warga Harmoni Indah',
+            'location' => 'Sidoarjo, Jawa Timur',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Sampah Residensial Terjadwal',
+            'title' => 'Pengangkutan Sampah Rumah Tangga Armada Tertutup Bersih',
+            'slug' => 'pengangkutan-sampah-armada-tertutup-bersih',
+            'description' => 'Pengambilan sampah rumah tangga on-time tanpa ceceran air lindi di jalanan perumahan, dijamin bebas bau menyengat.',
+            'client' => 'Ketua Lingkungan Rungkut Asri',
+            'location' => 'Rungkut, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Sampah Komersial Kafe & Resto',
             'title' => 'Manajemen Pembuangan Sampah Basah & Kering Kafe Komersial',
-            'slug' => 'sampah-komersial-resto-gubeng',
+            'slug' => 'pembuangan-sampah-kafe-komersial-gubeng',
             'description' => 'Pengangkutan harian limbah sisa makanan, ampas kopi, dan kardus kemasan F&B dengan armada pikap tertutup sanitasi tinggi.',
             'client' => 'Manajemen Kafe & Roastery Kroma',
-            'location' => 'Gubeng, Surabaya Pusat',
+            'location' => 'Gubeng, Surabaya',
             'completion_date' => 'September 2024',
-            'image' => 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1200&q=80',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'image' => 'https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
             'is_featured' => true,
         ]);
 
         Project::create([
             'service_id' => $wasteService->id,
-            'category_name' => 'Pengangkutan Sampah',
+            'category_name' => 'Sampah Komersial Kafe & Resto',
+            'title' => 'Pengangkutan Harian Limbah Restoran & Dapur Higienis',
+            'slug' => 'pengangkutan-harian-limbah-restoran-dapur',
+            'description' => 'Evakuasi sampah basah sisa dapur pagi dan malam hari untuk menjaga standar higienitas sanitasi restoran dan lolos audit kebersihan.',
+            'client' => 'Bale Rasa Nusantara Restaurant',
+            'location' => 'Seminyak, Bali',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Sampah Komersial Kafe & Resto',
+            'title' => 'Evakuasi Kardus Kemasan & Ampas Kopi Coffee Shop Terjadwal',
+            'slug' => 'evakuasi-kardus-ampas-kopi-coffee-shop',
+            'description' => 'Penjemputan teratur limbah kering karton, botol sirup, dan sampah daur ulang gerai minuman kekinian secara tertib.',
+            'client' => 'Kopi Titik Temu Kemang',
+            'location' => 'Kebayoran Baru, Jakarta',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Puing Sisa Renovasi Bangunan',
             'title' => 'Evakuasi Puing Sisa Bongkaran Tembok & Puing Renovasi Hunian',
-            'slug' => 'evakuasi-puing-kebayoran-baru',
+            'slug' => 'evakuasi-puing-bongkaran-tembok-kebayoran',
             'description' => 'Evakuasi 2 unit dump truck puing semen, pecahan keramik, dan kayu bongkaran rumah tinggal hingga sapuan akhir bersih rapi.',
             'client' => 'Bapak Aditya Nugraha',
-            'location' => 'Kebayoran Baru, Jakarta Selatan',
+            'location' => 'Kebayoran Baru, Jakarta',
             'completion_date' => 'Oktober 2024',
             'image' => 'https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=1200&q=80',
-            'gallery_images' => [
-                'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80',
-                'https://images.unsplash.com/photo-1541888946425-d0fbb186c5f7?auto=format&fit=crop&w=1200&q=80',
-            ],
+            'is_video' => false,
             'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Puing Sisa Renovasi Bangunan',
+            'title' => 'Pembersihan & Angkut Puing Keramik Sisa Pembongkaran Lantai',
+            'slug' => 'pembersihan-angkut-puing-keramik-lantai',
+            'description' => 'Pengangkutan serpihan batu bata, adukan semen mengering, dan bongkaran dinding sekat ruko komersial ke tempat pembuangan resmi.',
+            'client' => 'Bapak Surya Dharma',
+            'location' => 'Darmo, Surabaya',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Puing Sisa Renovasi Bangunan',
+            'title' => 'Evakuasi 2 Dump Truck Puing Cor Semen Pasca Renovasi Rumah',
+            'slug' => 'evakuasi-2-dump-truck-puing-cor-semen',
+            'description' => 'Pemuatan puing genteng lama, dak semen, dan besi beton bekas proyek renovasi hunian dengan tenaga angkut terlatih.',
+            'client' => 'Bapak Ir. Johanes Handoko',
+            'location' => 'Citraland, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Pembuangan Barang Bekas Besar',
+            'title' => 'Evakuasi Perabot Besar & Kasur Bekas Rusak On-Demand',
+            'slug' => 'evakuasi-perabot-besar-kasur-bekas-ondemand',
+            'description' => 'Layanan angkut furnitur lapuk, kasur springbed rusak, lemari kayu besar, dan perlengkapan rumah tangga tak terpakai secara aman ke TPA resmi.',
+            'client' => 'Bapak Denny R.',
+            'location' => 'Soekarno Hatta, Malang',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Pembuangan Barang Bekas Besar',
+            'title' => 'Pembuangan Lemari Kayu Lapuk & Sofa Rusak Pindahan Rumah',
+            'slug' => 'pembuangan-lemari-kayu-lapuk-sofa-rusak',
+            'description' => 'Bongkar dan evakuasi lemari pakaian 3 pintu yang rapuh, meja makan usang, dan sofa jebol yang tidak dibawa saat pindahan rumah.',
+            'client' => 'Ibu Laksmi Paramita',
+            'location' => 'Pakuwon City, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1540518614846-7ede433c4ef4?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Pembuangan Barang Bekas Besar',
+            'title' => 'Angkut Springbed Bekas & Meja Kantor Usang ke TPA Resmi',
+            'slug' => 'angkut-springbed-bekas-meja-kantor-usang',
+            'description' => 'Pengangkutan perabot kantor usang, partisi meja kerja lama, dan kasur latex rusak tanpa mencemari lingkungan pemukiman.',
+            'client' => 'PT Cipta Sarana Graha',
+            'location' => 'Graha Family, Surabaya',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Sampah Acara & Pameran',
+            'title' => 'Pembersihan & Pengangkutan Sampah Event Komersial & Pameran',
+            'slug' => 'pembersihan-sampah-event-komersial-pameran',
+            'description' => 'Penanganan sampah volume besar pasca-acara pameran, dekorasi sementara, sisa katering, dan kardus booth pameran dalam waktu semalam.',
+            'client' => 'Event Organizer Kreasi Nusantara',
+            'location' => 'Grand City Hall, Surabaya',
+            'completion_date' => 'November 2024',
+            'image' => 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => true,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Sampah Acara & Pameran',
+            'title' => 'Evakuasi Sampah Acara Pernikahan & Tenda Outdoor Malam Hari',
+            'slug' => 'evakuasi-sampah-acara-pernikahan-tenda',
+            'description' => 'Pembersihan cepat botol minuman, kardus katering, sisa makanan prasmanan, dan dekorasi bunga resepsi pernikahan outdoor villa.',
+            'client' => 'Keluarga Bpk. Putu Sudharma',
+            'location' => 'Sanur, Bali',
+            'completion_date' => 'Oktober 2024',
+            'image' => 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
+        ]);
+
+        Project::create([
+            'service_id' => $wasteService->id,
+            'category_name' => 'Sampah Acara & Pameran',
+            'title' => 'Pembersihan Sampah Booth & Sisa Material Expo Kebersihan',
+            'slug' => 'pembersihan-sampah-booth-expo-kebersihan',
+            'description' => 'Evakuasi limbah triplek, spanduk vinyl, plastik pelapis, dan kardus display booth expo industri fasilitas gedung.',
+            'client' => 'Asosiasi Pengelola Gedung Indonesia',
+            'location' => 'Surabaya Barat, Jawa Timur',
+            'completion_date' => 'September 2024',
+            'image' => 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80',
+            'is_video' => false,
+            'is_featured' => false,
         ]);
 
         // Video Highlight Reels Projects (1 Distinct Video per Service)
@@ -354,7 +819,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Aksi Cepat Tim Home Cleaning KOOTA SERVICE',
             'slug' => 'video-home-cleaning-koota',
             'description' => 'Transformasi rumah bersih berkilau dan bebas tungau bersama tim profesional Koota Services.',
-            'image' => 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80',
+            'image' => 'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=1200&q=80',
             'video_url' => 'https://www.youtube.com/shorts/aqz-KE-bpKQ',
             'video_type' => 'shorts',
             'is_video' => true,
@@ -367,7 +832,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Proses Perbaikan & Renovasi Interior Presisi',
             'slug' => 'video-perbaikan-rumah-koota',
             'description' => 'Dari perbaikan pipa bocor hingga finishing dinding rapi oleh tukang ahli Koota Services.',
-            'image' => 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80',
+            'image' => 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80',
             'video_url' => 'https://www.youtube.com/shorts/aqz-KE-bpKQ',
             'video_type' => 'shorts',
             'is_video' => true,
@@ -380,7 +845,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Armada Truk Pengangkutan Sampah Terjadwal & Higienis',
             'slug' => 'video-pengangkutan-sampah-koota',
             'description' => 'Pengangkutan sampah rutin tertib tanpa bau ceceran dengan armada tertutup ramah lingkungan.',
-            'image' => 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=80',
+            'image' => 'https://images.unsplash.com/photo-1503596476-1c12a8ba09a9?auto=format&fit=crop&w=1200&q=80',
             'video_url' => 'https://www.youtube.com/shorts/aqz-KE-bpKQ',
             'video_type' => 'shorts',
             'is_video' => true,

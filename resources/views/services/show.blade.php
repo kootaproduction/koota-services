@@ -335,6 +335,14 @@
                 ];
             }
         }
+
+        if ($isCleaning) {
+            $canonicalCategories = ["Rumah Residensial", "Apartemen & Studio", "Pembersihan Kerak Kamar Mandi", "Sedot Tungau Kasur & Sofa", "Pembersihan Pasca Renovasi"];
+        } elseif ($isTukang) {
+            $canonicalCategories = ["Perbaikan Pipa & Saluran", "Kelistrikan & Panel Listrik", "Perbaikan Atap & Bocor", "Servis AC Rumah", "Pengecatan & Plafon"];
+        } else {
+            $canonicalCategories = ["Sampah Residensial Terjadwal", "Sampah Komersial Kafe & Resto", "Puing Sisa Renovasi Bangunan", "Pembuangan Barang Bekas Besar", "Sampah Acara & Pameran"];
+        }
     @endphp
 
     <!-- 1. HERO SECTION -->
@@ -683,8 +691,12 @@
         </div>
     </section>
 
-    <!-- 6. SOCIAL PROOF & PROJECT GALLERY -->
-    <section class="py-20 bg-white border-b border-gray-100" x-data="{ activeCategory: '{{ $categories[0] }}' }">
+    <!-- 6. SOCIAL PROOF & PROJECT GALLERY (INTERACTIVE CATEGORY FILTER) -->
+    <section class="py-20 bg-white border-b border-gray-100" 
+             x-data="{ 
+                activeIdx: 0, 
+                categoryNames: {{ json_encode($categories) }} 
+             }">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <div class="space-y-3">
                 <div class="inline-flex items-center justify-center gap-3">
@@ -704,10 +716,10 @@
 
             <!-- Category Filter Pills -->
             <div class="flex flex-wrap justify-center items-center gap-2.5 pt-2">
-                @foreach($categories as $cat)
+                @foreach($categories as $idx => $cat)
                     <button type="button" 
-                            @click="activeCategory = '{{ $cat }}'" 
-                            :class="activeCategory === '{{ $cat }}' ? 'bg-[#ac0c0c] text-white shadow-xs font-bold' : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 font-medium'"
+                            @click="activeIdx = {{ $idx }}" 
+                            :class="activeIdx === {{ $idx }} ? 'bg-[#ac0c0c] text-white shadow-xs font-bold' : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-300 font-medium'"
                             class="px-5 py-2 rounded-full text-xs sm:text-sm transition-all cursor-pointer">
                         {{ $cat }}
                     </button>
@@ -717,23 +729,50 @@
             <!-- Dynamic Sub-header: Project <activeCategory> -->
             <div class="pt-2 pb-1">
                 <p class="text-xs sm:text-sm font-medium text-gray-500">
-                    {{ __('Kategori:') }} <span x-text="activeCategory" class="font-bold text-[#ac0c0c]"></span>
+                    {{ __('Kategori:') }} <span x-text="categoryNames[activeIdx]" class="font-bold text-[#ac0c0c]"></span>
                 </p>
             </div>
 
-            <!-- 3 Clean Photo Showcase Cards (Distinct Project Photos) -->
+            <!-- Dynamic Category Showcase Cards Grid -->
             @php
-                $displayProjects = $projects->where('is_video', false)->values();
+                $photoProjects = $projects->where('is_video', false)->values();
             @endphp
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-left">
-                @foreach($displayProjects->take(3) as $dp)
-                    <div class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
-                        <img src="{{ $dp->image }}" alt="{{ __($dp->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
-                            <span class="text-xs font-bold text-white drop-shadow-sm">{{ __($dp->title) }}</span>
+                @foreach($canonicalCategories as $cIdx => $canonCat)
+                    @php
+                        $catProjects = $photoProjects->filter(function($p) use ($canonCat) {
+                            return trim($p->category_name) === trim($canonCat);
+                        })->values();
+
+                        if ($catProjects->isEmpty()) {
+                            $catProjects = $photoProjects->take(3);
+                        }
+                    @endphp
+
+                    @foreach($catProjects as $dp)
+                        <div x-show="activeIdx === {{ $cIdx }}"
+                             x-transition:enter="transition ease-out duration-300"
+                             x-transition:enter-start="opacity-0 scale-95"
+                             x-transition:enter-end="opacity-100 scale-100"
+                             class="rounded-3xl overflow-hidden shadow-2xs hover:shadow-lg transition-all duration-300 border border-gray-200/80 bg-white group aspect-[4/3] relative">
+                            <img src="{{ $dp->image }}" alt="{{ __($dp->title) }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-5">
+                                @if($dp->location)
+                                    <span class="text-[10px] font-bold text-red-300 uppercase tracking-wider mb-1">{{ $dp->location }}</span>
+                                @endif
+                                <span class="text-xs sm:text-sm font-bold text-white drop-shadow-sm leading-snug">{{ __($dp->title) }}</span>
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 @endforeach
+            </div>
+
+            <!-- See All Portfolio Button -->
+            <div class="pt-4">
+                <a href="{{ route('portfolio.index') }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-300 hover:border-[#ac0c0c] bg-white text-gray-800 hover:text-[#ac0c0c] text-xs sm:text-sm font-bold transition-all shadow-2xs hover:shadow-sm">
+                    <span>{{ __('Lihat Seluruh Portofolio Proyek') }}</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
             </div>
         </div>
     </section>
