@@ -514,7 +514,7 @@
                             <!-- Clean Sheet Body -->
                             <div class="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
                                 <div class="space-y-3">
-                                    <span class="text-3xl sm:text-4xl font-black text-[#ac0c0c] font-serif-brand block leading-none">
+                                    <span class="text-3xl sm:text-4xl font-black text-[#ac0c0c] block leading-none">
                                         {{ $p['num'] }}
                                     </span>
                                     <h3 class="text-base sm:text-lg font-bold text-gray-900 leading-snug group-hover:text-[#ac0c0c] transition-colors">
@@ -527,7 +527,7 @@
 
                                 <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
                                     <span class="font-medium text-gray-500">{{ __('SOP Terstandarisasi') }}</span>
-                                    <span class="text-[#ac0c0c] font-bold">✓</span>
+                                    <svg class="w-4 h-4 text-[#ac0c0c]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
                                 </div>
                             </div>
                         </div>

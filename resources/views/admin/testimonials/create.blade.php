@@ -53,9 +53,9 @@
                         Rating Bintang <span class="text-red-500">*</span>
                     </label>
                     <select name="rating" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#ac0c0c] focus:border-transparent text-sm">
-                        <option value="5" {{ old('rating', '5') == '5' ? 'selected' : '' }}>★★★★★ (5 Bintang - Sangat Puas)</option>
-                        <option value="4" {{ old('rating') == '4' ? 'selected' : '' }}>★★★★☆ (4 Bintang - Puas)</option>
-                        <option value="3" {{ old('rating') == '3' ? 'selected' : '' }}>★★★☆☆ (3 Bintang - Cukup)</option>
+                        <option value="5" {{ old('rating', '5') == '5' ? 'selected' : '' }}>5 Bintang (Sangat Puas)</option>
+                        <option value="4" {{ old('rating') == '4' ? 'selected' : '' }}>4 Bintang (Puas)</option>
+                        <option value="3" {{ old('rating') == '3' ? 'selected' : '' }}>3 Bintang (Cukup)</option>
                     </select>
                 </div>
 

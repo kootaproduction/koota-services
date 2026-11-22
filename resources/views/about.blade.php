@@ -143,7 +143,7 @@
                             <span class="text-[11px] text-slate-400 font-semibold tracking-wider uppercase">KOOTA SERVICES</span>
                         </div>
 
-                        <blockquote class="font-serif-brand text-lg sm:text-xl lg:text-[23px] font-normal italic text-white/95 leading-relaxed">
+                        <blockquote class="text-base sm:text-lg lg:text-xl font-normal text-white/95 leading-relaxed">
                             "{{ __('Menjadi penyedia layanan perawatan fasilitas, kebersihan profesional, dan manajemen lingkungan terkemuka di Indonesia dengan standar kualitas unggul, inovatif, dan berkelanjutan.') }}"
                         </blockquote>
                     </div>
@@ -295,7 +295,7 @@
             <!-- Header Block -->
             <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12 space-y-3">
                 <h2 id="commitment-title" class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0f172a] leading-tight">
-                    <span class="font-serif-brand italic font-normal text-gray-300">“</span>{{ __('Kita Wujudkan') }} <span class="text-[#ac0c0c] underline decoration-[#ac0c0c]/20 underline-offset-8">{{ __('Kota Bersih') }}</span><span class="font-serif-brand italic font-normal text-gray-300">”</span>
+                    {{ __('Kita Wujudkan') }} <span class="text-[#ac0c0c] underline decoration-[#ac0c0c]/20 underline-offset-8">{{ __('Kota Bersih') }}</span>
                 </h2>
 
                 <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto pt-2">

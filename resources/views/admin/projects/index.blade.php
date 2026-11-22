@@ -52,7 +52,10 @@
                             </td>
                             <td class="py-4 px-6">
                                 @if($p->is_video)
-                                    <span class="px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-bold">▶ Reels / Shorts</span>
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-100 text-purple-800 text-xs font-bold">
+                                        <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                        Reels / Shorts
+                                    </span>
                                 @else
                                     <span class="px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">Foto Proyek</span>
                                 @endif
