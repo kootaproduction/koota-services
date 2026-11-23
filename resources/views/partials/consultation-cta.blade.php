@@ -13,28 +13,28 @@
             </div>
         @endif
 
-        <!-- Card Container Dark Slate with Subtle Crimson Aura (Zero Blue) -->
-        <div class="relative bg-[#0f172a] rounded-3xl overflow-hidden shadow-2xl border border-slate-800 text-white">
-            <!-- Ambient Subtle Crimson Glow (Brand red #ac0c0c) -->
-            <div aria-hidden="true" class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#ac0c0c]/20 blur-3xl pointer-events-none"></div>
-            <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-[#ac0c0c]/15 blur-3xl pointer-events-none"></div>
+        <!-- Card Container Clean White (Hilangkan Background Biru, Ganti Warna Putih) -->
+        <div class="relative bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-200/90 text-gray-900">
+            <!-- Subtle Ambient Background Accents -->
+            <div aria-hidden="true" class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-red-50/50 blur-3xl pointer-events-none"></div>
+            <div aria-hidden="true" class="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-slate-100/50 blur-3xl pointer-events-none"></div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 items-center relative z-10">
                 <!-- Left Content -->
                 <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-4">
                     <!-- Badge -->
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-red-200 text-xs font-semibold tracking-wide border border-white/10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-[#ac0c0c] text-xs font-semibold tracking-wide border border-red-100">
                         <span class="w-2 h-2 rounded-full bg-[#ac0c0c]"></span>
                         <span>{{ __('KONSULTASI BEBAS BIAYA') }}</span>
                     </div>
 
                     <!-- Title -->
-                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
+                    <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 tracking-tight leading-snug">
                         {{ __('Konsultasi Masalah dan Perawatan Rumah Gratis') }}
                     </h3>
 
                     <!-- Description -->
-                    <p class="text-gray-300 text-xs sm:text-sm sm:leading-relaxed max-w-xl">
+                    <p class="text-gray-600 text-xs sm:text-sm sm:leading-relaxed max-w-xl">
                         {{ __('Ceritakan kebutuhan Anda, kami siap bantu jadwalkan kunjungan tenaga ahli untuk solusi hunian bersih, rapi, dan terawat.') }}
                     </p>
 
@@ -52,15 +52,15 @@
                             <span>{{ __('Konsultasi via WhatsApp') }}</span>
                         </a>
 
-                        <a href="{{ route('consultation.index') }}" class="inline-flex items-center px-6 py-3.5 rounded-xl border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs sm:text-sm transition-all hover:scale-105 active:scale-95">
+                        <a href="{{ route('consultation.index') }}" class="inline-flex items-center px-6 py-3.5 rounded-xl border border-gray-300 hover:border-gray-400 bg-white hover:bg-gray-50 text-gray-800 font-semibold text-xs sm:text-sm shadow-xs transition-all hover:scale-105 active:scale-95">
                             <span>{{ __('Form Reservasi') }}</span>
                         </a>
                     </div>
                 </div>
 
-                <!-- Right Image: Kenzo Yanuar (CEO Koota Production) with clean warm executive studio (zero blue) -->
+                <!-- Right Image: Kenzo Yanuar (CEO Koota Production) with clean warm executive studio -->
                 <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end pt-4 lg:pt-0 overflow-hidden">
-                    <img src="{{ asset('images/kenzo-yanuar.png') }}" alt="Kenzo Yanuar - CEO Koota Production" class="w-auto h-72 sm:h-80 md:h-96 object-contain object-bottom select-none drop-shadow-2xl">
+                    <img src="{{ asset('images/kenzo-yanuar.png') }}" alt="Kenzo Yanuar - CEO Koota Production" class="w-auto h-72 sm:h-80 md:h-96 object-contain object-bottom select-none">
                 </div>
             </div>
         </div>
