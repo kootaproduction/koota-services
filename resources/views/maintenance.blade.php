@@ -25,11 +25,7 @@
             </div>
         </div>
 
-        <!-- Status Pill -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/80 border border-red-800/60 text-red-300 text-xs font-semibold">
-            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-            <span>Maintenance Mode / Sedang Pemeliharaan</span>
-        </div>
+
 
         <!-- Headline -->
         <div class="space-y-3">

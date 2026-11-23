@@ -148,36 +148,7 @@
                 <!-- Main Article Column (8 Cols) -->
                 <div class="lg:col-span-8 space-y-8">
                     
-                    <!-- Key Takeaways / Poin Intisari Box -->
-                    <div class="p-6 sm:p-7 rounded-2xl bg-white border border-gray-200/80 shadow-xs relative overflow-hidden">
-                        <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-[#ac0c0c]"></div>
-                        <div class="flex items-center gap-2.5 text-xs font-extrabold uppercase tracking-wider text-[#ac0c0c] mb-3">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                                <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.001z"/>
-                            </svg>
-                            <span>{{ __('Poin Intisari Artikel') }}</span>
-                        </div>
-                        <ul class="text-xs sm:text-sm text-gray-700 space-y-2.5 leading-relaxed">
-                            <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                </span>
-                                <span>{{ __('Pencegahan dini melalui pemeliharaan berkala jauh lebih hemat dibanding perbaikan kerusakan struktural.') }}</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                </span>
-                                <span>{{ __('Pemilahan dan jadwal sanitasi teratur melindungi keluarga dan penghuni dari bibit penyakit serta alergen.') }}</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-red-50 text-[#ac0c0c] flex items-center justify-center shrink-0 mt-0.5">
-                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                                </span>
-                                <span>{{ __('Gunakan tenaga profesional bersertifikat untuk memastikan standar pengerjaan aman dan bergaransi resmi.') }}</span>
-                            </li>
-                        </ul>
-                    </div>
+
 
                     <!-- Article Body Content with Editorial Typography -->
                     <div class="bg-white p-7 sm:p-10 lg:p-12 rounded-3xl border border-gray-200/80 shadow-xs">
@@ -190,18 +161,7 @@
                             @endif
                         </div>
 
-                        <!-- Pro Tip Callout Box -->
-                        <div class="my-8 p-6 rounded-2xl bg-slate-900 text-white relative overflow-hidden space-y-3">
-                            <div class="flex items-center gap-2.5 text-xs font-bold text-amber-400 uppercase tracking-wider">
-                                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                                </svg>
-                                <span>{{ __('Tips Spesialis KOOTA SERVICES') }}</span>
-                            </div>
-                            <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                                {{ __('Untuk kebutuhan hunian berukuran besar, gedung kantor, maupun restoran komersial, menjadwalkan inspeksi rutin berkala dapat menghemat hingga 40% biaya pengeluaran tak terduga. Tim kami selalu siap membantu survei lokasi tanpa biaya di wilayah operasional KOOTA.') }}
-                            </p>
-                        </div>
+
 
                         <!-- Article Tags & Share Strip -->
                         <div class="pt-8 mt-8 border-t border-gray-100 flex flex-wrap items-center justify-between gap-4">
@@ -234,7 +194,6 @@
                         <div class="space-y-2">
                             <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
                                 <h3 class="text-base font-bold text-gray-900">{{ __('Diterbitkan oleh KOOTA SERVICES') }}</h3>
-                                <span class="text-xs px-2.5 py-0.5 rounded-full bg-green-50 text-green-700 font-bold border border-green-200 inline-block self-center sm:self-auto">{{ __('Penyedia Jasa Resmi') }}</span>
                             </div>
                             <p class="text-xs text-gray-600 leading-relaxed">
                                 {{ __('KOOTA SERVICES adalah penyedia layanan terpadu profesional untuk Home Cleaning, Perbaikan Rumah, dan Pengangkutan Sampah berlisensi di Surabaya, Malang, Sidoarjo, Gresik, Bali, dan Jakarta. Seluruh artikel disusun berdasarkan pengalaman teknis nyata di lapangan.') }}
@@ -252,10 +211,7 @@
                         <div class="p-7 rounded-3xl bg-gradient-to-br from-[#ac0c0c] to-[#8f0a0a] text-white shadow-xl relative overflow-hidden space-y-5">
                             <div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-white/5 pointer-events-none"></div>
 
-                            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-bold tracking-wide">
-                                <span class="w-2 h-2 rounded-full bg-green-400"></span>
-                                <span>{{ __('Layanan Siaga') }}</span>
-                            </div>
+
 
                             <div class="space-y-2">
                                 <h3 class="text-xl font-black leading-tight tracking-tight">

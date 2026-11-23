@@ -355,11 +355,7 @@
         </div>
 
         <div class="relative z-10 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <!-- Badge Pill -->
-            <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/15 backdrop-blur-md shadow-xs">
-                <span class="w-2 h-2 rounded-full bg-[#ac0c0c] animate-pulse"></span>
-                <span class="tracking-widest uppercase text-[11px] font-bold">{{ __('KOOTA PREMIUM SERVICE') }}</span>
-            </div>
+
 
             <!-- Main Heading Hook -->
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] max-w-4xl mx-auto">
