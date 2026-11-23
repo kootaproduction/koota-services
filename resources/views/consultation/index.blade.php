@@ -581,7 +581,7 @@
                                     </p>
 
                                     <button type="submit" 
-                                            class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-[#ac0c0c] via-[#b91c1c] to-[#ac0c0c] hover:brightness-110 text-white font-black text-xs sm:text-sm shadow-xl shadow-red-950/20 hover:shadow-2xl hover:shadow-red-900/30 transition-all hover:-translate-y-0.5 active:scale-95">
+                                            class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-[#ac0c0c] to-[#8f0a0a] hover:brightness-110 text-white font-black text-xs sm:text-sm shadow-xl shadow-red-950/20 hover:shadow-2xl hover:shadow-red-900/30 transition-all hover:-translate-y-0.5 active:scale-95">
                                         <span>{{ __('Kirim Permintaan Konsultasi & Jadwalkan Survei') }} &rarr;</span>
                                     </button>
                                 </div>

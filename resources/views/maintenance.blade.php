@@ -12,7 +12,7 @@
 <body class="bg-[#0f172a] text-white font-sans antialiased min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
     <!-- Subtle Background Glows -->
     <div class="absolute top-1/4 -left-20 w-96 h-96 bg-[#ac0c0c]/30 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#dc2626]/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-[#ac0c0c]/20 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-xl w-full text-center space-y-8 relative z-10 bg-slate-900/85 backdrop-blur-xl p-8 sm:p-12 rounded-3xl border border-slate-800 shadow-2xl">
         <!-- Logo -->
@@ -20,7 +20,7 @@
             <div class="flex items-center gap-3 bg-white/5 px-5 py-2.5 rounded-2xl border border-white/10">
                 <img src="{{ asset('images/logo-white.svg') }}" alt="KOOTA SERVICES" class="h-10 w-auto object-contain">
                 <span class="font-extrabold text-lg sm:text-xl tracking-tight text-white">
-                    KOOTA <span class="text-[#ff4d4d]">SERVICES</span>
+                    KOOTA <span class="text-[#ac0c0c]">SERVICES</span>
                 </span>
             </div>
         </div>

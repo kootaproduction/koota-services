@@ -249,7 +249,7 @@
                     <div class="sticky top-20 space-y-6">
                         
                         <!-- 1. Consultation Direct Card (Branded & High Conversion) -->
-                        <div class="p-7 rounded-3xl bg-gradient-to-br from-[#ac0c0c] via-[#991b1b] to-[#7f1d1d] text-white shadow-xl relative overflow-hidden space-y-5">
+                        <div class="p-7 rounded-3xl bg-gradient-to-br from-[#ac0c0c] to-[#8f0a0a] text-white shadow-xl relative overflow-hidden space-y-5">
                             <div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-white/5 pointer-events-none"></div>
 
                             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-[11px] font-bold tracking-wide">

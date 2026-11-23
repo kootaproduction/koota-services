@@ -40,7 +40,7 @@
             <p class="text-[11px] text-gray-400">Pertanyaan user yang perlu Anda lengkapi</p>
         </div>
 
-        <div class="bg-gradient-to-br from-[#ac0c0c] to-[#450002] p-5 rounded-2xl text-white shadow-2xs flex flex-col justify-between">
+        <div class="bg-gradient-to-br from-[#ac0c0c] to-[#8f0a0a] p-5 rounded-2xl text-white shadow-2xs flex flex-col justify-between">
             <div>
                 <span class="text-[11px] uppercase tracking-wider font-bold text-red-200 block">Riwayat Interaksi</span>
                 <p class="text-sm font-semibold mt-1">Pantau pertanyaan asli dari pengunjung</p>

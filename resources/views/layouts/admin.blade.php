@@ -23,7 +23,7 @@
                     <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3">
                         <img src="{{ asset('images/logo-white.svg') }}" alt="KOOTA SERVICES" class="h-9 w-auto object-contain">
                         <span class="font-extrabold text-sm tracking-tight text-white">
-                            KOOTA <span class="text-[#ff4d4d]">SERVICES</span>
+                            KOOTA <span class="text-[#ac0c0c]">SERVICES</span>
                         </span>
                     </a>
                     <span class="text-[10px] text-gray-400 uppercase tracking-widest font-bold block pl-1">

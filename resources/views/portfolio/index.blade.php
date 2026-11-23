@@ -124,7 +124,7 @@
 
                         <!-- Action Link to Dedicated Detail Page -->
                         <div class="px-6 pb-6 pt-2 border-t border-gray-50">
-                            <a href="{{ route('portfolio.show', $project->id) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#ac0c0c] hover:text-[#dc2626] transition-colors">
+                            <a href="{{ route('portfolio.show', $project->id) }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-[#ac0c0c] hover:text-[#8f0a0a] transition-colors">
                                 <span>{{ __('Lihat Dokumentasi Proyek') }}</span>
                             </a>
                         </div>
