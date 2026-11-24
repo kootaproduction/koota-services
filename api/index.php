@@ -4,8 +4,7 @@
  * Vercel Serverless Function Entry Point for Laravel
  */
 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
+ini_set('display_errors', '0');
 error_reporting(E_ALL);
 
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
@@ -17,10 +16,6 @@ if (empty($_SERVER['REMOTE_ADDR'])) {
     $_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? '127.0.0.1';
 }
 
-putenv('LOG_CHANNEL=stderr');
-$_ENV['LOG_CHANNEL'] = 'stderr';
-$_SERVER['LOG_CHANNEL'] = 'stderr';
-
 $tmpStorage = '/tmp/storage';
 
 $requiredDirs = [
@@ -28,19 +23,36 @@ $requiredDirs = [
     $tmpStorage . '/framework/cache/data',
     $tmpStorage . '/framework/sessions',
     $tmpStorage . '/logs',
-    '/tmp/bootstrap/cache',
 ];
 
 foreach ($requiredDirs as $dir) {
     if (!is_dir($dir)) {
-        @mkdir($dir, 0755, true);
+        @mkdir($dir, 0777, true);
     }
 }
 
-putenv('APP_STORAGE_PATH=' . $tmpStorage);
-putenv('VIEW_COMPILED_PATH=' . $tmpStorage . '/framework/views');
+// Redirect all Laravel writable directories & caches to /tmp
+$envVars = [
+    'APP_STORAGE_PATH' => $tmpStorage,
+    'VIEW_COMPILED_PATH' => '/tmp',
+    'APP_SERVICES_CACHE' => '/tmp/services.php',
+    'APP_PACKAGES_CACHE' => '/tmp/packages.php',
+    'APP_CONFIG_CACHE' => '/tmp/config.php',
+    'APP_ROUTES_CACHE' => '/tmp/routes.php',
+    'APP_EVENTS_CACHE' => '/tmp/events.php',
+    'LOG_CHANNEL' => 'stderr',
+    'CACHE_STORE' => 'array',
+    'CACHE_DRIVER' => 'array',
+    'SESSION_DRIVER' => 'cookie',
+];
 
-// Set Application Key directly so MissingAppKeyException never occurs
+foreach ($envVars as $key => $val) {
+    putenv("{$key}={$val}");
+    $_ENV[$key] = $val;
+    $_SERVER[$key] = $val;
+}
+
+// Set Application Key directly
 $appKey = getenv('APP_KEY') ?: 'base64:6+IwAaI78Jnc1iTe3P/QumZDHR7WerPWW0owyNuhrv0=';
 putenv('APP_KEY=' . $appKey);
 $_ENV['APP_KEY'] = $appKey;
