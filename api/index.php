@@ -28,12 +28,22 @@ foreach ($requiredDirs as $dir) {
 putenv('APP_STORAGE_PATH=' . $tmpStorage);
 putenv('VIEW_COMPILED_PATH=' . $tmpStorage . '/framework/views');
 
+// Set Application Key directly so MissingAppKeyException never occurs
+$appKey = getenv('APP_KEY') ?: 'base64:6+IwAaI78Jnc1iTe3P/QumZDHR7WerPWW0owyNuhrv0=';
+putenv('APP_KEY=' . $appKey);
+$_ENV['APP_KEY'] = $appKey;
+$_SERVER['APP_KEY'] = $appKey;
+
 // Ensure SQLite uses writable /tmp directory on Vercel serverless
 $sqliteSource = __DIR__ . '/../database/database.sqlite';
 $sqliteDest = '/tmp/database.sqlite';
 
-if (file_exists($sqliteSource) && !file_exists($sqliteDest)) {
-    @copy($sqliteSource, $sqliteDest);
+if (!file_exists($sqliteDest)) {
+    if (file_exists($sqliteSource)) {
+        @copy($sqliteSource, $sqliteDest);
+    } else {
+        @touch($sqliteDest);
+    }
 }
 
 putenv('DB_CONNECTION=sqlite');
