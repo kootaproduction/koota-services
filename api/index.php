@@ -4,6 +4,10 @@
  * Vercel Serverless Function Entry Point for Laravel
  */
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
     $_SERVER['HTTPS'] = 'on';
     $_SERVER['SERVER_PORT'] = 443;
@@ -54,4 +58,12 @@ $_SERVER['DB_CONNECTION'] = 'sqlite';
 $_SERVER['DB_DATABASE'] = $sqliteDest;
 
 // Forward request to Laravel standard front controller
-require __DIR__ . '/../public/index.php';
+try {
+    require __DIR__ . '/../public/index.php';
+} catch (\Throwable $e) {
+    http_response_code(500);
+    header('Content-Type: text/plain');
+    echo "ERROR ON VERCEL:\n" . $e->getMessage() . "\n\n";
+    echo "File: " . $e->getFile() . " on line " . $e->getLine() . "\n\n";
+    echo "Stack Trace:\n" . $e->getTraceAsString();
+}
