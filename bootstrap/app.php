@@ -18,7 +18,15 @@ $app = Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        $exceptions->render(function (\Throwable $e, \Illuminate\Http\Request $request) {
+            return response(
+                "ROOT EXCEPTION:\n" . get_class($e) . ": " . $e->getMessage() . "\n" .
+                "File: " . $e->getFile() . " line " . $e->getLine() . "\n\n" .
+                "Trace:\n" . $e->getTraceAsString(),
+                500,
+                ['Content-Type' => 'text/plain']
+            );
+        });
     })->create();
 
 if ($storagePath = env('APP_STORAGE_PATH')) {

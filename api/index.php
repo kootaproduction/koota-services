@@ -63,7 +63,12 @@ try {
 } catch (\Throwable $e) {
     http_response_code(500);
     header('Content-Type: text/plain');
-    echo "ERROR ON VERCEL:\n" . $e->getMessage() . "\n\n";
+    echo "ERROR ON VERCEL:\n" . get_class($e) . ": " . $e->getMessage() . "\n\n";
     echo "File: " . $e->getFile() . " on line " . $e->getLine() . "\n\n";
+    if ($prev = $e->getPrevious()) {
+        echo "PREVIOUS CAUSE:\n" . get_class($prev) . ": " . $prev->getMessage() . "\n";
+        echo "File: " . $prev->getFile() . " on line " . $prev->getLine() . "\n\n";
+        echo "Trace:\n" . $prev->getTraceAsString() . "\n\n";
+    }
     echo "Stack Trace:\n" . $e->getTraceAsString();
 }
