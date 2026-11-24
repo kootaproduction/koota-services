@@ -38,10 +38,10 @@ $_SERVER['APP_KEY'] = $appKey;
 $sqliteSource = __DIR__ . '/../database/database.sqlite';
 $sqliteDest = '/tmp/database.sqlite';
 
-if (!file_exists($sqliteDest)) {
-    if (file_exists($sqliteSource)) {
+if (!file_exists($sqliteDest) || (file_exists($sqliteDest) && filesize($sqliteDest) < 1000)) {
+    if (file_exists($sqliteSource) && filesize($sqliteSource) > 1000) {
         @copy($sqliteSource, $sqliteDest);
-    } else {
+    } elseif (!file_exists($sqliteDest)) {
         @touch($sqliteDest);
     }
 }
