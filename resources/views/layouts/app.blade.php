@@ -514,7 +514,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-[#0f172a] text-white pt-16 pb-12 border-t border-slate-800">
+    <footer class="bg-black text-white pt-16 pb-12 border-t border-neutral-800">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
                 
@@ -597,7 +597,7 @@
             </div>
 
             <!-- Bottom Copyright -->
-            <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+            <div class="pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
                 <p>© {{ date('Y') }} KOOTA SERVICE. {{ __('Kita Wujudkan') }} <span class="text-emerald-400 font-bold">{{ __('Kota Bersih') }}</span></p>
                 <div class="flex items-center gap-3">
                     <span>Surabaya, Malang, Bali, Jakarta</span>

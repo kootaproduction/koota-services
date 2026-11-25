@@ -222,21 +222,15 @@
                 </div>
 
                 <!-- Compact Trust & Action Bar -->
-                <div class="pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <span class="text-xs font-medium text-slate-500">
-                        {{ __('SOP Terstandar & Bergaransi') }}
-                    </span>
+                <div class="pt-4 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-end gap-3">
+                    <a href="{{ route('services.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-all active:scale-95">
+                        <span>{{ __('Lihat Layanan Kami') }}</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
 
-                    <div class="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
-                        <a href="{{ route('services.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#ac0c0c] hover:bg-[#8f0a0a] text-white text-xs font-bold shadow-sm transition-all active:scale-95">
-                            <span>{{ __('Lihat Layanan Kami') }}</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </a>
-
-                        <a href="{{ route('consultation.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3 rounded-xl border border-slate-300 hover:border-[#ac0c0c] bg-white hover:bg-red-50/50 text-slate-800 hover:text-[#ac0c0c] text-xs font-bold transition-all shadow-2xs">
-                            <span>{{ __('Hubungi Kami') }}</span>
-                        </a>
-                    </div>
+                    <a href="{{ route('consultation.index') }}" class="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3 rounded-xl border border-slate-300 hover:border-[#ac0c0c] bg-white hover:bg-red-50/50 text-slate-800 hover:text-[#ac0c0c] text-xs font-bold transition-all shadow-2xs">
+                        <span>{{ __('Hubungi Kami') }}</span>
+                    </a>
                 </div>
             </div>
 
