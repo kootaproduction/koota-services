@@ -14,8 +14,24 @@
         </div>
     </div>
 
+    @php
+        $photos = array_values(array_unique(array_filter(array_merge([$project->image], $project->gallery_images ?? []))));
+    @endphp
+
     <!-- Simple, Modern, Minimalist Photo Documentation -->
-    <section class="py-12 md:py-16 bg-slate-50" x-data="{ lightbox: false, currentPhoto: '{{ $project->image }}' }">
+    <section class="py-12 md:py-16 bg-slate-50"
+             x-data="{
+                 lightbox: false,
+                 photos: @js($photos),
+                 currentIndex: 0,
+                 get currentPhoto() { return this.photos[this.currentIndex] ?? ''; },
+                 open(idx) { this.currentIndex = idx; this.lightbox = true; },
+                 prev() { this.currentIndex = (this.currentIndex - 1 + this.photos.length) % this.photos.length; },
+                 next() { this.currentIndex = (this.currentIndex + 1) % this.photos.length; }
+             }"
+             @keydown.escape.window="lightbox = false"
+             @keydown.arrow-left.window="if (lightbox) prev()"
+             @keydown.arrow-right.window="if (lightbox) next()">
         <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             
             <!-- Simple Header (Title & Category Only) -->
@@ -33,16 +49,12 @@
                 @endif
             </div>
 
-            @php
-                $photos = array_values(array_filter(array_merge([$project->image], $project->gallery_images ?? [])));
-            @endphp
-
             <!-- Clean Modern Photo Documentation Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach($photos as $photo)
+                @foreach($photos as $idx => $photo)
                     <div class="h-80 sm:h-96 rounded-3xl overflow-hidden shadow-xs hover:shadow-xl border border-gray-100 bg-white group cursor-pointer relative"
-                         @click="currentPhoto = '{{ $photo }}'; lightbox = true">
-                        <img src="{{ $photo }}" alt="{{ $project->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                         @click="open({{ $idx }})">
+                        <img src="{{ $photo }}" alt="{{ $project->title }} - {{ $idx + 1 }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <span class="px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-xs font-bold text-gray-900 shadow-md flex items-center gap-1.5">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -51,16 +63,6 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-
-            <!-- Minimalist Action CTA Bar -->
-            <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
-                <a href="https://wa.me/6281217597109?text=Halo%20KOOTA%20SERVICES,%20saya%20tertarik%20konsultasi%20proyek%20{{ urlencode($project->title) }}." target="_blank" class="px-8 py-3.5 rounded-xl bg-[#16a34a] hover:bg-[#15803d] text-white font-bold text-xs sm:text-sm transition-all shadow-lg shadow-emerald-600/30 flex items-center gap-2 active:scale-95">
-                    <span>{{ __('Konsultasi Proyek Ini via WA') }}</span>
-                </a>
-                <a href="{{ route('portfolio.index') }}" class="px-6 py-3.5 rounded-xl bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 font-bold text-xs sm:text-sm transition-all">
-                    {{ __('Kembali ke Semua Portofolio') }}
-                </a>
             </div>
 
         </div>
@@ -77,12 +79,21 @@
              @click="lightbox = false"
              style="display: none;">
             
-            <button @click="lightbox = false" class="absolute top-6 right-6 z-20 w-11 h-11 rounded-full bg-white/20 text-white text-xl flex items-center justify-center hover:bg-white/40 transition-colors">
+            <button @click="lightbox = false" class="absolute top-6 right-6 z-20 px-4 h-11 rounded-full bg-white/20 text-white text-sm font-bold flex items-center justify-center hover:bg-white/40 transition-colors cursor-pointer">
                 {{ __('Tutup') }}
             </button>
+
+            <button x-show="photos.length > 1" @click.stop="prev()" class="absolute left-4 sm:left-8 z-20 w-11 h-11 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/40 transition-colors cursor-pointer" aria-label="Previous photo">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+
             <div class="max-w-5xl max-h-[90vh] overflow-hidden rounded-3xl" @click.stop>
                 <img :src="currentPhoto" alt="{{ __('Katalog Foto Fullsize') }}" class="w-full h-full object-contain max-h-[85vh] rounded-3xl">
             </div>
+
+            <button x-show="photos.length > 1" @click.stop="next()" class="absolute right-4 sm:right-8 z-20 w-11 h-11 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/40 transition-colors cursor-pointer" aria-label="Next photo">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
+            </button>
         </div>
     </section>
 @endsection
