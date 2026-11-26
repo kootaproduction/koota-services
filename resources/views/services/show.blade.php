@@ -69,7 +69,7 @@
                     ["q" => "02 Are the cleaning chemicals safe for kids and pets?", "a" => "Yes, all cleaning solutions we use are certified eco-friendly, non-toxic, free from harmful carcinogens, and completely safe for infants, children, and pets."],
                     ["q" => "03 Do I need to provide any equipment or supplies?", "a" => "Not at all! Our team arrives fully equipped with industrial vacuum cleaners, polishing machines, portable ladders, sterile microfiber cloths, and specialized formulas."],
                     ["q" => "04 How long does a cleaning session usually take?", "a" => "Duration depends on property size and condition. Standard daily cleaning takes 2–4 hours on average, while total deep cleaning takes 4–8 hours with a crew of 2–4 technicians."],
-                    ["q" => "05 Is Home Cleaning service available outside major cities?", "a" => "We serve the entire metropolitan areas of Surabaya, Malang, Bali, and Jakarta, including their surrounding buffer zones."],
+                    ["q" => "05 Is Home Cleaning service available outside major cities?", "a" => "We serve the entire metropolitan areas of Surabaya, Sidoarjo, Gresik, Bali, and Jakarta, including their surrounding buffer zones."],
                     ["q" => "06 Is there a quality guarantee if I'm not satisfied with the results?", "a" => "Absolutely! We provide a Quality Guarantee. If you or our supervisor identify any area not cleaned according to the checklist, our team will reclean it immediately at no additional cost."],
                     ["q" => "07 How does the booking and payment process work?", "a" => "Simply reach out via WhatsApp to schedule and receive a price estimate. Payment is completed via official bank transfer after the work is inspected and approved together."]
                 ];
@@ -120,7 +120,7 @@
                     ["q" => "02 Apakah cairan pembersih yang digunakan aman?", "a" => "Ya, seluruh cairan pembersih yang kami gunakan telah teruji ramah lingkungan, bebas zat berbahaya karsinogenik, dan aman untuk bayi, anak-anak, serta hewan peliharaan."],
                     ["q" => "03 Apakah saya harus menyediakan peralatan sendiri?", "a" => "Tidak perlu repot! Tim kami datang lengkap dengan vacuum cleaner industri, mesin poles, tangga portabel, kain mikrofiber steril, hingga formula pembersih khusus."],
                     ["q" => "04 Berapa lama estimasi durasi pengerjaan?", "a" => "Durasi bergantung pada luasan dan kondisi properti. Untuk pembersihan harian rumah standar rata-rata membutuhkan 2-4 jam, sedangkan pembersihan menyeluruh total 4-8 jam dengan tim 2-4 orang teknisi."],
-                    ["q" => "05 Apakah layanan Pembersihan Rumah tersedia untuk luar kota?", "a" => "Kami melayani seluruh area metropolitan Surabaya, Malang, Bali, dan Jakarta, serta kawasan penyangga sekitarnya."],
+                    ["q" => "05 Apakah layanan Pembersihan Rumah tersedia untuk luar kota?", "a" => "Kami melayani seluruh area metropolitan Surabaya, Sidoarjo, Gresik, Bali, dan Jakarta, serta kawasan penyangga sekitarnya."],
                     ["q" => "06 Apakah ada jaminan garansi jika hasil pembersihan belum puas?", "a" => "Tentu! Kami memberikan Garansi Kualitas. Jika supervisor kami atau Anda menemukan area yang belum bersih sesuai checklist, tim kami langsung membersihkannya kembali tanpa biaya tambahan."],
                     ["q" => "07 Bagaimana alur reservasi dan sistem pembayarannya?", "a" => "Cukup hubungi Customer Care via WhatsApp untuk konsultasi jadwal dan estimasi harga. Pembayaran dapat dilakukan via transfer bank resmi setelah pekerjaan selesai diperiksa bersama."]
                 ];
@@ -432,7 +432,7 @@
 
                             <div class="flex items-center justify-between text-[11px] text-white/90 font-medium px-2">
                                 <span>{{ __('Wilayah Layanan Resmi') }}</span>
-                                <span class="font-bold text-white">{{ __('Surabaya • Malang • Bali • Jakarta') }}</span>
+                                <span class="font-bold text-white">{{ __('Surabaya • Sidoarjo • Gresik • Bali • Jakarta') }}</span>
                             </div>
                         </div>
                     </div>

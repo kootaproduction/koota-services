@@ -170,7 +170,7 @@
                                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">{{ __('Topik:') }}</span>
                                 <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700 text-xs font-semibold">#{{ Str::slug($post->category) }}</span>
                                 <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700 text-xs font-semibold">#KootaServices</span>
-                                <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700 text-xs font-semibold">#SurabayaMalangBali</span>
+                                <span class="px-3 py-1 rounded-lg bg-gray-100 text-gray-700 text-xs font-semibold">#SurabayaSidoarjoGresikBali</span>
                             </div>
 
                             <!-- Bottom Share Button -->
@@ -196,7 +196,7 @@
                                 <h3 class="text-base font-bold text-gray-900">{{ __('Diterbitkan oleh KOOTA SERVICES') }}</h3>
                             </div>
                             <p class="text-xs text-gray-600 leading-relaxed">
-                                {{ __('KOOTA SERVICES adalah penyedia layanan terpadu profesional untuk Home Cleaning, Perbaikan Rumah, dan Pengangkutan Sampah berlisensi di Surabaya, Malang, Sidoarjo, Gresik, Bali, dan Jakarta. Seluruh artikel disusun berdasarkan pengalaman teknis nyata di lapangan.') }}
+                                {{ __('KOOTA SERVICES adalah penyedia layanan terpadu profesional untuk Home Cleaning, Perbaikan Rumah, dan Pengangkutan Sampah berlisensi di Surabaya, Sidoarjo, Gresik, Bali, dan Jakarta. Seluruh artikel disusun berdasarkan pengalaman teknis nyata di lapangan.') }}
                             </p>
                         </div>
                     </div>
@@ -299,7 +299,7 @@
                                 <span>{{ __('Jangkauan Area Layanan') }}</span>
                             </div>
                             <p class="text-[11px] leading-relaxed text-gray-500">
-                                Surabaya, Sidoarjo, Gresik, Malang Raya, Bali (Denpasar & sekitarnya), dan DKI Jakarta.
+                                Surabaya, Sidoarjo, Gresik, Bali (Denpasar & sekitarnya), dan DKI Jakarta.
                             </p>
                         </div>
 

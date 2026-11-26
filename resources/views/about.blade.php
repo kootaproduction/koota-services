@@ -24,7 +24,7 @@
                         </h1>
 
                         <p class="mx-auto mt-4 max-w-3xl text-sm text-gray-700 leading-relaxed sm:mt-5 sm:text-lg">
-                            {{ __('Mitra terpercaya untuk layanan fasilitas komersial, industri, dan perumahan di Surabaya, Malang, Bali, dan Jakarta. Kami mendedikasikan diri untuk menciptakan lingkungan yang bersih, aman, dan berkelanjutan.') }}
+                            {{ __('Mitra terpercaya untuk layanan fasilitas komersial, industri, dan perumahan di Surabaya, Sidoarjo, Gresik, Bali, dan Jakarta. Kami mendedikasikan diri untuk menciptakan lingkungan yang bersih, aman, dan berkelanjutan.') }}
                         </p>
                     </div>
                 </div>
@@ -54,9 +54,10 @@
                             {{ __('Area Operasional:') }}
                         </p>
 
-                        <div class="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
+                        <div class="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-3 text-sm font-semibold text-gray-800">
                             <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Surabaya') }}</div>
-                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Malang') }}</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Sidoarjo') }}</div>
+                            <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Gresik') }}</div>
                             <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Denpasar (Bali)') }}</div>
                             <div class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-[#ac0c0c]" aria-hidden="true"></span>{{ __('Jakarta') }}</div>
                         </div>
@@ -77,7 +78,8 @@
                     @php
                         $serviceLocations = [
                             ['name' => 'Surabaya', 'latitude' => -7.2575, 'longitude' => 112.7521],
-                            ['name' => 'Malang', 'latitude' => -7.9666, 'longitude' => 112.6326],
+                            ['name' => 'Sidoarjo', 'latitude' => -7.4478, 'longitude' => 112.7183],
+                            ['name' => 'Gresik', 'latitude' => -7.1566, 'longitude' => 112.6555],
                             ['name' => __('Denpasar (Bali)'), 'latitude' => -8.6705, 'longitude' => 115.2126],
                             ['name' => 'Jakarta', 'latitude' => -6.2088, 'longitude' => 106.8456],
                         ];
@@ -182,7 +184,7 @@
                         </h3>
                     </div>
                     <span class="text-xs font-bold text-[#ac0c0c] tracking-wide">
-                        {{ __('Surabaya • Malang • Bali • Jakarta') }}
+                        {{ __('Surabaya • Sidoarjo • Gresik • Bali • Jakarta') }}
                     </span>
                 </div>
 
@@ -293,7 +295,7 @@
                 </h2>
 
                 <p class="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto pt-2">
-                    {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Malang, Bali, dan Jakarta.') }}
+                    {{ __('Fokus utama kami bukan sekadar menyelesaikan tugas teknis, melainkan menciptakan dampak positif bagi kelestarian lingkungan dan kenyamanan hidup di Surabaya, Sidoarjo, Gresik, Bali, dan Jakarta.') }}
                 </p>
             </div>
 
@@ -329,7 +331,7 @@
                     </h3>
 
                     <p class="mt-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        {{ __('Menjaga konsistensi standar mutu layanan fasilitas dengan SOP ketat dan jaminan pengerjaan bergaransi di Surabaya, Malang, Bali, dan Jakarta.') }}
+                        {{ __('Menjaga konsistensi standar mutu layanan fasilitas dengan SOP ketat dan jaminan pengerjaan bergaransi di Surabaya, Sidoarjo, Gresik, Bali, dan Jakarta.') }}
                     </p>
                 </div>
 
@@ -350,7 +352,7 @@
                     </h2>
 
                     <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                        {{ __('Kami memadukan keahlian teknis, transparansi penuh, dan jaminan pengerjaan bergaransi untuk setiap hunian dan fasilitas di Surabaya, Malang, Bali, dan Jakarta.') }}
+                        {{ __('Kami memadukan keahlian teknis, transparansi penuh, dan jaminan pengerjaan bergaransi untuk setiap hunian dan fasilitas di Surabaya, Sidoarjo, Gresik, Bali, dan Jakarta.') }}
                     </p>
 
                     <div>

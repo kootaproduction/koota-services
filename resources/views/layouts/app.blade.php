@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>@yield('title', 'KOOTA SERVICE - Solusi Fasilitas Terintegrasi')</title>
-    <meta name="description" content="Solusi terpadu untuk kebutuhan perawatan fasilitas dan manajemen lingkungan yang berkelanjutan di Surabaya, Malang, Bali, Jakarta.">
+    <meta name="description" content="Solusi terpadu untuk kebutuhan perawatan fasilitas dan manajemen lingkungan yang berkelanjutan di Surabaya, Sidoarjo, Gresik, Bali, Jakarta.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -117,7 +117,7 @@
                             {{ __('Punya Rencana Perawatan Fasilitas & Proyek?') }}
                         </h2>
                         <p class="mt-2 text-xs leading-relaxed text-white/80">
-                            {{ __('Konsultasikan kebutuhan perawatan fasilitas, pengangkutan limbah, atau renovasi Anda di Surabaya, Malang, Bali, atau Jakarta bersama tim ahli kami hari ini.') }}
+                            {{ __('Konsultasikan kebutuhan perawatan fasilitas, pengangkutan limbah, atau renovasi Anda di Surabaya, Sidoarjo, Gresik, Bali, atau Jakarta bersama tim ahli kami hari ini.') }}
                         </p>
                     </div>
                 </div>
@@ -524,14 +524,14 @@
                         <img src="{{ asset('images/logo.png') }}" alt="KOOTA SERVICE" class="h-14 w-auto object-contain bg-white/95 p-1 rounded-xl shadow-md">
                     </a>
                     <p class="text-xs text-gray-400 leading-relaxed max-w-sm">
-                        {{ __('Solusi terpercaya untuk kebersihan, perbaikan, dan perawatan rumah terpadu di Surabaya, Malang, Bali, dan Jakarta.') }}
+                        {{ __('Solusi terpercaya untuk kebersihan, perbaikan, dan perawatan rumah terpadu di Surabaya, Sidoarjo, Gresik, Bali, dan Jakarta.') }}
                     </p>
 
                     @php
                         $socialLinks = [
                             [
                                 'name' => 'Instagram',
-                                'href' => 'https://www.instagram.com/',
+                                'href' => 'https://www.instagram.com/koota.service/',
                                 'style' => 'background:#fff; color:#E1306C;',
                                 'svg' => '<svg viewBox="0 0 24 24" aria-hidden="true" style="width: 28px; height: 28px; fill: currentColor"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.25-3.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/></svg>'
                             ],
@@ -600,7 +600,7 @@
             <div class="pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
                 <p>© {{ date('Y') }} KOOTA SERVICE. {{ __('Kita Wujudkan') }} <span class="text-emerald-400 font-bold">{{ __('Kota Bersih') }}</span></p>
                 <div class="flex items-center gap-3">
-                    <span>Surabaya, Malang, Bali, Jakarta</span>
+                    <span>Surabaya, Sidoarjo, Gresik, Bali, Jakarta</span>
                     <a href="{{ route('admin.login') }}" class="text-slate-500 hover:text-slate-300 text-[11px] transition-colors" title="Akses Panel Internal Admin">
                         • Admin Area
                     </a>

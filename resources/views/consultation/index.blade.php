@@ -183,7 +183,7 @@
                             {{ __('Wilayah Layanan Aktif') }}
                         </span>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            {{ __('Surabaya Raya (Surabaya, Sidoarjo, Gresik), Malang Raya, Bali (Denpasar, Badung, Sanur), dan DKI Jakarta.') }}
+                            {{ __('Surabaya, Sidoarjo, Gresik, Bali (Denpasar, Badung, Sanur), dan DKI Jakarta.') }}
                         </p>
                     </div>
 
@@ -369,7 +369,6 @@
                                             <option value="Surabaya" {{ old('location') === 'Surabaya' ? 'selected' : '' }}>Surabaya</option>
                                             <option value="Sidoarjo" {{ old('location') === 'Sidoarjo' ? 'selected' : '' }}>Sidoarjo</option>
                                             <option value="Gresik" {{ old('location') === 'Gresik' ? 'selected' : '' }}>Gresik</option>
-                                            <option value="Malang" {{ old('location') === 'Malang' ? 'selected' : '' }}>{{ __('Malang Raya') }}</option>
                                             <option value="Bali" {{ old('location') === 'Bali' ? 'selected' : '' }}>{{ __('Bali (Denpasar & Sekitarnya)') }}</option>
                                             <option value="Jakarta" {{ old('location') === 'Jakarta' ? 'selected' : '' }}>{{ __('DKI Jakarta & Sekitarnya') }}</option>
                                             <option value="Lainnya" {{ old('location') === 'Lainnya' ? 'selected' : '' }}>{{ __('Kota Lainnya') }}</option>
